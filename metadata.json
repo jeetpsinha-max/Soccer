@@ -1,0 +1,6 @@
+{
+  "name": "SoccerForge AI",
+  "description": "Premium AI soccer coaching, soccer-specific weightlifting Programs, nutrition and recovery optimizations, speed lab, video analysis, and elite weak-foot academy.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
