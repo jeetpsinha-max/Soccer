@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3011;
 
 app.use(express.json());
 
