@@ -76,6 +76,9 @@ export interface MatchEvent {
   success: boolean;
   description: string;
   phase: 'Open Play' | 'High Press' | 'Counter Attack' | 'Set Piece';
+  period?: number; // 1, 2, 3, 4
+  videoUrl?: string; // Direct Veo CDN 1080p MP4 clip
+  thumbnailUrl?: string;
 }
 
 export type FormationId = '4-3-3' | '4-2-3-1' | '3-5-2' | '4-4-2';
@@ -108,6 +111,7 @@ export interface MatchFixture {
   opponentLogoText: string;
   isHome: boolean;
   isConference: boolean; // MAPL Conference match
+  matchType?: string;
   rivalryName?: string;
   status: 'Completed' | 'Live' | 'Upcoming';
   peddieScore?: number;
@@ -117,6 +121,8 @@ export interface MatchFixture {
   possessionPctPeddie: number;
   fieldTiltPctPeddie: number;
   keySummary: string;
+  videoUrl?: string; // Veo match link
+  thumbnailUrl?: string;
 }
 
 export interface ScoutingReport {

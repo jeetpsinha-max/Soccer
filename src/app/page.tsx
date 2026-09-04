@@ -16,7 +16,8 @@ import {
   Layers, 
   ShieldCheck, 
   Award,
-  Zap
+  Zap,
+  Film
 } from 'lucide-react';
 
 export default function Home() {
@@ -73,6 +74,49 @@ export default function Home() {
           >
             Sideline Call Sheet <ArrowRight className="w-3.5 h-3.5" />
           </Link>
+        </div>
+      </div>
+
+      {/* Official First Game Veo AI Banner */}
+      <div className="glass-panel p-4 border border-emerald-500/30 flex flex-col md:flex-row md:items-center justify-between gap-3 bg-gradient-to-r from-emerald-950/30 via-slate-900/60 to-slate-950">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-black text-xs shrink-0">
+            VEO
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-black text-emerald-400 uppercase tracking-wide">
+                Season Opener Scrimmage Film Available
+              </span>
+              <span className="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono">
+                Sept 1, 2026
+              </span>
+            </div>
+            <div className="text-sm font-bold text-white">
+              Peddie Varsity vs. The Haverford School (4x20-Min Periods)
+            </div>
+            <div className="text-xs text-slate-300">
+              Veo AI match video recorded with 32 highlight clips, 5 goals, and 1080p MP4 film breakdown.
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 shrink-0">
+          <Link
+            href="/dashboard/match-film"
+            className="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black transition shadow flex items-center gap-1.5"
+          >
+            <Film className="w-3.5 h-3.5" /> Analyze Film
+          </Link>
+          <a
+            href="https://app.veo.co/matches/20260901-vs-peddie-v4d69c3b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold transition flex items-center gap-1.5"
+          >
+            <span>Veo URL</span>
+            <ArrowRight className="w-3 h-3" />
+          </a>
         </div>
       </div>
 

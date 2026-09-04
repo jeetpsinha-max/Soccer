@@ -82,4 +82,40 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(plan.substitutionsRoadmap.length).toBeGreaterThan(0);
     expect(plan.predictedOutcome.winProbabilityPct).toBeGreaterThan(50);
   });
+
+  it('validates Official First Game vs The Haverford School on Veo AI Video', async () => {
+    const { MATCH_EVENTS_VEO_HAVERFORD } = await import('../src/lib/soccer-data');
+    
+    // 1. Fixture m-0 is in schedule
+    const firstGame = PEDDIE_SCHEDULE_2026_2027.find(m => m.id === 'm-0');
+    expect(firstGame).toBeDefined();
+    expect(firstGame?.opponent).toBe('The Haverford School');
+    expect(firstGame?.matchDate).toBe('Sept 1, 2026');
+    expect(firstGame?.status).toBe('Completed');
+    expect(firstGame?.videoUrl).toBe('https://app.veo.co/matches/20260901-vs-peddie-v4d69c3b/');
+    expect(firstGame?.peddieScore).toBe(0);
+    expect(firstGame?.opponentScore).toBe(5);
+
+    // 2. Curated Veo highlights
+    expect(MATCH_EVENTS_VEO_HAVERFORD).toBeDefined();
+    expect(MATCH_EVENTS_VEO_HAVERFORD.length).toBe(18);
+
+    // 3. Exactly 5 goals from the match
+    const goals = MATCH_EVENTS_VEO_HAVERFORD.filter(e => e.type === 'Goal');
+    expect(goals.length).toBe(5);
+
+    // 4. Video URLs and thumbnails all point to Veo CDN
+    MATCH_EVENTS_VEO_HAVERFORD.forEach(e => {
+      expect(e.videoUrl).toMatch(/https:\/\/c\.veocdn\.com/);
+      expect(e.thumbnailUrl).toBeTruthy();
+      expect(e.period).toBeGreaterThanOrEqual(1);
+      expect(e.period).toBeLessThanOrEqual(4);
+    });
+
+    // 5. NLP filtering on Veo events
+    const kimEvents = SoccerTacticalAgent.filterEventsByNaturalLanguage('kim', MATCH_EVENTS_VEO_HAVERFORD);
+    expect(kimEvents.length).toBeGreaterThan(0);
+    const mckenzieEvents = SoccerTacticalAgent.filterEventsByNaturalLanguage('mckenzie', MATCH_EVENTS_VEO_HAVERFORD);
+    expect(mckenzieEvents.length).toBeGreaterThan(0);
+  });
 });

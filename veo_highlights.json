@@ -1,0 +1,2274 @@
+[
+  {
+    "created": "2026-09-02T04:51:19.434593+02:00",
+    "duration": 25,
+    "id": "9d3f697d-cb02-498f-a233-a33ac5401369",
+    "start": 5379,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.122579+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/9d3f697d-cb02-498f-a233-a33ac5401369_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.066663+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/9d3f697d-cb02-498f-a233-a33ac5401369_1788317479.555815/video.mp4?v=et3VChnp",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.434428+02:00",
+    "duration": 25,
+    "id": "daaa5cef-e9e8-486f-8b4e-be101e49c774",
+    "start": 5317,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:28.850780+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/daaa5cef-e9e8-486f-8b4e-be101e49c774_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:28.788739+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/daaa5cef-e9e8-486f-8b4e-be101e49c774_1788317479.555815/video.mp4?v=mzbRgbH6",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.434248+02:00",
+    "duration": 25,
+    "id": "2dc977f1-451b-4319-8b7f-a350caa01420",
+    "start": 5060,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:28.154323+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/2dc977f1-451b-4319-8b7f-a350caa01420_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:28.085576+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/2dc977f1-451b-4319-8b7f-a350caa01420_1788317479.555815/video.mp4?v=QbeHPDVs",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.434074+02:00",
+    "duration": 25,
+    "id": "cccff1fc-0ee4-4d8a-b580-70f094f7d3ec",
+    "start": 4903,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:28.713286+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/cccff1fc-0ee4-4d8a-b580-70f094f7d3ec_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:28.655133+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/cccff1fc-0ee4-4d8a-b580-70f094f7d3ec_1788317479.555815/video.mp4?v=eqBYxZvt",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.433893+02:00",
+    "duration": 25,
+    "id": "7c9d8fdf-ab12-456e-854a-a3b685d7aa05",
+    "start": 4668,
+    "type": "goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.479652+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Goal",
+        "slug": "goal",
+        "origin": "1",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/7c9d8fdf-ab12-456e-854a-a3b685d7aa05_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.429742+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/7c9d8fdf-ab12-456e-854a-a3b685d7aa05_1788317479.555815/video.mp4?v=BXlEsn3q",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.433735+02:00",
+    "duration": 25,
+    "id": "867e5fe6-541a-4233-898a-9fc0340b5f84",
+    "start": 4667,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.835875+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/867e5fe6-541a-4233-898a-9fc0340b5f84_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.780762+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/867e5fe6-541a-4233-898a-9fc0340b5f84_1788317479.555815/video.mp4?v=2r-dhJ0B",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.433567+02:00",
+    "duration": 25,
+    "id": "d35014da-753b-4c9f-b2e3-4dd85f8a004c",
+    "start": 4498,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.918882+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/d35014da-753b-4c9f-b2e3-4dd85f8a004c_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.864170+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/d35014da-753b-4c9f-b2e3-4dd85f8a004c_1788317479.555815/video.mp4?v=BXa-yrue",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.433403+02:00",
+    "duration": 25,
+    "id": "04b043aa-0e47-4f84-b798-0b26e8bd0341",
+    "start": 4458,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:28.501662+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/04b043aa-0e47-4f84-b798-0b26e8bd0341_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:28.441636+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/04b043aa-0e47-4f84-b798-0b26e8bd0341_1788317479.555815/video.mp4?v=9whNmVMc",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.433229+02:00",
+    "duration": 25,
+    "id": "955497fe-8896-48bf-aaf6-4d4a0418b6fa",
+    "start": 4260,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:28.380732+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/955497fe-8896-48bf-aaf6-4d4a0418b6fa_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:28.322379+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/955497fe-8896-48bf-aaf6-4d4a0418b6fa_1788317479.555815/video.mp4?v=VIt--J5f",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.433058+02:00",
+    "duration": 25,
+    "id": "f7d5ec37-6dc4-461e-843c-128f2e82c1df",
+    "start": 3992,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.245614+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f7d5ec37-6dc4-461e-843c-128f2e82c1df_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.187558+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f7d5ec37-6dc4-461e-843c-128f2e82c1df_1788317479.555815/video.mp4?v=OIMYNrKJ",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.432889+02:00",
+    "duration": 25,
+    "id": "4442e40c-2af2-4c0a-bfba-8c84dd99130f",
+    "start": 3738,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.223187+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4442e40c-2af2-4c0a-bfba-8c84dd99130f_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.166098+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4442e40c-2af2-4c0a-bfba-8c84dd99130f_1788317479.555815/video.mp4?v=KAxzf5FY",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.432723+02:00",
+    "duration": 25,
+    "id": "00d9a0b2-e89b-46f4-b02f-31c6981dce41",
+    "start": 3583,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.742146+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/00d9a0b2-e89b-46f4-b02f-31c6981dce41_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.680333+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/00d9a0b2-e89b-46f4-b02f-31c6981dce41_1788317479.555815/video.mp4?v=daL9_KhM",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.432557+02:00",
+    "duration": 25,
+    "id": "1801dba5-cb37-46ed-885f-355899ef566e",
+    "start": 3448,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:28.085932+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1801dba5-cb37-46ed-885f-355899ef566e_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:28.026194+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1801dba5-cb37-46ed-885f-355899ef566e_1788317479.555815/video.mp4?v=XGYDjtj_",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.432367+02:00",
+    "duration": 25,
+    "id": "1c160071-7c95-495f-9083-746380345b00",
+    "start": 2923,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.715150+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1c160071-7c95-495f-9083-746380345b00_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.640987+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1c160071-7c95-495f-9083-746380345b00_1788317479.555815/video.mp4?v=St2s4S9u",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.432194+02:00",
+    "duration": 25,
+    "id": "4c049e62-a5bf-418f-934d-74b1d09f43d9",
+    "start": 2512,
+    "type": "goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:28.050445+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Goal",
+        "slug": "goal",
+        "origin": "1",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c049e62-a5bf-418f-934d-74b1d09f43d9_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.962804+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c049e62-a5bf-418f-934d-74b1d09f43d9_1788317479.555815/video.mp4?v=Nhvja1fS",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.432031+02:00",
+    "duration": 25,
+    "id": "c8ce0eb8-d651-4193-a476-ecc79ff6d247",
+    "start": 2512,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.841103+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/c8ce0eb8-d651-4193-a476-ecc79ff6d247_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.780354+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/c8ce0eb8-d651-4193-a476-ecc79ff6d247_1788317479.555815/video.mp4?v=iD5jIntY",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.431866+02:00",
+    "duration": 25,
+    "id": "9ce1a551-cdaa-4718-838d-43e5478a45ea",
+    "start": 2333,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.382591+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/9ce1a551-cdaa-4718-838d-43e5478a45ea_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.327655+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/9ce1a551-cdaa-4718-838d-43e5478a45ea_1788317479.555815/video.mp4?v=6zmi1d2x",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.431690+02:00",
+    "duration": 25,
+    "id": "06cc928b-6a11-40e9-85ae-01bf1d34dca8",
+    "start": 2102,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:26.590544+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/06cc928b-6a11-40e9-85ae-01bf1d34dca8_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.530509+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/06cc928b-6a11-40e9-85ae-01bf1d34dca8_1788317479.555815/video.mp4?v=00ys9FWU",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.431514+02:00",
+    "duration": 25,
+    "id": "cf38a9f2-b334-4626-be07-e87af154ff92",
+    "start": 1980,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:26.547603+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/cf38a9f2-b334-4626-be07-e87af154ff92_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.492425+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/cf38a9f2-b334-4626-be07-e87af154ff92_1788317479.555815/video.mp4?v=R4qgYOLg",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.431333+02:00",
+    "duration": 25,
+    "id": "3eabdafc-f07f-47c1-8c0a-5913bb6e0015",
+    "start": 1755,
+    "type": "goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.153287+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Goal",
+        "slug": "goal",
+        "origin": "1",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/3eabdafc-f07f-47c1-8c0a-5913bb6e0015_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.096350+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/3eabdafc-f07f-47c1-8c0a-5913bb6e0015_1788317479.555815/video.mp4?v=YwaRAfam",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.431154+02:00",
+    "duration": 25,
+    "id": "fe533807-2f40-403c-b49a-8b528bc76a1e",
+    "start": 1755,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.082650+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/fe533807-2f40-403c-b49a-8b528bc76a1e_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.018688+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/fe533807-2f40-403c-b49a-8b528bc76a1e_1788317479.555815/video.mp4?v=2XbKbMD2",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.430880+02:00",
+    "duration": 25,
+    "id": "f07ba327-7225-4d16-ab40-207b712e2705",
+    "start": 1604,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.154367+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f07ba327-7225-4d16-ab40-207b712e2705_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.096303+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f07ba327-7225-4d16-ab40-207b712e2705_1788317479.555815/video.mp4?v=2VxPy6iu",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.430034+02:00",
+    "duration": 25,
+    "id": "cded00c6-bb03-4a7d-ad64-bc747f764f62",
+    "start": 1181,
+    "type": "goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.291340+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Goal",
+        "slug": "goal",
+        "origin": "1",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/cded00c6-bb03-4a7d-ad64-bc747f764f62_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:27.233624+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/cded00c6-bb03-4a7d-ad64-bc747f764f62_1788317479.555815/video.mp4?v=gjk_1dSv",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.429872+02:00",
+    "duration": 25,
+    "id": "f6214ce4-57dd-4a60-8871-815bdd66c959",
+    "start": 1180,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:26.431162+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f6214ce4-57dd-4a60-8871-815bdd66c959_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.372075+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f6214ce4-57dd-4a60-8871-815bdd66c959_1788317479.555815/video.mp4?v=s0kiRyJb",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.429692+02:00",
+    "duration": 25,
+    "id": "ef4eab6f-61b9-41d4-bbae-728efac6a969",
+    "start": 1016,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:26.616271+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/ef4eab6f-61b9-41d4-bbae-728efac6a969_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.559007+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/ef4eab6f-61b9-41d4-bbae-728efac6a969_1788317479.555815/video.mp4?v=7boZ56wi",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.429525+02:00",
+    "duration": 25,
+    "id": "8b7d90a3-7840-4447-8fa8-89cf0aa8def2",
+    "start": 975,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:27.043944+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/8b7d90a3-7840-4447-8fa8-89cf0aa8def2_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.978058+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/8b7d90a3-7840-4447-8fa8-89cf0aa8def2_1788317479.555815/video.mp4?v=D0hJ9wO1",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.429344+02:00",
+    "duration": 25,
+    "id": "4c7c51a0-7704-4549-b0a2-991a39b54a3c",
+    "start": 788,
+    "type": "goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:26.395781+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Goal",
+        "slug": "goal",
+        "origin": "1",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c7c51a0-7704-4549-b0a2-991a39b54a3c_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.338335+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c7c51a0-7704-4549-b0a2-991a39b54a3c_1788317479.555815/video.mp4?v=2Vr-NiPh",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.429177+02:00",
+    "duration": 25,
+    "id": "0267db1f-6d65-4676-845e-3c5feb5766c7",
+    "start": 787,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:26.409640+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/0267db1f-6d65-4676-845e-3c5feb5766c7_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.348199+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/0267db1f-6d65-4676-845e-3c5feb5766c7_1788317479.555815/video.mp4?v=FE9DOfWG",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.429004+02:00",
+    "duration": 25,
+    "id": "86a673c2-a2f7-495c-8282-739cfb12c034",
+    "start": 695,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:26.339103+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/86a673c2-a2f7-495c-8282-739cfb12c034_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.283071+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/86a673c2-a2f7-495c-8282-739cfb12c034_1788317479.555815/video.mp4?v=0FOHwG9l",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.428821+02:00",
+    "duration": 25,
+    "id": "9a180ab3-5960-441e-92ec-55831f302860",
+    "start": 543,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:26.414966+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/9a180ab3-5960-441e-92ec-55831f302860_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.347794+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/9a180ab3-5960-441e-92ec-55831f302860_1788317479.555815/video.mp4?v=94pzzbHZ",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.428645+02:00",
+    "duration": 25,
+    "id": "1529b6ca-f348-40e7-9981-be71033d96af",
+    "start": 466,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:26.362417+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1529b6ca-f348-40e7-9981-be71033d96af_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:26.270667+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1529b6ca-f348-40e7-9981-be71033d96af_1788317479.555815/video.mp4?v=tjiRX8v5",
+        "width": 1920
+      }
+    ]
+  },
+  {
+    "created": "2026-09-02T04:51:19.428386+02:00",
+    "duration": 25,
+    "id": "df91eca4-bd9b-4171-893d-6da93b295af0",
+    "start": 435,
+    "type": "shot_on_goal",
+    "ai_resolution": 1,
+    "annotations": null,
+    "camera_directions": null,
+    "comment": null,
+    "creator": null,
+    "has_camera_directions": null,
+    "involved_players": [],
+    "is_ai_generated": true,
+    "modified": "2026-09-02T04:52:25.889439+02:00",
+    "permissions": {
+      "matches.create_highlight__matchhighlightreply": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.create_highlight__showcasehighlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.update_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.destroy_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "matches.download_highlight": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    },
+    "privacy": "public",
+    "reply_count": 0,
+    "should_render": true,
+    "tags": [
+      {
+        "name": "Shot on goal",
+        "slug": "shot-on-goal",
+        "origin": "9",
+        "custom": false
+      }
+    ],
+    "team_association": null,
+    "thumbnail": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/df91eca4-bd9b-4171-893d-6da93b295af0_1788317479.555815/thumbnail-854x480.jpg",
+    "videos": [
+      {
+        "bit_rate": null,
+        "created": "2026-09-02T04:52:25.836776+02:00",
+        "height": 1080,
+        "mime_type": "video/mp4",
+        "url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/df91eca4-bd9b-4171-893d-6da93b295af0_1788317479.555815/video.mp4?v=7v9q8pPK",
+        "width": 1920
+      }
+    ]
+  }
+]

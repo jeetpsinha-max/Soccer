@@ -42,8 +42,8 @@ export class SoccerTacticalAgent {
         {
           minute: 60,
           offPlayer: '#7 Harry Xiao (RW)',
-          onPlayer: '#21 Luca Romanelli (RW)',
-          tacticalPurpose: 'Inject experienced senior forward against fatigued opposing left-back.'
+          onPlayer: '#19 Lucas Zhang (RW)',
+          tacticalPurpose: 'Inject explosive sophomore winger against fatigued opposing left-back.'
         },
         {
           minute: 75,
@@ -71,6 +71,7 @@ export class SoccerTacticalAgent {
    */
   static filterEventsByNaturalLanguage(query: string, events: MatchEvent[]): MatchEvent[] {
     const q = query.toLowerCase().trim();
+    if (!q) return events;
     if (q === 'goal' || q === 'goals') {
       return events.filter(e => e.type === 'Goal');
     }
@@ -82,9 +83,13 @@ export class SoccerTacticalAgent {
       if (q.includes('tackle') && e.type === 'Tackle') return true;
       if (q.includes('corner') && e.type === 'Corner') return true;
       if (q.includes('press') && (e.type === 'Press Trap' || e.phase === 'High Press')) return true;
+      if (q.includes('haverford') && (e.team === 'Opponent' || e.description.toLowerCase().includes('haverford'))) return true;
       if (q.includes('blair') && (e.team === 'Opponent' || e.description.toLowerCase().includes('blair'))) return true;
       if (q.includes('peddie') && e.team === 'Peddie') return true;
       if (q.includes('kim') && e.playerName.toLowerCase().includes('kim')) return true;
+      if (q.includes('mckenzie') && e.playerName.toLowerCase().includes('mckenzie')) return true;
+      if (q.includes('tharney') && e.playerName.toLowerCase().includes('tharney')) return true;
+      if (q.includes('mohiuddin') && e.playerName.toLowerCase().includes('mohiuddin')) return true;
       if (q.includes('sheinin') && e.playerName.toLowerCase().includes('sheinin')) return true;
       if (q.includes('wachtveitl') && e.playerName.toLowerCase().includes('wachtveitl')) return true;
       if (q.includes('romanelli') && e.playerName.toLowerCase().includes('romanelli')) return true;

@@ -1,0 +1,649 @@
+{
+  "id": "3c6d8c4d-e123-49b3-9aec-61805299b2ba",
+  "identifier": "3c6d8c4d-e123-49b3-9aec-61805299b2ba",
+  "recordings": [
+    {
+      "identifier": "3c6d8c4d-e123-49b3-9aec-61805299b2ba"
+    }
+  ],
+  "slug": "20260901-vs-peddie-v4d69c3b",
+  "url": "/matches/20260901-vs-peddie-v4d69c3b/",
+  "title": "vs. Peddie",
+  "thumbnail": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg",
+  "type": "friendly",
+  "type_name": "Friendly",
+  "created": "2026-09-02T02:07:04.473806+02:00",
+  "start": "2026-09-01T12:00:00+02:00",
+  "end": "2026-09-02T00:04:02.065329+02:00",
+  "privacy": "public",
+  "own_team_home_or_away": "home",
+  "opponent_club_name": "",
+  "opponent_team_name": "",
+  "opponent_short_name": "",
+  "opponent_short_name_display": "OPP",
+  "own_team_formation": null,
+  "own_team_formation_name": "",
+  "opponent_team_formation": null,
+  "opponent_team_formation_name": "",
+  "own_team_color": "blue",
+  "opponent_team_color": "red",
+  "tactics": [],
+  "tactics_info": [],
+  "camera": "14:ae:85:92:4a:1f",
+  "duration": 5485,
+  "processing_status": {},
+  "is_accessible": true,
+  "is_shared_recording": false,
+  "is_paid_for_storage_minutes": true,
+  "is_paid_for_upload_minutes": true,
+  "upload_minutes_consumed_on": "2026-09-02T04:06:57.596080+02:00",
+  "audio_status": "removed",
+  "expires_at": null,
+  "expiration_status": "does-not-expire",
+  "time_to_expiry": null,
+  "sport": "football",
+  "sport_name": "Football",
+  "has_analytics_enabled": false,
+  "has_playermoments_enabled": false,
+  "has_events_enabled": true,
+  "has_tracking_data": false,
+  "has_momentum_data": false,
+  "analytics_version": null,
+  "view_count": 75,
+  "reel_url": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/reel/video.mp4?v=zUVD62I8",
+  "external_id_dbu_match": null,
+  "external_id_dbu_pool": null,
+  "external_id_dbu_club": null,
+  "club": {
+    "id": "51da477e-7398-43e4-93f2-9dab65c08e3d",
+    "slug": "the-haverford-school-soccer-program",
+    "title": "Haverford School",
+    "short_name": "HS",
+    "country": {
+      "code": "US",
+      "name": "United States of America"
+    },
+    "crest": "https://assets.app.veo.co/crests/the-haverford-school-soccer-program/download.png",
+    "external_id_dbu": null,
+    "permissions": {
+      "teams.update_club": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.update_club_highlight_tags": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.read_club_highlight_tags": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      }
+    }
+  },
+  "team": {
+    "id": "65a9505a-400c-45e8-8dd1-2440e96bc041",
+    "match_count": 89,
+    "member_count": 3,
+    "user_member": null,
+    "name": "Haverford School",
+    "permissions": {
+      "teams.update_team": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.update_team_crest": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.update_team_header_image": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.destroy_team": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.create_teamroleinvitation": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.update_teammember_permission_role": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.destroy_teammember": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.read_team__members": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.read_team__recordings": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.read_team_lineup": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "teams.update_team_lineup": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "coach_assist.personalize_team_assistant": {
+        "permitted": false,
+        "reason": [
+          "permission"
+        ]
+      },
+      "coach_assist.create_run": {
+        "permitted": false,
+        "reason": [
+          "permission",
+          "entitlement"
+        ]
+      }
+    },
+    "short_name": "HS",
+    "short_name_display": "HS",
+    "recordings_expiring_soon_count": 9,
+    "recordings_expired_count": 65,
+    "default_own_color": "",
+    "default_opponent_color": "",
+    "speed_zones": [
+      {
+        "zone": 1,
+        "name": "Walking",
+        "lower_bound_kmh": 0,
+        "upper_bound_kmh": 6
+      },
+      {
+        "zone": 2,
+        "name": "Jogging",
+        "lower_bound_kmh": 6,
+        "upper_bound_kmh": 15
+      },
+      {
+        "zone": 3,
+        "name": "Running",
+        "lower_bound_kmh": 15,
+        "upper_bound_kmh": 20
+      },
+      {
+        "zone": 4,
+        "name": "HSR",
+        "lower_bound_kmh": 20,
+        "upper_bound_kmh": 25
+      },
+      {
+        "zone": 5,
+        "name": "Sprint",
+        "lower_bound_kmh": 25,
+        "upper_bound_kmh": null
+      }
+    ],
+    "hsr_threshold_kmh": 20,
+    "sprint_threshold_kmh": 25,
+    "slug": "haverford-varsity-soccer",
+    "image": "https://assets.app.veo.co/team-crests/the-haverford-school-soccer-program/haverford-varsity-soccer..jpg",
+    "header_image": null,
+    "url": "/clubs/the-haverford-school-soccer-program/teams/haverford-varsity-soccer/",
+    "gender": "male",
+    "age_group": "",
+    "club": {
+      "id": "51da477e-7398-43e4-93f2-9dab65c08e3d",
+      "name": "Haverford School",
+      "title": "Haverford School",
+      "slug": "the-haverford-school-soccer-program",
+      "crest": "https://assets.app.veo.co/crests/the-haverford-school-soccer-program/download.png",
+      "header_image": "https://assets.app.veo.co/club-header-images/the-haverford-school-soccer-program/image..jpeg",
+      "url": "/clubs/the-haverford-school-soccer-program/",
+      "source": "unknown",
+      "is_fosbury": true,
+      "club_entitlements": {
+        "camera_seats": {
+          "max_value": 1,
+          "remaining": 0,
+          "used": 1
+        },
+        "teams": {
+          "max_value": 1,
+          "remaining": 0,
+          "used": 1
+        },
+        "users": {
+          "max_value": 30,
+          "remaining": 27,
+          "used": 3
+        },
+        "storage_minutes": {
+          "max_value": "inf",
+          "remaining": "inf",
+          "used": 6351
+        },
+        "upload_minutes": {
+          "max_value": 1200,
+          "remaining": 979,
+          "used": 221
+        },
+        "veo_go_upload_minutes": {
+          "max_value": 0,
+          "remaining": 0,
+          "used": 0
+        },
+        "start_date": "2026-08-29T00:00:00Z",
+        "renewal_date": "2026-09-27T00:00:00Z",
+        "is_active": true,
+        "is_paid_plan": true,
+        "can_create_clip_follow_cam": true,
+        "can_create_clip_interactive_cam": true,
+        "can_download_clips": true,
+        "can_download_full_video": true,
+        "can_live_stream": false,
+        "can_run_event_detection": true,
+        "can_see_analytics_studio": false,
+        "can_see_analytics_studio_limited": true,
+        "can_see_telestration": true,
+        "can_see_events": true,
+        "can_see_timeline": true,
+        "can_see_match_analysis": false,
+        "can_see_journal": true,
+        "can_see_match_momentum": false,
+        "can_see_match_report_basic": false,
+        "can_see_match_report_advanced": false,
+        "can_see_follow_cam": true,
+        "can_see_interactive_cam": true,
+        "can_see_player_events": false,
+        "can_see_player_event_stats": false,
+        "can_see_player_moments": false,
+        "can_see_panoramic_cam": true,
+        "can_see_player_physical_stats": false,
+        "can_see_radar_view": false,
+        "can_see_scoreboard": false,
+        "can_see_veo_go": false,
+        "can_see_social_media_options": true,
+        "entitlements_origin": "S00100291:O-00753855:2026-08-29:activated:9d84ca06",
+        "recording_retention_days": 365,
+        "can_run_analytics": false,
+        "can_see_player_spotlight": false
+      }
+    },
+    "privacy": null,
+    "active_season_months": [],
+    "is_profile_complete": false
+  },
+  "info": {
+    "age_group": "",
+    "stats": {
+      "score": {
+        "own": null,
+        "opponent": null
+      },
+      "score_aggregated": {
+        "own": 5,
+        "opponent": 0
+      },
+      "table": [
+        "FootballGoal",
+        "FootballShot",
+        "TotalAttempts",
+        "FootballCornerKick",
+        "FootballFreeKick",
+        "FootballThrowIn",
+        "FootballFoul",
+        "FootballPenaltyKick",
+        "tackle",
+        "PassesCompleted",
+        "PossessionPercent",
+        "PossessionMinutes",
+        "PossessionWon"
+      ]
+    }
+  },
+  "permissions": {
+    "matches.create_match__shareinvitation": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.destroy_match": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.download_match": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.read_match__shareinvitations": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.update_match": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.share_match_social": {
+      "permitted": true,
+      "reason": null
+    },
+    "analysis.read_match_analysis": {
+      "permitted": false,
+      "reason": [
+        "permission",
+        "entitlement"
+      ]
+    },
+    "analysis.read_match_heatmap": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "analysis.read_match_momentum": {
+      "permitted": false,
+      "reason": [
+        "permission",
+        "entitlement"
+      ]
+    },
+    "analysis.read_match_playerphysicalstats": {
+      "permitted": false,
+      "reason": [
+        "permission",
+        "entitlement"
+      ]
+    },
+    "analysis.read_match_radar": {
+      "permitted": false,
+      "reason": [
+        "permission",
+        "entitlement"
+      ]
+    },
+    "analysis.read_match_stats": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "analysis.read_match_shotmap": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "analysis.read_match_passstrings": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "analysis.read_match_passlocations": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "analysis.read_match_possessionlocations": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "analysis.read_match_scoreboard": {
+      "permitted": false,
+      "reason": [
+        "permission",
+        "entitlement"
+      ]
+    },
+    "analysis.read_match_formguide": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "analysis.read_match_playereventstats": {
+      "permitted": false,
+      "reason": [
+        "permission",
+        "entitlement"
+      ]
+    },
+    "analysis.read_match_playermoments": {
+      "permitted": false,
+      "reason": [
+        "permission",
+        "entitlement"
+      ]
+    },
+    "matches.access_zola_admin": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.create_match_viewcount": {
+      "permitted": true,
+      "reason": null
+    },
+    "matches.create_match__highlight": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.download_highlight": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.read_match__periods": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.read_match_journal": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.remove_audio_match__videos": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.resolve_aihighlight": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.restore_match_video": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.update_match_journal": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.read_match__lineup": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.update_match__lineup": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.create_match__lineupplayer": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.read_match__lineupplayer": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.destroy_match__lineupplayer": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.create_match_events": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.read_match_events": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.update_match_events": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.destroy_match_events": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.read_match__video_mode_followcam": {
+      "permitted": true,
+      "reason": null
+    },
+    "matches.read_match__video_mode_interactive": {
+      "permitted": true,
+      "reason": null
+    },
+    "matches.read_match__video_mode_panorama": {
+      "permitted": true,
+      "reason": null
+    },
+    "matches.create_match__highlight_followcam": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.create_match__highlight_interactivecam": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.read_match_timeline": {
+      "permitted": true,
+      "reason": null
+    },
+    "matches.access_annotation_tools": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.read_match__bookmark": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.update_match__bookmark": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "matches.destroy_match__bookmark": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "coach_assist.create_match__generation": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "coach_assist.view_match__generation": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    },
+    "coach_assist.create_run": {
+      "permitted": false,
+      "reason": [
+        "permission",
+        "entitlement"
+      ]
+    },
+    "matches.read_recording__cornerselection": {
+      "permitted": false,
+      "reason": [
+        "permission"
+      ]
+    }
+  },
+  "share_origin_club": null
+}

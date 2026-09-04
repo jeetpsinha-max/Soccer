@@ -1,0 +1,50 @@
+[
+  {
+    "public_identifier": "9f6b9087-438b-46f1-8583-e608db0e8855",
+    "timeframe": [
+      9,
+      1212
+    ],
+    "own_side": "right",
+    "name": "",
+    "user_modified": "2026-09-02T12:35:57.468069+00:00",
+    "is_confirmed": true,
+    "duration": 1203
+  },
+  {
+    "public_identifier": "53cb3901-76a5-4e0e-b0c2-d0857e612152",
+    "timeframe": [
+      1419,
+      2621
+    ],
+    "own_side": "right",
+    "name": "",
+    "user_modified": "2026-09-02T12:35:57.468069+00:00",
+    "is_confirmed": true,
+    "duration": 1202
+  },
+  {
+    "public_identifier": "4e2a0988-1b66-4f0b-9f19-d832690b8c9a",
+    "timeframe": [
+      2824,
+      4025
+    ],
+    "own_side": "left",
+    "name": "",
+    "user_modified": "2026-09-02T12:35:57.468069+00:00",
+    "is_confirmed": true,
+    "duration": 1201
+  },
+  {
+    "public_identifier": "37ca4cfa-fa48-441e-a5a3-730957812a5b",
+    "timeframe": [
+      4185,
+      5396
+    ],
+    "own_side": "left",
+    "name": "",
+    "user_modified": "2026-09-02T12:35:57.468069+00:00",
+    "is_confirmed": true,
+    "duration": 1211
+  }
+]
