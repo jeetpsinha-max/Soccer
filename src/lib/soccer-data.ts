@@ -173,7 +173,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-tharney',
-    number: 5,
+    number: 13,
     name: 'Christian Tharney',
     classYear: 'Senior',
     gradYear: 2027,
@@ -353,7 +353,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-zeller',
-    number: 13,
+    number: 5,
     name: 'Zachary Zeller',
     classYear: 'Junior',
     gradYear: 2028,
@@ -573,7 +573,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Sweeper Keeper' },
       { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 15, yPct: 74, role: 'Inverted Wingback (Captain)' },
-      { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 38, yPct: 78, role: 'Covering Defender (Captain)' },
+      { position: 'CB', playerNumber: 13, playerName: 'Tharney (C)', xPct: 38, yPct: 78, role: 'Covering Defender (Captain)' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 78, role: 'Ball-Playing Stopper' },
       { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 85, yPct: 74, role: 'Overlapping Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 58, role: 'Deep-Lying Anchor' },
@@ -593,7 +593,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Sweeper Keeper' },
       { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 16, yPct: 75, role: 'Fullback (Captain)' },
-      { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Center Back (Captain)' },
+      { position: 'CB', playerNumber: 13, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Center Back (Captain)' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Center Back' },
       { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 84, yPct: 75, role: 'Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 38, yPct: 60, role: 'Double Pivot Left' },
@@ -612,9 +612,9 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     vulnerabilities: ['Flanks exposed if wingbacks are caught high up'],
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Goalkeeper' },
-      { position: 'CB', playerNumber: 13, playerName: 'Zeller', xPct: 28, yPct: 78, role: 'Left Center Back' },
+      { position: 'CB', playerNumber: 5, playerName: 'Zeller', xPct: 28, yPct: 78, role: 'Left Center Back' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 50, yPct: 80, role: 'Sweeper / Libero' },
-      { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 72, yPct: 78, role: 'Right Center Back (Captain)' },
+      { position: 'CB', playerNumber: 13, playerName: 'Tharney (C)', xPct: 72, yPct: 78, role: 'Right Center Back (Captain)' },
       { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 12, yPct: 52, role: 'Left Wing-Back (Captain)' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 56, role: 'Central Midfielder' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 34, yPct: 44, role: 'Central Midfielder' },
@@ -641,7 +641,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Sweeper Keeper' },
       { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 16, yPct: 76, role: 'Attacking Left Fullback (Captain)' },
-      { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Stopper Center Back (Captain)' },
+      { position: 'CB', playerNumber: 13, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Stopper Center Back (Captain)' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Covering Center Back' },
       { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 84, yPct: 76, role: 'Right Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 64, role: 'Diamond Base Anchor' },
@@ -1090,7 +1090,7 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
       name: 'Gold Horizon (Far Post Deep Curl)',
       triggerSignal: 'Both Hands On Hips',
       taker: '#28 Tommy Kim',
-      description: 'Outswinging curler to far post. Christian Tharney (#5) blocks goalkeeper sight line while Wachtveitl (#10) rises over fullback at back post.',
+      description: 'Outswinging curler to far post. Christian Tharney (#13) blocks goalkeeper sight line while Wachtveitl (#10) rises over fullback at back post.',
       probabilityGoalPct: 24.0
     },
     {

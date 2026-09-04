@@ -9,7 +9,7 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const classOf2026 = PEDDIE_ROSTER_2026_2027.filter(p => p.gradYear === 2026);
     expect(classOf2026.length).toBe(0);
 
-    // 2. Official 4 new captains: Christian (#5), Rayyaan (#14), Noah (#3), Tommy (#10)
+    // 2. Official 4 new captains: Christian (#13), Rayyaan (#14), Noah (#12), Tommy (#28)
     const captains = PEDDIE_ROSTER_2026_2027.filter(p => p.isCaptain);
     expect(captains.length).toBe(4);
     const captainNames = captains.map(c => c.name);
@@ -17,6 +17,15 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(captainNames).toContain('Rayyaan Mohiuddin');
     expect(captainNames).toContain('Noah Eldessouky');
     expect(captainNames).toContain('Tommy Kim');
+
+    const tharney = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Christian Tharney');
+    expect(tharney).toBeDefined();
+    expect(tharney?.number).toBe(13);
+    expect(tharney?.isCaptain).toBe(true);
+
+    const zeller = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Zachary Zeller');
+    expect(zeller).toBeDefined();
+    expect(zeller?.number).toBe(5);
 
     // 3. Number 8 is Owen Bonchev (starting LCM in diamond); Massimo did not play in opener (DNP)
     const owen = PEDDIE_ROSTER_2026_2027.find(p => p.number === 8);

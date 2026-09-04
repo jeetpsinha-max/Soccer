@@ -168,7 +168,7 @@ export default function Home() {
               Protect 2-1 Advantage: 4-4-2 Diamond Central Control
             </div>
             <p className="text-xs text-slate-300 leading-relaxed mb-3">
-              Blair Academy pushing high for an equalizer. Directive: Maintain the 4-4-2 Diamond Midfield compactness anchored by Captains Christian Tharney (#5), Noah Eldessouky (#12), Rayyaan Mohiuddin (#14), and Tommy Kim (#28).
+              Blair Academy pushing high for an equalizer. Directive: Maintain the 4-4-2 Diamond Midfield compactness anchored by Captains Christian Tharney (#13), Noah Eldessouky (#12), Rayyaan Mohiuddin (#14), and Tommy Kim (#28).
             </p>
             <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-[11px] flex items-center justify-between">
               <span className="text-slate-400">Projected Win Rate:</span>
