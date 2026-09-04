@@ -350,54 +350,6 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     distanceCoveredKm: 8.9,
     assignmentHistory: [],
     recruitmentNotes: 'Promising backup goalkeeper with athletic shot-stopping.'
-  },
-  {
-    id: 'p-zeller',
-    number: 5,
-    name: 'Zachary Zeller',
-    classYear: 'Junior',
-    gradYear: 2028,
-    position: 'CB',
-    overallRating: 86,
-    height: "6'1\"",
-    weight: '175 lbs',
-    hometown: 'Hightstown, NJ',
-    minutesPlayed: 620,
-    matchesPlayed: 10,
-    goals: 1,
-    assists: 1,
-    expectedGoals: 0.8,
-    expectedAssists: 0.5,
-    passCompletionPct: 87.2,
-    tackleSuccessPct: 84.0,
-    topSpeedKmh: 32.5,
-    distanceCoveredKm: 82.0,
-    assignmentHistory: [],
-    recruitmentNotes: 'Physical, disciplined center back with strong aerial dominance.'
-  },
-  {
-    id: 'p-chen-n',
-    number: 17,
-    name: 'Nicholas Chen',
-    classYear: 'Junior',
-    gradYear: 2028,
-    position: 'RB',
-    overallRating: 84,
-    height: "5'10\"",
-    weight: '162 lbs',
-    hometown: 'West Windsor, NJ',
-    minutesPlayed: 540,
-    matchesPlayed: 9,
-    goals: 0,
-    assists: 3,
-    expectedGoals: 0.4,
-    expectedAssists: 2.5,
-    passCompletionPct: 84.8,
-    tackleSuccessPct: 79.5,
-    topSpeedKmh: 33.8,
-    distanceCoveredKm: 76.5,
-    assignmentHistory: [],
-    recruitmentNotes: 'Reliable defensive right fullback with quick recovery pace.'
   }
 ];
 
@@ -567,7 +519,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
   '4-3-3': {
     id: '4-3-3',
     name: '4-3-3 Attacking Possession',
-    description: 'High wingers, single pivot CDM (#6 Gabriel Lam) and overlapping fullbacks (Captain #12 Noah Eldessouky, #17 Nicholas Chen). Guided by Head Coach George Nazario.',
+    description: 'High wingers, single pivot CDM (#6 Gabriel Lam) and overlapping fullbacks (Captain #12 Noah Eldessouky, Right Fullback). Guided by Head Coach George Nazario.',
     strengths: ['High positional flexibility', 'Overloading opponent fullbacks', 'Fluid half-space triangles'],
     vulnerabilities: ['Wide spaces behind attacking fullbacks', 'Requires high aerobic recovery sprint load'],
     nodes: [
@@ -575,7 +527,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 15, yPct: 74, role: 'Inverted Wingback (Captain)' },
       { position: 'CB', playerNumber: 13, playerName: 'Tharney (C)', xPct: 38, yPct: 78, role: 'Covering Defender (Captain)' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 78, role: 'Ball-Playing Stopper' },
-      { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 85, yPct: 74, role: 'Overlapping Fullback' },
+      { position: 'RB', playerNumber: 2, playerName: 'Right Back (TBD)', xPct: 85, yPct: 74, role: 'Overlapping Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 58, role: 'Deep-Lying Anchor' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 34, yPct: 44, role: 'Mezzala Playmaker' },
       { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 66, yPct: 42, role: 'Advanced Free 10 (Captain)' },
@@ -595,7 +547,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 16, yPct: 75, role: 'Fullback (Captain)' },
       { position: 'CB', playerNumber: 13, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Center Back (Captain)' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Center Back' },
-      { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 84, yPct: 75, role: 'Fullback' },
+      { position: 'RB', playerNumber: 2, playerName: 'Right Back (TBD)', xPct: 84, yPct: 75, role: 'Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 38, yPct: 60, role: 'Double Pivot Left' },
       { position: 'CDM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 62, yPct: 60, role: 'Double Pivot Right (Captain)' },
       { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 50, yPct: 38, role: 'Central Playmaker (Captain)' },
@@ -612,14 +564,14 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     vulnerabilities: ['Flanks exposed if wingbacks are caught high up'],
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Goalkeeper' },
-      { position: 'CB', playerNumber: 5, playerName: 'Zeller', xPct: 28, yPct: 78, role: 'Left Center Back' },
+      { position: 'CB', playerNumber: 6, playerName: 'Lam', xPct: 28, yPct: 78, role: 'Left Center Back' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 50, yPct: 80, role: 'Sweeper / Libero' },
       { position: 'CB', playerNumber: 13, playerName: 'Tharney (C)', xPct: 72, yPct: 78, role: 'Right Center Back (Captain)' },
       { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 12, yPct: 52, role: 'Left Wing-Back (Captain)' },
-      { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 56, role: 'Central Midfielder' },
+      { position: 'CDM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 50, yPct: 56, role: 'Central Midfield Anchor (Captain)' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 34, yPct: 44, role: 'Central Midfielder' },
       { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 66, yPct: 44, role: 'Attacking Midfielder (Captain)' },
-      { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 88, yPct: 52, role: 'Right Wing-Back' },
+      { position: 'RB', playerNumber: 7, playerName: 'Xiao', xPct: 88, yPct: 52, role: 'Right Wing-Back' },
       { position: 'ST', playerNumber: 9, playerName: 'Rozo', xPct: 38, yPct: 18, role: 'Target Striker' },
       { position: 'ST', playerNumber: 11, playerName: 'Romanelli B', xPct: 62, yPct: 18, role: 'Second Striker' }
     ]
@@ -631,7 +583,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     strengths: [
       'Unmatched central midfield numerical dominance (4v3 / 4v2)',
       'Free playmaking conductor role for Captain Tommy Kim (#28)',
-      'Overlapping flank corridors for Captain Noah Eldessouky (#12) and Nicholas Chen (#17)',
+      'Overlapping flank corridors for Captain Noah Eldessouky (#12) and Right Fullback',
       'Twin dynamic strikers pinning and stretching opposition center backs'
     ],
     vulnerabilities: [
@@ -643,7 +595,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 16, yPct: 76, role: 'Attacking Left Fullback (Captain)' },
       { position: 'CB', playerNumber: 13, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Stopper Center Back (Captain)' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Covering Center Back' },
-      { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 84, yPct: 76, role: 'Right Fullback' },
+      { position: 'RB', playerNumber: 2, playerName: 'Right Back (TBD)', xPct: 84, yPct: 76, role: 'Right Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 64, role: 'Diamond Base Anchor' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 30, yPct: 48, role: 'Left Central Midfielder' },
       { position: 'CM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 70, yPct: 48, role: 'Right Central Midfielder (Captain)' },

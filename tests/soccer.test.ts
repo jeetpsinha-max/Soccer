@@ -23,10 +23,6 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(tharney?.number).toBe(13);
     expect(tharney?.isCaptain).toBe(true);
 
-    const zeller = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Zachary Zeller');
-    expect(zeller).toBeDefined();
-    expect(zeller?.number).toBe(5);
-
     // 3. Number 8 is Owen Bonchev (starting LCM in diamond); Massimo did not play in opener (DNP)
     const owen = PEDDIE_ROSTER_2026_2027.find(p => p.number === 8);
     expect(owen).toBeDefined();
@@ -59,8 +55,8 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const mahoney = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes('Mahoney'));
     expect(mahoney).toBeUndefined();
 
-    // 6. Verify fake names (Shavel, Patel, Murphy, Zhang, D'Alonzo) are completely wiped
-    const fakeNames = ['Shavel', 'Patel', 'Murphy', 'Zhang', "D'Alonzo"];
+    // 6. Verify fake names (Shavel, Patel, Murphy, Zhang, D'Alonzo, Chen, Zeller) are completely wiped
+    const fakeNames = ['Shavel', 'Patel', 'Murphy', 'Zhang', "D'Alonzo", 'Chen', 'Zeller'];
     fakeNames.forEach(name => {
       const found = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes(name));
       expect(found).toBeUndefined();
@@ -73,8 +69,10 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(diamondNodes.length).toBe(11);
     const lbNoah = diamondNodes.find(n => n.playerNumber === 12);
     expect(lbNoah?.playerName).toBe('Eldessouky (C)');
-    const rbChen = diamondNodes.find(n => n.playerNumber === 17);
-    expect(rbChen?.playerName).toBe('Chen');
+    const rbNode = diamondNodes.find(n => n.position === 'RB');
+    expect(rbNode?.role).toBe('Right Fullback');
+    const cbTharney = diamondNodes.find(n => n.playerNumber === 13);
+    expect(cbTharney?.playerName).toBe('Tharney (C)');
     const cbQuinn = diamondNodes.find(n => n.playerNumber === 10);
     expect(cbQuinn?.playerName).toBe('Wachtveitl');
     const lcm = diamondNodes.find(n => n.playerNumber === 8);

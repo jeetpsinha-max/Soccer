@@ -172,13 +172,13 @@ export default function SidelineCallSheetPage() {
                 <tr>
                   <td className="py-2 font-mono font-bold text-amber-400">75&apos;</td>
                   <td className="py-2 font-semibold">#28 Tommy Kim (CAM)</td>
-                  <td className="py-2 font-semibold text-emerald-400">#5 Zachary Zeller (CB)</td>
+                  <td className="py-2 font-semibold text-emerald-400">#16 Massimo Sheinin (CM)</td>
                   <td className="py-2">Midfield possession tempo control</td>
                 </tr>
                 <tr>
                   <td className="py-2 font-mono font-bold text-amber-400">82&apos;</td>
                   <td className="py-2 font-semibold">#11 Blake Romanelli (ST)</td>
-                  <td className="py-2 font-semibold text-emerald-400">#17 Nicholas Chen (RB)</td>
+                  <td className="py-2 font-semibold text-emerald-400">#6 Gabriel Lam (CDM)</td>
                   <td className="py-2">Solidify 5-man low block central defense shield</td>
                 </tr>
               </tbody>
