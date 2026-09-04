@@ -94,7 +94,7 @@ export default function SidelineCallSheetPage() {
             <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 space-y-2">
               <div className="font-bold text-white">Zone 1 & Central Anchor</div>
               <p>
-                <strong>#5 Christian Tharney (C)</strong> and <strong>#4 Quinn Wachtveitl</strong> command central 6-yard box. Wins initial aerial header.
+                <strong>#5 Christian Tharney (C)</strong> and <strong>#10 Quinn Wachtveitl</strong> command central 6-yard box. Wins initial aerial header.
               </p>
               <p>
                 <strong>#3 Noah Eldessouky (C)</strong> covers near post zone to extinguish flick-ons.
@@ -171,7 +171,7 @@ export default function SidelineCallSheetPage() {
                 </tr>
                 <tr>
                   <td className="py-2 font-mono font-bold text-amber-400">75&apos;</td>
-                  <td className="py-2 font-semibold">#10 Tommy Kim (CAM)</td>
+                  <td className="py-2 font-semibold">#28 Tommy Kim (CAM)</td>
                   <td className="py-2 font-semibold text-emerald-400">#12 Jackson Shavel (CM)</td>
                   <td className="py-2">Midfield possession tempo control</td>
                 </tr>

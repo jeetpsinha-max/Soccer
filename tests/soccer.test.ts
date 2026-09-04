@@ -28,11 +28,23 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(massimo).toBeDefined();
     expect(massimo?.recruitmentNotes).toContain('DNP');
 
-    // 4. Validate 4-4-2 Diamond Midfield system
+    // 4. Number 10 is Quinn Wachtveitl; Tommy Kim is #28 (Captain)
+    const quinn = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Quinn Wachtveitl');
+    expect(quinn).toBeDefined();
+    expect(quinn?.number).toBe(10);
+
+    const tommy = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Tommy Kim');
+    expect(tommy).toBeDefined();
+    expect(tommy?.number).toBe(28);
+    expect(tommy?.isCaptain).toBe(true);
+
+    // 5. Validate 4-4-2 Diamond Midfield system
     const diamond = FORMATIONS_CONFIG['4-4-2'];
     expect(diamond.name).toContain('4-4-2 Diamond Midfield');
     const diamondNodes = diamond.nodes;
     expect(diamondNodes.length).toBe(11);
+    const cbQuinn = diamondNodes.find(n => n.playerNumber === 10);
+    expect(cbQuinn?.playerName).toBe('Wachtveitl');
     const lcm = diamondNodes.find(n => n.playerNumber === 8);
     expect(lcm?.playerName).toBe('Bonchev');
     const cdm = diamondNodes.find(n => n.position === 'CDM');
@@ -40,6 +52,7 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const cam = diamondNodes.find(n => n.position === 'CAM');
     expect(cam?.role).toContain('Diamond Tip');
     expect(cam?.playerName).toContain('Kim');
+    expect(cam?.playerNumber).toBe(28);
   });
 
   it('validates MAPL Conference schedule and Peddie-Blair Day fixture', () => {

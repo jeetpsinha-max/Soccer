@@ -23,7 +23,7 @@ export class SoccerTacticalAgent {
       systemSummary: `Opponent deploys a ${report.formation}. ${report.tendencies.buildup} To break their ${report.tendencies.defensiveBlock}, our system recommends targeting ${report.tendencies.vulnerabilityZone}.`,
       keyMatchups: [
         {
-          ourPlayer: '#4 Quinn Wachtveitl (CB)',
+          ourPlayer: '#10 Quinn Wachtveitl (CB)',
           opponentKey: report.keyPlaymakers[0] || 'Opposing Striker',
           edge: 'Peddie +14% Aerial Dominance. Wachtveitl wins 89% of headers inside our 18-yard box.'
         },
@@ -33,7 +33,7 @@ export class SoccerTacticalAgent {
           edge: 'Peddie +22% Ball Retention under high press. Bonchev averages 91.5% passing accuracy.'
         },
         {
-          ourPlayer: '#10 Tommy Kim (CAM/ST)',
+          ourPlayer: '#28 Tommy Kim (CAM/ST)',
           opponentKey: 'Opponent Center Backs',
           edge: 'Prep A 1st Team pace and agility. Tommy Kim top speed 34.2 km/h beats their backline by 0.3s over 20m.'
         }

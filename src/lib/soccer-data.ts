@@ -37,7 +37,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-kim-t',
-    number: 10,
+    number: 28,
     name: 'Tommy Kim',
     classYear: 'Senior',
     gradYear: 2027,
@@ -93,7 +93,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-wachtveitl',
-    number: 4,
+    number: 10,
     name: 'Quinn Wachtveitl',
     classYear: 'Senior',
     gradYear: 2027,
@@ -720,11 +720,11 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Sweeper Keeper' },
       { position: 'LB', playerNumber: 3, playerName: 'Eldessouky (C)', xPct: 15, yPct: 74, role: 'Inverted Wingback (Captain)' },
       { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 38, yPct: 78, role: 'Covering Defender (Captain)' },
-      { position: 'CB', playerNumber: 4, playerName: 'Wachtveitl', xPct: 62, yPct: 78, role: 'Ball-Playing Stopper' },
+      { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 78, role: 'Ball-Playing Stopper' },
       { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 85, yPct: 74, role: 'Overlapping Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 58, role: 'Deep-Lying Anchor' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 34, yPct: 44, role: 'Mezzala Playmaker' },
-      { position: 'CAM', playerNumber: 10, playerName: 'Kim T (C)', xPct: 66, yPct: 42, role: 'Advanced Free 10 (Captain)' },
+      { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 66, yPct: 42, role: 'Advanced Free 10 (Captain)' },
       { position: 'LW', playerNumber: 11, playerName: 'Romanelli B', xPct: 18, yPct: 24, role: 'Inside Forward' },
       { position: 'ST', playerNumber: 9, playerName: 'Rozo', xPct: 50, yPct: 16, role: 'Complete Forward' },
       { position: 'RW', playerNumber: 7, playerName: 'Xiao', xPct: 82, yPct: 24, role: 'Touchline Winger' }
@@ -733,18 +733,18 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
   '4-2-3-1': {
     id: '4-2-3-1',
     name: '4-2-3-1 Gegenpressing Double Pivot',
-    description: 'Double pivot with #6 Lam and Captain #14 Mohiuddin shielding backline, liberating Captain #10 Tommy Kim to conduct rapid counter-attacks.',
+    description: 'Double pivot with #6 Lam and Captain #14 Mohiuddin shielding backline, liberating Captain #28 Tommy Kim to conduct rapid counter-attacks.',
     strengths: ['Unbreakable central transition defense', 'Explosive 4-man counter-attack waves'],
     vulnerabilities: ['Can leave striker isolated against 3-man backline'],
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Sweeper Keeper' },
       { position: 'LB', playerNumber: 3, playerName: 'Eldessouky (C)', xPct: 16, yPct: 75, role: 'Fullback (Captain)' },
       { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Center Back (Captain)' },
-      { position: 'CB', playerNumber: 4, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Center Back' },
+      { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Center Back' },
       { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 84, yPct: 75, role: 'Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 38, yPct: 60, role: 'Double Pivot Left' },
       { position: 'CDM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 62, yPct: 60, role: 'Double Pivot Right (Captain)' },
-      { position: 'CAM', playerNumber: 10, playerName: 'Kim T (C)', xPct: 50, yPct: 38, role: 'Central Playmaker (Captain)' },
+      { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 50, yPct: 38, role: 'Central Playmaker (Captain)' },
       { position: 'LW', playerNumber: 11, playerName: 'Romanelli B', xPct: 18, yPct: 26, role: 'Left Winger' },
       { position: 'ST', playerNumber: 9, playerName: 'Rozo', xPct: 50, yPct: 15, role: 'Striker' },
       { position: 'RW', playerNumber: 7, playerName: 'Xiao', xPct: 82, yPct: 26, role: 'Right Winger' }
@@ -759,12 +759,12 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Goalkeeper' },
       { position: 'CB', playerNumber: 26, playerName: "D'Alonzo", xPct: 28, yPct: 78, role: 'Left Center Back' },
-      { position: 'CB', playerNumber: 4, playerName: 'Wachtveitl', xPct: 50, yPct: 80, role: 'Sweeper / Libero' },
+      { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 50, yPct: 80, role: 'Sweeper / Libero' },
       { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 72, yPct: 78, role: 'Right Center Back (Captain)' },
       { position: 'LB', playerNumber: 3, playerName: 'Eldessouky (C)', xPct: 12, yPct: 52, role: 'Left Wing-Back (Captain)' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 56, role: 'Central Midfielder' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 34, yPct: 44, role: 'Central Midfielder' },
-      { position: 'CAM', playerNumber: 10, playerName: 'Kim T (C)', xPct: 66, yPct: 44, role: 'Attacking Midfielder (Captain)' },
+      { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 66, yPct: 44, role: 'Attacking Midfielder (Captain)' },
       { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 88, yPct: 52, role: 'Right Wing-Back' },
       { position: 'ST', playerNumber: 9, playerName: 'Rozo', xPct: 38, yPct: 18, role: 'Target Striker' },
       { position: 'ST', playerNumber: 11, playerName: 'Romanelli B', xPct: 62, yPct: 18, role: 'Second Striker' }
@@ -773,10 +773,10 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
   '4-4-2': {
     id: '4-4-2',
     name: '4-4-2 Diamond Midfield (Peddie Primary System)',
-    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor #6 Gabriel Lam, interior mezzalas #8 Owen Bonchev and Captain #14 Rayyaan Mohiuddin, and Captain #10 Tommy Kim pulling strings at the tip behind twin strikers #11 Blake Romanelli and #9 Brody Rozo.',
+    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor #6 Gabriel Lam, interior mezzalas #8 Owen Bonchev and Captain #14 Rayyaan Mohiuddin, and Captain #28 Tommy Kim pulling strings at the tip behind twin strikers #11 Blake Romanelli and #9 Brody Rozo.',
     strengths: [
       'Unmatched central midfield numerical dominance (4v3 / 4v2)',
-      'Free playmaking conductor role for Captain Tommy Kim (#10)',
+      'Free playmaking conductor role for Captain Tommy Kim (#28)',
       'Overlapping flank corridors for Captain Noah Eldessouky (#3) and Connor Mahoney (#2)',
       'Twin dynamic strikers pinning and stretching opposition center backs'
     ],
@@ -788,12 +788,12 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Sweeper Keeper' },
       { position: 'LB', playerNumber: 3, playerName: 'Eldessouky (C)', xPct: 16, yPct: 76, role: 'Attacking Left Fullback (Captain)' },
       { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Stopper Center Back (Captain)' },
-      { position: 'CB', playerNumber: 4, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Covering Center Back' },
+      { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Covering Center Back' },
       { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 84, yPct: 76, role: 'Right Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 64, role: 'Diamond Base Anchor' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 30, yPct: 48, role: 'Left Central Midfielder' },
       { position: 'CM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 70, yPct: 48, role: 'Right Central Midfielder (Captain)' },
-      { position: 'CAM', playerNumber: 10, playerName: 'Kim T (C)', xPct: 50, yPct: 34, role: 'Diamond Tip Playmaker (Captain)' },
+      { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 50, yPct: 34, role: 'Diamond Tip Playmaker (Captain)' },
       { position: 'ST', playerNumber: 11, playerName: 'Romanelli B', xPct: 38, yPct: 16, role: 'Left Striker' },
       { position: 'ST', playerNumber: 9, playerName: 'Rozo', xPct: 62, yPct: 16, role: 'Right Striker' }
     ]
@@ -809,7 +809,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "period": 1,
     "type": "Shot",
     "team": "Peddie",
-    "playerNumber": 10,
+    "playerNumber": 28,
     "playerName": "Tommy Kim (C)",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/df91eca4-bd9b-4171-893d-6da93b295af0_1788317479.555815/video.mp4?v=7v9q8pPK",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/df91eca4-bd9b-4171-893d-6da93b295af0_1788317479.555815/thumbnail-854x480.jpg",
@@ -818,7 +818,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "phase": "Counter Attack",
     "startX": 82,
     "startY": 26,
-    "description": "Peddie transition counter: Captain Tommy Kim (#10) turns in pocket and fires from 22 yards. (Veo AI Period 1)"
+    "description": "Peddie transition counter: Captain Tommy Kim (#28) turns in pocket and fires from 22 yards. (Veo AI Period 1)"
   },
   {
     "id": "veo-86a673c2",
@@ -863,7 +863,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "period": 1,
     "type": "Shot",
     "team": "Peddie",
-    "playerNumber": 10,
+    "playerNumber": 28,
     "playerName": "Tommy Kim (C)",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/8b7d90a3-7840-4447-8fa8-89cf0aa8def2_1788317479.555815/video.mp4?v=D0hJ9wO1",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/8b7d90a3-7840-4447-8fa8-89cf0aa8def2_1788317479.555815/thumbnail-854x480.jpg",
@@ -872,7 +872,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "phase": "Counter Attack",
     "startX": 82,
     "startY": 26,
-    "description": "Peddie transition counter: Captain Tommy Kim (#10) turns in pocket and fires from 22 yards. (Veo AI Period 1)"
+    "description": "Peddie transition counter: Captain Tommy Kim (#28) turns in pocket and fires from 22 yards. (Veo AI Period 1)"
   },
   {
     "id": "veo-cded00c6",
@@ -1025,7 +1025,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "period": 3,
     "type": "Shot",
     "team": "Peddie",
-    "playerNumber": 10,
+    "playerNumber": 28,
     "playerName": "Tommy Kim (C)",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/00d9a0b2-e89b-46f4-b02f-31c6981dce41_1788317479.555815/video.mp4?v=daL9_KhM",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/00d9a0b2-e89b-46f4-b02f-31c6981dce41_1788317479.555815/thumbnail-854x480.jpg",
@@ -1034,7 +1034,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "phase": "Counter Attack",
     "startX": 82,
     "startY": 26,
-    "description": "Peddie transition counter: Captain Tommy Kim (#10) turns in pocket and fires from 22 yards. (Veo AI Period 3)"
+    "description": "Peddie transition counter: Captain Tommy Kim (#28) turns in pocket and fires from 22 yards. (Veo AI Period 3)"
   },
   {
     "id": "veo-f7d5ec37",
@@ -1133,13 +1133,13 @@ export const MATCH_EVENTS_LIVE_BLAIR: MatchEvent[] = [
   { id: 'ev-2', minute: 7, second: 45, team: 'Peddie', playerNumber: 11, playerName: 'Blake Romanelli', type: 'Cross', startX: 88, startY: 12, endX: 98, endY: 32, success: false, description: 'Whip cross cleared by Blair CB', phase: 'Open Play' },
   { id: 'ev-3', minute: 12, second: 18, team: 'Opponent', playerNumber: 9, playerName: 'Blair Striker #9', type: 'Shot', startX: 84, startY: 28, expectedGoals: 0.08, success: false, description: 'Long distance shot deflected over bar', phase: 'Counter Attack' },
   { id: 'ev-4', minute: 18, second: 30, team: 'Peddie', playerNumber: 11, playerName: 'Blake Romanelli', type: 'Goal', startX: 92, startY: 22, expectedGoals: 0.42, success: true, description: 'GOAL! Blake Romanelli cuts inside on right foot and bends into top corner (1-0 Peddie)', phase: 'Open Play' },
-  { id: 'ev-5', minute: 28, second: 10, team: 'Peddie', playerNumber: 4, playerName: 'Quinn Wachtveitl', type: 'Tackle', startX: 35, startY: 42, success: true, description: 'Standing tackle on Blair #10 to halt counter', phase: 'High Press' },
+  { id: 'ev-5', minute: 28, second: 10, team: 'Peddie', playerNumber: 10, playerName: 'Quinn Wachtveitl', type: 'Tackle', startX: 35, startY: 42, success: true, description: 'Standing tackle on Blair #10 to halt counter', phase: 'High Press' },
   { id: 'ev-6', minute: 34, second: 45, team: 'Peddie', playerNumber: 8, playerName: 'Owen Bonchev', type: 'Corner', startX: 105, startY: 0, endX: 96, endY: 32, success: true, description: 'Inswinging corner to near post', phase: 'Set Piece' },
-  { id: 'ev-7', minute: 35, second: 0, team: 'Peddie', playerNumber: 4, playerName: 'Quinn Wachtveitl', type: 'Shot', startX: 96, startY: 32, expectedGoals: 0.38, success: false, description: 'Header glanced off crossbar', phase: 'Set Piece' },
+  { id: 'ev-7', minute: 35, second: 0, team: 'Peddie', playerNumber: 10, playerName: 'Quinn Wachtveitl', type: 'Shot', startX: 96, startY: 32, expectedGoals: 0.38, success: false, description: 'Header glanced off crossbar', phase: 'Set Piece' },
   { id: 'ev-8', minute: 49, second: 22, team: 'Opponent', playerNumber: 11, playerName: 'Blair Winger #11', type: 'Goal', startX: 88, startY: 42, expectedGoals: 0.34, success: true, description: 'Goal for Blair on rebound scramble inside 6-yard box (1-1)', phase: 'Set Piece' },
   { id: 'ev-9', minute: 62, second: 15, team: 'Peddie', playerNumber: 6, playerName: 'Gabriel Lam', type: 'Interception', startX: 52, startY: 30, success: true, description: 'Stepped into passing lane to intercept clearance', phase: 'High Press' },
   { id: 'ev-10', minute: 73, second: 40, team: 'Peddie', playerNumber: 3, playerName: 'Noah Eldessouky', type: 'Key Pass', startX: 86, startY: 8, endX: 98, endY: 30, success: true, description: 'Low drilled cross across face of goal', phase: 'Open Play' },
-  { id: 'ev-11', minute: 74, second: 0, team: 'Peddie', playerNumber: 10, playerName: 'Tommy Kim', type: 'Goal', startX: 98, startY: 30, expectedGoals: 0.65, success: true, description: 'GOAL! Tommy Kim clinical half-volley into side netting (2-1 Peddie!)', phase: 'Open Play' }
+  { id: 'ev-11', minute: 74, second: 0, team: 'Peddie', playerNumber: 28, playerName: 'Tommy Kim', type: 'Goal', startX: 98, startY: 30, expectedGoals: 0.65, success: true, description: 'GOAL! Tommy Kim clinical half-volley into side netting (2-1 Peddie!)', phase: 'Open Play' }
 ];
 
 export const MAPL_SCOUTING_REPORTS: Record<string, ScoutingReport> = {
@@ -1229,14 +1229,14 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
       name: 'Falcon Claw (Near Post Overload)',
       triggerSignal: 'Left Hand Raised',
       taker: '#8 Owen Bonchev',
-      description: 'Quinn Wachtveitl (#4) fakes far post then dashes across near post to flick on or head directly into near corner. Tommy Kim (#10) crashes 6-yard box for rebounds.',
+      description: 'Quinn Wachtveitl (#10) fakes far post then dashes across near post to flick on or head directly into near corner. Tommy Kim (#28) crashes 6-yard box for rebounds.',
       probabilityGoalPct: 28.5
     },
     {
       name: 'Gold Horizon (Far Post Deep Curl)',
       triggerSignal: 'Both Hands On Hips',
-      taker: '#10 Tommy Kim',
-      description: 'Outswinging curler to far post. Christian Tharney (#5) blocks goalkeeper sight line while Wachtveitl (#4) rises over fullback at back post.',
+      taker: '#28 Tommy Kim',
+      description: 'Outswinging curler to far post. Christian Tharney (#5) blocks goalkeeper sight line while Wachtveitl (#10) rises over fullback at back post.',
       probabilityGoalPct: 24.0
     },
     {
@@ -1251,7 +1251,7 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
     {
       name: 'Hybrid Zonal Anchor',
       organization: '5 Zonal Protectors + 3 Man-Markers + 1 Short Corner Disruptor + 1 Outlet Sprinter',
-      anchor: '#4 Quinn Wachtveitl on 6-yard central zone',
+      anchor: '#10 Quinn Wachtveitl on 6-yard central zone',
       outlet: '#11 Blake Romanelli stationed at midfield stripe ready for counter sprint'
     }
   ],

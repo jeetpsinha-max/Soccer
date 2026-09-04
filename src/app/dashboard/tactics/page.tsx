@@ -132,7 +132,7 @@ export default function TacticsPage() {
 
             <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
               <div>
-                <div className="font-bold text-white">#10 Tommy Kim (CAM)</div>
+                <div className="font-bold text-white">#28 Tommy Kim (CAM)</div>
                 <div className="text-[11px] text-slate-400">Half-space receipts: 22</div>
               </div>
               <div className="text-right">
