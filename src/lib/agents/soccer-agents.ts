@@ -23,38 +23,38 @@ export class SoccerTacticalAgent {
       systemSummary: `Opponent deploys a ${report.formation}. ${report.tendencies.buildup} To break their ${report.tendencies.defensiveBlock}, our system recommends targeting ${report.tendencies.vulnerabilityZone}.`,
       keyMatchups: [
         {
-          ourPlayer: '#4 Julian Vance (CB)',
+          ourPlayer: '#4 Quinn Wachtveitl (CB)',
           opponentKey: report.keyPlaymakers[0] || 'Opposing Striker',
-          edge: 'Peddie +14% Aerial Dominance. Vance wins 88% of headers inside our 18-yard box.'
+          edge: 'Peddie +14% Aerial Dominance. Wachtveitl wins 89% of headers inside our 18-yard box.'
         },
         {
-          ourPlayer: '#8 Mateo Rossi (CM)',
+          ourPlayer: '#8 Massimo Sheinin (CM)',
           opponentKey: report.keyPlaymakers[1] || 'Opposing Midfield Pivot',
-          edge: 'Peddie +22% Ball Retention under high press. Rossi averages 93.8% passing accuracy.'
+          edge: 'Peddie +22% Ball Retention under high press. Sheinin averages 93.8% passing accuracy.'
         },
         {
-          ourPlayer: '#9 Dylan Morales (ST)',
+          ourPlayer: '#10 Tommy Kim (CAM/ST)',
           opponentKey: 'Opponent Center Backs',
-          edge: 'Explosive pace advantage. Morales top speed 34.7 km/h beats their backline by 0.3s over 20m.'
+          edge: 'Prep A 1st Team pace and agility. Tommy Kim top speed 34.2 km/h beats their backline by 0.3s over 20m.'
         }
       ],
       substitutionsRoadmap: [
         {
           minute: 60,
-          offPlayer: '#7 Tyler Brooks (RW)',
-          onPlayer: '#15 Carlos Mendez (LW/RW)',
-          tacticalPurpose: 'Inject fresh sprinting legs against fatigued opposing left-back.'
+          offPlayer: '#7 Harry Xiao (RW)',
+          onPlayer: '#21 Luca Romanelli (RW)',
+          tacticalPurpose: 'Inject experienced senior forward against fatigued opposing left-back.'
         },
         {
           minute: 75,
-          offPlayer: '#10 Leo Sterling (CAM)',
-          onPlayer: '#12 Samira Patel (CM)',
+          offPlayer: '#16 Owen Bonchev (CAM)',
+          onPlayer: '#14 Rayyaan Mohiuddin (CM)',
           tacticalPurpose: 'Reinforce midfield possession triangle and prevent late counter-attacks.'
         },
         {
           minute: 82,
-          offPlayer: '#11 Xavier Dupont (LW)',
-          onPlayer: '#17 Jack Turner (CDM)',
+          offPlayer: '#11 Blake Romanelli (LW)',
+          onPlayer: '#6 Gabriel Lam (CDM)',
           tacticalPurpose: 'Lock down central zones; transition into 4-4-2 double pivot.'
         }
       ],
@@ -84,10 +84,11 @@ export class SoccerTacticalAgent {
       if (q.includes('press') && (e.type === 'Press Trap' || e.phase === 'High Press')) return true;
       if (q.includes('blair') && (e.team === 'Opponent' || e.description.toLowerCase().includes('blair'))) return true;
       if (q.includes('peddie') && e.team === 'Peddie') return true;
-      if (q.includes('morales') && e.playerName.toLowerCase().includes('morales')) return true;
-      if (q.includes('rossi') && e.playerName.toLowerCase().includes('rossi')) return true;
-      if (q.includes('vance') && e.playerName.toLowerCase().includes('vance')) return true;
-      if (q.includes('dupont') && e.playerName.toLowerCase().includes('dupont')) return true;
+      if (q.includes('kim') && e.playerName.toLowerCase().includes('kim')) return true;
+      if (q.includes('sheinin') && e.playerName.toLowerCase().includes('sheinin')) return true;
+      if (q.includes('wachtveitl') && e.playerName.toLowerCase().includes('wachtveitl')) return true;
+      if (q.includes('romanelli') && e.playerName.toLowerCase().includes('romanelli')) return true;
+      if (q.includes('rozo') && e.playerName.toLowerCase().includes('rozo')) return true;
       return e.description.toLowerCase().includes(q) || e.playerName.toLowerCase().includes(q);
     });
   }

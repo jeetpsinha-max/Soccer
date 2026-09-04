@@ -94,22 +94,22 @@ export default function SidelineCallSheetPage() {
             <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 space-y-2">
               <div className="font-bold text-white">Zone 1 & Central Anchor</div>
               <p>
-                <strong>#4 Julian Vance (C)</strong> commands central 6-yard box. Wins initial aerial header.
+                <strong>#5 Christian Tharney (C)</strong> and <strong>#4 Quinn Wachtveitl</strong> command central 6-yard box. Wins initial aerial header.
               </p>
               <p>
-                <strong>#5 Lucas Davies</strong> covers near post zone to extinguish flick-ons.
+                <strong>#3 Noah Eldessouky (C)</strong> covers near post zone to extinguish flick-ons.
               </p>
               <p>
-                <strong>#1 Liam O&apos;Connor (GK)</strong> claims any delivery lofted inside the 6-yard perimeter.
+                <strong>#1 Dylan McKenzie (GK)</strong> claims any delivery lofted inside the 6-yard perimeter.
               </p>
             </div>
             <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 space-y-2">
               <div className="font-bold text-white">Counter-Attack Sprinter & Short Disturber</div>
               <p>
-                <strong>#11 Xavier Dupont</strong> positioned 10 yards past halfway stripe on left flank for instant outlet ball.
+                <strong>#11 Blake Romanelli</strong> positioned 10 yards past halfway stripe on left flank for instant outlet ball.
               </p>
               <p>
-                <strong>#7 Tyler Brooks</strong> charges any short corner attempt within 5 yards.
+                <strong>#7 Harry Xiao</strong> charges any short corner attempt within 5 yards.
               </p>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function SidelineCallSheetPage() {
           </div>
           <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-slate-200">
             <div className="font-black text-amber-300 mb-2">
-              TACTICAL SHIFT: 4-3-3 &rarr; 4-4-2 COMPACT LOW BLOCK (BRING ON #17 JACK TURNER)
+              TACTICAL SHIFT: 4-4-2 DIAMOND &rarr; COMPACT LOW BLOCK (BRING ON #26 LUKE D&apos;ALONZO)
             </div>
             <ul className="list-disc list-inside space-y-1 text-[11px] text-slate-300">
               {SIDELINE_SET_PIECE_PLAYBOOK.lateGameLockout[0].rules.map((rule, idx) => (
@@ -165,21 +165,21 @@ export default function SidelineCallSheetPage() {
               <tbody className="divide-y divide-slate-800 text-slate-300 text-[11px]">
                 <tr>
                   <td className="py-2 font-mono font-bold text-amber-400">60&apos; - 65&apos;</td>
-                  <td className="py-2 font-semibold">#7 Tyler Brooks (RW)</td>
-                  <td className="py-2 font-semibold text-emerald-400">#15 Carlos Mendez (Winger)</td>
+                  <td className="py-2 font-semibold">#7 Harry Xiao (RW)</td>
+                  <td className="py-2 font-semibold text-emerald-400">#19 Lucas Zhang (Winger)</td>
                   <td className="py-2">Exploit tired fullback with fresh sprint burst</td>
                 </tr>
                 <tr>
                   <td className="py-2 font-mono font-bold text-amber-400">75&apos;</td>
-                  <td className="py-2 font-semibold">#10 Leo Sterling (CAM)</td>
-                  <td className="py-2 font-semibold text-emerald-400">#12 Samira Patel (CM)</td>
+                  <td className="py-2 font-semibold">#10 Tommy Kim (CAM)</td>
+                  <td className="py-2 font-semibold text-emerald-400">#16 Owen Bonchev (CAM)</td>
                   <td className="py-2">Midfield possession tempo control</td>
                 </tr>
                 <tr>
                   <td className="py-2 font-mono font-bold text-amber-400">82&apos;</td>
-                  <td className="py-2 font-semibold">#11 Xavier Dupont (LW)</td>
-                  <td className="py-2 font-semibold text-emerald-400">#17 Jack Turner (CDM)</td>
-                  <td className="py-2">Solidify double-pivot central defense shield</td>
+                  <td className="py-2 font-semibold">#11 Blake Romanelli (ST)</td>
+                  <td className="py-2 font-semibold text-emerald-400">#26 Luke D&apos;Alonzo (CB)</td>
+                  <td className="py-2">Solidify 5-man low block central defense shield</td>
                 </tr>
               </tbody>
             </table>

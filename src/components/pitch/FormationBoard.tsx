@@ -15,7 +15,7 @@ export const FormationBoard: React.FC = () => {
       {/* System Switcher */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900 border border-slate-800">
-          {(['4-3-3', '4-2-3-1', '3-5-2', '4-4-2'] as FormationId[]).map(fid => (
+          {(['4-4-2', '4-3-3', '4-2-3-1', '3-5-2'] as FormationId[]).map(fid => (
             <button
               key={fid}
               onClick={() => setActiveFormation(fid)}
@@ -25,7 +25,7 @@ export const FormationBoard: React.FC = () => {
                   : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
               }`}
             >
-              {fid}
+              {fid === '4-4-2' ? '4-4-2 Diamond' : fid}
             </button>
           ))}
         </div>

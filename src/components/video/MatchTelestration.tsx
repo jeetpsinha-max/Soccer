@@ -44,7 +44,7 @@ export const MatchTelestration: React.FC = () => {
     ctx.stroke();
 
     // Simulated players
-    // Peddie Player #8 (Rossi)
+    // Peddie Midfield Captain #8 (Massimo Sheinin)
     ctx.fillStyle = '#002147';
     ctx.strokeStyle = '#ffb81c';
     ctx.lineWidth = 2;
@@ -57,14 +57,14 @@ export const MatchTelestration: React.FC = () => {
     ctx.textAlign = 'center';
     ctx.fillText('#8', canvas.width * 0.45, canvas.height * 0.48 + 4);
 
-    // Peddie Striker #9 (Morales)
+    // Peddie Attacking Captain #10 (Tommy Kim)
     ctx.fillStyle = '#002147';
     ctx.beginPath();
     ctx.arc(canvas.width * 0.72, canvas.height * 0.42, 14, 0, Math.PI * 2);
     ctx.fill();
     ctx.stroke();
     ctx.fillStyle = '#ffb81c';
-    ctx.fillText('#9', canvas.width * 0.72, canvas.height * 0.42 + 4);
+    ctx.fillText('#10', canvas.width * 0.72, canvas.height * 0.42 + 4);
 
     // Blair Defender #4
     ctx.fillStyle = '#1e293b';

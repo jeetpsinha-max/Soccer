@@ -18,7 +18,7 @@ const SeasonContext = createContext<SeasonContextType | undefined>(undefined);
 
 export const SeasonProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [season, setSeasonState] = useState<SeasonId>('2026-2027');
-  const [activeFormation, setActiveFormation] = useState<FormationId>('4-3-3');
+  const [activeFormation, setActiveFormation] = useState<FormationId>('4-4-2');
   const [selectedMatch, setSelectedMatch] = useState<MatchFixture>(
     PEDDIE_SCHEDULE_2026_2027.find(m => m.status === 'Live') || PEDDIE_SCHEDULE_2026_2027[0]
   );

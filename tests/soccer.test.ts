@@ -4,18 +4,36 @@ import { SoccerCsvEngine } from '../src/lib/soccer-csv-engine';
 import { SoccerTacticalAgent } from '../src/lib/agents/soccer-agents';
 
 describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
-  it('validates official 24-player varsity roster integrity', () => {
-    expect(PEDDIE_ROSTER_2026_2027.length).toBe(24);
+  it('validates active varsity roster integrity, zero 2026 graduates, and 4 new captains', () => {
+    // 1. Ensure zero players with gradYear 2026 (they graduated)
+    const classOf2026 = PEDDIE_ROSTER_2026_2027.filter(p => p.gradYear === 2026);
+    expect(classOf2026.length).toBe(0);
 
-    const captain = PEDDIE_ROSTER_2026_2027.find(p => p.number === 4);
-    expect(captain).toBeDefined();
-    expect(captain?.name).toBe('Julian Vance');
-    expect(captain?.isCaptain).toBe(true);
-    expect(captain?.overallRating).toBeGreaterThanOrEqual(90);
+    // 2. Official 4 new captains: Christian (#5), Rayyaan (#14), Noah (#3), Tommy (#10)
+    const captains = PEDDIE_ROSTER_2026_2027.filter(p => p.isCaptain);
+    expect(captains.length).toBe(4);
+    const captainNames = captains.map(c => c.name);
+    expect(captainNames).toContain('Christian Tharney');
+    expect(captainNames).toContain('Rayyaan Mohiuddin');
+    expect(captainNames).toContain('Noah Eldessouky');
+    expect(captainNames).toContain('Tommy Kim');
 
-    const striker = PEDDIE_ROSTER_2026_2027.find(p => p.number === 9);
-    expect(striker?.name).toBe('Dylan Morales');
-    expect(striker?.goals).toBe(15);
+    // 3. Former captains Quinn and Massimo are active players but not captains
+    const quinn = PEDDIE_ROSTER_2026_2027.find(p => p.number === 4);
+    expect(quinn?.isCaptain).toBeFalsy();
+    const massimo = PEDDIE_ROSTER_2026_2027.find(p => p.number === 8);
+    expect(massimo?.isCaptain).toBeFalsy();
+
+    // 4. Validate 4-4-2 Diamond Midfield system
+    const diamond = FORMATIONS_CONFIG['4-4-2'];
+    expect(diamond.name).toContain('4-4-2 Diamond Midfield');
+    const diamondNodes = diamond.nodes;
+    expect(diamondNodes.length).toBe(11);
+    const cdm = diamondNodes.find(n => n.position === 'CDM');
+    expect(cdm?.role).toContain('Diamond Base');
+    const cam = diamondNodes.find(n => n.position === 'CAM');
+    expect(cam?.role).toContain('Diamond Tip');
+    expect(cam?.playerName).toContain('Kim');
   });
 
   it('validates MAPL Conference schedule and Peddie-Blair Day fixture', () => {
@@ -45,7 +63,8 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
   it('tests SoccerCsvEngine serialization and deserialization roundtrip', () => {
     const csv = SoccerCsvEngine.exportToCsv(MATCH_EVENTS_LIVE_BLAIR);
     expect(csv).toContain('EVENT_ID,MINUTE,SECOND');
-    expect(csv).toContain('Dylan Morales');
+    expect(csv).toContain('Tommy Kim');
+    expect(csv).toContain('Blake Romanelli');
 
     const parsed = SoccerCsvEngine.parseCsv(csv);
     expect(parsed.length).toBe(MATCH_EVENTS_LIVE_BLAIR.length);

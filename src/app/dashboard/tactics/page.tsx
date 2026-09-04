@@ -58,7 +58,7 @@ export default function TacticsPage() {
 
             <div>
               <div className="flex justify-between text-slate-300 mb-1">
-                <span>15&apos; - 30&apos; (Dupont 18&apos; Goal Spell)</span>
+                <span>15&apos; - 30&apos; (Blake Romanelli 18&apos; Goal Spell)</span>
                 <span className="font-mono font-bold text-amber-400">72% Peddie</span>
               </div>
               <div className="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
@@ -68,7 +68,7 @@ export default function TacticsPage() {
 
             <div>
               <div className="flex justify-between text-slate-300 mb-1">
-                <span>30&apos; - 45&apos; (Vance Crossbar Header)</span>
+                <span>30&apos; - 45&apos; (Quinn Wachtveitl Crossbar Header)</span>
                 <span className="font-mono font-bold text-cyan-400">68% Peddie</span>
               </div>
               <div className="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
@@ -88,7 +88,7 @@ export default function TacticsPage() {
 
             <div>
               <div className="flex justify-between text-slate-300 mb-1">
-                <span>60&apos; - 75&apos; (Morales 74&apos; Game Winner)</span>
+                <span>60&apos; - 75&apos; (Tommy Kim 74&apos; Game Winner)</span>
                 <span className="font-mono font-bold text-emerald-400">76% Peddie</span>
               </div>
               <div className="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
@@ -110,7 +110,7 @@ export default function TacticsPage() {
           <div className="space-y-3 text-xs">
             <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
               <div>
-                <div className="font-bold text-white">#8 Mateo Rossi (CM)</div>
+                <div className="font-bold text-white">#8 Massimo Sheinin (CM)</div>
                 <div className="text-[11px] text-slate-400">Pass Volume: 88 passes | Success: 95%</div>
               </div>
               <div className="text-right">
@@ -121,7 +121,7 @@ export default function TacticsPage() {
 
             <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
               <div>
-                <div className="font-bold text-white">#3 Alex Rivera (LB)</div>
+                <div className="font-bold text-white">#3 Noah Eldessouky (LB)</div>
                 <div className="text-[11px] text-slate-400">Overlaps: 14 | Crosses: 8</div>
               </div>
               <div className="text-right">
@@ -132,7 +132,7 @@ export default function TacticsPage() {
 
             <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
               <div>
-                <div className="font-bold text-white">#10 Leo Sterling (CAM)</div>
+                <div className="font-bold text-white">#10 Tommy Kim (CAM)</div>
                 <div className="text-[11px] text-slate-400">Half-space receipts: 22</div>
               </div>
               <div className="text-right">

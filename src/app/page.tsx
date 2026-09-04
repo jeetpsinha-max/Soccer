@@ -45,6 +45,12 @@ export default function Home() {
             </span>
             <span className="text-slate-400 text-xs">•</span>
             <span className="text-slate-400 text-xs font-semibold">MAPL Championship Decider</span>
+            <span className="text-slate-400 text-xs">•</span>
+            <span className="text-cyan-400 text-xs font-semibold">Head Coach: George Nazario</span>
+            <span className="text-slate-400 text-xs">•</span>
+            <span className="text-amber-400 text-xs font-bold">Captains: Christian, Rayyaan, Noah, Tommy</span>
+            <span className="text-slate-400 text-xs">•</span>
+            <span className="text-emerald-400 text-xs font-bold">System: 4-4-2 Diamond Midfield</span>
           </div>
           <h1 className="text-2xl lg:text-3xl font-black text-white tracking-tight">
             Peddie Falcons vs. Blair Academy Buccaneers
@@ -115,14 +121,14 @@ export default function Home() {
               <span>AI TACTICAL ORCHESTRATOR (74&apos; DIRECTIVE)</span>
             </div>
             <div className="text-sm font-bold text-white mb-2">
-              Protect 2-1 Advantage: Prepare 4-4-2 Transition
+              Protect 2-1 Advantage: 4-4-2 Diamond Central Control
             </div>
             <p className="text-xs text-slate-300 leading-relaxed mb-3">
-              Blair Academy has shifted striker #9 to central target overload. Recommendation: Bring on #17 Jack Turner at minute 78 to create a compact double-pivot with #6 Christian Bell.
+              Blair Academy pushing high for an equalizer. Directive: Maintain the 4-4-2 Diamond Midfield compactness anchored by Captains Christian Tharney (#5), Noah Eldessouky (#3), Rayyaan Mohiuddin (#14), and Tommy Kim (#10).
             </p>
             <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-[11px] flex items-center justify-between">
               <span className="text-slate-400">Projected Win Rate:</span>
-              <span className="text-emerald-400 font-black font-mono">82.4% with 4-4-2 lockout</span>
+              <span className="text-emerald-400 font-black font-mono">82.4% with Diamond Lockout</span>
             </div>
           </div>
 

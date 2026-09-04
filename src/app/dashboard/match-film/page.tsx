@@ -8,7 +8,7 @@ import { Film, Search, Sparkles, Video, PlayCircle } from 'lucide-react';
 
 export default function MatchFilmPage() {
   const [nlQuery, setNlQuery] = useState('');
-  const [selectedClip, setSelectedClip] = useState(MATCH_EVENTS_LIVE_BLAIR[10]); // Dylan Morales goal
+  const [selectedClip, setSelectedClip] = useState(MATCH_EVENTS_LIVE_BLAIR[10]); // Tommy Kim match-winning goal
 
   const filteredEvents = SoccerTacticalAgent.filterEventsByNaturalLanguage(nlQuery, MATCH_EVENTS_LIVE_BLAIR);
 
@@ -74,7 +74,7 @@ export default function MatchFilmPage() {
                 type="text"
                 value={nlQuery}
                 onChange={e => setNlQuery(e.target.value)}
-                placeholder="e.g., 'Show Morales goals' or 'high press'"
+                placeholder="e.g., 'Show Tommy Kim goals' or 'high press'"
                 className="w-full bg-slate-900 border border-slate-700 rounded-lg pl-8 pr-3 py-2 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
               />
               <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2" />
@@ -85,7 +85,9 @@ export default function MatchFilmPage() {
               <span>•</span>
               <button onClick={() => setNlQuery('press')} className="hover:text-amber-400 underline">Pressing</button>
               <span>•</span>
-              <button onClick={() => setNlQuery('vance')} className="hover:text-amber-400 underline">Vance</button>
+              <button onClick={() => setNlQuery('kim')} className="hover:text-amber-400 underline">Tommy Kim</button>
+              <span>•</span>
+              <button onClick={() => setNlQuery('wachtveitl')} className="hover:text-amber-400 underline">Wachtveitl</button>
             </div>
           </div>
 
