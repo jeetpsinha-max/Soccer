@@ -97,7 +97,7 @@ export default function SidelineCallSheetPage() {
                 <strong>#5 Christian Tharney (C)</strong> and <strong>#10 Quinn Wachtveitl</strong> command central 6-yard box. Wins initial aerial header.
               </p>
               <p>
-                <strong>#3 Noah Eldessouky (C)</strong> covers near post zone to extinguish flick-ons.
+                <strong>#12 Noah Eldessouky (C)</strong> covers near post zone to extinguish flick-ons.
               </p>
               <p>
                 <strong>#1 Dylan McKenzie (GK)</strong> claims any delivery lofted inside the 6-yard perimeter.
@@ -172,7 +172,7 @@ export default function SidelineCallSheetPage() {
                 <tr>
                   <td className="py-2 font-mono font-bold text-amber-400">75&apos;</td>
                   <td className="py-2 font-semibold">#28 Tommy Kim (CAM)</td>
-                  <td className="py-2 font-semibold text-emerald-400">#12 Jackson Shavel (CM)</td>
+                  <td className="py-2 font-semibold text-emerald-400">#4 Jackson Shavel (CM)</td>
                   <td className="py-2">Midfield possession tempo control</td>
                 </tr>
                 <tr>

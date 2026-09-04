@@ -120,7 +120,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-eldessouky',
-    number: 3,
+    number: 12,
     name: 'Noah Eldessouky',
     classYear: 'Senior',
     gradYear: 2027,
@@ -277,32 +277,6 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     recruitmentNotes: 'Explosive underclassman forward. Carries family Peddie soccer legacy, blistering acceleration and lethal finishing.'
   },
   {
-    id: 'p-mahoney',
-    number: 2,
-    name: 'Connor Mahoney',
-    classYear: 'Sophomore',
-    gradYear: 2029,
-    position: 'RB',
-    overallRating: 86,
-    height: "5'9\"",
-    weight: '156 lbs',
-    hometown: 'Pennington, NJ',
-    minutesPlayed: 880,
-    matchesPlayed: 11,
-    goals: 1,
-    assists: 3,
-    expectedGoals: 0.8,
-    expectedAssists: 3.2,
-    passCompletionPct: 85.8,
-    tackleSuccessPct: 80.2,
-    topSpeedKmh: 34.4,
-    distanceCoveredKm: 116.2,
-    assignmentHistory: [
-      { match: 'vs Blair Academy', opponent: 'Blair', grade: '+', assignment: 'Lock down opposing left winger', notes: 'Zero fouls conceded, won 7 tackles' }
-    ],
-    recruitmentNotes: 'Tenacious right back with speed and tactical discipline.'
-  },
-  {
     id: 'p-bonchev',
     number: 8,
     name: 'Owen Bonchev',
@@ -379,7 +353,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-shavel',
-    number: 12,
+    number: 4,
     name: 'Jackson Shavel',
     classYear: 'Junior',
     gradYear: 2028,
@@ -713,15 +687,15 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
   '4-3-3': {
     id: '4-3-3',
     name: '4-3-3 Attacking Possession',
-    description: 'High wingers, single pivot CDM (#6 Gabriel Lam) and overlapping fullbacks (Captain #3 Noah Eldessouky, #2 Connor Mahoney). Guided by Head Coach George Nazario.',
+    description: 'High wingers, single pivot CDM (#6 Gabriel Lam) and overlapping fullbacks (Captain #12 Noah Eldessouky, #17 Nicholas Chen). Guided by Head Coach George Nazario.',
     strengths: ['High positional flexibility', 'Overloading opponent fullbacks', 'Fluid half-space triangles'],
     vulnerabilities: ['Wide spaces behind attacking fullbacks', 'Requires high aerobic recovery sprint load'],
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Sweeper Keeper' },
-      { position: 'LB', playerNumber: 3, playerName: 'Eldessouky (C)', xPct: 15, yPct: 74, role: 'Inverted Wingback (Captain)' },
+      { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 15, yPct: 74, role: 'Inverted Wingback (Captain)' },
       { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 38, yPct: 78, role: 'Covering Defender (Captain)' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 78, role: 'Ball-Playing Stopper' },
-      { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 85, yPct: 74, role: 'Overlapping Fullback' },
+      { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 85, yPct: 74, role: 'Overlapping Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 58, role: 'Deep-Lying Anchor' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 34, yPct: 44, role: 'Mezzala Playmaker' },
       { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 66, yPct: 42, role: 'Advanced Free 10 (Captain)' },
@@ -738,10 +712,10 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     vulnerabilities: ['Can leave striker isolated against 3-man backline'],
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Sweeper Keeper' },
-      { position: 'LB', playerNumber: 3, playerName: 'Eldessouky (C)', xPct: 16, yPct: 75, role: 'Fullback (Captain)' },
+      { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 16, yPct: 75, role: 'Fullback (Captain)' },
       { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Center Back (Captain)' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Center Back' },
-      { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 84, yPct: 75, role: 'Fullback' },
+      { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 84, yPct: 75, role: 'Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 38, yPct: 60, role: 'Double Pivot Left' },
       { position: 'CDM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 62, yPct: 60, role: 'Double Pivot Right (Captain)' },
       { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 50, yPct: 38, role: 'Central Playmaker (Captain)' },
@@ -761,11 +735,11 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CB', playerNumber: 26, playerName: "D'Alonzo", xPct: 28, yPct: 78, role: 'Left Center Back' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 50, yPct: 80, role: 'Sweeper / Libero' },
       { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 72, yPct: 78, role: 'Right Center Back (Captain)' },
-      { position: 'LB', playerNumber: 3, playerName: 'Eldessouky (C)', xPct: 12, yPct: 52, role: 'Left Wing-Back (Captain)' },
+      { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 12, yPct: 52, role: 'Left Wing-Back (Captain)' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 56, role: 'Central Midfielder' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 34, yPct: 44, role: 'Central Midfielder' },
       { position: 'CAM', playerNumber: 28, playerName: 'Kim T (C)', xPct: 66, yPct: 44, role: 'Attacking Midfielder (Captain)' },
-      { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 88, yPct: 52, role: 'Right Wing-Back' },
+      { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 88, yPct: 52, role: 'Right Wing-Back' },
       { position: 'ST', playerNumber: 9, playerName: 'Rozo', xPct: 38, yPct: 18, role: 'Target Striker' },
       { position: 'ST', playerNumber: 11, playerName: 'Romanelli B', xPct: 62, yPct: 18, role: 'Second Striker' }
     ]
@@ -777,7 +751,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     strengths: [
       'Unmatched central midfield numerical dominance (4v3 / 4v2)',
       'Free playmaking conductor role for Captain Tommy Kim (#28)',
-      'Overlapping flank corridors for Captain Noah Eldessouky (#3) and Connor Mahoney (#2)',
+      'Overlapping flank corridors for Captain Noah Eldessouky (#12) and Nicholas Chen (#17)',
       'Twin dynamic strikers pinning and stretching opposition center backs'
     ],
     vulnerabilities: [
@@ -786,10 +760,10 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
     ],
     nodes: [
       { position: 'GK', playerNumber: 1, playerName: 'McKenzie', xPct: 50, yPct: 92, role: 'Sweeper Keeper' },
-      { position: 'LB', playerNumber: 3, playerName: 'Eldessouky (C)', xPct: 16, yPct: 76, role: 'Attacking Left Fullback (Captain)' },
+      { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 16, yPct: 76, role: 'Attacking Left Fullback (Captain)' },
       { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 38, yPct: 80, role: 'Stopper Center Back (Captain)' },
       { position: 'CB', playerNumber: 10, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Covering Center Back' },
-      { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 84, yPct: 76, role: 'Right Fullback' },
+      { position: 'RB', playerNumber: 17, playerName: 'Chen', xPct: 84, yPct: 76, role: 'Right Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 64, role: 'Diamond Base Anchor' },
       { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 30, yPct: 48, role: 'Left Central Midfielder' },
       { position: 'CM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 70, yPct: 48, role: 'Right Central Midfielder (Captain)' },
@@ -1138,7 +1112,7 @@ export const MATCH_EVENTS_LIVE_BLAIR: MatchEvent[] = [
   { id: 'ev-7', minute: 35, second: 0, team: 'Peddie', playerNumber: 10, playerName: 'Quinn Wachtveitl', type: 'Shot', startX: 96, startY: 32, expectedGoals: 0.38, success: false, description: 'Header glanced off crossbar', phase: 'Set Piece' },
   { id: 'ev-8', minute: 49, second: 22, team: 'Opponent', playerNumber: 11, playerName: 'Blair Winger #11', type: 'Goal', startX: 88, startY: 42, expectedGoals: 0.34, success: true, description: 'Goal for Blair on rebound scramble inside 6-yard box (1-1)', phase: 'Set Piece' },
   { id: 'ev-9', minute: 62, second: 15, team: 'Peddie', playerNumber: 6, playerName: 'Gabriel Lam', type: 'Interception', startX: 52, startY: 30, success: true, description: 'Stepped into passing lane to intercept clearance', phase: 'High Press' },
-  { id: 'ev-10', minute: 73, second: 40, team: 'Peddie', playerNumber: 3, playerName: 'Noah Eldessouky', type: 'Key Pass', startX: 86, startY: 8, endX: 98, endY: 30, success: true, description: 'Low drilled cross across face of goal', phase: 'Open Play' },
+  { id: 'ev-10', minute: 73, second: 40, team: 'Peddie', playerNumber: 12, playerName: 'Noah Eldessouky', type: 'Key Pass', startX: 86, startY: 8, endX: 98, endY: 30, success: true, description: 'Low drilled cross across face of goal', phase: 'Open Play' },
   { id: 'ev-11', minute: 74, second: 0, team: 'Peddie', playerNumber: 28, playerName: 'Tommy Kim', type: 'Goal', startX: 98, startY: 30, expectedGoals: 0.65, success: true, description: 'GOAL! Tommy Kim clinical half-volley into side netting (2-1 Peddie!)', phase: 'Open Play' }
 ];
 
@@ -1243,7 +1217,7 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
       name: 'Highstown Switch (Short Corner Triad)',
       triggerSignal: 'Taps Shinguard',
       taker: '#8 Owen Bonchev & #11 Blake Romanelli',
-      description: 'Short pass to Romanelli, who lays back to Eldessouky (#3) arriving at top of box for first-time curling effort.',
+      description: 'Short pass to Romanelli, who lays back to Eldessouky (#12) arriving at top of box for first-time curling effort.',
       probabilityGoalPct: 21.0
     }
   ],

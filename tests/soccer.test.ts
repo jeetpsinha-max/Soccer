@@ -38,11 +38,27 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(tommy?.number).toBe(28);
     expect(tommy?.isCaptain).toBe(true);
 
-    // 5. Validate 4-4-2 Diamond Midfield system
+    // 5. Noah Eldessouky is #12; No player has jersey #3; Connor Mahoney is not on the team
+    const noah = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Noah Eldessouky');
+    expect(noah).toBeDefined();
+    expect(noah?.number).toBe(12);
+    expect(noah?.isCaptain).toBe(true);
+
+    const number3 = PEDDIE_ROSTER_2026_2027.find(p => p.number === 3);
+    expect(number3).toBeUndefined();
+
+    const mahoney = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes('Mahoney'));
+    expect(mahoney).toBeUndefined();
+
+    // 6. Validate 4-4-2 Diamond Midfield system
     const diamond = FORMATIONS_CONFIG['4-4-2'];
     expect(diamond.name).toContain('4-4-2 Diamond Midfield');
     const diamondNodes = diamond.nodes;
     expect(diamondNodes.length).toBe(11);
+    const lbNoah = diamondNodes.find(n => n.playerNumber === 12);
+    expect(lbNoah?.playerName).toBe('Eldessouky (C)');
+    const rbChen = diamondNodes.find(n => n.playerNumber === 17);
+    expect(rbChen?.playerName).toBe('Chen');
     const cbQuinn = diamondNodes.find(n => n.playerNumber === 10);
     expect(cbQuinn?.playerName).toBe('Wachtveitl');
     const lcm = diamondNodes.find(n => n.playerNumber === 8);
