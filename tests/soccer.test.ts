@@ -50,7 +50,14 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const mahoney = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes('Mahoney'));
     expect(mahoney).toBeUndefined();
 
-    // 6. Validate 4-4-2 Diamond Midfield system
+    // 6. Verify fake names (Shavel, Patel, Murphy, Zhang, D'Alonzo) are completely wiped
+    const fakeNames = ['Shavel', 'Patel', 'Murphy', 'Zhang', "D'Alonzo"];
+    fakeNames.forEach(name => {
+      const found = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes(name));
+      expect(found).toBeUndefined();
+    });
+
+    // 7. Validate 4-4-2 Diamond Midfield system
     const diamond = FORMATIONS_CONFIG['4-4-2'];
     expect(diamond.name).toContain('4-4-2 Diamond Midfield');
     const diamondNodes = diamond.nodes;

@@ -42,14 +42,14 @@ export class SoccerTacticalAgent {
         {
           minute: 60,
           offPlayer: '#7 Harry Xiao (RW)',
-          onPlayer: '#19 Lucas Zhang (RW)',
-          tacticalPurpose: 'Inject explosive sophomore winger against fatigued opposing left-back.'
+          onPlayer: '#9 Brody Rozo (ST)',
+          tacticalPurpose: 'Inject direct sophomore forward against fatigued backline.'
         },
         {
           minute: 75,
-          offPlayer: '#16 Owen Bonchev (CAM)',
-          onPlayer: '#14 Rayyaan Mohiuddin (CM)',
-          tacticalPurpose: 'Reinforce midfield possession triangle and prevent late counter-attacks.'
+          offPlayer: '#8 Owen Bonchev (LCM)',
+          onPlayer: '#16 Massimo Sheinin (CM)',
+          tacticalPurpose: 'Reinforce midfield possession triangle with fresh legs.'
         },
         {
           minute: 82,
