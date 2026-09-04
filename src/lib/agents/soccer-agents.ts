@@ -28,9 +28,9 @@ export class SoccerTacticalAgent {
           edge: 'Peddie +14% Aerial Dominance. Wachtveitl wins 89% of headers inside our 18-yard box.'
         },
         {
-          ourPlayer: '#8 Massimo Sheinin (CM)',
+          ourPlayer: '#8 Owen Bonchev (CM)',
           opponentKey: report.keyPlaymakers[1] || 'Opposing Midfield Pivot',
-          edge: 'Peddie +22% Ball Retention under high press. Sheinin averages 93.8% passing accuracy.'
+          edge: 'Peddie +22% Ball Retention under high press. Bonchev averages 91.5% passing accuracy.'
         },
         {
           ourPlayer: '#10 Tommy Kim (CAM/ST)',
@@ -91,6 +91,8 @@ export class SoccerTacticalAgent {
       if (q.includes('tharney') && e.playerName.toLowerCase().includes('tharney')) return true;
       if (q.includes('mohiuddin') && e.playerName.toLowerCase().includes('mohiuddin')) return true;
       if (q.includes('sheinin') && e.playerName.toLowerCase().includes('sheinin')) return true;
+      if (q.includes('bonchev') && e.playerName.toLowerCase().includes('bonchev')) return true;
+      if (q.includes('owen') && e.playerName.toLowerCase().includes('owen')) return true;
       if (q.includes('wachtveitl') && e.playerName.toLowerCase().includes('wachtveitl')) return true;
       if (q.includes('romanelli') && e.playerName.toLowerCase().includes('romanelli')) return true;
       if (q.includes('rozo') && e.playerName.toLowerCase().includes('rozo')) return true;

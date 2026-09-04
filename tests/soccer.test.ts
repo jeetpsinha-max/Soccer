@@ -18,17 +18,23 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(captainNames).toContain('Noah Eldessouky');
     expect(captainNames).toContain('Tommy Kim');
 
-    // 3. Former captains Quinn and Massimo are active players but not captains
-    const quinn = PEDDIE_ROSTER_2026_2027.find(p => p.number === 4);
-    expect(quinn?.isCaptain).toBeFalsy();
-    const massimo = PEDDIE_ROSTER_2026_2027.find(p => p.number === 8);
-    expect(massimo?.isCaptain).toBeFalsy();
+    // 3. Number 8 is Owen Bonchev (starting LCM in diamond); Massimo did not play in opener (DNP)
+    const owen = PEDDIE_ROSTER_2026_2027.find(p => p.number === 8);
+    expect(owen).toBeDefined();
+    expect(owen?.name).toBe('Owen Bonchev');
+    expect(owen?.position).toBe('CM');
+
+    const massimo = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Massimo Sheinin');
+    expect(massimo).toBeDefined();
+    expect(massimo?.recruitmentNotes).toContain('DNP');
 
     // 4. Validate 4-4-2 Diamond Midfield system
     const diamond = FORMATIONS_CONFIG['4-4-2'];
     expect(diamond.name).toContain('4-4-2 Diamond Midfield');
     const diamondNodes = diamond.nodes;
     expect(diamondNodes.length).toBe(11);
+    const lcm = diamondNodes.find(n => n.playerNumber === 8);
+    expect(lcm?.playerName).toBe('Bonchev');
     const cdm = diamondNodes.find(n => n.position === 'CDM');
     expect(cdm?.role).toContain('Diamond Base');
     const cam = diamondNodes.find(n => n.position === 'CAM');

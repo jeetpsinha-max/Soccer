@@ -110,8 +110,8 @@ export default function TacticsPage() {
           <div className="space-y-3 text-xs">
             <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
               <div>
-                <div className="font-bold text-white">#8 Massimo Sheinin (CM)</div>
-                <div className="text-[11px] text-slate-400">Pass Volume: 88 passes | Success: 95%</div>
+                <div className="font-bold text-white">#8 Owen Bonchev (CM)</div>
+                <div className="text-[11px] text-slate-400">Pass Volume: 88 passes | Success: 92%</div>
               </div>
               <div className="text-right">
                 <span className="text-base font-black font-mono text-amber-400">+2.48</span>

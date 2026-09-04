@@ -66,7 +66,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-sheinin',
-    number: 8,
+    number: 16,
     name: 'Massimo Sheinin',
     classYear: 'Senior',
     gradYear: 2027,
@@ -89,7 +89,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
       { match: 'vs Blair Academy', opponent: 'Blair', grade: '+', assignment: 'Midfield tempo control and half-space distribution', notes: 'Completed 78 passes at 94% accuracy, broke opponent high press repeatedly' },
       { match: 'vs Hun School', opponent: 'Hun', grade: '+', assignment: 'Double-pivot central midfield anchor', notes: 'Won 8 ground duels, controlled match tempo' }
     ],
-    recruitmentNotes: 'Elected Student Council Leader. Metronomic tempo setter, elite vision and college soccer prospect.'
+    recruitmentNotes: 'Elected Student Council Leader. Metronomic tempo setter, elite vision and college soccer prospect. (Did not play in season opener vs. Haverford / DNP).'
   },
   {
     id: 'p-wachtveitl',
@@ -304,11 +304,12 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-bonchev',
-    number: 16,
+    number: 8,
     name: 'Owen Bonchev',
     classYear: 'Sophomore',
     gradYear: 2029,
-    position: 'CAM',
+    position: 'CM',
+    secondaryPosition: 'CAM',
     overallRating: 84,
     height: "5'8\"",
     weight: '150 lbs',
@@ -324,7 +325,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     topSpeedKmh: 32.5,
     distanceCoveredKm: 72.4,
     assignmentHistory: [],
-    recruitmentNotes: 'Creative attacking midfielder with quick footwork.'
+    recruitmentNotes: 'Starting #8 left central midfielder in 4-4-2 diamond midfield. Creative playmaker with elite vision and tight-space passing.'
   },
   {
     id: 'p-rozo',
@@ -722,7 +723,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CB', playerNumber: 4, playerName: 'Wachtveitl', xPct: 62, yPct: 78, role: 'Ball-Playing Stopper' },
       { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 85, yPct: 74, role: 'Overlapping Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 58, role: 'Deep-Lying Anchor' },
-      { position: 'CM', playerNumber: 8, playerName: 'Sheinin', xPct: 34, yPct: 44, role: 'Mezzala Playmaker' },
+      { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 34, yPct: 44, role: 'Mezzala Playmaker' },
       { position: 'CAM', playerNumber: 10, playerName: 'Kim T (C)', xPct: 66, yPct: 42, role: 'Advanced Free 10 (Captain)' },
       { position: 'LW', playerNumber: 11, playerName: 'Romanelli B', xPct: 18, yPct: 24, role: 'Inside Forward' },
       { position: 'ST', playerNumber: 9, playerName: 'Rozo', xPct: 50, yPct: 16, role: 'Complete Forward' },
@@ -762,7 +763,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CB', playerNumber: 5, playerName: 'Tharney (C)', xPct: 72, yPct: 78, role: 'Right Center Back (Captain)' },
       { position: 'LB', playerNumber: 3, playerName: 'Eldessouky (C)', xPct: 12, yPct: 52, role: 'Left Wing-Back (Captain)' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 56, role: 'Central Midfielder' },
-      { position: 'CM', playerNumber: 8, playerName: 'Sheinin', xPct: 34, yPct: 44, role: 'Central Midfielder' },
+      { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 34, yPct: 44, role: 'Central Midfielder' },
       { position: 'CAM', playerNumber: 10, playerName: 'Kim T (C)', xPct: 66, yPct: 44, role: 'Attacking Midfielder (Captain)' },
       { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 88, yPct: 52, role: 'Right Wing-Back' },
       { position: 'ST', playerNumber: 9, playerName: 'Rozo', xPct: 38, yPct: 18, role: 'Target Striker' },
@@ -772,7 +773,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
   '4-4-2': {
     id: '4-4-2',
     name: '4-4-2 Diamond Midfield (Peddie Primary System)',
-    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor #6 Gabriel Lam, interior mezzalas #8 Massimo Sheinin and Captain #14 Rayyaan Mohiuddin, and Captain #10 Tommy Kim pulling strings at the tip behind twin strikers #11 Blake Romanelli and #9 Brody Rozo.',
+    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor #6 Gabriel Lam, interior mezzalas #8 Owen Bonchev and Captain #14 Rayyaan Mohiuddin, and Captain #10 Tommy Kim pulling strings at the tip behind twin strikers #11 Blake Romanelli and #9 Brody Rozo.',
     strengths: [
       'Unmatched central midfield numerical dominance (4v3 / 4v2)',
       'Free playmaking conductor role for Captain Tommy Kim (#10)',
@@ -790,7 +791,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CB', playerNumber: 4, playerName: 'Wachtveitl', xPct: 62, yPct: 80, role: 'Covering Center Back' },
       { position: 'RB', playerNumber: 2, playerName: 'Mahoney', xPct: 84, yPct: 76, role: 'Right Fullback' },
       { position: 'CDM', playerNumber: 6, playerName: 'Lam', xPct: 50, yPct: 64, role: 'Diamond Base Anchor' },
-      { position: 'CM', playerNumber: 8, playerName: 'Sheinin', xPct: 30, yPct: 48, role: 'Left Central Midfielder' },
+      { position: 'CM', playerNumber: 8, playerName: 'Bonchev', xPct: 30, yPct: 48, role: 'Left Central Midfielder' },
       { position: 'CM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 70, yPct: 48, role: 'Right Central Midfielder (Captain)' },
       { position: 'CAM', playerNumber: 10, playerName: 'Kim T (C)', xPct: 50, yPct: 34, role: 'Diamond Tip Playmaker (Captain)' },
       { position: 'ST', playerNumber: 11, playerName: 'Romanelli B', xPct: 38, yPct: 16, role: 'Left Striker' },
@@ -1128,12 +1129,12 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
 ];
 
 export const MATCH_EVENTS_LIVE_BLAIR: MatchEvent[] = [
-  { id: 'ev-1', minute: 4, second: 12, team: 'Peddie', playerNumber: 8, playerName: 'Massimo Sheinin', type: 'Pass', startX: 42, startY: 34, endX: 68, endY: 14, success: true, description: 'Diagonal 35m switch to Blake Romanelli on left wing', phase: 'Open Play' },
+  { id: 'ev-1', minute: 4, second: 12, team: 'Peddie', playerNumber: 8, playerName: 'Owen Bonchev', type: 'Pass', startX: 42, startY: 34, endX: 68, endY: 14, success: true, description: 'Diagonal 35m switch to Blake Romanelli on left wing', phase: 'Open Play' },
   { id: 'ev-2', minute: 7, second: 45, team: 'Peddie', playerNumber: 11, playerName: 'Blake Romanelli', type: 'Cross', startX: 88, startY: 12, endX: 98, endY: 32, success: false, description: 'Whip cross cleared by Blair CB', phase: 'Open Play' },
   { id: 'ev-3', minute: 12, second: 18, team: 'Opponent', playerNumber: 9, playerName: 'Blair Striker #9', type: 'Shot', startX: 84, startY: 28, expectedGoals: 0.08, success: false, description: 'Long distance shot deflected over bar', phase: 'Counter Attack' },
   { id: 'ev-4', minute: 18, second: 30, team: 'Peddie', playerNumber: 11, playerName: 'Blake Romanelli', type: 'Goal', startX: 92, startY: 22, expectedGoals: 0.42, success: true, description: 'GOAL! Blake Romanelli cuts inside on right foot and bends into top corner (1-0 Peddie)', phase: 'Open Play' },
   { id: 'ev-5', minute: 28, second: 10, team: 'Peddie', playerNumber: 4, playerName: 'Quinn Wachtveitl', type: 'Tackle', startX: 35, startY: 42, success: true, description: 'Standing tackle on Blair #10 to halt counter', phase: 'High Press' },
-  { id: 'ev-6', minute: 34, second: 45, team: 'Peddie', playerNumber: 8, playerName: 'Massimo Sheinin', type: 'Corner', startX: 105, startY: 0, endX: 96, endY: 32, success: true, description: 'Inswinging corner to near post', phase: 'Set Piece' },
+  { id: 'ev-6', minute: 34, second: 45, team: 'Peddie', playerNumber: 8, playerName: 'Owen Bonchev', type: 'Corner', startX: 105, startY: 0, endX: 96, endY: 32, success: true, description: 'Inswinging corner to near post', phase: 'Set Piece' },
   { id: 'ev-7', minute: 35, second: 0, team: 'Peddie', playerNumber: 4, playerName: 'Quinn Wachtveitl', type: 'Shot', startX: 96, startY: 32, expectedGoals: 0.38, success: false, description: 'Header glanced off crossbar', phase: 'Set Piece' },
   { id: 'ev-8', minute: 49, second: 22, team: 'Opponent', playerNumber: 11, playerName: 'Blair Winger #11', type: 'Goal', startX: 88, startY: 42, expectedGoals: 0.34, success: true, description: 'Goal for Blair on rebound scramble inside 6-yard box (1-1)', phase: 'Set Piece' },
   { id: 'ev-9', minute: 62, second: 15, team: 'Peddie', playerNumber: 6, playerName: 'Gabriel Lam', type: 'Interception', startX: 52, startY: 30, success: true, description: 'Stepped into passing lane to intercept clearance', phase: 'High Press' },
@@ -1227,7 +1228,7 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
     {
       name: 'Falcon Claw (Near Post Overload)',
       triggerSignal: 'Left Hand Raised',
-      taker: '#8 Massimo Sheinin',
+      taker: '#8 Owen Bonchev',
       description: 'Quinn Wachtveitl (#4) fakes far post then dashes across near post to flick on or head directly into near corner. Tommy Kim (#10) crashes 6-yard box for rebounds.',
       probabilityGoalPct: 28.5
     },
@@ -1241,7 +1242,7 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
     {
       name: 'Highstown Switch (Short Corner Triad)',
       triggerSignal: 'Taps Shinguard',
-      taker: '#8 Massimo Sheinin & #11 Blake Romanelli',
+      taker: '#8 Owen Bonchev & #11 Blake Romanelli',
       description: 'Short pass to Romanelli, who lays back to Eldessouky (#3) arriving at top of box for first-time curling effort.',
       probabilityGoalPct: 21.0
     }

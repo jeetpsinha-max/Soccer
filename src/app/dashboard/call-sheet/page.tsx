@@ -172,7 +172,7 @@ export default function SidelineCallSheetPage() {
                 <tr>
                   <td className="py-2 font-mono font-bold text-amber-400">75&apos;</td>
                   <td className="py-2 font-semibold">#10 Tommy Kim (CAM)</td>
-                  <td className="py-2 font-semibold text-emerald-400">#16 Owen Bonchev (CAM)</td>
+                  <td className="py-2 font-semibold text-emerald-400">#12 Jackson Shavel (CM)</td>
                   <td className="py-2">Midfield possession tempo control</td>
                 </tr>
                 <tr>
