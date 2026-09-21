@@ -148,19 +148,19 @@ export default function AnalyticsPage() {
               className="bg-transparent text-white text-xs font-extrabold focus:outline-none cursor-pointer"
             >
               <option value="m-4" className="bg-slate-950 text-white">
-                Match 4: Sept 14 vs Princeton Day (7-1 W Derby)
+                Match 4: Sept 16 vs Princeton Day (4-2 W)
               </option>
               <option value="m-3" className="bg-slate-950 text-white">
-                Match 3: Sept 10 @ George School (5-2 W)
+                Match 3: Sept 12 @ George School (6-4 W)
               </option>
               <option value="m-1" className="bg-slate-950 text-white">
-                Match 1: Sept 4 vs St. Thomas Aquinas (3-2 W)
+                Match 1: Sept 5 vs St. Thomas Aquinas (3-2 W)
               </option>
               <option value="m-2" className="bg-slate-950 text-white">
-                Match 2: Sept 8 @ Trenton Central (2-3 L)
+                Match 2: Sept 9 @ Trenton Catholic (4-1 W)
               </option>
               <option value="m-0" className="bg-slate-950 text-white">
-                Match 0: Sept 1 @ Haverford (0-5 L Veo Film)
+                Match 0: Sept 1 @ Haverford (0-4 L Veo Film)
               </option>
               <option value="season" className="bg-slate-950 text-amber-400 font-bold">
                 ⭐ Full 2026 Season Aggregate (17 Goals, 15.84 xG)
@@ -196,7 +196,7 @@ export default function AnalyticsPage() {
                       : 'bg-slate-800 text-slate-400 hover:text-white'
                   }`}
                 >
-                  {id === 'm-4' ? 'PDS 7-1' : id === 'm-3' ? 'GEO 5-2' : id === 'm-1' ? 'STA 3-2' : id === 'm-2' ? 'TCH 2-3' : id === 'm-0' ? 'HAV 0-5' : 'Season'}
+                  {id === 'm-4' ? 'PDS 4-2' : id === 'm-3' ? 'GEO 6-4' : id === 'm-1' ? 'STA 3-2' : id === 'm-2' ? 'TCH 4-1' : id === 'm-0' ? 'HAV 0-4' : 'Season'}
                 </button>
               ))}
             </div>

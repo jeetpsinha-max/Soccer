@@ -9,8 +9,12 @@ import { FormationBoard } from '@/components/pitch/FormationBoard';
 import { 
   MATCH_EVENTS_VEO_HAVERFORD, 
   MATCH_EVENTS_VEO_AQUINAS,
+  MATCH_EVENTS_VEO_TRENTON,
+  MATCH_EVENTS_VEO_GEORGE,
+  MATCH_EVENTS_VEO_PDS,
   PEDDIE_SCHEDULE_2026_2027 
 } from '@/lib/soccer-data';
+import { MatchEvent } from '@/lib/types';
 import { SoccerCsvEngine } from '@/lib/soccer-csv-engine';
 import { 
   Sparkles, 
@@ -32,7 +36,7 @@ import {
 
 export default function Home() {
   const { season, isLiveMatch } = useSeason();
-  const [selectedMatchId, setSelectedMatchId] = useState<string>('m-4'); // Defaults to latest Princeton Day School 7-1 rout
+  const [selectedMatchId, setSelectedMatchId] = useState<string>('m-4'); // Defaults to PDS 4-2 W
   const [eventFilter, setEventFilter] = useState('ALL');
   const [nlQuery, setNlQuery] = useState('');
 
@@ -50,88 +54,88 @@ export default function Home() {
     badge: string;
     headline: string;
     summary: string;
-    events: typeof MATCH_EVENTS_VEO_AQUINAS;
+    events: MatchEvent[];
     coachQuote: string;
     pressStatus: string;
   }> = {
     'm-4': {
-      name: 'PDS (7-1 W)',
+      name: 'PDS (4-2 W)',
       opponent: 'PRINCETON DAY SCHOOL',
-      date: 'Sept 14, 2026',
-      scorePeddie: 7,
-      scoreOpponent: 1,
-      xgPeddie: 4.82,
-      xgOpponent: 0.95,
-      possession: 68,
-      badge: '2026–2027 MERCER COUNTY DERBY ROUT',
-      headline: 'Peddie Falcons 7 – 1 Princeton Day School',
-      summary: 'Rampant attacking masterclass powered by Captain Tommy Kim\'s hat-trick (14\', 29\', 61\'), dynamic diamond circulation, and total Zone 14 control.',
-      events: MATCH_EVENTS_VEO_AQUINAS,
-      coachQuote: '"The boys executed our 4-4-2 diamond with ruthless efficiency. Moving the ball through Zone 14 and pressing high unlocked everything."',
-      pressStatus: 'FINAL • PEDDIE 7-1 PDS (W)'
+      date: 'Sept 16, 2026',
+      scorePeddie: 4,
+      scoreOpponent: 2,
+      xgPeddie: 3.12,
+      xgOpponent: 1.45,
+      possession: 58,
+      badge: '2026–2027 MERCER COUNTY DERBY VICTORY',
+      headline: 'Peddie Falcons 4 – 2 Princeton Day School',
+      summary: "Signature home victory highlighted by Jeet Sinha's stunning 64' curling strike into the top corner, Tommy Kim's brace (9', 38'), and Zachary Horsch's 79' counter-attack sealer.",
+      events: MATCH_EVENTS_VEO_PDS,
+      coachQuote: '"Outstanding discipline. Jeet Sinha\'s curling finish was world-class, and Dylan McKenzie came up huge in goal to seal the win." — Coach George Nazario',
+      pressStatus: 'FINAL • PEDDIE 4-2 PDS (W)'
     },
     'm-3': {
-      name: 'George (5-2 W)',
+      name: 'George (6-4 W)',
       opponent: 'GEORGE SCHOOL',
-      date: 'Sept 10, 2026',
-      scorePeddie: 5,
-      scoreOpponent: 2,
-      xgPeddie: 3.45,
-      xgOpponent: 1.80,
-      possession: 62,
-      badge: 'NON-CONFERENCE ROAD VICTORY',
-      headline: 'Peddie Falcons 5 – 2 George School',
-      summary: 'Dominant non-conference road performance with relentless high-pressing, 8.1 PPDA intensity, and fluid attacking transitions.',
-      events: MATCH_EVENTS_VEO_AQUINAS,
-      coachQuote: '"Traveling on the road and putting up 5 goals shows our tactical maturity, physical endurance, and depth across the bench."',
-      pressStatus: 'FINAL • PEDDIE 5-2 GEORGE (W)'
+      date: 'Sept 12, 2026',
+      scorePeddie: 6,
+      scoreOpponent: 4,
+      xgPeddie: 4.25,
+      xgOpponent: 3.10,
+      possession: 54,
+      badge: 'HIGH-SCORING ROAD TRIUMPH',
+      headline: 'Peddie Falcons 6 – 4 George School',
+      summary: 'Epic 10-goal thriller on the road featuring braces from Tommy Kim and Jeffrey Zhang, Bennett Cucchiara\'s laser, and Carson Wiley\'s towering header.',
+      events: MATCH_EVENTS_VEO_GEORGE,
+      coachQuote: '"We showed tremendous offensive firepower. Scoring 6 goals away from home proved our attacking depth." — Coach George Nazario',
+      pressStatus: 'FINAL • PEDDIE 6-4 GEORGE (W)'
     },
     'm-1': {
       name: 'Aquinas (3-2 W)',
       opponent: 'ST. THOMAS AQUINAS',
-      date: 'Sept 4, 2026',
+      date: 'Sept 5, 2026',
       scorePeddie: 3,
       scoreOpponent: 2,
       xgPeddie: 2.84,
       xgOpponent: 1.65,
-      possession: 57,
+      possession: 55,
       badge: '2026–2027 HOME OPENER VICTORY',
       headline: 'Peddie Falcons 3 – 2 St. Thomas Aquinas',
-      summary: 'Thrilling Home Opener triumph on the Peddie campus. Goals by Tommy Kim 34\', Christian Tharney 58\', and Carson Wiley 81\' (Winner).',
+      summary: 'Thrilling Home Opener triumph. Goals by Tommy Kim 34\', Captain Christian Tharney 58\', and Carson Wiley 81\' (Game-Winning Header).',
       events: MATCH_EVENTS_VEO_AQUINAS,
-      coachQuote: '"Our diamond structure clicked into place in the second half. Tharney\'s leadership and Wiley\'s towering set-piece winner set the tone against high-caliber opposition."',
+      coachQuote: '"Carson Wiley\'s 81st minute header gave us the lift we needed against a very tough Aquinas side." — Coach George Nazario',
       pressStatus: 'FINAL • PEDDIE 3-2 AQUINAS (W)'
     },
     'm-2': {
-      name: 'Trenton (2-3 L)',
-      opponent: 'TRENTON CENTRAL',
-      date: 'Sept 8, 2026',
-      scorePeddie: 2,
-      scoreOpponent: 3,
-      xgPeddie: 2.10,
-      xgOpponent: 2.45,
-      possession: 49,
-      badge: 'HIGH-INTENSITY ROAD TEST',
-      headline: 'Peddie Falcons 2 – 3 Trenton Central',
-      summary: 'High-tempo road clash with early 2-goal Peddie blitz and resilient battle in transition against an aggressive pressing opponent.',
-      events: MATCH_EVENTS_VEO_AQUINAS,
-      coachQuote: '"Tough physical test in Trenton. We started strong with two quick goals, but learned crucial lessons in game control and defensive shape under pressure."',
-      pressStatus: 'FINAL • TRENTON 3-2 PEDDIE (L)'
+      name: 'Trenton (4-1 W)',
+      opponent: 'TRENTON CATHOLIC ACADEMY',
+      date: 'Sept 9, 2026',
+      scorePeddie: 4,
+      scoreOpponent: 1,
+      xgPeddie: 3.35,
+      xgOpponent: 1.20,
+      possession: 61,
+      badge: 'NON-CONFERENCE HOME MASTERCLASS',
+      headline: 'Peddie Falcons 4 – 1 Trenton Catholic',
+      summary: 'Decisive home victory powered by Tommy Kim\'s brace, Jeffrey Zhang\'s curling strike, and Christian Tharney\'s towering header off a Cucchiara corner.',
+      events: MATCH_EVENTS_VEO_TRENTON,
+      coachQuote: '"Dominant response after the opener. Our midfield diamond controlled the tempo from start to finish." — Coach George Nazario',
+      pressStatus: 'FINAL • PEDDIE 4-1 TRENTON (W)'
     },
     'm-0': {
-      name: 'Haverford (0-5 L)',
+      name: 'Haverford (0-4 L)',
       opponent: 'THE HAVERFORD SCHOOL',
       date: 'Sept 1, 2026',
       scorePeddie: 0,
-      scoreOpponent: 5,
-      xgPeddie: 1.15,
-      xgOpponent: 3.48,
-      possession: 45,
+      scoreOpponent: 4,
+      xgPeddie: 1.02,
+      xgOpponent: 2.85,
+      possession: 46,
       badge: '2026–2027 SEASON OPENER (VEO AI)',
-      headline: 'Peddie Falcons vs. The Haverford School',
-      summary: 'Official Veo AI match breakdown, 4x20 min periods, expected goals ($xG$), passing channel dominance, and computerized sideline directives.',
+      headline: 'Peddie Falcons 0 – 4 The Haverford School',
+      summary: 'Official Veo AI match breakdown, 4x20 min periods, test against nationally ranked Inter-Ac powerhouse that launched our tactical progression.',
       events: MATCH_EVENTS_VEO_HAVERFORD,
-      coachQuote: '"Film breakdown from Haverford match. Directive: Maintain the 4-4-2 Diamond Midfield compactness anchored by our four captains. Build positive transition moments."',
+      coachQuote: '"Playing a national power like Haverford revealed what we needed to tighten defensively before embarking on our 3-game win streak." — Coach George Nazario',
       pressStatus: 'FINAL • 4x20-MIN PERIODS'
     }
   };

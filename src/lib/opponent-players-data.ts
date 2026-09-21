@@ -2300,6 +2300,19 @@ export const ALL_OPPONENT_PLAYER_REPORTS: OpponentPlayerReport[] = Object.values
   OPPONENT_PLAYER_SCOUTING_REPORTS
 ).flat();
 
-export function getOpponentPlayers(opponentKey: string): OpponentPlayerReport[] {
-  return OPPONENT_PLAYER_SCOUTING_REPORTS[opponentKey] || [];
+export function getOpponentPlayers(opponentKeyOrName: string): OpponentPlayerReport[] {
+  if (!opponentKeyOrName) return [];
+  if (OPPONENT_PLAYER_SCOUTING_REPORTS[opponentKeyOrName]) {
+    return OPPONENT_PLAYER_SCOUTING_REPORTS[opponentKeyOrName];
+  }
+  const clean = opponentKeyOrName.toLowerCase().trim();
+  // Match by key or teamName
+  for (const [k, players] of Object.entries(OPPONENT_PLAYER_SCOUTING_REPORTS)) {
+    if (k === clean) return players;
+    const team = (players[0]?.teamName || '').toLowerCase();
+    if (team.includes(clean) || clean.includes(k) || clean.includes(team.replace('the ', '').replace(' high school', '').replace(' school', ''))) {
+      return players;
+    }
+  }
+  return [];
 }

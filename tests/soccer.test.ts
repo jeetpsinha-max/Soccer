@@ -7,8 +7,15 @@ import {
   MATCH_EVENTS_VEO_HAVERFORD,
   XT_GRID_PITCH_MODEL,
   PPDA_SEASON_SERIES,
-  XG_TIMELINE_PDS
+  XG_TIMELINE_PDS,
+  ALL_VEO_MATCH_EVENTS,
+  PEDDIE_SEASON_TEAM_STATS_2026
 } from '../src/lib/soccer-data';
+import { 
+  OPPONENT_PLAYER_SCOUTING_REPORTS, 
+  ALL_OPPONENT_PLAYER_REPORTS, 
+  getOpponentPlayers 
+} from '../src/lib/opponent-players-data';
 import { SoccerCsvEngine } from '../src/lib/soccer-csv-engine';
 import { SoccerTacticalAgent } from '../src/lib/agents/soccer-agents';
 
@@ -550,6 +557,57 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
 
     const mohiuddin = PEDDIE_ROSTER_2026_2027.find(p => p.number === 14);
     expect(mohiuddin?.tacticalRole).toContain('Advanced Playmaker');
+  });
+
+  it('validates 17-opponent 5-player scouting coverage, fuzzy opponent lookup, and Veo film reels', () => {
+    // 1. All 17 scheduled opponents have exactly 5 scouted players
+    const opponentKeys = Object.keys(OPPONENT_PLAYER_SCOUTING_REPORTS);
+    expect(opponentKeys.length).toBe(17);
+    opponentKeys.forEach(key => {
+      const players = OPPONENT_PLAYER_SCOUTING_REPORTS[key];
+      expect(players.length).toBe(5);
+      players.forEach(p => {
+        expect(p.name).toBeDefined();
+        expect(p.tacticalRole).toBeDefined();
+        expect(p.dangerLevel).toBeDefined();
+        expect(p.currentSeasonNotes).toBeDefined();
+        expect(p.peddieMatchupCounter).toBeDefined();
+      });
+    });
+
+    // Total 85 scouted opponent player dossiers
+    expect(ALL_OPPONENT_PLAYER_REPORTS.length).toBe(85);
+
+    // 2. Fuzzy opponent player lookup
+    const lcaByKey = getOpponentPlayers('life-center');
+    expect(lcaByKey.length).toBe(5);
+    const lcaByName = getOpponentPlayers('Life Center Academy');
+    expect(lcaByName.length).toBe(5);
+    expect(lcaByName[0].teamName).toContain('Life Center');
+
+    // 3. Film events coverage
+    expect(ALL_VEO_MATCH_EVENTS['m-0'].length).toBeGreaterThan(5); // Haverford
+    expect(ALL_VEO_MATCH_EVENTS['m-1'].length).toBeGreaterThan(5); // Aquinas
+    expect(ALL_VEO_MATCH_EVENTS['m-2'].length).toBeGreaterThan(4); // Trenton
+    expect(ALL_VEO_MATCH_EVENTS['m-3'].length).toBeGreaterThan(5); // George
+    expect(ALL_VEO_MATCH_EVENTS['m-4'].length).toBeGreaterThan(5); // PDS
+    expect(ALL_VEO_MATCH_EVENTS['scout-lca'].length).toBe(5);     // Life Center Scout Reel
+
+    // 4. Team stats 2026
+    expect(PEDDIE_SEASON_TEAM_STATS_2026.matchesPlayed).toBe(5);
+    expect(PEDDIE_SEASON_TEAM_STATS_2026.wins).toBe(3);
+    expect(PEDDIE_SEASON_TEAM_STATS_2026.losses).toBe(2);
+    expect(PEDDIE_SEASON_TEAM_STATS_2026.goalsScored).toBe(17);
+    expect(PEDDIE_SEASON_TEAM_STATS_2026.goalsConceded).toBe(13);
+
+    // 5. User Jeet Sinha on varsity roster
+    const sinha = PEDDIE_ROSTER_2026_2027.find(p => p.number === 6);
+    expect(sinha).toBeDefined();
+    expect(sinha?.name).toBe('Jeet Sinha');
+    expect(sinha?.position).toBe('LM');
+    expect(sinha?.passCompletionPct).toBe(91.8);
+    expect(sinha?.goals).toBe(1);
+    expect(sinha?.assists).toBe(1);
   });
 });
 

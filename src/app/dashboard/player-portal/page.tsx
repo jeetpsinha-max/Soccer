@@ -1,11 +1,14 @@
 'use client';
 
+import Link from 'next/link';
+
 import React, { useState } from 'react';
 import { PEDDIE_ROSTER_2026_2027 } from '@/lib/soccer-data';
 import { OPPONENT_PLAYER_SCOUTING_REPORTS, ALL_OPPONENT_PLAYER_REPORTS } from '@/lib/opponent-players-data';
 import { Player, Position, OpponentPlayerReport } from '@/lib/types';
 import { 
-  Users, 
+  Users,
+  Swords, 
   Search, 
   Award, 
   Activity, 
@@ -30,7 +33,10 @@ export default function PlayerPortalPage() {
   const [selectedPlayer, setSelectedPlayer] = useState<Player>(PEDDIE_ROSTER_2026_2027[0]);
   const [filterPos, setFilterPos] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [activeTab, setActiveTab] = useState<'DOSSIER' | 'OPPONENT_SCOUTING' | 'GALLERY'>('DOSSIER');
+  const [activeTab, setActiveTab] = useState<'DOSSIER' | 'OPPONENT_SCOUTING' | 'MATCHUPS' | 'GALLERY'>('DOSSIER');
+  const [matchupPeddieId, setMatchupPeddieId] = useState<string>('p-sinha-6');
+  const [matchupOpponentTeam, setMatchupOpponentTeam] = useState<string>('life-center');
+  const [matchupOpponentId, setMatchupOpponentId] = useState<string>('lca-6');
   const [modalPhoto, setModalPhoto] = useState<string | null>(null);
 
   // Opponent player scouting explorer state
@@ -119,6 +125,17 @@ export default function PlayerPortalPage() {
             >
               <Crosshair className="w-3.5 h-3.5" />
               Opponent Player Reports ({ALL_OPPONENT_PLAYER_REPORTS.length})
+            </button>
+            <button
+              onClick={() => setActiveTab('MATCHUPS')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
+                activeTab === 'MATCHUPS'
+                  ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-black shadow-md shadow-emerald-500/20'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <Swords className="w-3.5 h-3.5" />
+              1v1 Matchup Simulator
             </button>
             <button
               onClick={() => setActiveTab('GALLERY')}
@@ -855,7 +872,401 @@ export default function PlayerPortalPage() {
         </div>
       )}
 
-      {/* TAB 3: FULL MEDIA DAY PHOTO GALLERY */}
+      
+      {/* TAB 3: 1V1 TACTICAL MATCHUP SIMULATOR */}
+      {activeTab === 'MATCHUPS' && (
+        <div className="flex flex-col gap-6">
+          {/* Next Fixture Spotlight Banner */}
+          <div className="p-5 rounded-2xl bg-gradient-to-r from-slate-950 via-slate-900 to-[#001f3f] border border-cyan-500/40 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 shadow">
+                <Target className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 text-[10px] font-black uppercase tracking-wider animate-pulse">
+                    🎯 IMMEDIATE UPCOMING FIXTURE
+                  </span>
+                  <span className="text-slate-400 text-xs">•</span>
+                  <span className="text-white font-bold text-xs">Tuesday, Sept 22, 2026 @ 4:15 PM</span>
+                  <span className="text-slate-400 text-xs">•</span>
+                  <span className="text-emerald-400 font-bold text-xs">Peddie Campus Home Turf</span>
+                </div>
+                <h2 className="text-xl font-black text-white mt-1">
+                  Peddie Falcons vs. Life Center Academy Warriors
+                </h2>
+                <p className="text-xs text-slate-300 mt-1 max-w-2xl leading-relaxed">
+                  Coach George Nazario Pre-Match Directive: <em className="text-amber-200">&ldquo;Life Center plays a rapid 4-2-3-1 counter-attacking system. Goalkeeper Mateo Sanchez launches 50-yard rollouts to their speedy right flank. Jeet Sinha must cut off the rollout transition within 2 seconds, while Tharney protects Zone 14 against Lucas DeOliveira&rsquo;s free-kick range.&rdquo;</em>
+                </p>
+              </div>
+            </div>
+
+            <Link
+              href="/dashboard/match-film?match=scout-lca"
+              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs flex items-center gap-2 shadow-lg shadow-amber-500/20 transition shrink-0"
+            >
+              <Video className="w-4 h-4" />
+              <span>Watch LCA Film Scout</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+            </Link>
+          </div>
+
+          {/* Quick-Select LCA Matchup Presets */}
+          <div className="glass-panel p-4 flex flex-col gap-2">
+            <div className="text-xs font-black uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <Zap className="w-3.5 h-3.5 text-amber-400" />
+              Featured Head-to-Head Key Duels vs. Life Center Academy:
+            </div>
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+              <button
+                onClick={() => {
+                  setMatchupPeddieId('p-sinha-6');
+                  setMatchupOpponentTeam('life-center');
+                  setMatchupOpponentId('lca-6');
+                }}
+                className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 shrink-0 border ${
+                  matchupPeddieId === 'p-sinha-6' && matchupOpponentId === 'lca-6'
+                    ? 'bg-amber-400 text-slate-950 font-black border-amber-400 shadow-md shadow-amber-500/20'
+                    : 'bg-slate-900 text-slate-300 hover:text-white border-slate-800'
+                }`}
+              >
+                <span>⚡ Jeet Sinha (#6) vs. Kofi Mensah (#6 CDM)</span>
+              </button>
+              <button
+                onClick={() => {
+                  setMatchupPeddieId('p-kim-t');
+                  setMatchupOpponentTeam('life-center');
+                  setMatchupOpponentId('lca-1');
+                }}
+                className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 shrink-0 border ${
+                  matchupPeddieId === 'p-kim-t' && matchupOpponentId === 'lca-1'
+                    ? 'bg-amber-400 text-slate-950 font-black border-amber-400 shadow-md shadow-amber-500/20'
+                    : 'bg-slate-900 text-slate-300 hover:text-white border-slate-800'
+                }`}
+              >
+                <span>⚡ Tommy Kim (#28) vs. Mateo Sanchez (#1 GK)</span>
+              </button>
+              <button
+                onClick={() => {
+                  setMatchupPeddieId('p-tharney');
+                  setMatchupOpponentTeam('life-center');
+                  setMatchupOpponentId('lca-10');
+                }}
+                className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 shrink-0 border ${
+                  matchupPeddieId === 'p-tharney' && matchupOpponentId === 'lca-10'
+                    ? 'bg-amber-400 text-slate-950 font-black border-amber-400 shadow-md shadow-amber-500/20'
+                    : 'bg-slate-900 text-slate-300 hover:text-white border-slate-800'
+                }`}
+              >
+                <span>⚡ Christian Tharney (#13) vs. Lucas DeOliveira (#10 CAM)</span>
+              </button>
+              <button
+                onClick={() => {
+                  setMatchupPeddieId('p-mckenzie');
+                  setMatchupOpponentTeam('life-center');
+                  setMatchupOpponentId('lca-9');
+                }}
+                className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 shrink-0 border ${
+                  matchupPeddieId === 'p-mckenzie' && matchupOpponentId === 'lca-9'
+                    ? 'bg-amber-400 text-slate-950 font-black border-amber-400 shadow-md shadow-amber-500/20'
+                    : 'bg-slate-900 text-slate-300 hover:text-white border-slate-800'
+                }`}
+              >
+                <span>⚡ Dylan McKenzie (#98) vs. Kofi Mensah (#9 ST)</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Interactive Matchup Duel Selector Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Peddie Athlete Selector */}
+            <div className="glass-panel p-4 flex flex-col gap-2 border border-cyan-500/30">
+              <label className="text-xs font-black uppercase text-cyan-400 flex items-center gap-1.5">
+                <Users className="w-3.5 h-3.5" /> Select Peddie Athlete:
+              </label>
+              <select
+                value={matchupPeddieId}
+                onChange={e => setMatchupPeddieId(e.target.value)}
+                className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-bold focus:outline-none focus:border-cyan-400 cursor-pointer"
+              >
+                {PEDDIE_ROSTER_2026_2027.map(p => (
+                  <option key={p.id} value={p.id} className="bg-slate-950 text-white">
+                    #{p.number} {p.name} ({p.position}) • {p.isCaptain ? 'Captain' : p.classYear}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Opponent Selector */}
+            <div className="glass-panel p-4 flex flex-col gap-2 border border-rose-500/30">
+              <div className="flex items-center justify-between gap-2">
+                <label className="text-xs font-black uppercase text-rose-400 flex items-center gap-1.5">
+                  <Crosshair className="w-3.5 h-3.5" /> Select Opponent Athlete:
+                </label>
+                <select
+                  value={matchupOpponentTeam}
+                  onChange={e => {
+                    const teamKey = e.target.value;
+                    setMatchupOpponentTeam(teamKey);
+                    const players = OPPONENT_PLAYER_SCOUTING_REPORTS[teamKey] || [];
+                    if (players.length > 0) setMatchupOpponentId(players[0].id);
+                  }}
+                  className="bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-[11px] text-amber-300 font-bold focus:outline-none cursor-pointer"
+                >
+                  {opponentTeamsList.map(t => (
+                    <option key={t.key} value={t.key} className="bg-slate-950 text-white">
+                      {t.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <select
+                value={matchupOpponentId}
+                onChange={e => setMatchupOpponentId(e.target.value)}
+                className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-bold focus:outline-none focus:border-rose-400 cursor-pointer"
+              >
+                {(OPPONENT_PLAYER_SCOUTING_REPORTS[matchupOpponentTeam] || []).map(p => (
+                  <option key={p.id} value={p.id} className="bg-slate-950 text-white">
+                    #{p.number} {p.name} ({p.position} • {p.line}) — {p.dangerLevel}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* Side-by-Side Athlete Duel Card */}
+          {(() => {
+            const pPeddie = PEDDIE_ROSTER_2026_2027.find(p => p.id === matchupPeddieId) || PEDDIE_ROSTER_2026_2027[0];
+            const pOpp = (OPPONENT_PLAYER_SCOUTING_REPORTS[matchupOpponentTeam] || []).find(p => p.id === matchupOpponentId) || (OPPONENT_PLAYER_SCOUTING_REPORTS[matchupOpponentTeam] || [])[0] || ALL_OPPONENT_PLAYER_REPORTS[0];
+
+            return (
+              <div className="glass-panel p-6 border-2 border-slate-800 rounded-2xl flex flex-col gap-6 bg-slate-950">
+                <div className="grid grid-cols-1 lg:grid-cols-11 gap-6 items-center">
+                  {/* Left: Peddie Player Card (5 Cols) */}
+                  <div className="lg:col-span-5 p-5 rounded-2xl bg-gradient-to-br from-slate-900 via-[#002147]/60 to-slate-950 border border-cyan-500/40 flex flex-col gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-20 h-20 rounded-2xl overflow-hidden bg-slate-950 border-2 border-cyan-400 shrink-0 shadow-lg relative">
+                        {pPeddie.photoUrl ? (
+                          <img src={pPeddie.photoUrl} alt={pPeddie.name} className="w-full h-full object-cover" />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center font-black text-cyan-400 text-2xl">
+                            #{pPeddie.number}
+                          </div>
+                        )}
+                        <span className="absolute bottom-1 right-1 bg-slate-950/90 text-cyan-300 font-mono font-black text-[10px] px-1 rounded border border-cyan-500/40">
+                          {pPeddie.position}
+                        </span>
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-mono font-black text-[10px]">
+                            PEDDIE FALCONS
+                          </span>
+                          {pPeddie.isCaptain && (
+                            <span className="px-2 py-0.5 rounded bg-amber-400 text-slate-950 font-black text-[9px] uppercase">
+                              Captain
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="text-lg font-black text-white mt-1 truncate">{pPeddie.name}</h3>
+                        <div className="text-xs text-cyan-400 font-medium line-clamp-1">{pPeddie.tacticalRole}</div>
+                        <div className="text-[11px] text-slate-400 font-mono mt-0.5">
+                          {pPeddie.classYear} • {pPeddie.height} • {pPeddie.weight}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Peddie Player Production Metrics */}
+                    <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800/80 text-center">
+                      <div className="p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+                        <div className="text-[9px] font-mono text-slate-400 uppercase">Season G/A</div>
+                        <div className="text-sm font-black font-mono text-emerald-400 mt-0.5">
+                          {pPeddie.goals}G / {pPeddie.assists}A
+                        </div>
+                      </div>
+                      <div className="p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+                        <div className="text-[9px] font-mono text-slate-400 uppercase">Pass Acc %</div>
+                        <div className="text-sm font-black font-mono text-cyan-400 mt-0.5">
+                          {pPeddie.passCompletionPct}%
+                        </div>
+                      </div>
+                      <div className="p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+                        <div className="text-[9px] font-mono text-slate-400 uppercase">Top Speed</div>
+                        <div className="text-sm font-black font-mono text-amber-400 mt-0.5">
+                          {pPeddie.topSpeedMph} mph
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Center: VS Duel Badge (1 Col) */}
+                  <div className="lg:col-span-1 flex flex-col items-center justify-center gap-1 py-2">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-rose-600 flex items-center justify-center font-black text-slate-950 text-sm shadow-xl shadow-amber-500/20">
+                      VS
+                    </div>
+                    <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider">
+                      1v1 DUEL
+                    </span>
+                  </div>
+
+                  {/* Right: Opponent Player Card (5 Cols) */}
+                  <div className="lg:col-span-5 p-5 rounded-2xl bg-gradient-to-br from-slate-900 via-rose-950/40 to-slate-950 border border-rose-500/40 flex flex-col gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-20 h-20 rounded-2xl bg-slate-950 border-2 border-rose-400 flex items-center justify-center shrink-0 shadow-lg text-rose-400 font-black text-2xl font-mono relative">
+                        #{pOpp?.number || 0}
+                        <span className="absolute bottom-1 right-1 bg-slate-900 text-rose-300 font-mono font-black text-[10px] px-1 rounded border border-rose-500/40">
+                          {pOpp?.position}
+                        </span>
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40 font-mono font-black text-[10px]">
+                            {pOpp?.teamName}
+                          </span>
+                          <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-mono font-black text-[10px] uppercase">
+                            {pOpp?.dangerLevel}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-black text-white mt-1 truncate">{pOpp?.name}</h3>
+                        <div className="text-xs text-rose-300 font-medium line-clamp-1">{pOpp?.tacticalRole}</div>
+                        <div className="text-[11px] text-slate-400 font-mono mt-0.5">
+                          {pOpp?.classYear} • {pOpp?.height} • {pOpp?.dominantFoot} Foot
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Opponent Player Production Metrics */}
+                    <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800/80 text-center">
+                      <div className="p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+                        <div className="text-[9px] font-mono text-slate-400 uppercase">Production</div>
+                        <div className="text-sm font-black font-mono text-rose-400 mt-0.5">
+                          {pOpp?.keyStats?.goals ?? 0}G / {pOpp?.keyStats?.assists ?? 0}A
+                        </div>
+                      </div>
+                      <div className="p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+                        <div className="text-[9px] font-mono text-slate-400 uppercase">Duels Won</div>
+                        <div className="text-sm font-black font-mono text-cyan-400 mt-0.5">
+                          {pOpp?.keyStats?.duelsWonPct ?? 50}%
+                        </div>
+                      </div>
+                      <div className="p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+                        <div className="text-[9px] font-mono text-slate-400 uppercase">Def / GK Stats</div>
+                        <div className="text-sm font-black font-mono text-amber-400 mt-0.5 truncate">
+                          {pOpp?.keyStats?.savesOrTackles || '1.8 tackles/gm'}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Head-to-Head Comparative Metric Bars */}
+                <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-3">
+                  <div className="text-xs font-black uppercase tracking-wider text-slate-400 flex items-center justify-between">
+                    <span>Statistical Comparison Matrix</span>
+                    <span className="text-[10px] font-mono text-amber-400">Higher Value Highlighted</span>
+                  </div>
+
+                  {/* Metric 1: Sprint Velocity / Pace */}
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-xs text-slate-300 font-mono font-bold">
+                      <span className="text-cyan-400">{pPeddie.topSpeedMph} mph</span>
+                      <span className="text-slate-400 font-sans text-[11px]">Sprint Velocity & Burst</span>
+                      <span className="text-rose-400">20.2 mph (Scout Est)</span>
+                    </div>
+                    <div className="w-full h-2 rounded-full bg-slate-950 flex overflow-hidden border border-slate-800">
+                      <div className="bg-cyan-400 h-full rounded-l-full" style={{ width: `${(pPeddie.topSpeedMph / (pPeddie.topSpeedMph + 20.2)) * 100}%` }} />
+                      <div className="bg-rose-500 h-full rounded-r-full" style={{ width: `${(20.2 / (pPeddie.topSpeedMph + 20.2)) * 100}%` }} />
+                    </div>
+                  </div>
+
+                  {/* Metric 2: Passing Accuracy */}
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-xs text-slate-300 font-mono font-bold">
+                      <span className="text-cyan-400">{pPeddie.passCompletionPct}%</span>
+                      <span className="text-slate-400 font-sans text-[11px]">Pass Completion Accuracy</span>
+                      <span className="text-rose-400">82.0% (Scout Est)</span>
+                    </div>
+                    <div className="w-full h-2 rounded-full bg-slate-950 flex overflow-hidden border border-slate-800">
+                      <div className="bg-cyan-400 h-full rounded-l-full" style={{ width: `${(pPeddie.passCompletionPct / (pPeddie.passCompletionPct + 82)) * 100}%` }} />
+                      <div className="bg-rose-500 h-full rounded-r-full" style={{ width: `${(82 / (pPeddie.passCompletionPct + 82)) * 100}%` }} />
+                    </div>
+                  </div>
+
+                  {/* Metric 3: Duels Won % */}
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-xs text-slate-300 font-mono font-bold">
+                      <span className="text-cyan-400">{pPeddie.tackleSuccessPct}%</span>
+                      <span className="text-slate-400 font-sans text-[11px]">Contested Tackle / Duel Success</span>
+                      <span className="text-rose-400">{pOpp?.keyStats?.duelsWonPct ?? 60}%</span>
+                    </div>
+                    <div className="w-full h-2 rounded-full bg-slate-950 flex overflow-hidden border border-slate-800">
+                      <div className="bg-cyan-400 h-full rounded-l-full" style={{ width: `${(pPeddie.tackleSuccessPct / (pPeddie.tackleSuccessPct + (pOpp?.keyStats?.duelsWonPct ?? 60))) * 100}%` }} />
+                      <div className="bg-rose-500 h-full rounded-r-full" style={{ width: `${((pOpp?.keyStats?.duelsWonPct ?? 60) / (pPeddie.tackleSuccessPct + (pOpp?.keyStats?.duelsWonPct ?? 60))) * 100}%` }} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Coach George Nazario Tactical Battle Plan Box */}
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-[#002147]/80 to-slate-950 border border-amber-500/40 space-y-3">
+                  <div className="flex items-center justify-between border-b border-slate-800 pb-2.5">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="w-5 h-5 text-amber-400" />
+                      <h4 className="text-sm font-black text-white">
+                        Coach George Nazario Individual Tactical Battle Plan
+                      </h4>
+                    </div>
+                    <span className="px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 font-mono text-[10px] font-bold">
+                      MATCHUP ASSIGNMENT
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    {/* Offensive Strategy */}
+                    <div className="p-3.5 rounded-xl bg-slate-900/90 border border-emerald-500/30 space-y-1">
+                      <div className="text-emerald-400 font-bold flex items-center gap-1 text-[11px] uppercase tracking-wider">
+                        <TrendingUp className="w-3.5 h-3.5" /> How {pPeddie.name} Attacks & Exploits {pOpp?.name}:
+                      </div>
+                      <p className="text-slate-300 leading-relaxed text-[11px]">
+                        Target {pOpp?.name}&rsquo;s primary vulnerability: &ldquo;{pOpp?.vulnerabilities?.[0] || 'Uncomfortable when pressed rapidly from blind side'}&rdquo;. Use rapid give-and-go circulation with {pPeddie.position === 'LM' ? 'Rayyaan Mohiuddin (#14)' : 'Jeet Sinha (#6)'} to pull {pOpp?.name} out of central position.
+                      </p>
+                    </div>
+
+                    {/* Defensive Neutralization Directives */}
+                    <div className="p-3.5 rounded-xl bg-slate-900/90 border border-rose-500/30 space-y-1">
+                      <div className="text-rose-400 font-bold flex items-center gap-1 text-[11px] uppercase tracking-wider">
+                        <ShieldAlert className="w-3.5 h-3.5" /> Neutralization Counter Directive:
+                      </div>
+                      <p className="text-slate-300 leading-relaxed text-[11px]">
+                        {pOpp?.peddieMatchupCounter || 'Maintain disciplined depth and contest first touch aggressively.'}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Film Link Action */}
+                  <div className="pt-2 flex items-center justify-between text-xs text-slate-400">
+                    <span className="text-[11px]">
+                      Scouted via Veo AI All-22 High-Def Camera System • 2026–2027 Season Telemetry
+                    </span>
+                    <Link
+                      href="/dashboard/match-film"
+                      className="text-amber-400 hover:text-white font-bold flex items-center gap-1 transition"
+                    >
+                      <Video className="w-3.5 h-3.5" />
+                      <span>Review Video In Film Room</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+      )}
+
+{/* TAB 3: FULL MEDIA DAY PHOTO GALLERY */}
       {activeTab === 'GALLERY' && (
         <div className="flex flex-col gap-4">
           <div className="glass-panel p-4 flex items-center justify-between">
