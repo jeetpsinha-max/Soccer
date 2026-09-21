@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { MATCH_EVENTS_LIVE_BLAIR } from '@/lib/soccer-data';
+import { MATCH_EVENTS_VEO_HAVERFORD } from '@/lib/soccer-data';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   const team = searchParams.get('team');
   const player = searchParams.get('player');
 
-  let events = MATCH_EVENTS_LIVE_BLAIR;
+  let events = MATCH_EVENTS_VEO_HAVERFORD;
 
   if (type) {
     events = events.filter(e => e.type.toLowerCase() === type.toLowerCase());

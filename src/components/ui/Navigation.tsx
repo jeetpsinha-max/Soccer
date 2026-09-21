@@ -12,6 +12,8 @@ import {
   Film, 
   Compass, 
   Layers,
+  BarChart3,
+  Calendar,
   ChevronDown
 } from 'lucide-react';
 
@@ -21,6 +23,8 @@ export const Navigation: React.FC = () => {
 
   const navItems = [
     { label: 'Match Center', href: '/', icon: Activity },
+    { label: 'Upcoming Schedule', href: '/dashboard/schedule', icon: Calendar },
+    { label: 'Data Analytics', href: '/dashboard/analytics', icon: BarChart3 },
     { label: 'Tactics & Pitch', href: '/dashboard/tactics', icon: Layers },
     { label: 'Sideline Call Sheet', href: '/dashboard/call-sheet', icon: ClipboardList },
     { label: 'Player Portal', href: '/dashboard/player-portal', icon: Users },
@@ -75,24 +79,22 @@ export const Navigation: React.FC = () => {
 
         {/* Telemetry Status & Season Selector */}
         <div className="flex items-center gap-3">
-          {isLiveMatch && (
+          {isLiveMatch ? (
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              <span>LIVE: 74&apos; vs Blair (2-1)</span>
+              <span>LIVE: vs {selectedMatch.opponent}</span>
+            </div>
+          ) : (
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Next Match: @ Trenton Catholic (Sept 8)</span>
             </div>
           )}
 
-          <div className="relative">
-            <select
-              value={season}
-              onChange={(e) => setSeason(e.target.value as any)}
-              className="bg-slate-900/90 text-amber-400 text-xs font-bold py-1.5 pl-3 pr-8 rounded-lg border border-amber-500/40 focus:outline-none focus:border-amber-400 cursor-pointer appearance-none"
-            >
-              <option value="2026-2027">Season 2026–2027 (Championship Quest)</option>
-              <option value="2025-2026">Season 2025–2026 (MAPL Contender)</option>
-              <option value="2024-2025">Season 2024–2025 (Baseline Archive)</option>
-            </select>
-            <ChevronDown className="w-3 h-3 text-amber-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          {/* Current Season Exclusive Badge */}
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-amber-500/40 text-xs font-bold text-amber-400 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span>2026–2027 Current Season</span>
           </div>
         </div>
       </div>

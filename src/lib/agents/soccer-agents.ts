@@ -15,7 +15,14 @@ export class SoccerTacticalAgent {
    * Generates a comprehensive scouting and tactical plan against an opponent.
    */
   static generateTacticalPlan(opponentName: string): TacticalAnalysisResult {
-    const report: ScoutingReport | undefined = MAPL_SCOUTING_REPORTS[opponentName] || MAPL_SCOUTING_REPORTS['Blair Academy'];
+    const report: ScoutingReport | undefined = MAPL_SCOUTING_REPORTS[opponentName] ||
+      Object.values(MAPL_SCOUTING_REPORTS).find(r => r.opponent.toLowerCase().includes(opponentName.toLowerCase())) ||
+      MAPL_SCOUTING_REPORTS['Blair Academy'] ||
+      Object.values(MAPL_SCOUTING_REPORTS)[0];
+
+    if (!report) {
+      throw new Error(`Scouting report not found for ${opponentName}`);
+    }
 
     return {
       headline: `Tactical Blueprint vs ${report.opponent}`,
@@ -35,7 +42,7 @@ export class SoccerTacticalAgent {
         {
           ourPlayer: '#28 Tommy Kim (CAM/ST)',
           opponentKey: 'Opponent Center Backs',
-          edge: 'Prep A 1st Team pace and agility. Tommy Kim top speed 34.2 km/h beats their backline by 0.3s over 20m.'
+          edge: 'Prep A 1st Team pace and agility. Tommy Kim top speed 21.3 mph beats their backline by 0.3s over 20 yards.'
         }
       ],
       substitutionsRoadmap: [

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { MatchEvent } from '@/lib/types';
-import { MATCH_EVENTS_LIVE_BLAIR } from '@/lib/soccer-data';
+import { MATCH_EVENTS_VEO_HAVERFORD } from '@/lib/soccer-data';
 import { Crosshair, Eye, ShieldAlert, Award } from 'lucide-react';
 
 interface PitchRadarOverlayProps {
@@ -12,7 +12,7 @@ interface PitchRadarOverlayProps {
 }
 
 export const PitchRadarOverlay: React.FC<PitchRadarOverlayProps> = ({
-  events = MATCH_EVENTS_LIVE_BLAIR,
+  events = MATCH_EVENTS_VEO_HAVERFORD,
   selectedEventType = 'ALL',
   showHalfSpaces = true
 }) => {

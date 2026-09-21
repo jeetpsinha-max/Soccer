@@ -16,15 +16,15 @@ interface BroadcastSoccerHudProps {
 }
 
 export const BroadcastSoccerHud: React.FC<BroadcastSoccerHudProps> = ({
-  minute = 74,
-  second = 12,
-  peddieScore = 2,
-  opponentScore = 1,
-  opponentName = 'BLAIR',
-  peddieXg = 1.84,
-  opponentXg = 0.92,
-  possessionPeddie = 58,
-  pressStatus = 'HIGH-PRESS TRAP ACTIVE'
+  minute = 80,
+  second = 0,
+  peddieScore = 0,
+  opponentScore = 5,
+  opponentName = 'HAVERFORD',
+  peddieXg = 1.15,
+  opponentXg = 3.48,
+  possessionPeddie = 45,
+  pressStatus = 'FINAL • 4x20-MIN PERIODS'
 }) => {
   return (
     <div className="w-full glass-panel p-4 flex flex-col md:flex-row items-center justify-between gap-4 border border-cyan-500/30">
@@ -34,7 +34,7 @@ export const BroadcastSoccerHud: React.FC<BroadcastSoccerHudProps> = ({
         <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700 text-cyan-400 font-mono text-sm font-bold shadow-inner">
           <Clock className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
           <span>{minute}:{second < 10 ? `0${second}` : second}</span>
-          <span className="text-[10px] text-amber-400 uppercase font-sans font-black ml-1">2ND HALF</span>
+          <span className="text-[10px] text-amber-400 uppercase font-sans font-black ml-1">FINAL</span>
         </div>
 
         {/* Score Board */}
@@ -55,7 +55,7 @@ export const BroadcastSoccerHud: React.FC<BroadcastSoccerHudProps> = ({
             <span className="text-2xl font-black text-slate-300 font-mono">{opponentScore}</span>
             <span className="font-extrabold text-slate-300 text-sm tracking-wide">{opponentName}</span>
             <div className="w-7 h-7 rounded-lg bg-slate-800 border border-slate-600 flex items-center justify-center font-bold text-slate-300 text-xs">
-              B
+              {opponentName.charAt(0)}
             </div>
           </div>
         </div>

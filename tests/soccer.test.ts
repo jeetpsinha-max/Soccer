@@ -1,5 +1,14 @@
 import { describe, it, expect } from 'vitest';
-import { PEDDIE_ROSTER_2026_2027, PEDDIE_SCHEDULE_2026_2027, FORMATIONS_CONFIG, MATCH_EVENTS_LIVE_BLAIR } from '../src/lib/soccer-data';
+import { 
+  PEDDIE_ROSTER_2026_2027, 
+  PEDDIE_SCHEDULE_2026_2027, 
+  OPPONENT_VEO_SCOUTING,
+  FORMATIONS_CONFIG, 
+  MATCH_EVENTS_VEO_HAVERFORD,
+  XT_GRID_PITCH_MODEL,
+  PPDA_SEASON_SERIES,
+  XG_TIMELINE_PDS
+} from '../src/lib/soccer-data';
 import { SoccerCsvEngine } from '../src/lib/soccer-csv-engine';
 import { SoccerTacticalAgent } from '../src/lib/agents/soccer-agents';
 
@@ -23,11 +32,11 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(tharney?.number).toBe(13);
     expect(tharney?.isCaptain).toBe(true);
 
-    // 3. Number 8 is Owen Bonchev (starting LCM in diamond); Massimo did not play in opener (DNP)
+    // 3. Number 8 is Owen Bonchev (starting CB with Carson Wiley); Massimo did not play in opener (DNP)
     const owen = PEDDIE_ROSTER_2026_2027.find(p => p.number === 8);
     expect(owen).toBeDefined();
     expect(owen?.name).toBe('Owen Bonchev');
-    expect(owen?.position).toBe('CM');
+    expect(owen?.position).toBe('CB');
 
     const massimo = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Massimo Sheinin');
     expect(massimo).toBeDefined();
@@ -55,42 +64,235 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const mahoney = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes('Mahoney'));
     expect(mahoney).toBeUndefined();
 
-    // 6. Verify fake names (Shavel, Patel, Murphy, Zhang, D'Alonzo, Chen, Zeller) are completely wiped
-    const fakeNames = ['Shavel', 'Patel', 'Murphy', 'Zhang', "D'Alonzo", 'Chen', 'Zeller'];
+    // 6. Verify fake names (Shavel, Patel, Murphy, D'Alonzo, Chen, Zeller) are completely wiped
+    const fakeNames = ['Shavel', 'Patel', 'Murphy', "D'Alonzo", 'Chen', 'Zeller'];
     fakeNames.forEach(name => {
       const found = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes(name));
       expect(found).toBeUndefined();
     });
 
-    // 7. Validate 4-4-2 Diamond Midfield system
+    // 7. Validate all user-confirmed players & jersey numbers
+    const dylanMcKenzie = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Dylan McKenzie');
+    expect(dylanMcKenzie).toBeDefined();
+    expect(dylanMcKenzie?.number).toBe(98);
+    expect(dylanMcKenzie?.position).toBe('GK');
+
+    const jefferyZhang = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Jeffery Zhang');
+    expect(jefferyZhang).toBeDefined();
+    expect(jefferyZhang?.number).toBe(20);
+    expect(jefferyZhang?.classYear).toBe('Junior');
+    expect(jefferyZhang?.position).toBe('ST');
+    expect(jefferyZhang?.secondaryPosition).toBe('GK'); // Jeffrey is backup GK to Dylan
+
+    const gabrielLam = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Gabriel Lam');
+    expect(gabrielLam).toBeDefined();
+    expect(gabrielLam?.number).toBe(5);
+    expect(gabrielLam?.position).toBe('RB');
+
+    const jeetSinha = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Jeet Sinha');
+    expect(jeetSinha).toBeDefined();
+    expect(jeetSinha?.number).toBe(6);
+    expect(jeetSinha?.classYear).toBe('Junior');
+    expect(jeetSinha?.position).toBe('LM');
+    expect(jeetSinha?.photoUrl).toBe('/media-day-headshots/IMG_000761.jpg');
+    expect(jeetSinha?.actionPhotoUrl).toBe('/media-day-previews/IMG_000769.jpg');
+
+    const brodyRozo = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Brody Rozo');
+    expect(brodyRozo).toBeDefined();
+    expect(brodyRozo?.number).toBe(18);
+    expect(brodyRozo?.classYear).toBe('Sophomore');
+    expect(brodyRozo?.position).toBe('CM');
+    expect(brodyRozo?.photoUrl).toBe('/media-day-headshots/IMG_0001109.jpg');
+    expect(brodyRozo?.actionPhotoUrl).toBe('/media-day-previews/IMG_0001065.jpg');
+
+    const blakeRomanelli = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Blake Romanelli');
+    expect(blakeRomanelli).toBeDefined();
+    expect(blakeRomanelli?.number).toBe(26);
+    expect(blakeRomanelli?.classYear).toBe('Sophomore');
+    expect(blakeRomanelli?.position).toBe('RB');
+    expect(blakeRomanelli?.secondaryPosition).toBe('RM');
+
+    const harryXiao = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Harry Xiao');
+    expect(harryXiao).toBeDefined();
+    expect(harryXiao?.number).toBe(25);
+    expect(harryXiao?.classYear).toBe('Junior');
+
+    const bennettCuchera = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Bennett Cuchera');
+    expect(bennettCuchera).toBeDefined();
+    expect(bennettCuchera?.number).toBe(7);
+    expect(bennettCuchera?.classYear).toBe('Freshman');
+    expect(bennettCuchera?.photoUrl).toBe('/media-day-headshots/IMG_0001197.jpg');
+    expect(bennettCuchera?.photoUrl2).toBe('/media-day-previews/IMG_0001227.jpg');
+    expect(bennettCuchera?.actionPhotoUrl).toBe('/media-day-previews/IMG_0001227.jpg');
+
+    const wyattRaya = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Wyatt Raya');
+    expect(wyattRaya).toBeDefined();
+    expect(wyattRaya?.number).toBe(2);
+    expect(wyattRaya?.classYear).toBe('Sophomore');
+    expect(wyattRaya?.position).toBe('CM');
+
+    const zachHorsch = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Zach Horsch');
+    expect(zachHorsch).toBeDefined();
+    expect(zachHorsch?.number).toBe(15);
+    expect(zachHorsch?.classYear).toBe('Freshman');
+
+    const mango = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Mango');
+    expect(mango).toBeDefined();
+    expect(mango?.number).toBe(17);
+    expect(mango?.classYear).toBe('Sophomore');
+
+    const emersonGimbel = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Emerson Gimbel');
+    expect(emersonGimbel).toBeDefined();
+    expect(emersonGimbel?.number).toBe(19);
+
+    const carsonWiley = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Carson Wiley');
+    expect(carsonWiley).toBeDefined();
+    expect(carsonWiley?.number).toBe(22);
+    expect(carsonWiley?.classYear).toBe('Junior');
+
+    // Confirm players not on the team are completely purged:
+    const maxPersons = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Max Persons');
+    expect(maxPersons).toBeUndefined();
+
+    const umarMubaraki = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Umar Mubaraki');
+    expect(umarMubaraki).toBeUndefined();
+
+    const mattKleinhandler = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Matt Kleinhandler');
+    expect(mattKleinhandler).toBeUndefined();
+
+    // Exactly 20 players (11 starters + 9 bench)
+    expect(PEDDIE_ROSTER_2026_2027.length).toBe(20);
+
+    // 8. Validate 4-4-2 Diamond Midfield system
     const diamond = FORMATIONS_CONFIG['4-4-2'];
     expect(diamond.name).toContain('4-4-2 Diamond Midfield');
     const diamondNodes = diamond.nodes;
     expect(diamondNodes.length).toBe(11);
+    
+    // Backline
     const lbNoah = diamondNodes.find(n => n.playerNumber === 12);
     expect(lbNoah?.playerName).toBe('Eldessouky (C)');
-    const rbNode = diamondNodes.find(n => n.position === 'RB');
-    expect(rbNode?.role).toBe('Right Fullback');
-    const cbTharney = diamondNodes.find(n => n.playerNumber === 13);
-    expect(cbTharney?.playerName).toBe('Tharney (C)');
-    const cbQuinn = diamondNodes.find(n => n.playerNumber === 10);
-    expect(cbQuinn?.playerName).toBe('Wachtveitl');
-    const lcm = diamondNodes.find(n => n.playerNumber === 8);
-    expect(lcm?.playerName).toBe('Bonchev');
+    const cbBonchev = diamondNodes.find(n => n.playerNumber === 8);
+    expect(cbBonchev?.playerName).toBe('Bonchev');
+    expect(cbBonchev?.position).toBe('CB');
+    const cbWiley = diamondNodes.find(n => n.playerNumber === 22);
+    expect(cbWiley?.playerName).toBe('Wiley');
+    expect(cbWiley?.position).toBe('CB');
+    const rbLam = diamondNodes.find(n => n.playerNumber === 5);
+    expect(rbLam?.playerName).toBe('Lam');
+    expect(rbLam?.role).toBe('Starting Right Fullback');
+
+    // Diamond Midfield
     const cdm = diamondNodes.find(n => n.position === 'CDM');
+    expect(cdm?.playerNumber).toBe(13);
+    expect(cdm?.playerName).toContain('Tharney');
     expect(cdm?.role).toContain('Diamond Base');
+    
+    const lm = diamondNodes.find(n => n.position === 'LM');
+    expect(lm?.playerNumber).toBe(10);
+    expect(lm?.playerName).toBe('Wachtveitl');
+    
+    const rm = diamondNodes.find(n => n.position === 'RM');
+    expect(rm?.playerNumber).toBe(7);
+    expect(rm?.playerName).toBe('Cuchera');
+
     const cam = diamondNodes.find(n => n.position === 'CAM');
     expect(cam?.role).toContain('Diamond Tip');
-    expect(cam?.playerName).toContain('Kim');
-    expect(cam?.playerNumber).toBe(28);
+    expect(cam?.playerNumber).toBe(14);
+    expect(cam?.playerName).toContain('Mohiuddin');
+
+    // Twin Strikers
+    const stKim = diamondNodes.find(n => n.playerNumber === 28);
+    expect(stKim?.playerName).toContain('Kim');
+    expect(stKim?.position).toBe('ST');
+
+    const stZhang = diamondNodes.find(n => n.playerNumber === 20);
+    expect(stZhang?.playerName).toBe('Zhang');
+    expect(stZhang?.position).toBe('ST');
   });
 
-  it('validates MAPL Conference schedule and Peddie-Blair Day fixture', () => {
-    expect(PEDDIE_SCHEDULE_2026_2027.length).toBeGreaterThanOrEqual(6);
+  it('validates complete 17-match official schedule and Veo scouting coverage for all opponents', () => {
+    // 1. Exactly 17 official fixtures from MaxPreps and Peddie Athletics
+    expect(PEDDIE_SCHEDULE_2026_2027.length).toBe(17);
+
+    // 2. Exactly 9 home matches and 8 away matches (total 17)
+    const homeMatches = PEDDIE_SCHEDULE_2026_2027.filter(m => m.isHome);
+    const awayMatches = PEDDIE_SCHEDULE_2026_2027.filter(m => !m.isHome);
+    expect(homeMatches.length).toBe(9);
+    expect(awayMatches.length).toBe(8);
+
+    // 3. Exactly 5 MAPL Conference rivals
+    const maplMatches = PEDDIE_SCHEDULE_2026_2027.filter(m => m.isConference);
+    expect(maplMatches.length).toBe(5);
+
+    // 4. Completed matches through mid-Sept 2026: Haverford (0-5), Aquinas (3-2), Trenton (2-3), George (5-2), PDS (7-1)
+    const completedMatches = PEDDIE_SCHEDULE_2026_2027.filter(m => m.status === 'Completed');
+    expect(completedMatches.length).toBe(5);
+
+    const upcomingMatches = PEDDIE_SCHEDULE_2026_2027.filter(m => m.status === 'Upcoming');
+    expect(upcomingMatches.length).toBe(12);
+
+    const opener = PEDDIE_SCHEDULE_2026_2027.find(m => m.id === 'm-0');
+    expect(opener?.opponent).toBe('The Haverford School');
+    expect(opener?.status).toBe('Completed');
+    expect(opener?.peddieScore).toBe(0);
+    expect(opener?.opponentScore).toBe(5);
+
+    const aquinasFixture = PEDDIE_SCHEDULE_2026_2027.find(m => m.id === 'm-1');
+    expect(aquinasFixture?.opponent).toBe('St. Thomas Aquinas High School');
+    expect(aquinasFixture?.status).toBe('Completed');
+    expect(aquinasFixture?.peddieScore).toBe(3);
+    expect(aquinasFixture?.opponentScore).toBe(2);
+    expect(aquinasFixture?.keySummary).toContain('Tommy Kim');
+    expect(aquinasFixture?.keySummary).toContain('Christian Tharney');
+    expect(aquinasFixture?.keySummary).toContain('Carson');
+
+    // Verify scorers have Aquinas game logged and goals strictly reflect 2026-2027 season
+    const tommy = PEDDIE_ROSTER_2026_2027.find(p => p.number === 28);
+    expect(tommy?.goals).toBe(1);
+    expect(tommy?.topSpeedMph).toBe(21.3);
+    expect(tommy?.assignmentHistory.some(a => a.opponent === 'Aquinas')).toBe(true);
+
+    const tharney = PEDDIE_ROSTER_2026_2027.find(p => p.number === 13);
+    expect(tharney?.goals).toBe(1);
+    expect(tharney?.topSpeedMph).toBe(20.4);
+    expect(tharney?.assignmentHistory.some(a => a.opponent === 'Aquinas')).toBe(true);
+
+    const carson = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes('Carson'));
+    expect(carson?.goals).toBe(1);
+    expect(carson?.assignmentHistory.some(a => a.opponent === 'Aquinas')).toBe(true);
+
     const blairFixture = PEDDIE_SCHEDULE_2026_2027.find(m => m.opponent.includes('Blair'));
     expect(blairFixture).toBeDefined();
     expect(blairFixture?.rivalryName).toContain('Peddie-Blair Day');
-    expect(blairFixture?.status).toBe('Live');
+    expect(blairFixture?.status).toBe('Upcoming');
+    expect(blairFixture?.peddieScore).toBeUndefined();
+
+    // 5. Verify every scheduled match with scoutingReportId maps to a comprehensive Veo scouting dossier
+    PEDDIE_SCHEDULE_2026_2027.forEach(fixture => {
+      expect(fixture.matchDate).toBeTruthy();
+      expect(fixture.gameTime).toBeTruthy();
+      expect(fixture.location).toBeTruthy();
+      expect(fixture.scoutingReportId).toBeTruthy();
+
+      const scoutKey = fixture.scoutingReportId!;
+      const dossier = OPPONENT_VEO_SCOUTING[scoutKey];
+      expect(dossier).toBeDefined();
+      expect(dossier.opponent).toBeTruthy();
+      expect(dossier.logoText).toBeTruthy();
+      expect(dossier.winProbabilityPct).toBeGreaterThan(0);
+      expect(dossier.veoClips.length).toBeGreaterThanOrEqual(2);
+      expect(dossier.keyPlaymakers.length).toBeGreaterThanOrEqual(1);
+      expect(dossier.tacticalBreakdown.inPossession).toBeTruthy();
+      expect(dossier.tacticalBreakdown.outOfPossession).toBeTruthy();
+      expect(dossier.tacticalBreakdown.transitionFlaws).toBeTruthy();
+      expect(dossier.peddieCounterDirectives.coachNazarioDirective).toBeTruthy();
+      expect(dossier.peddieCounterDirectives.diamondKeyAssignment).toBeTruthy();
+    });
+
+    // 6. Verify total Veo scouting database covers all 17 distinct teams
+    const uniqueScoutedKeys = Object.keys(OPPONENT_VEO_SCOUTING);
+    expect(uniqueScoutedKeys.length).toBe(17);
   });
 
   it('verifies all tactical formations have exactly 11 player nodes and valid coordinates', () => {
@@ -110,20 +312,20 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
   });
 
   it('tests SoccerCsvEngine serialization and deserialization roundtrip', () => {
-    const csv = SoccerCsvEngine.exportToCsv(MATCH_EVENTS_LIVE_BLAIR);
+    const csv = SoccerCsvEngine.exportToCsv(MATCH_EVENTS_VEO_HAVERFORD);
     expect(csv).toContain('EVENT_ID,MINUTE,SECOND');
     expect(csv).toContain('Tommy Kim');
-    expect(csv).toContain('Blake Romanelli');
+    expect(csv).toContain('Dylan McKenzie');
 
     const parsed = SoccerCsvEngine.parseCsv(csv);
-    expect(parsed.length).toBe(MATCH_EVENTS_LIVE_BLAIR.length);
-    expect(parsed[0].minute).toBe(MATCH_EVENTS_LIVE_BLAIR[0].minute);
-    expect(parsed[0].playerName).toBe(MATCH_EVENTS_LIVE_BLAIR[0].playerName);
+    expect(parsed.length).toBe(MATCH_EVENTS_VEO_HAVERFORD.length);
+    expect(parsed[0].minute).toBe(MATCH_EVENTS_VEO_HAVERFORD[0].minute);
+    expect(parsed[0].playerName).toBe(MATCH_EVENTS_VEO_HAVERFORD[0].playerName);
   });
 
   it('tests SoccerTacticalAgent NLP filter and opponent game planning', () => {
-    const goalEvents = SoccerTacticalAgent.filterEventsByNaturalLanguage('goal', MATCH_EVENTS_LIVE_BLAIR);
-    expect(goalEvents.length).toBeGreaterThanOrEqual(2);
+    const goalEvents = SoccerTacticalAgent.filterEventsByNaturalLanguage('goal', MATCH_EVENTS_VEO_HAVERFORD);
+    expect(goalEvents.length).toBe(5);
     expect(goalEvents.every(e => e.type === 'Goal')).toBe(true);
 
     const plan = SoccerTacticalAgent.generateTacticalPlan('Blair Academy');
@@ -167,4 +369,159 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const mckenzieEvents = SoccerTacticalAgent.filterEventsByNaturalLanguage('mckenzie', MATCH_EVENTS_VEO_HAVERFORD);
     expect(mckenzieEvents.length).toBeGreaterThan(0);
   });
+
+  it('validates Set-Piece Specialists (Tharney on Penalties, Left Corner, Free Kicks; Bennett Cuchera on Right Corner)', async () => {
+    const { SIDELINE_SET_PIECE_PLAYBOOK } = await import('../src/lib/soccer-data');
+    
+    expect(SIDELINE_SET_PIECE_PLAYBOOK.designatedTakers).toBeDefined();
+    
+    // Penalties -> Christian Tharney (#13)
+    expect(SIDELINE_SET_PIECE_PLAYBOOK.designatedTakers.penalties.primary).toContain('Christian Tharney');
+    expect(SIDELINE_SET_PIECE_PLAYBOOK.designatedTakers.penalties.primary).toContain('13');
+
+    // Left Corner -> Christian Tharney (#13)
+    expect(SIDELINE_SET_PIECE_PLAYBOOK.designatedTakers.leftCorner.primary).toContain('Christian Tharney');
+    expect(SIDELINE_SET_PIECE_PLAYBOOK.designatedTakers.leftCorner.primary).toContain('13');
+
+    // Right Corner -> Bennett Cuchera (#7, Freshman)
+    expect(SIDELINE_SET_PIECE_PLAYBOOK.designatedTakers.rightCorner.primary).toContain('Bennett Cuchera');
+    expect(SIDELINE_SET_PIECE_PLAYBOOK.designatedTakers.rightCorner.primary).toContain('7');
+
+    // Direct Free Kicks -> Christian Tharney (#13)
+    expect(SIDELINE_SET_PIECE_PLAYBOOK.designatedTakers.freeKicks.primary).toContain('Christian Tharney');
+    expect(SIDELINE_SET_PIECE_PLAYBOOK.designatedTakers.freeKicks.primary).toContain('13');
+  });
+
+  it('validates Advanced Data Analytics engine (xG flow, passing network, physical telemetry, GK metrics)', async () => {
+    const { 
+      XG_TIMELINE_HAVERFORD, 
+      DETAILED_SHOTS_LOG_HAVERFORD, 
+      PASSING_NETWORK_DIAMOND, 
+      SQUAD_PHYSICAL_TELEMETRY, 
+      GOALKEEPER_ADVANCED_METRICS 
+    } = await import('../src/lib/soccer-data');
+
+    // 1. xG Timelines (Season Opener vs Haverford)
+    expect(XG_TIMELINE_HAVERFORD.length).toBeGreaterThanOrEqual(8);
+    const finalHaverfordXg = XG_TIMELINE_HAVERFORD[XG_TIMELINE_HAVERFORD.length - 1].opponentXg;
+    expect(finalHaverfordXg).toBeGreaterThan(3.0); // 3.48 xG
+    const goalsInTimeline = XG_TIMELINE_HAVERFORD.filter(pt => pt.isGoal);
+    expect(goalsInTimeline.length).toBe(5); // 5 Haverford goals
+
+    // 2. Shot Quality Details (12 total shots logged for Season Opener)
+    expect(DETAILED_SHOTS_LOG_HAVERFORD.length).toBe(12);
+    const kimShot = DETAILED_SHOTS_LOG_HAVERFORD.find(s => s.playerNumber === 28);
+    expect(kimShot).toBeDefined();
+    expect(kimShot?.playerName).toBe('Tommy Kim');
+    const cucheraShot = DETAILED_SHOTS_LOG_HAVERFORD.find(s => s.playerNumber === 7);
+    expect(cucheraShot).toBeDefined();
+    expect(cucheraShot?.playerName).toBe('Bennett Cuchera');
+
+    // 3. Passing Network
+    expect(PASSING_NETWORK_DIAMOND.length).toBeGreaterThanOrEqual(12);
+    // Ensure captain Tharney (#13) and playmaker Mohiuddin (#14) are prominent nodes
+    const tharneyLinks = PASSING_NETWORK_DIAMOND.filter(l => l.fromNumber === 13 || l.toNumber === 13);
+    expect(tharneyLinks.length).toBeGreaterThanOrEqual(4);
+    const mohiuddinLinks = PASSING_NETWORK_DIAMOND.filter(l => l.fromNumber === 14 || l.toNumber === 14);
+    expect(mohiuddinLinks.length).toBeGreaterThanOrEqual(4);
+
+    // 4. Squad Physical Telemetry covers all 20 players
+    expect(SQUAD_PHYSICAL_TELEMETRY.length).toBe(20);
+    SQUAD_PHYSICAL_TELEMETRY.forEach(athlete => {
+      expect(athlete.totalDistanceMiles).toBeGreaterThan(3.0);
+      expect(athlete.topSpeedMph).toBeGreaterThan(16.0);
+      expect(athlete.aerobicWorkRatePct).toBeGreaterThanOrEqual(80);
+    });
+
+    // 5. Goalkeeper Advanced Metrics
+    expect(GOALKEEPER_ADVANCED_METRICS.length).toBe(2);
+    const dylanGk = GOALKEEPER_ADVANCED_METRICS.find(g => g.playerNumber === 98);
+    expect(dylanGk).toBeDefined();
+    expect(dylanGk?.isStarter).toBe(true);
+    expect(dylanGk?.goalsPrevented).toBeGreaterThan(0); // Positive PSxG
+    expect(dylanGk?.crossesClaimedPct).toBeGreaterThan(90);
+
+    const jeffreyGk = GOALKEEPER_ADVANCED_METRICS.find(g => g.playerNumber === 20);
+    expect(jeffreyGk).toBeDefined();
+    expect(jeffreyGk?.isStarter).toBe(false);
+
+    // 6. Test Midfielder filter includes LM and RM
+    const midPositions = ['CDM', 'CM', 'CAM', 'LM', 'RM'];
+    const quinn = PEDDIE_ROSTER_2026_2027.find(p => p.number === 10);
+    expect(quinn?.position).toBe('LM');
+    expect(midPositions.includes(quinn!.position)).toBe(true);
+
+    const jeet = PEDDIE_ROSTER_2026_2027.find(p => p.number === 6);
+    expect(jeet?.position).toBe('LM');
+    expect(midPositions.includes(jeet!.position)).toBe(true);
+
+    const bennett = PEDDIE_ROSTER_2026_2027.find(p => p.number === 7);
+    expect(bennett?.position).toBe('RM');
+    expect(midPositions.includes(bennett!.position)).toBe(true);
+
+    // 7. Verify media day photo coverage: 19 athletes have official media day photos; Massimo Sheinin (#16) has no media day photo
+    expect(PEDDIE_ROSTER_2026_2027.length).toBe(20);
+    const massimoAthlete = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Massimo Sheinin');
+    expect(massimoAthlete?.photoUrl).toBeUndefined();
+    expect(massimoAthlete?.photoUrl2).toBeUndefined();
+    expect(massimoAthlete?.actionPhotoUrl).toBeUndefined();
+
+    const playersWithPhotos = PEDDIE_ROSTER_2026_2027.filter(p => p.photoUrl);
+    expect(playersWithPhotos.length).toBe(19);
+    playersWithPhotos.forEach(player => {
+      expect(player.photoUrl).toMatch(/^\/media-day-headshots\/IMG_\d+\.jpg$/);
+      const photo2 = player.photoUrl2 || player.actionPhotoUrl;
+      expect(photo2).toMatch(/^\/media-day-previews\/IMG_\d+\.jpg$/);
+    });
+  });
+
+  it('validates 2026 campaign ground-truth matches, Veo/Hudl linkages, and Expected Threat (xT) models', () => {
+    // 1. Verify 5 completed matches in 2026 schedule
+    const completedMatches = PEDDIE_SCHEDULE_2026_2027.filter(m => m.status === 'Completed');
+    expect(completedMatches.length).toBe(5);
+
+    // Verify key scores
+    const aquinas = completedMatches.find(m => m.id === 'm-1');
+    expect(aquinas?.peddieScore).toBe(3);
+    expect(aquinas?.opponentScore).toBe(2);
+
+    const trenton = completedMatches.find(m => m.id === 'm-2');
+    expect(trenton?.peddieScore).toBe(2);
+    expect(trenton?.opponentScore).toBe(3);
+
+    const george = completedMatches.find(m => m.id === 'm-3');
+    expect(george?.peddieScore).toBe(5);
+    expect(george?.opponentScore).toBe(2);
+
+    const pds = completedMatches.find(m => m.id === 'm-4');
+    expect(pds?.peddieScore).toBe(7);
+    expect(pds?.opponentScore).toBe(1);
+
+    // 2. Verify Veo & Hudl platform links
+    completedMatches.forEach(m => {
+      if (m.hudlUrl) {
+        expect(m.hudlUrl).toContain('fan.hudl.com');
+        expect(m.hudlUrl).toContain('15965');
+      }
+      if (m.videoUrl) {
+        expect(m.videoUrl).toContain('app.veo.co');
+      }
+    });
+
+    // 3. Verify Expected Threat (xT) pitch model
+    expect(XT_GRID_PITCH_MODEL.peddieTotalXT).toBeGreaterThan(XT_GRID_PITCH_MODEL.opponentTotalXT);
+    expect(XT_GRID_PITCH_MODEL.halfSpaceAdvantagePct).toBeGreaterThan(20);
+    expect(XT_GRID_PITCH_MODEL.zones.length).toBeGreaterThanOrEqual(10);
+
+    // 4. Verify PPDA series (Peddie maintains high-press intensity under 10.0 PPDA in wins)
+    expect(PPDA_SEASON_SERIES.length).toBe(5);
+    const pdsPpda = PPDA_SEASON_SERIES.find(p => p.matchId === 'm-4');
+    expect(pdsPpda?.peddiePpda).toBeLessThan(8.0); // 6.9 PPDA dominant high trap
+
+    // 5. Verify PDS 7-1 xG Timeline
+    expect(XG_TIMELINE_PDS.length).toBeGreaterThanOrEqual(8);
+    const finalPdsXg = XG_TIMELINE_PDS[XG_TIMELINE_PDS.length - 1].peddieXg;
+    expect(finalPdsXg).toBeGreaterThan(4.0);
+  });
 });
+

@@ -6,6 +6,8 @@ export type Position =
   | 'CDM' 
   | 'CM' 
   | 'CAM' 
+  | 'LM'
+  | 'RM'
   | 'LW' 
   | 'RW' 
   | 'ST';
@@ -33,6 +35,9 @@ export interface Player {
   height: string;
   weight: string;
   hometown: string;
+  photoUrl?: string; // Media Day Picture 1 (Primary Headshot)
+  photoUrl2?: string; // Media Day Picture 2 (Secondary Portrait)
+  actionPhotoUrl?: string; // Backwards compatible alias for photoUrl2
   minutesPlayed: number;
   matchesPlayed: number;
   goals: number;
@@ -41,10 +46,25 @@ export interface Player {
   expectedAssists: number; // xA
   passCompletionPct: number;
   tackleSuccessPct: number;
-  topSpeedKmh: number;
-  distanceCoveredKm: number;
+  topSpeedMph: number;
+  topSpeedKmh?: number;
+  distanceCoveredMiles: number;
+  distanceCoveredKm?: number;
   assignmentHistory: PlayerAssignmentRecord[];
   recruitmentNotes: string;
+  currentSeasonReport?: CurrentSeasonReport;
+}
+
+export interface CurrentSeasonReport {
+  seasonRole: string; // e.g. "Starting Center Forward & Captain", "Key Central Midfield Anchor"
+  formRating: number; // e.g. 9.4 (out of 10)
+  match0Review: string; // Haverford match review
+  match1Review: string; // Aquinas match review (3-2 Win)
+  upcomingMatchAssignment: string; // Next match directive (Trenton Catholic)
+  technicalStrengths: string[];
+  developmentPriorities: string[];
+  coachNazarioEvaluation: string;
+  veoFilmInsight: string;
 }
 
 export type EventType = 
@@ -101,7 +121,7 @@ export interface FormationConfig {
   nodes: FormationNode[];
 }
 
-export type SeasonId = '2024-2025' | '2025-2026' | '2026-2027';
+export type SeasonId = '2026-2027';
 
 export interface MatchFixture {
   id: string;
@@ -116,13 +136,43 @@ export interface MatchFixture {
   status: 'Completed' | 'Live' | 'Upcoming';
   peddieScore?: number;
   opponentScore?: number;
-  expectedGoalsPeddie: number;
-  expectedGoalsOpponent: number;
-  possessionPctPeddie: number;
-  fieldTiltPctPeddie: number;
+  gameTime?: string;
+  location?: string;
+  expectedGoalsPeddie?: number;
+  expectedGoalsOpponent?: number;
+  possessionPctPeddie?: number;
+  fieldTiltPctPeddie?: number;
+  ppdaPeddie?: number; // Passes Per Defensive Action (pressing intensity)
+  ppdaOpponent?: number;
+  xTPeddie?: number; // Expected Threat created
+  xTOpponent?: number;
   keySummary: string;
   videoUrl?: string; // Veo match link
+  hudlUrl?: string; // Official Hudl team/match video link
+  filmProvider?: 'veo' | 'hudl' | 'both' | 'pending';
   thumbnailUrl?: string;
+  scoutingReportId?: string;
+}
+
+export interface XTCell {
+  zoneId: string;
+  zoneName: string;
+  col: number; // 0 to 11 (pitch length divided into 12 zones)
+  row: number; // 0 to 7 (pitch width divided into 8 channels)
+  xMeters: number;
+  yMeters: number;
+  threatValue: number; // Expected Threat baseline value (0.001 - 0.28)
+  peddieThreatCreated: number;
+  opponentThreatCreated: number;
+  dominantTeam: 'Peddie' | 'Opponent' | 'Neutral';
+}
+
+export interface XTGridModel {
+  zones: XTCell[];
+  peddieTotalXT: number;
+  opponentTotalXT: number;
+  topDangerZone: string;
+  halfSpaceAdvantagePct: number;
 }
 
 export interface ScoutingReport {
@@ -140,3 +190,152 @@ export interface ScoutingReport {
   recommendedTactics: string[];
   winProbabilityPct: number;
 }
+
+// ============================================================================
+// Advanced Data Analytics Interfaces (xG Flow, Shot Quality, Passing Networks)
+// ============================================================================
+
+export interface XgTimelinePoint {
+  minute: number;
+  peddieXg: number;
+  opponentXg: number;
+  eventDescription?: string;
+  isGoal?: boolean;
+  scoringTeam?: 'Peddie' | 'Opponent';
+}
+
+export interface ShotDetail {
+  id: string;
+  minute: number;
+  second: number;
+  team: 'Peddie' | 'Opponent';
+  playerNumber: number;
+  playerName: string;
+  xMeters: number; // 0 to 105
+  yMeters: number; // 0 to 68
+  xg: number;
+  psxg?: number; // Post-Shot xG
+  shotType: 'Open Play' | 'Direct Free Kick' | 'Penalty' | 'Corner Header' | 'Volley';
+  bodyPart: 'Right Foot' | 'Left Foot' | 'Header';
+  outcome: 'Goal' | 'Saved' | 'Blocked' | 'Off Target' | 'Woodwork';
+  distanceYards: number;
+  angleDegrees: number;
+}
+
+export interface PassingLink {
+  fromNumber: number;
+  fromName: string;
+  toNumber: number;
+  toName: string;
+  completedPasses: number;
+  attemptedPasses: number;
+  progressiveYards: number;
+  keyPasses: number;
+}
+
+export interface PhysicalTelemetry {
+  playerId: string;
+  playerNumber: number;
+  playerName: string;
+  position: Position;
+  totalDistanceMiles: number;
+  totalDistanceKm?: number;
+  highIntensityMiles: number; // speed > 12.5 mph
+  highIntensityKm?: number;
+  sprintsCount: number; // speed > 15.5 mph
+  topSpeedMph: number;
+  topSpeedKmh?: number;
+  aerobicWorkRatePct: number;
+}
+
+export interface GoalkeeperAdvancedMetrics {
+  playerNumber: number;
+  playerName: string;
+  isStarter: boolean;
+  minutesPlayed: number;
+  shotsFaced: number;
+  saves: number;
+  goalsConceded: number;
+  cleanSheets: number;
+  expectedGoalsFaced: number;
+  goalsPrevented: number; // PSxG - GA
+  savePct: number;
+  crossesClaimedPct: number;
+  penaltySavePct: number;
+  avgDistributionLengthMeters: number;
+}
+
+export interface VeoFilmTimestamp {
+  minute: string; // e.g. "14:22"
+  title: string;
+  phase: 'Build-up' | 'High Press' | 'Defensive Transition' | 'Set Piece' | 'Vulnerability';
+  description: string;
+  clipUrl?: string;
+  thumbnailUrl?: string;
+}
+
+export interface VeoPlaymakerScout {
+  number: number;
+  name: string;
+  position: string;
+  traits: string;
+  dangerLevel: 'Elite' | 'Dangerous' | 'Key Threat';
+}
+
+export interface VeoTeamScout {
+  opponent: string;
+  shortName: string;
+  logoText: string;
+  conference: string;
+  headCoach: string;
+  primaryFormation: FormationId | string;
+  secondaryFormation?: string;
+  winProbabilityPct: number;
+  threatLevel: 'High' | 'Medium' | 'Critical';
+  veoMatchRecordId?: string;
+  veoThumbnailUrl?: string;
+  veoVideoUrl?: string;
+  scoutingOverview: string;
+  veoClips: VeoFilmTimestamp[];
+  keyPlaymakers: VeoPlaymakerScout[];
+  tacticalBreakdown: {
+    inPossession: string;
+    outOfPossession: string;
+    transitionFlaws: string;
+    setPieceTendencies: string;
+  };
+  peddieCounterDirectives: {
+    coachNazarioDirective: string;
+    diamondKeyAssignment: string;
+    recommendedFormation: FormationId;
+  };
+  scoutedPlayers?: OpponentPlayerReport[];
+}
+
+export interface OpponentPlayerReport {
+  id: string;
+  opponentKey: string;
+  teamName: string;
+  number: number;
+  name: string;
+  position: string;
+  line: 'GK' | 'DEF' | 'MID' | 'FWD';
+  classYear: string;
+  height?: string;
+  dominantFoot?: 'Right' | 'Left' | 'Both';
+  tacticalRole: string;
+  dangerLevel: 'Elite' | 'Dangerous' | 'Key Threat' | 'Tactical Pivot';
+  traits: string;
+  strengths: string[];
+  vulnerabilities: string[];
+  currentSeasonNotes: string; // Current 2026-2027 Veo film/match scouting notes
+  peddieMatchupCounter: string; // Assigned Peddie defender / tactical counter
+  keyStats?: {
+    goals?: number;
+    assists?: number;
+    duelsWonPct?: number;
+    savesOrTackles?: string;
+  };
+}
+
+

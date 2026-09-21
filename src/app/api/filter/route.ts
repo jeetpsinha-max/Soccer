@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { MATCH_EVENTS_LIVE_BLAIR } from '@/lib/soccer-data';
+import { MATCH_EVENTS_VEO_HAVERFORD } from '@/lib/soccer-data';
 import { SoccerTacticalAgent } from '@/lib/agents/soccer-agents';
 
 export async function POST(request: Request) {
@@ -7,7 +7,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const query = body.query || '';
 
-    const matchedEvents = SoccerTacticalAgent.filterEventsByNaturalLanguage(query, MATCH_EVENTS_LIVE_BLAIR);
+    const matchedEvents = SoccerTacticalAgent.filterEventsByNaturalLanguage(query, MATCH_EVENTS_VEO_HAVERFORD);
 
     return NextResponse.json({
       status: 'ok',

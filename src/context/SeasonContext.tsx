@@ -24,15 +24,12 @@ export const SeasonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   );
 
   useEffect(() => {
-    const saved = localStorage.getItem('peddie_soccer_season');
-    if (saved === '2024-2025' || saved === '2025-2026' || saved === '2026-2027') {
-      setSeasonState(saved as SeasonId);
-    }
+    localStorage.setItem('peddie_soccer_season', '2026-2027');
   }, []);
 
   const setSeason = (s: SeasonId) => {
-    setSeasonState(s);
-    localStorage.setItem('peddie_soccer_season', s);
+    setSeasonState('2026-2027');
+    localStorage.setItem('peddie_soccer_season', '2026-2027');
   };
 
   return (
