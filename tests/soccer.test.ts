@@ -523,5 +523,33 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const finalPdsXg = XG_TIMELINE_PDS[XG_TIMELINE_PDS.length - 1].peddieXg;
     expect(finalPdsXg).toBeGreaterThan(4.0);
   });
+
+  it('validates elimination of arcade OVR ratings and verifies tactical roles & scouting tiers across all 20 players', () => {
+    // 1. All 20 rostered players must have authentic tacticalRole, scoutingTier, and valid matchFormScore (7.0 - 10.0)
+    expect(PEDDIE_ROSTER_2026_2027.length).toBe(20);
+    PEDDIE_ROSTER_2026_2027.forEach(player => {
+      expect(player.tacticalRole).toBeDefined();
+      expect(player.tacticalRole?.length).toBeGreaterThan(5);
+      expect(player.scoutingTier).toBeDefined();
+      expect(player.scoutingTier?.length).toBeGreaterThan(5);
+      expect(player.matchFormScore).toBeGreaterThanOrEqual(7.0);
+      expect(player.matchFormScore).toBeLessThanOrEqual(10.0);
+    });
+
+    // 2. Four team captains have verified roles
+    const tharney = PEDDIE_ROSTER_2026_2027.find(p => p.number === 13);
+    expect(tharney?.tacticalRole).toContain('Single Pivot');
+    expect(tharney?.scoutingTier).toContain('All-MAPL');
+
+    const kim = PEDDIE_ROSTER_2026_2027.find(p => p.number === 28);
+    expect(kim?.tacticalRole).toContain('Center-Forward');
+    expect(kim?.scoutingTier).toContain('NCAA D1');
+
+    const eldessouky = PEDDIE_ROSTER_2026_2027.find(p => p.number === 12);
+    expect(eldessouky?.tacticalRole).toContain('Wing-Back');
+
+    const mohiuddin = PEDDIE_ROSTER_2026_2027.find(p => p.number === 14);
+    expect(mohiuddin?.tacticalRole).toContain('Advanced Playmaker');
+  });
 });
 

@@ -40,6 +40,9 @@ export {
 export const PEDDIE_ROSTER_2026_2027: Player[] = [
   {
     id: 'p-kim-t',
+    tacticalRole: 'Clinical Center-Forward & Transition Spearhead',
+    scoutingTier: 'NCAA D1 Collegiate Prospect',
+    matchFormScore: 9.3,
     number: 28,
     name: 'Tommy Kim',
     classYear: 'Senior',
@@ -73,6 +76,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-tharney',
+    tacticalRole: 'Single Pivot Regista & Set-Piece Commander',
+    scoutingTier: 'All-MAPL First Team Anchor',
+    matchFormScore: 9.2,
     number: 13,
     name: 'Christian Tharney',
     classYear: 'Senior',
@@ -106,6 +112,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-eldessouky',
+    tacticalRole: 'Attacking Inverted Wing-Back & Engine',
+    scoutingTier: 'All-MAPL First Team Caliber',
+    matchFormScore: 9,
     number: 12,
     name: 'Noah Eldessouky',
     classYear: 'Senior',
@@ -138,6 +147,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-mohiuddin',
+    tacticalRole: 'Central Advanced Playmaker (Tip of Diamond)',
+    scoutingTier: 'All-MAPL Playmaking Cornerstone',
+    matchFormScore: 9.1,
     number: 14,
     name: 'Rayyaan Mohiuddin',
     classYear: 'Junior',
@@ -171,6 +183,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-wachtveitl',
+    tacticalRole: 'Dynamic Left Shuttle Midfielder & Creator',
+    scoutingTier: 'Varsity Key Starter',
+    matchFormScore: 9,
     number: 10,
     name: 'Quinn Wachtveitl',
     classYear: 'Senior',
@@ -203,6 +218,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-lam-5',
+    tacticalRole: 'Tactical Lockdown Full-Back & Ball Circulator',
+    scoutingTier: 'Varsity Key Starter',
+    matchFormScore: 8.8,
     number: 5,
     name: 'Gabriel Lam',
     classYear: 'Senior',
@@ -235,6 +253,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-sinha-6',
+    tacticalRole: 'Inverted Left Midfield Progressor & Combiner',
+    scoutingTier: 'Varsity Key Starter',
+    matchFormScore: 8.9,
     number: 6,
     name: 'Jeet Sinha',
     classYear: 'Junior',
@@ -268,6 +289,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-bonchev',
+    tacticalRole: 'Ball-Playing Central Defender & Line Anchor',
+    scoutingTier: 'Varsity Defensive Cornerstone',
+    matchFormScore: 8.8,
     number: 8,
     name: 'Owen Bonchev',
     classYear: 'Sophomore',
@@ -300,6 +324,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-rozo-18',
+    tacticalRole: 'Box-to-Box Midfield Engine & Aerial Finisher',
+    scoutingTier: 'Varsity Rotation Anchor',
+    matchFormScore: 8.7,
     number: 18,
     name: 'Brody Rozo',
     classYear: 'Sophomore',
@@ -333,6 +360,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-romanelli-26',
+    tacticalRole: 'Blistering Sprinting Full-Back (21.8 mph Peak)',
+    scoutingTier: 'All-Prep Athletic Phenom',
+    matchFormScore: 9.1,
     number: 26,
     name: 'Blake Romanelli',
     classYear: 'Sophomore',
@@ -365,6 +395,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-mckenzie',
+    tacticalRole: 'Sweeper Keeper & Backline Field Marshal',
+    scoutingTier: 'First XI Starting Goalkeeper',
+    matchFormScore: 8.9,
     number: 98,
     name: 'Dylan McKenzie',
     classYear: 'Junior',
@@ -396,6 +429,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-raya-2',
+    tacticalRole: 'Possession Link Midfielder & Tempo Controller',
+    scoutingTier: 'Varsity Midfield Rotation',
+    matchFormScore: 8.5,
     number: 2,
     name: 'Wyatt Raya',
     classYear: 'Sophomore',
@@ -428,6 +464,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-horsch-15',
+    tacticalRole: 'Agile Midfield Disruptor & Rapid Transitioner',
+    scoutingTier: 'Freshman Varsity Prospect',
+    matchFormScore: 8.3,
     number: 15,
     name: 'Zach Horsch',
     classYear: 'Freshman',
@@ -459,6 +498,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-mango-17',
+    tacticalRole: 'Physical Backline Enforcer & Utility Defender',
+    scoutingTier: 'Varsity Defensive Cover',
+    matchFormScore: 8.4,
     number: 17,
     name: 'Mango',
     classYear: 'Sophomore',
@@ -490,6 +532,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-gimbel-19',
+    tacticalRole: 'Direct Attacking Winger & Flank Isolator',
+    scoutingTier: 'Varsity Attacking Reserve',
+    matchFormScore: 8.4,
     number: 19,
     name: 'Emerson Gimbel',
     classYear: 'Sophomore',
@@ -521,6 +566,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-zhang-20',
+    tacticalRole: 'Channel-Carving Striker & Emergency Goalkeeper',
+    scoutingTier: 'Varsity Key Starter',
+    matchFormScore: 8.7,
     number: 20,
     name: 'Jeffery Zhang',
     classYear: 'Junior',
@@ -553,6 +601,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-wiley-22',
+    tacticalRole: 'Aerial Target Center-Back & Set-Piece Finisher',
+    scoutingTier: 'Varsity Defensive Cornerstone',
+    matchFormScore: 8.9,
     number: 22,
     name: 'Carson Wiley',
     classYear: 'Junior',
@@ -585,6 +636,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-xiao-25',
+    tacticalRole: 'High-Pace Attacking Winger (21.3 mph) & Presser',
+    scoutingTier: 'Varsity Impact Sub',
+    matchFormScore: 8.7,
     number: 25,
     name: 'Harry Xiao',
     classYear: 'Junior',
@@ -617,6 +671,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-cuchera',
+    tacticalRole: 'Right Corner Specialist & High-Motor Creator',
+    scoutingTier: 'Freshman First XI Starter',
+    matchFormScore: 8.8,
     number: 7,
     name: 'Bennett Cuchera',
     classYear: 'Freshman',
@@ -650,6 +707,9 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-sheinin',
+    tacticalRole: 'Experienced Midfield Conductor & Technical Ball Distributer',
+    scoutingTier: 'Senior Leadership Core',
+    matchFormScore: 8.6,
     number: 16,
     name: 'Massimo Sheinin',
     classYear: 'Senior',

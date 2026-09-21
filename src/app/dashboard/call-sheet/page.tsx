@@ -25,7 +25,8 @@ import {
 } from 'lucide-react';
 
 export default function SidelineCallSheetPage() {
-  const [selectedMatchId, setSelectedMatchId] = useState<string>('m-2'); // Defaults to active next upcoming match: Trenton Catholic (Sept 8, 2026)
+  const nextUpcoming = PEDDIE_SCHEDULE_2026_2027.find(m => m.status === 'Upcoming') || PEDDIE_SCHEDULE_2026_2027[5];
+  const [selectedMatchId, setSelectedMatchId] = useState<string>(nextUpcoming.id);
 
   const handlePrint = () => {
     window.print();
@@ -33,7 +34,7 @@ export default function SidelineCallSheetPage() {
 
   const getPlayer = (num: number) => PEDDIE_ROSTER_2026_2027.find(p => p.number === num);
   
-  const activeFixture = PEDDIE_SCHEDULE_2026_2027.find(m => m.id === selectedMatchId) || PEDDIE_SCHEDULE_2026_2027[2];
+  const activeFixture = PEDDIE_SCHEDULE_2026_2027.find(m => m.id === selectedMatchId) || nextUpcoming;
   const opponentDossier = activeFixture.scoutingReportId ? OPPONENT_VEO_SCOUTING[activeFixture.scoutingReportId] : undefined;
   const opponentKeyThreats = getOpponentPlayers(activeFixture.opponent);
 

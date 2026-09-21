@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSeason } from '@/context/SeasonContext';
+import { PEDDIE_SCHEDULE_2026_2027 } from '@/lib/soccer-data';
 import { 
   Shield, 
   Activity, 
@@ -85,10 +86,15 @@ export const Navigation: React.FC = () => {
               <span>LIVE: vs {selectedMatch.opponent}</span>
             </div>
           ) : (
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Next Match: @ Trenton Catholic (Sept 8)</span>
-            </div>
+            (() => {
+              const nextFixture = PEDDIE_SCHEDULE_2026_2027.find(m => m.status === 'Upcoming') || PEDDIE_SCHEDULE_2026_2027[5];
+              return (
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>Next: {nextFixture.isHome ? 'vs' : '@'} {nextFixture.opponent} ({nextFixture.matchDate})</span>
+                </div>
+              );
+            })()
           )}
 
           {/* Current Season Exclusive Badge */}

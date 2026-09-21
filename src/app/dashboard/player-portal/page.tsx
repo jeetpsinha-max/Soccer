@@ -283,8 +283,12 @@ export default function PlayerPortalPage() {
                     </div>
 
                     <div className="text-right">
-                      <div className="text-xs font-mono font-bold text-cyan-400">{p.overallRating} OVR</div>
+                      <div className="text-[11px] font-mono font-bold text-amber-300 flex items-center justify-end gap-1">
+                        <span className="text-[9px] text-slate-400 uppercase font-sans">FORM</span>
+                        <span>{p.matchFormScore || (p.currentSeasonReport?.formRating ? p.currentSeasonReport.formRating : 8.8)}</span>
+                      </div>
                       <div className="text-[10px] text-emerald-400 font-semibold">{p.goals}G / {p.assists}A</div>
+                      <div className="text-[9px] text-cyan-400/90 font-medium truncate max-w-[110px]">{p.tacticalRole?.split('&')[0].trim() || p.position}</div>
                     </div>
                   </div>
                 );
@@ -358,13 +362,23 @@ export default function PlayerPortalPage() {
               )}
               </div>
 
-              {/* Overall Scout Rating Meter */}
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800">
+              {/* Collegiate Scouting & Tactical Role Badge (Replaces Arcade OVR) */}
+              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-950 to-[#001f3f] border border-cyan-500/30 shadow-lg shadow-cyan-950/40">
                 <div className="text-right">
-                  <div className="text-[10px] text-slate-400 font-bold uppercase">SCOUT GRADE</div>
-                  <div className="text-lg font-black text-amber-400 font-mono">{selectedPlayer.overallRating} / 100</div>
+                  <div className="text-[10px] text-amber-400 font-black uppercase tracking-wider flex items-center justify-end gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+                    <span>{selectedPlayer.scoutingTier || 'Varsity Cornerstone'}</span>
+                  </div>
+                  <div className="text-sm font-bold text-white mt-0.5 max-w-[240px] truncate">
+                    {selectedPlayer.tacticalRole || selectedPlayer.currentSeasonReport?.seasonRole || 'First XI Starter'}
+                  </div>
+                  <div className="text-[11px] font-mono text-cyan-400 font-bold mt-0.5">
+                    Match Performance: <span className="text-emerald-400 font-extrabold">{selectedPlayer.matchFormScore || 8.8}</span> / 10.0
+                  </div>
                 </div>
-                <Award className="w-8 h-8 text-amber-400" />
+                <div className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/40 flex items-center justify-center text-amber-300 font-black text-xs shrink-0">
+                  {selectedPlayer.position}
+                </div>
               </div>
             </div>
 

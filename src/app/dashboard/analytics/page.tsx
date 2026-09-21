@@ -1177,8 +1177,9 @@ export default function AnalyticsPage() {
                   </div>
 
                   <div className="text-right">
-                    <span className="text-[10px] text-slate-400 uppercase font-bold">Rating</span>
-                    <div className="text-2xl font-mono font-black text-amber-400">{playerA.overallRating}</div>
+                    <span className="text-[10px] text-slate-400 uppercase font-bold">Match Form</span>
+                    <div className="text-2xl font-mono font-black text-amber-400">{playerA.matchFormScore || 8.8} <span className="text-xs text-slate-400 font-sans">/ 10</span></div>
+                    <div className="text-[10px] text-amber-300 font-semibold">{playerA.scoutingTier || 'Varsity Starter'}</div>
                   </div>
                 </div>
 
@@ -1249,8 +1250,9 @@ export default function AnalyticsPage() {
                   </div>
 
                   <div className="text-right">
-                    <span className="text-[10px] text-slate-400 uppercase font-bold">Rating</span>
-                    <div className="text-2xl font-mono font-black text-cyan-400">{playerB.overallRating}</div>
+                    <span className="text-[10px] text-slate-400 uppercase font-bold">Match Form</span>
+                    <div className="text-2xl font-mono font-black text-cyan-400">{playerB.matchFormScore || 8.8} <span className="text-xs text-slate-400 font-sans">/ 10</span></div>
+                    <div className="text-[10px] text-cyan-300 font-semibold">{playerB.scoutingTier || 'Varsity Starter'}</div>
                   </div>
                 </div>
 
