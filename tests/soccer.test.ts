@@ -52,14 +52,15 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(tommy?.number).toBe(28);
     expect(tommy?.isCaptain).toBe(true);
 
-    // 5. Noah Eldessouky is #12; No player has jersey #3; Connor Mahoney is not on the team
+    // 5. Noah Eldessouky is #12; Clayton Ling is jersey #3; Connor Mahoney is not on the team
     const noah = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Noah Eldessouky');
     expect(noah).toBeDefined();
     expect(noah?.number).toBe(12);
     expect(noah?.isCaptain).toBe(true);
 
-    const number3 = PEDDIE_ROSTER_2026_2027.find(p => p.number === 3);
-    expect(number3).toBeUndefined();
+    const claytonLing = PEDDIE_ROSTER_2026_2027.find(p => p.number === 3);
+    expect(claytonLing).toBeDefined();
+    expect(claytonLing?.name).toBe('Clayton Ling');
 
     const mahoney = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes('Mahoney'));
     expect(mahoney).toBeUndefined();
@@ -71,13 +72,13 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
       expect(found).toBeUndefined();
     });
 
-    // 7. Validate all user-confirmed players & jersey numbers
+    // 7. Validate all official rostered players & jersey numbers
     const dylanMcKenzie = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Dylan McKenzie');
     expect(dylanMcKenzie).toBeDefined();
     expect(dylanMcKenzie?.number).toBe(98);
     expect(dylanMcKenzie?.position).toBe('GK');
 
-    const jefferyZhang = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Jeffery Zhang');
+    const jefferyZhang = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Jeffrey Zhang');
     expect(jefferyZhang).toBeDefined();
     expect(jefferyZhang?.number).toBe(20);
     expect(jefferyZhang?.classYear).toBe('Junior');
@@ -117,13 +118,12 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(harryXiao?.number).toBe(25);
     expect(harryXiao?.classYear).toBe('Junior');
 
-    const bennettCuchera = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Bennett Cuchera');
-    expect(bennettCuchera).toBeDefined();
-    expect(bennettCuchera?.number).toBe(7);
-    expect(bennettCuchera?.classYear).toBe('Freshman');
-    expect(bennettCuchera?.photoUrl).toBe('/media-day-headshots/IMG_0001197.jpg');
-    expect(bennettCuchera?.photoUrl2).toBe('/media-day-previews/IMG_0001227.jpg');
-    expect(bennettCuchera?.actionPhotoUrl).toBe('/media-day-previews/IMG_0001227.jpg');
+    const bennettCucchiara = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Bennett Cucchiara');
+    expect(bennettCucchiara).toBeDefined();
+    expect(bennettCucchiara?.number).toBe(7);
+    expect(bennettCucchiara?.photoUrl).toBe('/media-day-headshots/IMG_0001197.jpg');
+    expect(bennettCucchiara?.photoUrl2).toBe('/media-day-previews/IMG_0001227.jpg');
+    expect(bennettCucchiara?.actionPhotoUrl).toBe('/media-day-previews/IMG_0001227.jpg');
 
     const wyattRaya = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Wyatt Raya');
     expect(wyattRaya).toBeDefined();
@@ -131,12 +131,12 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(wyattRaya?.classYear).toBe('Sophomore');
     expect(wyattRaya?.position).toBe('CM');
 
-    const zachHorsch = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Zach Horsch');
+    const zachHorsch = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Zachary Horsch');
     expect(zachHorsch).toBeDefined();
     expect(zachHorsch?.number).toBe(15);
-    expect(zachHorsch?.classYear).toBe('Freshman');
+    expect(zachHorsch?.classYear).toBe('Sophomore');
 
-    const mango = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Mango');
+    const mango = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Mango Zhang');
     expect(mango).toBeDefined();
     expect(mango?.number).toBe(17);
     expect(mango?.classYear).toBe('Sophomore');
@@ -160,8 +160,8 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const mattKleinhandler = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Matt Kleinhandler');
     expect(mattKleinhandler).toBeUndefined();
 
-    // Exactly 20 players (11 starters + 9 bench)
-    expect(PEDDIE_ROSTER_2026_2027.length).toBe(20);
+    // Exactly 25 players matching peddie.org active varsity roster (11 starters + 14 depth)
+    expect(PEDDIE_ROSTER_2026_2027.length).toBe(25);
 
     // 8. Validate 4-4-2 Diamond Midfield system
     const diamond = FORMATIONS_CONFIG['4-4-2'];
@@ -249,7 +249,7 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
 
     // Verify scorers have Aquinas game logged and goals strictly reflect 2026-2027 season
     const tommy = PEDDIE_ROSTER_2026_2027.find(p => p.number === 28);
-    expect(tommy?.goals).toBe(1);
+    expect(tommy?.goals).toBe(7);
     expect(tommy?.topSpeedMph).toBe(21.3);
     expect(tommy?.assignmentHistory.some(a => a.opponent === 'Aquinas')).toBe(true);
 
@@ -425,8 +425,8 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const mohiuddinLinks = PASSING_NETWORK_DIAMOND.filter(l => l.fromNumber === 14 || l.toNumber === 14);
     expect(mohiuddinLinks.length).toBeGreaterThanOrEqual(4);
 
-    // 4. Squad Physical Telemetry covers all 20 players
-    expect(SQUAD_PHYSICAL_TELEMETRY.length).toBe(20);
+    // 4. Squad Physical Telemetry covers all 25 players
+    expect(SQUAD_PHYSICAL_TELEMETRY.length).toBe(25);
     SQUAD_PHYSICAL_TELEMETRY.forEach(athlete => {
       expect(athlete.totalDistanceMiles).toBeGreaterThan(3.0);
       expect(athlete.topSpeedMph).toBeGreaterThan(16.0);
@@ -459,8 +459,8 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(bennett?.position).toBe('RM');
     expect(midPositions.includes(bennett!.position)).toBe(true);
 
-    // 7. Verify media day photo coverage: 19 athletes have official media day photos; Massimo Sheinin (#16) has no media day photo
-    expect(PEDDIE_ROSTER_2026_2027.length).toBe(20);
+    // 7. Verify media day photo coverage: 19 athletes have official media day photos; Massimo Sheinin (#27) has no media day photo
+    expect(PEDDIE_ROSTER_2026_2027.length).toBe(25);
     const massimoAthlete = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Massimo Sheinin');
     expect(massimoAthlete?.photoUrl).toBeUndefined();
     expect(massimoAthlete?.photoUrl2).toBeUndefined();
@@ -524,9 +524,9 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(finalPdsXg).toBeGreaterThan(4.0);
   });
 
-  it('validates elimination of arcade OVR ratings and verifies tactical roles & scouting tiers across all 20 players', () => {
-    // 1. All 20 rostered players must have authentic tacticalRole, scoutingTier, and valid matchFormScore (7.0 - 10.0)
-    expect(PEDDIE_ROSTER_2026_2027.length).toBe(20);
+  it('validates elimination of arcade OVR ratings and verifies tactical roles & scouting tiers across all 25 players', () => {
+    // 1. All 25 rostered players must have authentic tacticalRole, scoutingTier, and valid matchFormScore (7.0 - 10.0)
+    expect(PEDDIE_ROSTER_2026_2027.length).toBe(25);
     PEDDIE_ROSTER_2026_2027.forEach(player => {
       expect(player.tacticalRole).toBeDefined();
       expect(player.tacticalRole?.length).toBeGreaterThan(5);

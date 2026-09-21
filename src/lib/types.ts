@@ -53,6 +53,16 @@ export interface Player {
   topSpeedKmh?: number;
   distanceCoveredMiles: number;
   distanceCoveredKm?: number;
+  shots?: number;
+  shotsOnTarget?: number;
+  keyPasses?: number;
+  interceptions?: number;
+  clearances?: number;
+  aerialDuelsWon?: number;
+  aerialDuelsContested?: number;
+  cleanSheets?: number;
+  saves?: number;
+  goalsConceded?: number;
   assignmentHistory: PlayerAssignmentRecord[];
   recruitmentNotes: string;
   currentSeasonReport?: CurrentSeasonReport;
@@ -61,13 +71,38 @@ export interface Player {
 export interface CurrentSeasonReport {
   seasonRole: string; // e.g. "Starting Center Forward & Captain", "Key Central Midfield Anchor"
   formRating: number; // e.g. 9.4 (out of 10)
-  match0Review: string; // Haverford match review
-  match1Review: string; // Aquinas match review (3-2 Win)
-  upcomingMatchAssignment: string; // Next match directive (Trenton Catholic)
+  match0Review?: string; // Haverford match review
+  match1Review?: string; // Aquinas match review (3-2 Win)
+  match2Review?: string; // Trenton Catholic match review (2-3 L)
+  match3Review?: string; // George School match review (5-2 W)
+  match4Review?: string; // PDS match review (7-1 W)
+  latestMatchReview?: string; // Latest completed fixture summary
+  upcomingMatchAssignment: string; // Next match directive (vs Life Center Academy)
   technicalStrengths: string[];
   developmentPriorities: string[];
   coachNazarioEvaluation: string;
   veoFilmInsight: string;
+}
+
+export interface TeamSeasonStats {
+  matchesPlayed: number;
+  wins: number;
+  losses: number;
+  draws: number;
+  goalsScored: number;
+  goalsConceded: number;
+  goalDifference: number;
+  cleanSheets: number;
+  avgPossessionPct: number;
+  avgFieldTiltPct: number;
+  avgPassCompletionPct: number;
+  totalShots: number;
+  totalShotsOnTarget: number;
+  shotAccuracyPct: number;
+  totalXgCreated: number;
+  totalXgConceded: number;
+  ppdaAverage: number;
+  distanceCoveredTeamMiles: number;
 }
 
 export type EventType = 
