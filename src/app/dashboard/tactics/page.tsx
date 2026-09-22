@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { FormationBoard } from '@/components/pitch/FormationBoard';
 import { useSeason } from '@/context/SeasonContext';
 import { FORMATIONS_CONFIG } from '@/lib/soccer-data';
@@ -8,7 +9,7 @@ import { Layers, Activity, Compass, ShieldCheck, Zap, TrendingUp } from 'lucide-
 
 export default function TacticsPage() {
   const { activeFormation } = useSeason();
-  const [tacticsMatch, setTacticsMatch] = React.useState<'pds' | 'george' | 'aquinas' | 'haverford'>('pds');
+  const [tacticsMatch, setTacticsMatch] = React.useState<'pds' | 'george' | 'aquinas' | 'trenton' | 'haverford'>('pds');
   const config = FORMATIONS_CONFIG[activeFormation] || FORMATIONS_CONFIG['4-4-2'];
 
   const MATCH_TACTICS_DATA = {
@@ -63,6 +64,23 @@ export default function TacticsPage() {
       strikerDesc: 'Game Winner 81\' | Towering header from Cuchera corner',
       xtStriker: '+2.48'
     },
+    trenton: {
+      title: 'Trenton Central (2-3 L)',
+      tiltLabel: 'AVG 53.8% PEDDIE TILT',
+      periodTilt: [
+        { period: 'Period 1: 0\' - 20\' (Tommy Kim 19\' Equalizer & Transition Battle)', pct: '52% Peddie', width: 'w-[52%]', color: 'bg-cyan-500' },
+        { period: 'Period 2: 20\' - 40\' (Jeffrey Zhang 38\' Strike & Diamond Control)', pct: '56% Peddie', width: 'w-[56%]', color: 'bg-amber-500' },
+        { period: 'Period 3: 40\' - 60\' (High Physical Duels & Counter Traps)', pct: '49% Peddie', width: 'w-[49%]', color: 'bg-slate-400' },
+        { period: 'Period 4: 60\' - 80\' (Late Lockout Pressure & Box Scramble)', pct: '51% Peddie', width: 'w-[51%]', color: 'bg-slate-400' }
+      ],
+      hubTharney: 'Midfield Combat Pivot | Tackles: 7 | Acc: 89.1%',
+      xtTharney: '+2.95',
+      hubMohiuddin: 'Playmaker Link | Half-space Passes: 8 | xA: 1.10',
+      xtMohiuddin: '+2.80',
+      hubStriker: '#28 Tommy Kim & #20 Jeffrey Zhang',
+      strikerDesc: 'Combined 2 Goals in intense physical road clash',
+      xtStriker: '+2.85'
+    },
     haverford: {
       title: 'The Haverford School (0-5 L)',
       tiltLabel: 'AVG 41.2% PEDDIE TILT',
@@ -89,7 +107,7 @@ export default function TacticsPage() {
       {/* Header */}
       <div className="glass-panel p-5 border border-amber-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1 flex-wrap">
             <span className="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-extrabold text-[11px] uppercase">
               TACTICAL ENGINE & POSITIONAL PLAY
             </span>
@@ -104,40 +122,65 @@ export default function TacticsPage() {
           </p>
         </div>
 
-        {/* Match Selector Buttons */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900 border border-slate-800 flex-wrap">
-          <button
-            onClick={() => setTacticsMatch('pds')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-black transition ${
-              tacticsMatch === 'pds' ? 'bg-amber-400 text-slate-950 shadow' : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            PDS (7-1 W)
-          </button>
-          <button
-            onClick={() => setTacticsMatch('george')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-black transition ${
-              tacticsMatch === 'george' ? 'bg-amber-400 text-slate-950 shadow' : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            George (5-2 W)
-          </button>
-          <button
-            onClick={() => setTacticsMatch('aquinas')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-black transition ${
-              tacticsMatch === 'aquinas' ? 'bg-amber-400 text-slate-950 shadow' : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            Aquinas (3-2 W)
-          </button>
-          <button
-            onClick={() => setTacticsMatch('haverford')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-black transition ${
-              tacticsMatch === 'haverford' ? 'bg-amber-400 text-slate-950 shadow' : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            Haverford (0-5 L)
-          </button>
+        {/* Quick Hub Navigation & Match Selector */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 flex-wrap">
+          <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900 border border-slate-800 flex-wrap">
+            <button
+              onClick={() => setTacticsMatch('pds')}
+              className={`px-2.5 py-1.5 rounded-lg text-xs font-black transition ${
+                tacticsMatch === 'pds' ? 'bg-amber-400 text-slate-950 shadow' : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              PDS (7-1 W)
+            </button>
+            <button
+              onClick={() => setTacticsMatch('george')}
+              className={`px-2.5 py-1.5 rounded-lg text-xs font-black transition ${
+                tacticsMatch === 'george' ? 'bg-amber-400 text-slate-950 shadow' : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              George (5-2 W)
+            </button>
+            <button
+              onClick={() => setTacticsMatch('aquinas')}
+              className={`px-2.5 py-1.5 rounded-lg text-xs font-black transition ${
+                tacticsMatch === 'aquinas' ? 'bg-amber-400 text-slate-950 shadow' : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              Aquinas (3-2 W)
+            </button>
+            <button
+              onClick={() => setTacticsMatch('trenton')}
+              className={`px-2.5 py-1.5 rounded-lg text-xs font-black transition ${
+                tacticsMatch === 'trenton' ? 'bg-amber-400 text-slate-950 shadow' : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              Trenton (2-3 L)
+            </button>
+            <button
+              onClick={() => setTacticsMatch('haverford')}
+              className={`px-2.5 py-1.5 rounded-lg text-xs font-black transition ${
+                tacticsMatch === 'haverford' ? 'bg-amber-400 text-slate-950 shadow' : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              Haverford (0-5 L)
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Link
+              href="/dashboard/playbook"
+              className="px-3 py-1.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-bold transition flex items-center gap-1 shadow"
+            >
+              <Zap className="w-3.5 h-3.5 text-cyan-400" /> Playbook
+            </Link>
+            <Link
+              href="/dashboard/war-room"
+              className="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-bold transition flex items-center gap-1 shadow"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 text-amber-400" /> War Room
+            </Link>
+          </div>
         </div>
       </div>
 

@@ -163,6 +163,34 @@ export default function ScoutingPage() {
           })()}
         </div>
 
+        {/* Multi-Agent Council & Tactical Action Bar */}
+        <div className="flex flex-wrap items-center gap-3 p-3 rounded-xl bg-slate-950/90 border border-slate-800">
+          <Link
+            href="/dashboard/war-room"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 text-xs font-black shadow-md transition"
+          >
+            <Sparkles className="w-3.5 h-3.5" /> Convene War Room vs {selectedScout.shortName}
+          </Link>
+          <Link
+            href="/dashboard/simulator"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 text-xs font-black shadow-md transition"
+          >
+            <Activity className="w-3.5 h-3.5" /> Simulate Match vs {selectedScout.shortName}
+          </Link>
+          <Link
+            href="/dashboard/playbook"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-slate-700 text-xs font-bold transition"
+          >
+            <Layers className="w-3.5 h-3.5" /> Counter-Tactics Playbook
+          </Link>
+          <Link
+            href="/dashboard/call-sheet"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold transition ml-auto"
+          >
+            Sideline Call Sheet
+          </Link>
+        </div>
+
         {/* Overview */}
         <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs text-slate-300 leading-relaxed">
           <strong className="text-white block mb-1 text-xs uppercase tracking-wider font-bold">Veo Film Scout Overview:</strong>
