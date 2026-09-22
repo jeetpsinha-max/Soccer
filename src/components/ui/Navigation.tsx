@@ -15,7 +15,11 @@ import {
   Layers,
   BarChart3,
   Calendar,
-  ChevronDown
+  ChevronDown,
+  Sparkles,
+  Sliders,
+  GraduationCap,
+  Radio
 } from 'lucide-react';
 
 export const Navigation: React.FC = () => {
@@ -24,13 +28,17 @@ export const Navigation: React.FC = () => {
 
   const navItems = [
     { label: 'Match Center', href: '/', icon: Activity },
-    { label: 'Upcoming Schedule', href: '/dashboard/schedule', icon: Calendar },
+    { label: 'AI War Room', href: '/dashboard/war-room', icon: Sparkles },
+    { label: 'Playbook Studio', href: '/dashboard/playbook', icon: Layers },
+    { label: 'Touchline Simulator', href: '/dashboard/simulator', icon: Radio },
     { label: 'Data Analytics', href: '/dashboard/analytics', icon: BarChart3 },
-    { label: 'Tactics & Pitch', href: '/dashboard/tactics', icon: Layers },
-    { label: 'Sideline Call Sheet', href: '/dashboard/call-sheet', icon: ClipboardList },
+    { label: 'Tactics & Pitch', href: '/dashboard/tactics', icon: Sliders },
+    { label: 'College Recruiting', href: '/dashboard/recruiting', icon: GraduationCap },
+    { label: 'Call Sheet', href: '/dashboard/call-sheet', icon: ClipboardList },
     { label: 'Player Portal', href: '/dashboard/player-portal', icon: Users },
-    { label: 'Match Film Room', href: '/dashboard/match-film', icon: Film },
-    { label: 'Opponent Scouting', href: '/dashboard/scouting', icon: Compass }
+    { label: 'Match Film', href: '/dashboard/match-film', icon: Film },
+    { label: 'Opponent Scouting', href: '/dashboard/scouting', icon: Compass },
+    { label: 'Schedule', href: '/dashboard/schedule', icon: Calendar }
   ];
 
   return (

@@ -47,11 +47,11 @@ interface MatchTab {
 
 const MATCH_TABS: MatchTab[] = [
   // Completed 2026 Matches
-  { id: 'm-4', name: 'PDS', subtext: 'Sep 16 (4-2 W)', type: 'completed', scoreBadge: '4-2 W', badgeStyle: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' },
-  { id: 'm-3', name: 'George School', subtext: 'Sep 12 (6-4 W)', type: 'completed', scoreBadge: '6-4 W', badgeStyle: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' },
-  { id: 'm-2', name: 'Trenton Catholic', subtext: 'Sep 9 (4-1 W)', type: 'completed', scoreBadge: '4-1 W', badgeStyle: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' },
-  { id: 'm-1', name: 'St. Thomas Aquinas', subtext: 'Sep 5 (3-2 W)', type: 'completed', scoreBadge: '3-2 W', badgeStyle: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' },
-  { id: 'm-0', name: 'Haverford', subtext: 'Sep 1 (0-4 L)', type: 'completed', scoreBadge: '0-4 L', badgeStyle: 'bg-rose-500/20 text-rose-300 border-rose-500/40' },
+  { id: 'm-4', name: 'PDS', subtext: 'Sep 14 (7-1 W)', type: 'completed', scoreBadge: '7-1 W', badgeStyle: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' },
+  { id: 'm-3', name: 'George School', subtext: 'Sep 10 (5-2 W)', type: 'completed', scoreBadge: '5-2 W', badgeStyle: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' },
+  { id: 'm-2', name: 'Trenton Central', subtext: 'Sep 8 (2-3 L)', type: 'completed', scoreBadge: '2-3 L', badgeStyle: 'bg-rose-500/20 text-rose-300 border-rose-500/40' },
+  { id: 'm-1', name: 'St. Thomas Aquinas', subtext: 'Sep 4 (3-2 W)', type: 'completed', scoreBadge: '3-2 W', badgeStyle: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' },
+  { id: 'm-0', name: 'Haverford', subtext: 'Sep 1 (0-5 L)', type: 'completed', scoreBadge: '0-5 L', badgeStyle: 'bg-rose-500/20 text-rose-300 border-rose-500/40' },
   
   // Advance Opponent Scouting Reels
   { id: 'scout-lca', name: 'Life Center Academy', subtext: 'NEXT MATCH: Sep 22', type: 'scout', scoreBadge: 'SCOUT REEL', badgeStyle: 'bg-amber-500/20 text-amber-300 border-amber-500/40', opponentKey: 'life-center' },
@@ -61,7 +61,7 @@ const MATCH_TABS: MatchTab[] = [
 ];
 
 export default function MatchFilmPage() {
-  const [selectedMatchId, setSelectedMatchId] = useState<string>('m-4'); // Defaults to PDS 4-2 W (Sinha 64' golazo)
+  const [selectedMatchId, setSelectedMatchId] = useState<string>('m-4'); // Defaults to PDS 7-1 W (Sinha 64' golazo, Kim Hat-trick)
   const [filmCategory, setFilmCategory] = useState<'completed' | 'scout'>('completed');
   const [selectedPeriod, setSelectedPeriod] = useState<number | 'all'>('all');
   const [nlQuery, setNlQuery] = useState('');

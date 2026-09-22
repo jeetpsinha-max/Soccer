@@ -31,12 +31,16 @@ import {
   Trophy,
   Flame,
   Clock,
-  Eye
+  Eye,
+  GraduationCap,
+  Radio,
+  Play,
+  ChevronRight
 } from 'lucide-react';
 
 export default function Home() {
   const { season, isLiveMatch } = useSeason();
-  const [selectedMatchId, setSelectedMatchId] = useState<string>('m-4'); // Defaults to PDS 4-2 W
+  const [selectedMatchId, setSelectedMatchId] = useState<string>('m-4'); // Defaults to PDS 7-1 W
   const [eventFilter, setEventFilter] = useState('ALL');
   const [nlQuery, setNlQuery] = useState('');
 
@@ -59,84 +63,84 @@ export default function Home() {
     pressStatus: string;
   }> = {
     'm-4': {
-      name: 'PDS (4-2 W)',
+      name: 'PDS (7-1 W)',
       opponent: 'PRINCETON DAY SCHOOL',
-      date: 'Sept 16, 2026',
-      scorePeddie: 4,
-      scoreOpponent: 2,
-      xgPeddie: 3.12,
-      xgOpponent: 1.45,
-      possession: 58,
-      badge: '2026–2027 MERCER COUNTY DERBY VICTORY',
-      headline: 'Peddie Falcons 4 – 2 Princeton Day School',
-      summary: "Signature home victory highlighted by Jeet Sinha's stunning 64' curling strike into the top corner, Tommy Kim's brace (9', 38'), and Zachary Horsch's 79' counter-attack sealer.",
+      date: 'Sept 14, 2026',
+      scorePeddie: 7,
+      scoreOpponent: 1,
+      xgPeddie: 4.48,
+      xgOpponent: 0.94,
+      possession: 65,
+      badge: '2026–2027 MERCER COUNTY DERBY TRIUMPH',
+      headline: 'Peddie Falcons 7 – 1 Princeton Day School',
+      summary: "Signature road masterclass highlighted by Tommy Kim's explosive hat-trick (8', 24', 51'), Jeet Sinha's stunning 64' curling strike into the upper 90, and goals by Zhang, Tharney, and Cucchiara.",
       events: MATCH_EVENTS_VEO_PDS,
-      coachQuote: '"Outstanding discipline. Jeet Sinha\'s curling finish was world-class, and Dylan McKenzie came up huge in goal to seal the win." — Coach George Nazario',
-      pressStatus: 'FINAL • PEDDIE 4-2 PDS (W)'
+      coachQuote: '"A complete 80-minute performance. Jeet Sinha\'s curling finish was world-class, Tommy Kim was unplayable, and our diamond midfield owned every inch of the pitch." — Coach George Nazario',
+      pressStatus: 'FINAL • PEDDIE 7-1 PDS (W)'
     },
     'm-3': {
-      name: 'George (6-4 W)',
+      name: 'George (5-2 W)',
       opponent: 'GEORGE SCHOOL',
-      date: 'Sept 12, 2026',
-      scorePeddie: 6,
-      scoreOpponent: 4,
-      xgPeddie: 4.25,
-      xgOpponent: 3.10,
-      possession: 54,
-      badge: 'HIGH-SCORING ROAD TRIUMPH',
-      headline: 'Peddie Falcons 6 – 4 George School',
-      summary: 'Epic 10-goal thriller on the road featuring braces from Tommy Kim and Jeffrey Zhang, Bennett Cucchiara\'s laser, and Carson Wiley\'s towering header.',
+      date: 'Sept 10, 2026',
+      scorePeddie: 5,
+      scoreOpponent: 2,
+      xgPeddie: 3.65,
+      xgOpponent: 1.42,
+      possession: 59,
+      badge: 'FRIENDS SCHOOLS LEAGUE SHOWCASE ROAD WIN',
+      headline: 'Peddie Falcons 5 – 2 George School',
+      summary: "Dominant 5-2 road triumph powered by Tommy Kim's brace, Rayyaan Mohiuddin's Zone 14 masterclass, Christian Tharney's penalty, and Blake Romanelli's clinical finish.",
       events: MATCH_EVENTS_VEO_GEORGE,
-      coachQuote: '"We showed tremendous offensive firepower. Scoring 6 goals away from home proved our attacking depth." — Coach George Nazario',
-      pressStatus: 'FINAL • PEDDIE 6-4 GEORGE (W)'
+      coachQuote: '"Scoring 5 goals away from home proved our attacking depth and tactical maturity." — Coach George Nazario',
+      pressStatus: 'FINAL • PEDDIE 5-2 GEORGE (W)'
     },
     'm-1': {
       name: 'Aquinas (3-2 W)',
       opponent: 'ST. THOMAS AQUINAS',
-      date: 'Sept 5, 2026',
+      date: 'Sept 4, 2026',
       scorePeddie: 3,
       scoreOpponent: 2,
       xgPeddie: 2.84,
       xgOpponent: 1.65,
-      possession: 55,
+      possession: 57,
       badge: '2026–2027 HOME OPENER VICTORY',
       headline: 'Peddie Falcons 3 – 2 St. Thomas Aquinas',
-      summary: 'Thrilling Home Opener triumph. Goals by Tommy Kim 34\', Captain Christian Tharney 58\', and Carson Wiley 81\' (Game-Winning Header).',
+      summary: 'Thrilling Home Opener triumph. Goals by Tommy Kim 34\', Captain Christian Tharney 58\', and Carson Wiley 81\' (Game-Winning Header off Cucchiara corner).',
       events: MATCH_EVENTS_VEO_AQUINAS,
-      coachQuote: '"Carson Wiley\'s 81st minute header gave us the lift we needed against a very tough Aquinas side." — Coach George Nazario',
+      coachQuote: '"Carson Wiley\'s 81st minute header gave us the lift we needed against a very tough GMC Non-Public power." — Coach George Nazario',
       pressStatus: 'FINAL • PEDDIE 3-2 AQUINAS (W)'
     },
     'm-2': {
-      name: 'Trenton (4-1 W)',
-      opponent: 'TRENTON CATHOLIC ACADEMY',
-      date: 'Sept 9, 2026',
-      scorePeddie: 4,
-      scoreOpponent: 1,
-      xgPeddie: 3.35,
-      xgOpponent: 1.20,
-      possession: 61,
-      badge: 'NON-CONFERENCE HOME MASTERCLASS',
-      headline: 'Peddie Falcons 4 – 1 Trenton Catholic',
-      summary: 'Decisive home victory powered by Tommy Kim\'s brace, Jeffrey Zhang\'s curling strike, and Christian Tharney\'s towering header off a Cucchiara corner.',
+      name: 'Trenton (2-3 L)',
+      opponent: 'TRENTON CENTRAL HIGH SCHOOL',
+      date: 'Sept 8, 2026',
+      scorePeddie: 2,
+      scoreOpponent: 3,
+      xgPeddie: 2.12,
+      xgOpponent: 2.45,
+      possession: 51,
+      badge: 'MERCER COUNTY NON-CONFERENCE CLASH',
+      headline: 'Peddie Falcons 2 – 3 Trenton Central',
+      summary: 'High-octane Mercer County battle at Trenton Central. Peddie struck twice through Tommy Kim (#28) and Jeffrey Zhang (#20), battling intensely across 80 minutes.',
       events: MATCH_EVENTS_VEO_TRENTON,
-      coachQuote: '"Dominant response after the opener. Our midfield diamond controlled the tempo from start to finish." — Coach George Nazario',
-      pressStatus: 'FINAL • PEDDIE 4-1 TRENTON (W)'
+      coachQuote: '"Tough road clash against an athletic side. We scored two great goals and identified key transition coverage adjustments." — Coach George Nazario',
+      pressStatus: 'FINAL • PEDDIE 2-3 TRENTON (L)'
     },
     'm-0': {
-      name: 'Haverford (0-4 L)',
+      name: 'Haverford (0-5 L)',
       opponent: 'THE HAVERFORD SCHOOL',
       date: 'Sept 1, 2026',
       scorePeddie: 0,
-      scoreOpponent: 4,
-      xgPeddie: 1.02,
-      xgOpponent: 2.85,
-      possession: 46,
-      badge: '2026–2027 SEASON OPENER (VEO AI)',
-      headline: 'Peddie Falcons 0 – 4 The Haverford School',
-      summary: 'Official Veo AI match breakdown, 4x20 min periods, test against nationally ranked Inter-Ac powerhouse that launched our tactical progression.',
+      scoreOpponent: 5,
+      xgPeddie: 1.15,
+      xgOpponent: 3.48,
+      possession: 45,
+      badge: '2026–2027 PRESEASON OPENER (VEO AI)',
+      headline: 'Peddie Falcons 0 – 5 The Haverford School',
+      summary: 'Official Veo AI match breakdown, 4x20 min periods, early trial against nationally ranked Inter-Ac powerhouse that launched our diamond midfield progression.',
       events: MATCH_EVENTS_VEO_HAVERFORD,
-      coachQuote: '"Playing a national power like Haverford revealed what we needed to tighten defensively before embarking on our 3-game win streak." — Coach George Nazario',
-      pressStatus: 'FINAL • 4x20-MIN PERIODS'
+      coachQuote: '"Playing a national power like Haverford was the crucible that forged our diamond midfield structure and ignited our winning form." — Coach George Nazario',
+      pressStatus: 'FINAL • 4x20-MIN PERIODS (0-5 L)'
     }
   };
 
@@ -260,6 +264,89 @@ export default function Home() {
             <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
+      </div>
+
+      {/* Multi-Agent Council Quick Launch Command Hub */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <Link
+          href="/dashboard/war-room"
+          className="p-4 rounded-2xl glass-panel border border-amber-500/40 bg-gradient-to-br from-amber-950/30 via-slate-900/80 to-slate-950 hover:border-amber-400 transition-all duration-300 group shadow-lg"
+        >
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black">
+              <Sparkles className="w-4 h-4" />
+            </span>
+            <span className="text-[10px] uppercase font-black px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">
+              4 AI MINDS
+            </span>
+          </div>
+          <h3 className="text-sm font-black text-white group-hover:text-amber-300 transition flex items-center gap-1">
+            AI Tactical War Room <ChevronRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-1 transition" />
+          </h3>
+          <p className="text-[11px] text-slate-400 mt-1">
+            Fable 5, Grok, GPT & Kimi debate in-game dilemmas in real time.
+          </p>
+        </Link>
+
+        <Link
+          href="/dashboard/playbook"
+          className="p-4 rounded-2xl glass-panel border border-cyan-500/40 bg-gradient-to-br from-cyan-950/30 via-slate-900/80 to-slate-950 hover:border-cyan-400 transition-all duration-300 group shadow-lg"
+        >
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-black">
+              <Layers className="w-4 h-4" />
+            </span>
+            <span className="text-[10px] uppercase font-black px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">
+              ANIMATED
+            </span>
+          </div>
+          <h3 className="text-sm font-black text-white group-hover:text-cyan-300 transition flex items-center gap-1">
+            Playbook Studio <ChevronRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-1 transition" />
+          </h3>
+          <p className="text-[11px] text-slate-400 mt-1">
+            Animated corner kicks, press-break triangles, and free kick routines.
+          </p>
+        </Link>
+
+        <Link
+          href="/dashboard/simulator"
+          className="p-4 rounded-2xl glass-panel border border-emerald-500/40 bg-gradient-to-br from-emerald-950/30 via-slate-950 to-slate-950 hover:border-emerald-400 transition-all duration-300 group shadow-lg"
+        >
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black">
+              <Radio className="w-4 h-4" />
+            </span>
+            <span className="text-[10px] uppercase font-black px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">
+              LIVE ENGINE
+            </span>
+          </div>
+          <h3 className="text-sm font-black text-white group-hover:text-emerald-300 transition flex items-center gap-1">
+            Touchline Simulator <ChevronRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-1 transition" />
+          </h3>
+          <p className="text-[11px] text-slate-400 mt-1">
+            Simulate 80-min matches with live stances, team talks & substitutions.
+          </p>
+        </Link>
+
+        <Link
+          href="/dashboard/recruiting"
+          className="p-4 rounded-2xl glass-panel border border-purple-500/40 bg-gradient-to-br from-purple-950/30 via-slate-900/80 to-slate-950 hover:border-purple-400 transition-all duration-300 group shadow-lg"
+        >
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-black">
+              <GraduationCap className="w-4 h-4" />
+            </span>
+            <span className="text-[10px] uppercase font-black px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">
+              NCAA D1-D3
+            </span>
+          </div>
+          <h3 className="text-sm font-black text-white group-hover:text-purple-300 transition flex items-center gap-1">
+            College Recruiting Hub <ChevronRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-1 transition" />
+          </h3>
+          <p className="text-[11px] text-slate-400 mt-1">
+            Scout profiles, GPA/SAT metrics, 40-yd times & Nazario scout notes.
+          </p>
+        </Link>
       </div>
 
       {/* Broadcast Scoreboard & HUD Telemetry */}
