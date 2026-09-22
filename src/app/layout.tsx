@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SeasonProvider } from "@/context/SeasonContext";
 import { Navigation } from "@/components/ui/Navigation";
+import { CouncilChatDrawer } from "@/components/ui/CouncilChatDrawer";
 
 export const metadata: Metadata = {
   title: "Peddie Soccer SAC • Broadcast-Grade Tactical Analytics & Coaching Platform",
@@ -21,6 +22,7 @@ export default function RootLayout({
           <main className="max-w-7xl mx-auto px-4 lg:px-8 py-6">
             {children}
           </main>
+          <CouncilChatDrawer />
         </SeasonProvider>
       </body>
     </html>

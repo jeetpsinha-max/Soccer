@@ -24,8 +24,11 @@ import {
   Compass, 
   Activity, 
   Sliders,
-  CheckCircle2
+  CheckCircle2,
+  Volume2,
+  VolumeX
 } from 'lucide-react';
+import { TacticalAudio } from '@/lib/audio-synthesizer';
 
 export default function PlaybookPage() {
   const routines = SoccerTacticalAgent.PLAYBOOK_ROUTINES;
@@ -35,14 +38,25 @@ export default function PlaybookPage() {
   const [playSpeed, setPlaySpeed] = useState<number>(1.0); // 0.5x, 1.0x, 1.5x
   const [showZones, setShowZones] = useState<boolean>(true);
   const [showVectors, setShowVectors] = useState<boolean>(true);
+  const [soundMuted, setSoundMuted] = useState<boolean>(false);
 
   const activeRoutine = routines.find(r => r.id === selectedRoutineId) || routines[0];
   const activeStep = activeRoutine.steps[currentStepIndex] || activeRoutine.steps[0];
 
-  // Animation Loop
+  // Animation Loop with Tactical Audio
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (isPlaying) {
+      if (!soundMuted) {
+        if (currentStepIndex === 0) {
+          TacticalAudio.playWhistle(150);
+        } else if (currentStepIndex === activeRoutine.steps.length - 1) {
+          TacticalAudio.playGoalCheer(1800);
+        } else {
+          TacticalAudio.playKick();
+        }
+      }
+
       const stepDuration = (activeStep.durationMs || 2000) / playSpeed;
       timer = setTimeout(() => {
         if (currentStepIndex < activeRoutine.steps.length - 1) {
@@ -54,12 +68,13 @@ export default function PlaybookPage() {
       }, stepDuration);
     }
     return () => clearTimeout(timer);
-  }, [isPlaying, currentStepIndex, activeRoutine, activeStep, playSpeed]);
+  }, [isPlaying, currentStepIndex, activeRoutine, activeStep, playSpeed, soundMuted]);
 
   const handleRoutineChange = (routineId: string) => {
     setSelectedRoutineId(routineId);
     setCurrentStepIndex(0);
     setIsPlaying(false);
+    if (!soundMuted) TacticalAudio.playWhistle(120);
   };
 
   const handleNextStep = () => {
@@ -237,6 +252,21 @@ export default function PlaybookPage() {
               <option value="1.0">1.0x</option>
               <option value="1.5">1.5x</option>
             </select>
+
+            {/* Audio Toggle */}
+            <button
+              onClick={() => {
+                const next = !soundMuted;
+                setSoundMuted(next);
+                TacticalAudio.isMuted = next;
+              }}
+              className={`p-2 rounded-lg border transition cursor-pointer ${
+                soundMuted ? 'bg-slate-900 border-slate-800 text-slate-500' : 'bg-amber-500/20 border-amber-500/40 text-amber-400'
+              }`}
+              title={soundMuted ? 'Unmute Tactical Audio' : 'Mute Tactical Audio'}
+            >
+              {soundMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+            </button>
           </div>
         </div>
 

@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { PEDDIE_ROSTER_2026_2027 } from '@/lib/soccer-data';
 import { OPPONENT_PLAYER_SCOUTING_REPORTS, ALL_OPPONENT_PLAYER_REPORTS } from '@/lib/opponent-players-data';
 import { Player, Position, OpponentPlayerReport } from '@/lib/types';
+import { calculateDuelMatchup } from '@/lib/duel-engine';
 import { 
   Users,
   Swords, 
@@ -1039,9 +1040,34 @@ export default function PlayerPortalPage() {
           {(() => {
             const pPeddie = PEDDIE_ROSTER_2026_2027.find(p => p.id === matchupPeddieId) || PEDDIE_ROSTER_2026_2027[0];
             const pOpp = (OPPONENT_PLAYER_SCOUTING_REPORTS[matchupOpponentTeam] || []).find(p => p.id === matchupOpponentId) || (OPPONENT_PLAYER_SCOUTING_REPORTS[matchupOpponentTeam] || [])[0] || ALL_OPPONENT_PLAYER_REPORTS[0];
+            const duel = calculateDuelMatchup(pPeddie, pOpp);
+
+            const outcomeBadgeColor = 
+              duel.winProbabilityPct >= 68 ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' :
+              duel.winProbabilityPct >= 55 ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40' :
+              duel.winProbabilityPct >= 46 ? 'bg-amber-500/20 text-amber-300 border-amber-500/40' :
+              'bg-rose-500/20 text-rose-300 border-rose-500/40';
 
             return (
               <div className="glass-panel p-6 border-2 border-slate-800 rounded-2xl flex flex-col gap-6 bg-slate-950">
+                {/* Win Probability & Battleground Header */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 rounded-xl bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 border border-slate-800">
+                  <div>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-slate-400">Algorithmic Matchup Projection</div>
+                    <div className="flex items-center gap-3 mt-1">
+                      <span className="text-2xl font-black text-amber-400 font-mono">{duel.winProbabilityPct}%</span>
+                      <span className="text-xs font-bold text-slate-300">Peddie Win Probability</span>
+                      <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider border ${outcomeBadgeColor}`}>
+                        {duel.outcomeTier}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="text-right sm:text-right">
+                    <span className="text-[10px] font-mono uppercase text-slate-400">Primary Key Battleground</span>
+                    <div className="text-xs font-black text-cyan-400 mt-0.5">{duel.keyBattleground}</div>
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-1 lg:grid-cols-11 gap-6 items-center">
                   {/* Left: Peddie Player Card (5 Cols) */}
                   <div className="lg:col-span-5 p-5 rounded-2xl bg-gradient-to-br from-slate-900 via-[#002147]/60 to-slate-950 border border-cyan-500/40 flex flex-col gap-4">
@@ -1162,49 +1188,71 @@ export default function PlayerPortalPage() {
                   </div>
                 </div>
 
-                {/* Head-to-Head Comparative Metric Bars */}
-                <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800 space-y-3">
-                  <div className="text-xs font-black uppercase tracking-wider text-slate-400 flex items-center justify-between">
-                    <span>Statistical Comparison Matrix</span>
-                    <span className="text-[10px] font-mono text-amber-400">Higher Value Highlighted</span>
+                {/* 5-Dimensional Comparative Head-to-Head Breakdown */}
+                <div className="p-5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-4">
+                  <div className="text-xs font-black uppercase tracking-wider text-slate-300 flex items-center justify-between">
+                    <span className="flex items-center gap-1.5 text-amber-400">
+                      <Swords className="w-4 h-4 text-amber-400" />
+                      5-Dimensional Head-to-Head Metrics
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">Algorithmic Engine Scoring (0-100)</span>
                   </div>
 
-                  {/* Metric 1: Sprint Velocity / Pace */}
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-xs text-slate-300 font-mono font-bold">
-                      <span className="text-cyan-400">{pPeddie.topSpeedMph} mph</span>
-                      <span className="text-slate-400 font-sans text-[11px]">Sprint Velocity & Burst</span>
-                      <span className="text-rose-400">20.2 mph (Scout Est)</span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Dimension 1: Pace */}
+                    <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1.5">
+                      <div className="flex justify-between text-xs font-mono font-bold">
+                        <span className="text-cyan-400">{duel.dimensions.pace.peddieScore} ({pPeddie.name})</span>
+                        <span className="text-slate-300 text-[11px]">{duel.dimensions.pace.name}</span>
+                        <span className="text-rose-400">{duel.dimensions.pace.opponentScore} ({pOpp?.name})</span>
+                      </div>
+                      <div className="w-full h-2 rounded-full bg-slate-900 flex overflow-hidden border border-slate-800">
+                        <div className="bg-cyan-400 h-full" style={{ width: `${(duel.dimensions.pace.peddieScore / (duel.dimensions.pace.peddieScore + duel.dimensions.pace.opponentScore)) * 100}%` }} />
+                        <div className="bg-rose-500 h-full" style={{ width: `${(duel.dimensions.pace.opponentScore / (duel.dimensions.pace.peddieScore + duel.dimensions.pace.opponentScore)) * 100}%` }} />
+                      </div>
+                      <p className="text-[10px] text-slate-400">{duel.dimensions.pace.analysis}</p>
                     </div>
-                    <div className="w-full h-2 rounded-full bg-slate-950 flex overflow-hidden border border-slate-800">
-                      <div className="bg-cyan-400 h-full rounded-l-full" style={{ width: `${(pPeddie.topSpeedMph / (pPeddie.topSpeedMph + 20.2)) * 100}%` }} />
-                      <div className="bg-rose-500 h-full rounded-r-full" style={{ width: `${(20.2 / (pPeddie.topSpeedMph + 20.2)) * 100}%` }} />
-                    </div>
-                  </div>
 
-                  {/* Metric 2: Passing Accuracy */}
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-xs text-slate-300 font-mono font-bold">
-                      <span className="text-cyan-400">{pPeddie.passCompletionPct}%</span>
-                      <span className="text-slate-400 font-sans text-[11px]">Pass Completion Accuracy</span>
-                      <span className="text-rose-400">82.0% (Scout Est)</span>
+                    {/* Dimension 2: Aerial */}
+                    <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1.5">
+                      <div className="flex justify-between text-xs font-mono font-bold">
+                        <span className="text-cyan-400">{duel.dimensions.aerial.peddieScore}</span>
+                        <span className="text-slate-300 text-[11px]">{duel.dimensions.aerial.name}</span>
+                        <span className="text-rose-400">{duel.dimensions.aerial.opponentScore}</span>
+                      </div>
+                      <div className="w-full h-2 rounded-full bg-slate-900 flex overflow-hidden border border-slate-800">
+                        <div className="bg-cyan-400 h-full" style={{ width: `${(duel.dimensions.aerial.peddieScore / (duel.dimensions.aerial.peddieScore + duel.dimensions.aerial.opponentScore)) * 100}%` }} />
+                        <div className="bg-rose-500 h-full" style={{ width: `${(duel.dimensions.aerial.opponentScore / (duel.dimensions.aerial.peddieScore + duel.dimensions.aerial.opponentScore)) * 100}%` }} />
+                      </div>
+                      <p className="text-[10px] text-slate-400">{duel.dimensions.aerial.analysis}</p>
                     </div>
-                    <div className="w-full h-2 rounded-full bg-slate-950 flex overflow-hidden border border-slate-800">
-                      <div className="bg-cyan-400 h-full rounded-l-full" style={{ width: `${(pPeddie.passCompletionPct / (pPeddie.passCompletionPct + 82)) * 100}%` }} />
-                      <div className="bg-rose-500 h-full rounded-r-full" style={{ width: `${(82 / (pPeddie.passCompletionPct + 82)) * 100}%` }} />
-                    </div>
-                  </div>
 
-                  {/* Metric 3: Duels Won % */}
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-xs text-slate-300 font-mono font-bold">
-                      <span className="text-cyan-400">{pPeddie.tackleSuccessPct}%</span>
-                      <span className="text-slate-400 font-sans text-[11px]">Contested Tackle / Duel Success</span>
-                      <span className="text-rose-400">{pOpp?.keyStats?.duelsWonPct ?? 60}%</span>
+                    {/* Dimension 3: Ground Contests */}
+                    <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1.5">
+                      <div className="flex justify-between text-xs font-mono font-bold">
+                        <span className="text-cyan-400">{duel.dimensions.groundContest.peddieScore}</span>
+                        <span className="text-slate-300 text-[11px]">{duel.dimensions.groundContest.name}</span>
+                        <span className="text-rose-400">{duel.dimensions.groundContest.opponentScore}</span>
+                      </div>
+                      <div className="w-full h-2 rounded-full bg-slate-900 flex overflow-hidden border border-slate-800">
+                        <div className="bg-cyan-400 h-full" style={{ width: `${(duel.dimensions.groundContest.peddieScore / (duel.dimensions.groundContest.peddieScore + duel.dimensions.groundContest.opponentScore)) * 100}%` }} />
+                        <div className="bg-rose-500 h-full" style={{ width: `${(duel.dimensions.groundContest.opponentScore / (duel.dimensions.groundContest.peddieScore + duel.dimensions.groundContest.opponentScore)) * 100}%` }} />
+                      </div>
+                      <p className="text-[10px] text-slate-400">{duel.dimensions.groundContest.analysis}</p>
                     </div>
-                    <div className="w-full h-2 rounded-full bg-slate-950 flex overflow-hidden border border-slate-800">
-                      <div className="bg-cyan-400 h-full rounded-l-full" style={{ width: `${(pPeddie.tackleSuccessPct / (pPeddie.tackleSuccessPct + (pOpp?.keyStats?.duelsWonPct ?? 60))) * 100}%` }} />
-                      <div className="bg-rose-500 h-full rounded-r-full" style={{ width: `${((pOpp?.keyStats?.duelsWonPct ?? 60) / (pPeddie.tackleSuccessPct + (pOpp?.keyStats?.duelsWonPct ?? 60))) * 100}%` }} />
+
+                    {/* Dimension 4: Tactical Discipline */}
+                    <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1.5">
+                      <div className="flex justify-between text-xs font-mono font-bold">
+                        <span className="text-cyan-400">{duel.dimensions.tacticalIQ.peddieScore}</span>
+                        <span className="text-slate-300 text-[11px]">{duel.dimensions.tacticalIQ.name}</span>
+                        <span className="text-rose-400">{duel.dimensions.tacticalIQ.opponentScore}</span>
+                      </div>
+                      <div className="w-full h-2 rounded-full bg-slate-900 flex overflow-hidden border border-slate-800">
+                        <div className="bg-cyan-400 h-full" style={{ width: `${(duel.dimensions.tacticalIQ.peddieScore / (duel.dimensions.tacticalIQ.peddieScore + duel.dimensions.tacticalIQ.opponentScore)) * 100}%` }} />
+                        <div className="bg-rose-500 h-full" style={{ width: `${(duel.dimensions.tacticalIQ.opponentScore / (duel.dimensions.tacticalIQ.peddieScore + duel.dimensions.tacticalIQ.opponentScore)) * 100}%` }} />
+                      </div>
+                      <p className="text-[10px] text-slate-400">{duel.dimensions.tacticalIQ.analysis}</p>
                     </div>
                   </div>
                 </div>
@@ -1240,8 +1288,34 @@ export default function PlayerPortalPage() {
                         <ShieldAlert className="w-3.5 h-3.5" /> Neutralization Counter Directive:
                       </div>
                       <p className="text-slate-300 leading-relaxed text-[11px]">
-                        {pOpp?.peddieMatchupCounter || 'Maintain disciplined depth and contest first touch aggressively.'}
+                        {duel.coachNazarioDirective}
                       </p>
+                    </div>
+                  </div>
+
+                  {/* Multi-Agent Council Duel Insights */}
+                  <div className="mt-4 pt-4 border-t border-slate-800/80">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-amber-400 mb-2 flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      AI Tactical Council 1v1 Deliberation:
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-300">
+                      <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800">
+                        <span className="text-amber-300 font-black">[Fable 5]: </span>
+                        {duel.councilBreakdown.fableNarrative}
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800">
+                        <span className="text-cyan-300 font-black">[Grok Edge]: </span>
+                        {duel.councilBreakdown.grokEdge}
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800">
+                        <span className="text-emerald-300 font-black">[GPT Structure]: </span>
+                        {duel.councilBreakdown.gptStructure}
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800">
+                        <span className="text-purple-300 font-black">[Kimi Film Scout]: </span>
+                        {duel.councilBreakdown.kimiFilmScout}
+                      </div>
                     </div>
                   </div>
 

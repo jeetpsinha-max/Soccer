@@ -28,14 +28,43 @@ import {
   Volume2,
   ChevronRight,
   ArrowRight,
-  Radio
+  Radio,
+  VolumeX
 } from 'lucide-react';
+import { TacticalAudio } from '@/lib/audio-synthesizer';
 
 export default function SimulatorPage() {
   const [selectedOpponent, setSelectedOpponent] = useState<string>('Life Center Academy');
   const [simState, setSimState] = useState<SimState>(() => SoccerTacticalAgent.initSimulation('Life Center Academy'));
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(false);
   const [teamTalkMessage, setTeamTalkMessage] = useState<string | null>(null);
+  const [soundMuted, setSoundMuted] = useState<boolean>(false);
+  const lastEventRef = React.useRef<number>(0);
+
+  // Audio Event Feedback
+  useEffect(() => {
+    if (soundMuted) return;
+    if (simState.events.length > lastEventRef.current) {
+      const latest = simState.events[simState.events.length - 1];
+      if (latest) {
+        if (latest.type === 'Goal') {
+          if (latest.team === 'Peddie') {
+            TacticalAudio.playGoalCheer(2500);
+          } else {
+            TacticalAudio.playWhistle(300);
+          }
+        } else if (latest.type === 'Shot') {
+          TacticalAudio.playKick();
+        } else if (latest.type === 'Tactical Shift') {
+          TacticalAudio.playWhistle(180);
+        }
+      }
+      if (simState.isFinished) {
+        TacticalAudio.playWhistle(800);
+      }
+      lastEventRef.current = simState.events.length;
+    }
+  }, [simState.events, simState.isFinished, soundMuted]);
 
   // Auto-play loop
   useEffect(() => {
@@ -59,7 +88,9 @@ export default function SimulatorPage() {
   const handleReset = (opponent: string) => {
     setIsAutoPlaying(false);
     setTeamTalkMessage(null);
+    lastEventRef.current = 0;
     setSimState(SoccerTacticalAgent.initSimulation(opponent));
+    if (!soundMuted) TacticalAudio.playWhistle(200);
   };
 
   const handleStanceChange = (stance: SimState['tacticalStance']) => {
@@ -179,6 +210,21 @@ export default function SimulatorPage() {
             className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs font-bold text-slate-300 transition cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" /> Reset Match
+          </button>
+
+          <button
+            onClick={() => {
+              const next = !soundMuted;
+              setSoundMuted(next);
+              TacticalAudio.isMuted = next;
+            }}
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-bold transition cursor-pointer ${
+              soundMuted ? 'bg-slate-950 border-slate-800 text-slate-500' : 'bg-blue-950/40 border-blue-500/40 text-blue-400'
+            }`}
+            title="Toggle Web Audio SFX"
+          >
+            {soundMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
+            {soundMuted ? 'SFX Muted' : 'SFX Active'}
           </button>
         </div>
 
