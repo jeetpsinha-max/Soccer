@@ -8,6 +8,7 @@ import {
   AgentPersonaId 
 } from '@/lib/agents/soccer-agents';
 import { OPPONENT_VEO_SCOUTING, PEDDIE_SCHEDULE_2026_2027 } from '@/lib/soccer-data';
+import { FABLE_SOCCER_PSYCH_ROSTER } from '@/lib/fable-intelligence';
 import { 
   Shield, 
   Sparkles, 
@@ -423,6 +424,97 @@ export default function TacticalWarRoomPage() {
               Open Interactive Playbook Studio <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* 🧠 FABLE 5 PSYCHOLOGICAL & EMOTIONAL GRIT MATRIX */}
+      <div className="glass-panel p-6 lg:p-8 rounded-2xl border border-amber-500/30 bg-slate-950/80 shadow-2xl space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center shadow-md">
+                F5
+              </span>
+              <span className="text-[11px] font-black uppercase tracking-widest text-amber-400">
+                Fable 5 Deep Psychological Assessment
+              </span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-white">
+              Falcon Grit &amp; High-Leverage Composure Matrix
+            </h2>
+            <p className="text-xs text-slate-400 mt-1 max-w-2xl">
+              Qualitative psychological evaluations, clutch conversion ratings under pressure, and emotional composure metrics across Peddie&apos;s key contributors.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold shrink-0">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <span>Fable 5 Multi-Agent Lead</span>
+          </div>
+        </div>
+
+        {/* Player Psych Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {FABLE_SOCCER_PSYCH_ROSTER.map((player) => (
+            <div
+              key={player.id}
+              className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-amber-400/40 transition-all flex flex-col justify-between gap-3 shadow-lg"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <div>
+                    <span className="text-sm font-black text-white">
+                      #{player.number} {player.name}
+                    </span>
+                    <div className="text-[10px] text-slate-400 font-bold">
+                      {player.position}
+                    </div>
+                  </div>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 font-bold uppercase">
+                    {player.leadershipArchetype}
+                  </span>
+                </div>
+
+                {/* Score Gauges */}
+                <div className="space-y-1.5 pt-2 border-t border-white/5 font-mono text-[11px]">
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-400">Grit Score:</span>
+                    <span className="font-bold text-amber-400">{player.gritScore}/100</span>
+                  </div>
+                  <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-amber-400 h-full rounded-full" style={{ width: `${player.gritScore}%` }} />
+                  </div>
+
+                  <div className="flex justify-between items-center pt-1">
+                    <span className="text-slate-400">Clutch Rating:</span>
+                    <span className="font-bold text-emerald-400">{player.clutchRating}/100</span>
+                  </div>
+                  <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-emerald-400 h-full rounded-full" style={{ width: `${player.clutchRating}%` }} />
+                  </div>
+
+                  <div className="flex justify-between items-center pt-1">
+                    <span className="text-slate-400">Composure Under Duress:</span>
+                    <span className="font-bold text-cyan-400">{player.composureGrade}/100</span>
+                  </div>
+                  <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-cyan-400 h-full rounded-full" style={{ width: `${player.composureGrade}%` }} />
+                  </div>
+                </div>
+
+                {/* Narrative Assessment */}
+                <p className="text-[11px] text-slate-300 italic mt-3 pt-2 border-t border-white/5 leading-relaxed">
+                  &ldquo;{player.fableNarrative}&rdquo;
+                </p>
+              </div>
+
+              {/* Verified Clutch Moment */}
+              <div className="mt-2 p-2 rounded-lg bg-slate-950 border border-white/5 text-[10px]">
+                <span className="text-amber-400 font-bold block mb-0.5">⭐ High-Leverage Moment:</span>
+                <span className="text-slate-300">{player.clutchMoments[0]}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
