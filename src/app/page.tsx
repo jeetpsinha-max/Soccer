@@ -159,6 +159,117 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-6">
+      {/* 🦅 DUAL-SPORT ATHLETIC COMMAND CENTER BANNER */}
+      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-950 via-slate-900 to-[#001733] border border-amber-400/40 p-5 shadow-2xl">
+        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 -mb-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+          {/* Platform Identity */}
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-black text-[10px] tracking-wider uppercase">
+                Peddie Athletics SAC
+              </span>
+              <span className="text-cyan-400 text-xs font-mono font-bold">
+                Unified Multi-Sport Intelligence
+              </span>
+              <span className="text-slate-500 text-xs">•</span>
+              <span className="text-slate-300 text-xs">
+                Mid-Atlantic Prep League (MAPL)
+              </span>
+            </div>
+            <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2.5">
+              <span>FALCON VARSITY COMMAND SUITE</span>
+              <span className="text-amber-400 font-mono text-sm font-bold bg-amber-400/10 px-2 py-0.5 rounded-lg border border-amber-400/30">
+                v2.0 DUAL-SPORT
+              </span>
+            </h1>
+            <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
+              Real-time strategic analytics, AI vision tracking, and automated game planning for both Falcon Varsity Soccer (Veo Optical Tracking) and Falcon Varsity Football (Hudl AI Engine).
+            </p>
+          </div>
+
+          {/* Quick Program Jump Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 shrink-0">
+            {/* Soccer Program Pill */}
+            <div className="p-3.5 rounded-xl bg-slate-900/80 border border-emerald-500/40 hover:border-emerald-400 transition-all flex flex-col justify-between gap-2 shadow-lg">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">⚽</span>
+                  <div>
+                    <div className="text-xs font-black text-white">VARSITY SOCCER</div>
+                    <div className="text-[10px] text-emerald-400 font-bold">2026–2027 • 3-2-0 (17 GF)</div>
+                  </div>
+                </div>
+                <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-black">
+                  ACTIVE
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 flex-wrap pt-1 border-t border-white/5">
+                <Link
+                  href="/dashboard/war-room"
+                  className="px-2 py-1 rounded bg-slate-800 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-300 text-[10px] font-bold transition"
+                >
+                  AI War Room
+                </Link>
+                <Link
+                  href="/dashboard/playbook"
+                  className="px-2 py-1 rounded bg-slate-800 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-300 text-[10px] font-bold transition"
+                >
+                  Playbook
+                </Link>
+                <Link
+                  href="/dashboard/simulator"
+                  className="px-2 py-1 rounded bg-slate-800 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-300 text-[10px] font-bold transition"
+                >
+                  Simulator
+                </Link>
+              </div>
+            </div>
+
+            {/* Football Program Pill */}
+            <div className="p-3.5 rounded-xl bg-slate-900/80 border border-amber-500/40 hover:border-amber-400 transition-all flex flex-col justify-between gap-2 shadow-lg">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">🏈</span>
+                  <div>
+                    <div className="text-xs font-black text-white">VARSITY FOOTBALL</div>
+                    <div className="text-[10px] text-amber-400 font-bold">2025–2026 • 5-4 (1,280 Plays)</div>
+                  </div>
+                </div>
+                <Link
+                  href="/football"
+                  className="text-[10px] px-2 py-0.5 rounded bg-amber-400 hover:bg-amber-300 text-slate-950 font-black transition flex items-center gap-1 shadow-md shadow-amber-400/20"
+                >
+                  LAUNCH <span>→</span>
+                </Link>
+              </div>
+              <div className="flex items-center gap-1.5 flex-wrap pt-1 border-t border-white/5">
+                <Link
+                  href="/football/film-room"
+                  className="px-2 py-1 rounded bg-slate-800 hover:bg-amber-400/20 text-slate-300 hover:text-amber-300 text-[10px] font-bold transition"
+                >
+                  Film Room
+                </Link>
+                <Link
+                  href="/football/call-sheet"
+                  className="px-2 py-1 rounded bg-slate-800 hover:bg-amber-400/20 text-slate-300 hover:text-amber-300 text-[10px] font-bold transition"
+                >
+                  Call Sheet
+                </Link>
+                <Link
+                  href="/football/offensive-coach"
+                  className="px-2 py-1 rounded bg-slate-800 hover:bg-amber-400/20 text-slate-300 hover:text-amber-300 text-[10px] font-bold transition"
+                >
+                  AI Coach
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Top Banner / Match Fixture Context */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-panel p-5 border border-emerald-500/30">
         <div>

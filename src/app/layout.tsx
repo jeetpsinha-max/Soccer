@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SportProvider } from "@/context/SportContext";
 import { SeasonProvider } from "@/context/SeasonContext";
 import { Navigation } from "@/components/ui/Navigation";
+import { AppShell } from "@/components/ui/AppShell";
 import { CouncilChatDrawer } from "@/components/ui/CouncilChatDrawer";
 
 export const metadata: Metadata = {
-  title: "Peddie Soccer SAC • Broadcast-Grade Tactical Analytics & Coaching Platform",
-  description: "Official Strategic Analytics and Coaching (SAC) Platform for The Peddie School Varsity Soccer Program (2026-2027 MAPL Campaign).",
+  title: "Peddie Athletics SAC • Multi-Sport Tactical Analytics & Coaching Platform",
+  description: "Official Strategic Analytics and Coaching (SAC) Platform for The Peddie School Varsity Athletics — Soccer & Football (MAPL Conference).",
 };
 
 export default function RootLayout({
@@ -16,14 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased selection:bg-amber-400 selection:text-slate-950">
-        <SeasonProvider>
-          <Navigation />
-          <main className="max-w-7xl mx-auto px-4 lg:px-8 py-6">
-            {children}
-          </main>
-          <CouncilChatDrawer />
-        </SeasonProvider>
+      <body className="antialiased selection:bg-amber-400 selection:text-slate-950 bg-slate-950 text-slate-100">
+        <SportProvider>
+          <SeasonProvider>
+            <Navigation />
+            <AppShell>
+              {children}
+            </AppShell>
+            <CouncilChatDrawer />
+          </SeasonProvider>
+        </SportProvider>
       </body>
     </html>
   );
