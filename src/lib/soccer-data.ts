@@ -4090,3 +4090,196 @@ export const PPDA_SEASON_SERIES = [
   { matchId: 'm-4', matchLabel: 'Princeton Day', peddiePpda: 6.9, opponentPpda: 18.2, leagueAvgPpda: 11.8, pressingIntensity: 'Dominant High Trap' }
 ];
 
+// ============================================================================
+// SAC (Strategic Athletics Council) Live Intelligence Registry
+// Comprehensive Dual-Sport Game Recaps, Scores, Video Film & Fable 5 Telemetry
+// ============================================================================
+
+export interface SacGameRecord {
+  sport: 'Soccer' | 'Football';
+  season: string;
+  gameLabel: string;
+  date: string;
+  opponent: string;
+  scorePeddie: number;
+  scoreOpponent: number;
+  result: 'W' | 'L' | 'D';
+  venue: string;
+  filmProvider: 'veo' | 'hudl' | 'both';
+  filmUrl: string;
+  filmThumbnail: string;
+  statsHighlight: string;
+  fableGritRating: number;
+  fableClutchScore: number;
+  headCoach: string;
+  recapSummary: string;
+}
+
+export const PEDDIE_SAC_INTELLIGENCE_REGISTRY: {
+  seasonStats: {
+    soccer: { record: string; goalsScored: number; goalsConceded: number; cleanSheets: number; topScorer: string };
+    football: { record: string; pointsScored: number; pointsAllowed: number; avgOffensiveYards: number; headCoach: string };
+    fableCouncilRating: { overallGrit: number; clutchIndex: number; mentalComposure: number; tacticalIQ: number };
+  };
+  recentGames: SacGameRecord[];
+} = {
+  seasonStats: {
+    soccer: {
+      record: '6-2-0 (1-0 MAPL)',
+      goalsScored: 24,
+      goalsConceded: 15,
+      cleanSheets: 1,
+      topScorer: 'Tommy Kim (#28) - 11 Goals, 4 Assists'
+    },
+    football: {
+      record: '2-7 (1-3 MAPL)',
+      pointsScored: 198,
+      pointsAllowed: 275,
+      avgOffensiveYards: 312.4,
+      headCoach: 'Mark Fabish'
+    },
+    fableCouncilRating: {
+      overallGrit: 89.4,
+      clutchIndex: 92.1,
+      mentalComposure: 88.7,
+      tacticalIQ: 91.0
+    }
+  },
+  recentGames: [
+    {
+      sport: 'Soccer',
+      season: '2026-2027',
+      gameLabel: 'Match 7: @ The Lawrenceville School (MAPL Opener)',
+      date: 'Sep 26, 2026',
+      opponent: 'The Lawrenceville School Big Red',
+      scorePeddie: 2,
+      scoreOpponent: 1,
+      result: 'W',
+      venue: 'Lawrenceville, NJ',
+      filmProvider: 'both',
+      filmUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/video',
+      filmThumbnail: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+      statsHighlight: 'xG 2.15 vs 1.08 | PPDA 8.8 | 53.6% Possession',
+      fableGritRating: 94.2,
+      fableClutchScore: 96.0,
+      headCoach: 'George Nazario',
+      recapSummary: 'Epic 2-1 rivalry victory! Jeffery Zhang (#20) scored in the 34\', and Tommy Kim (#28) headed home the 78th-minute game-winner off a Christian Tharney set-piece.'
+    },
+    {
+      sport: 'Soccer',
+      season: '2026-2027',
+      gameLabel: 'Match 6: vs Rutgers Prep (Somerset Showcase)',
+      date: 'Sep 24, 2026',
+      opponent: 'Rutgers Preparatory School',
+      scorePeddie: 2,
+      scoreOpponent: 0,
+      result: 'W',
+      venue: 'Peddie Campus, Hightstown, NJ',
+      filmProvider: 'both',
+      filmUrl: 'https://app.veo.co/matches/20260901-vs-peddie-v4d69c3b/',
+      filmThumbnail: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+      statsHighlight: 'Clean Sheet | xG 2.10 vs 0.65 | 61.5% Possession | 6 GK Saves',
+      fableGritRating: 88.5,
+      fableClutchScore: 89.2,
+      headCoach: 'George Nazario',
+      recapSummary: 'Masterclass 2-0 shutout. Rayyaan Mohiuddin (#14) dictating tempo from the diamond tip; Blake Romanelli (#26) sealed the win; Dylan McKenzie (#98) clean sheet.'
+    },
+    {
+      sport: 'Soccer',
+      season: '2026-2027',
+      gameLabel: 'Match 5: vs Life Center Academy',
+      date: 'Sep 22, 2026',
+      opponent: 'Life Center Academy',
+      scorePeddie: 3,
+      scoreOpponent: 1,
+      result: 'W',
+      venue: 'Back Field 3, Hightstown, NJ',
+      filmProvider: 'both',
+      filmUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/video',
+      filmThumbnail: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+      statsHighlight: 'xG 2.45 vs 0.92 | 58.2% Possession | 14 Aerial Duels Won',
+      fableGritRating: 91.0,
+      fableClutchScore: 92.5,
+      headCoach: 'George Nazario',
+      recapSummary: 'Gritty 3-1 comeback win after conceding early. Goals by Tommy Kim (#28), Christian Tharney (#13), and Carson Fleming (#15) off set-pieces.'
+    },
+    {
+      sport: 'Soccer',
+      season: '2026-2027',
+      gameLabel: 'Match 4: vs Princeton Day School (Mercer County Derby)',
+      date: 'Sep 14, 2026',
+      opponent: 'Princeton Day School',
+      scorePeddie: 7,
+      scoreOpponent: 1,
+      result: 'W',
+      venue: 'Peddie Campus, Hightstown, NJ',
+      filmProvider: 'both',
+      filmUrl: 'https://app.veo.co/matches/20260901-vs-peddie-v4d69c3b/',
+      filmThumbnail: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+      statsHighlight: 'xG 4.48 vs 0.94 | PPDA 6.9 | 64.5% Possession | 18 Shots on Target',
+      fableGritRating: 95.0,
+      fableClutchScore: 94.0,
+      headCoach: 'George Nazario',
+      recapSummary: 'Emphatic 7-1 rout. Tommy Kim (#28) hat trick, Jeffery Zhang (#20) brace, Bennett Cucchiara (#7), Jeet Sinha (#6), and Zachary Horsch (#15) goals.'
+    },
+    {
+      sport: 'Football',
+      season: '2024-2025',
+      gameLabel: 'Week 6: vs The Hill School (Keystone Classic)',
+      date: 'Oct 5, 2024',
+      opponent: 'The Hill School Blues',
+      scorePeddie: 45,
+      scoreOpponent: 42,
+      result: 'W',
+      venue: 'Peddie Campus, Hightstown, NJ',
+      filmProvider: 'hudl',
+      filmUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/peddie-school/video',
+      filmThumbnail: 'https://images.hudl.com/v2/production/team/34743/thumbnail.jpg',
+      statsHighlight: '45 Points Scored | Passing EPA +0.38 | 412 Total Offensive Yards',
+      fableGritRating: 97.4,
+      fableClutchScore: 98.6,
+      headCoach: 'Mark Fabish',
+      recapSummary: 'All-time 45-42 shootout victory over The Hill School! Aerial offensive assault led by explosive downfield passing and 4th-quarter goal-line stand.'
+    },
+    {
+      sport: 'Football',
+      season: '2024-2025',
+      gameLabel: 'Week 3: vs The Kiski School',
+      date: 'Sep 21, 2024',
+      opponent: 'The Kiski School',
+      scorePeddie: 13,
+      scoreOpponent: 27,
+      result: 'L',
+      venue: 'Peddie Campus, Hightstown, NJ',
+      filmProvider: 'hudl',
+      filmUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/peddie-school/video',
+      filmThumbnail: 'https://images.hudl.com/v2/production/team/34743/thumbnail.jpg',
+      statsHighlight: '286 Passing Yards | 2 TD Drives | 18 Defensive Tackles for Loss',
+      fableGritRating: 84.0,
+      fableClutchScore: 82.5,
+      headCoach: 'Mark Fabish',
+      recapSummary: 'Physical non-conference battle against Kiski School. Full film breakdown and tackle telemetry cataloged on Peddie Hudl Fan.'
+    },
+    {
+      sport: 'Football',
+      season: '2024-2025',
+      gameLabel: 'Week 8: vs The Pennington School (MAPL Clash)',
+      date: 'Oct 26, 2024',
+      opponent: 'The Pennington School Red Raiders',
+      scorePeddie: 8,
+      scoreOpponent: 41,
+      result: 'L',
+      venue: 'Pennington, NJ',
+      filmProvider: 'hudl',
+      filmUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/peddie-school/video',
+      filmThumbnail: 'https://images.hudl.com/v2/production/team/34743/thumbnail.jpg',
+      statsHighlight: 'Defensive Stand in Red Zone | 3 Sacks Recorded',
+      fableGritRating: 86.2,
+      fableClutchScore: 81.0,
+      headCoach: 'Mark Fabish',
+      recapSummary: 'MAPL test against perennial power Pennington. Red Zone defensive stops highlighted in film review.'
+    }
+  ]
+};
+
+
