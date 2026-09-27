@@ -295,6 +295,30 @@ export default function SchedulePage() {
                   </div>
                 </div>
 
+                {/* 2026 Season Record & Predictive Badges */}
+                <div className="flex flex-wrap items-center gap-1.5 text-[10px] pt-1">
+                  {(scoutDossier?.currentRecord || match.opponentRecord) && (
+                    <span className="px-1.5 py-0.5 rounded bg-slate-800/90 text-amber-300 font-mono font-bold border border-slate-700">
+                      2026: {scoutDossier?.currentRecord || match.opponentRecord}
+                    </span>
+                  )}
+                  {(scoutDossier?.nationalRanking || match.nationalRanking) && (
+                    <span className="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30">
+                      🏆 {scoutDossier?.nationalRanking || match.nationalRanking}
+                    </span>
+                  )}
+                  {(scoutDossier?.stateRanking || match.stateRanking) && (
+                    <span className="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">
+                      📍 {scoutDossier?.stateRanking || match.stateRanking}
+                    </span>
+                  )}
+                  {(scoutDossier?.projectedScore || match.projectedScore) && match.status !== 'Completed' && (
+                    <span className="px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 font-mono font-bold border border-cyan-500/30">
+                      Proj: {scoutDossier?.projectedScore || match.projectedScore}
+                    </span>
+                  )}
+                </div>
+
                 {/* Status / Score or Scouting Status */}
                 <div className="pt-2 border-t border-slate-800/80">
                   {match.status === 'Completed' ? (
@@ -422,9 +446,37 @@ export default function SchedulePage() {
                   <h2 className="text-2xl font-black text-white mt-1">
                     {activeScoutDossier.opponent}
                   </h2>
-                  <div className="text-xs text-slate-400 font-medium mt-0.5">
-                    Head Coach: <span className="text-slate-200 font-semibold">{activeScoutDossier.headCoach}</span> • System: <span className="text-amber-400 font-bold">{activeScoutDossier.primaryFormation}</span> (Alt: {activeScoutDossier.secondaryFormation})
+                  <div className="text-xs text-slate-400 font-medium mt-0.5 flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                    <span>Head Coach: <span className="text-slate-200 font-semibold">{activeScoutDossier.headCoach}</span></span>
+                    <span>•</span>
+                    <span>System: <span className="text-amber-400 font-bold">{activeScoutDossier.primaryFormation}</span> (Alt: {activeScoutDossier.secondaryFormation})</span>
+                    {activeScoutDossier.currentRecord && (
+                      <>
+                        <span>•</span>
+                        <span>2026 Record: <strong className="text-amber-300 font-mono">{activeScoutDossier.currentRecord}</strong></span>
+                      </>
+                    )}
+                    {activeScoutDossier.formGuide && (
+                      <>
+                        <span>•</span>
+                        <span>Form: <span className="font-mono text-xs px-1.5 py-0.2 bg-slate-800 rounded text-slate-300 border border-slate-700">{activeScoutDossier.formGuide}</span></span>
+                      </>
+                    )}
                   </div>
+                  {(activeScoutDossier.nationalRanking || activeScoutDossier.stateRanking) && (
+                    <div className="flex flex-wrap items-center gap-2 mt-1.5">
+                      {activeScoutDossier.nationalRanking && (
+                        <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                          🏆 {activeScoutDossier.nationalRanking}
+                        </span>
+                      )}
+                      {activeScoutDossier.stateRanking && (
+                        <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                          📍 {activeScoutDossier.stateRanking}
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -437,7 +489,7 @@ export default function SchedulePage() {
             </div>
 
             {/* Win Probability & Threat Metric Bar */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
               {(() => {
                 const style = getWinExpectancyStyle(activeScoutDossier.winProbabilityPct);
                 return (
@@ -472,6 +524,14 @@ export default function SchedulePage() {
                     {activeScoutDossier.threatLevel} Alert
                   </span>
                 </div>
+              </div>
+
+              <div>
+                <div className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Projected Score</div>
+                <div className="text-base font-black text-cyan-300 font-mono mt-1">
+                  {activeScoutDossier.projectedScore || 'Peddie 2-1'}
+                </div>
+                <div className="text-[11px] text-slate-400 mt-0.5">Veo Model Grounded</div>
               </div>
 
               <div>

@@ -190,6 +190,11 @@ export interface MatchFixture {
   filmProvider?: 'veo' | 'hudl' | 'both' | 'pending';
   thumbnailUrl?: string;
   scoutingReportId?: string;
+  opponentRecord?: string;
+  projectedScore?: string;
+  nationalRanking?: string;
+  stateRanking?: string;
+  winProbabilityPct?: number;
 }
 
 export interface XTCell {
@@ -330,6 +335,11 @@ export interface VeoTeamScout {
   secondaryFormation?: string;
   winProbabilityPct: number;
   threatLevel: 'High' | 'Medium' | 'Critical';
+  currentRecord?: string;
+  projectedScore?: string;
+  formGuide?: string;
+  nationalRanking?: string;
+  stateRanking?: string;
   veoMatchRecordId?: string;
   veoThumbnailUrl?: string;
   veoVideoUrl?: string;
