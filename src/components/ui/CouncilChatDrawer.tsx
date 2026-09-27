@@ -271,15 +271,15 @@ export function CouncilChatDrawer() {
       };
     }
 
-    // Soccer 2. Recruiting & NCAA D1
-    if (q.includes('recruiting') || q.includes('d1') || q.includes('college') || q.includes('measurable')) {
+    // Soccer 2. Tactical Standouts & Form
+    if (q.includes('standout') || q.includes('player') || q.includes('form') || q.includes('tactical')) {
       return {
         id: `council-${Date.now()}`,
         sender: 'council',
-        senderName: 'Council Recruiting Panel',
-        text: 'Peddie 2026-2027 Collegiate Recruiting Standouts:\n• Christian Tharney (#13, CM/CAM, 2027): 6\'2", 178 lbs, 21.2 mph top speed, 4.0 GPA. 6 G, 5 A. Tier 1 NCAA D1 prospect.\n• Carson Wiley (#22, CB, 2028): 6\'2", 185 lbs, 20.8 mph, 3.9 GPA. 82% tackle rate, 78% aerial duel win rate.\n• Noah Eldessouky (#12, ST, 2027): 6\'3", 192 lbs, 20.4 mph, 3.8 GPA. 7 G (hat-trick vs PDS). Elite target forward profile.\n• Dylan McKenzie (#98, GK, 2027): 6\'3", 188 lbs, 4.0 GPA. 84% save conversion in MAPL play.',
+        senderName: 'Council Player Performance Panel',
+        text: 'Peddie 2026-2027 Key Tactical Standouts:\n• Christian Tharney (#13, CM/CAM, 2027): 178 lbs, 21.2 mph top speed. 6 G, 5 A. Creative midfield maestro.\n• Carson Wiley (#22, CB, 2028): 185 lbs, 20.8 mph. 82% tackle rate, 78% aerial duel win rate.\n• Noah Eldessouky (#12, ST, 2027): 192 lbs, 20.4 mph. 7 G (hat-trick vs PDS). Elite target forward finishing.\n• Dylan McKenzie (#98, GK, 2027): 188 lbs. 84% save conversion in MAPL play.',
         timestamp: timeStr,
-        tags: ['NCAA D1', 'Academic All-American', 'GPS Verified']
+        tags: ['Tactical Leaders', 'Form Audit', 'GPS Verified']
       };
     }
 
@@ -575,7 +575,7 @@ export function CouncilChatDrawer() {
                 type="text"
                 value={inputQuery}
                 onChange={(e) => setInputQuery(e.target.value)}
-                placeholder="Ask Council on tactics, 1v1 matchups, recruiting..."
+                placeholder="Ask Council on tactics, 1v1 matchups, player form..."
                 className="flex-1 bg-slate-950 border border-slate-700 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:outline-none transition-colors"
               />
               <button

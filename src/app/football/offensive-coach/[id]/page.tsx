@@ -237,7 +237,7 @@ export default function OffensiveCoachPage() {
           { rank: '3rd Read', target: '#22 Benjamin Perkins', route: 'Underneath Hitch / Whip (5 yds)', window: 'Quick RAC opportunity if safeties backpedal' },
           { rank: 'Checkdown', target: '#3 Jeremiah Davis', route: 'Shoot Flat', window: 'Immediate release against delayed blitz' },
         ],
-        tacticalRationale: 'Cover 2 is vulnerable in the high-middle hole between the two safeties and along the honey-hole sideline (18-22 yards). Cooper Allen (#4) creates an overwhelming height mismatch against middle linebackers.',
+        tacticalRationale: 'Cover 2 is vulnerable in the high-middle hole between the two safeties and along the honey-hole sideline (18-22 yards). Cooper Allen (#4) creates an overwhelming aerial and physical mismatch against middle linebackers.',
       });
     } else if (isCover0) {
       plays.push({

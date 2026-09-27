@@ -192,11 +192,11 @@ export function calculateDuelMatchup(
         analysis: `${peddie.name} clocks ${peddieSpeed} mph against estimated ${oppSpeed} mph top speed.`
       },
       aerial: {
-        name: 'Aerial Dominance & Height',
+        name: 'Aerial Dominance & Leverage',
         peddieScore: peddieAerialScore,
         opponentScore: oppAerialScore,
         advantage: aerialAdv,
-        analysis: `${peddie.name} (${peddie.height}) vs ${opponent.name} (${opponent.height || "5'10\""}) — ${heightDiff >= 0 ? '+' : ''}${heightDiff}" differential.`
+        analysis: `${peddie.name} vs ${opponent.name} — aerial & physical duel rating: ${peddieAerialScore} vs ${oppAerialScore}.`
       },
       groundContest: {
         name: 'Ground Duel & Tackle Success',

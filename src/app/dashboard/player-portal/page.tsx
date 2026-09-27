@@ -16,7 +16,6 @@ import {
   TrendingUp, 
   Zap, 
   FileText, 
-  GraduationCap,
   Camera,
   ShieldCheck,
   Sparkles,
@@ -358,7 +357,7 @@ export default function PlayerPortalPage() {
                     {selectedPlayer.classYear} • Class of {selectedPlayer.gradYear} • {selectedPlayer.hometown}
                   </div>
                   <div className="text-xs text-slate-400">
-                    Height: {selectedPlayer.height} • Weight: {selectedPlayer.weight}
+                    Weight: {selectedPlayer.weight}
                   </div>
                 </div>
                   {/* Media Picture 2 Quick Preview */}
@@ -649,10 +648,10 @@ export default function PlayerPortalPage() {
               )}
             </div>
 
-            {/* College Recruitment Dossier */}
+            {/* Tactical Development & Coaching Evaluation */}
             <div className="glass-panel p-5 flex flex-col gap-2 border border-emerald-500/20">
               <h3 className="text-sm font-black text-emerald-400 flex items-center gap-2">
-                <GraduationCap className="w-4 h-4" /> College Recruitment Profile & Scout Evaluation
+                <Award className="w-4 h-4" /> Tactical Development &amp; Coaching Evaluation
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 {selectedPlayer.recruitmentNotes}
@@ -815,8 +814,6 @@ export default function PlayerPortalPage() {
                       </div>
                       <div className="text-[10px] text-slate-400 flex items-center gap-2 font-mono">
                         <span>{p.classYear}</span>
-                        <span>•</span>
-                        <span>{p.height}</span>
                         <span>•</span>
                         <span>{p.dominantFoot} Foot</span>
                       </div>
@@ -1099,7 +1096,7 @@ export default function PlayerPortalPage() {
                         <h3 className="text-lg font-black text-white mt-1 truncate">{pPeddie.name}</h3>
                         <div className="text-xs text-cyan-400 font-medium line-clamp-1">{pPeddie.tacticalRole}</div>
                         <div className="text-[11px] text-slate-400 font-mono mt-0.5">
-                          {pPeddie.classYear} • {pPeddie.height} • {pPeddie.weight}
+                          {pPeddie.classYear} • {pPeddie.weight}
                         </div>
                       </div>
                     </div>
@@ -1159,7 +1156,7 @@ export default function PlayerPortalPage() {
                         <h3 className="text-lg font-black text-white mt-1 truncate">{pOpp?.name}</h3>
                         <div className="text-xs text-rose-300 font-medium line-clamp-1">{pOpp?.tacticalRole}</div>
                         <div className="text-[11px] text-slate-400 font-mono mt-0.5">
-                          {pOpp?.classYear} • {pOpp?.height} • {pOpp?.dominantFoot} Foot
+                          {pOpp?.classYear} • {pOpp?.dominantFoot} Foot
                         </div>
                       </div>
                     </div>
@@ -1464,8 +1461,6 @@ export default function PlayerPortalPage() {
               </div>
               <div className="text-[11px] text-slate-400 flex items-center gap-2 font-mono">
                 <span>Class: {inspectedOpponentPlayer.classYear}</span>
-                <span>•</span>
-                <span>Height: {inspectedOpponentPlayer.height}</span>
                 <span>•</span>
                 <span>Foot: {inspectedOpponentPlayer.dominantFoot}</span>
               </div>

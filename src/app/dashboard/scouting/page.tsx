@@ -320,7 +320,7 @@ export default function ScoutingPage() {
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-400 mt-0.5">
-                        {player.classYear} • {player.height || 'Height n/a'} • Foot: {player.dominantFoot || 'Right'}
+                        {player.classYear} • Foot: {player.dominantFoot || 'Right'}
                       </div>
                     </div>
                   </div>
@@ -424,7 +424,7 @@ export default function ScoutingPage() {
                     </span>
                   </div>
                   <div className="text-xs text-slate-400 mt-1">
-                    {selectedOpponentPlayer.teamName} • {selectedOpponentPlayer.classYear} • Height: {selectedOpponentPlayer.height || 'N/A'} • Preferred Foot: {selectedOpponentPlayer.dominantFoot || 'Right'}
+                    {selectedOpponentPlayer.teamName} • {selectedOpponentPlayer.classYear} • Preferred Foot: {selectedOpponentPlayer.dominantFoot || 'Right'}
                   </div>
                 </div>
               </div>

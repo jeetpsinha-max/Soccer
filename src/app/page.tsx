@@ -32,7 +32,7 @@ import {
   Flame,
   Clock,
   Eye,
-  GraduationCap,
+  Compass,
   Radio,
   Play,
   ChevronRight
@@ -440,22 +440,22 @@ export default function Home() {
         </Link>
 
         <Link
-          href="/dashboard/recruiting"
+          href="/dashboard/scouting"
           className="p-4 rounded-2xl glass-panel border border-purple-500/40 bg-gradient-to-br from-purple-950/30 via-slate-900/80 to-slate-950 hover:border-purple-400 transition-all duration-300 group shadow-lg"
         >
           <div className="flex items-center justify-between mb-1.5">
             <span className="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-black">
-              <GraduationCap className="w-4 h-4" />
+              <Compass className="w-4 h-4" />
             </span>
             <span className="text-[10px] uppercase font-black px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">
-              NCAA D1-D3
+              OPPONENT INTEL
             </span>
           </div>
           <h3 className="text-sm font-black text-white group-hover:text-purple-300 transition flex items-center gap-1">
-            College Recruiting Hub <ChevronRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-1 transition" />
+            Opponent Scouting Hub <ChevronRight className="w-3.5 h-3.5 opacity-60 group-hover:translate-x-1 transition" />
           </h3>
           <p className="text-[11px] text-slate-400 mt-1">
-            Scout profiles, GPA/SAT metrics, 40-yd times & Nazario scout notes.
+            Opponent tactical dossiers, key threats, and 1v1 duel matchup simulations.
           </p>
         </Link>
       </div>

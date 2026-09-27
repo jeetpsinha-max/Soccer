@@ -293,7 +293,7 @@ export default function SidelineCallSheetPage() {
                 <strong>#8 Owen Bonchev</strong> and <strong>#22 Carson Wiley</strong> command central 6-yard box as starting Center Backs.
               </p>
               <p>
-                <strong>#10 Quinn Wachtveitl (LM)</strong> crashes near-post zone to clear aerial balls with 6&apos;2&quot; height.
+                <strong>#10 Quinn Wachtveitl (LM)</strong> crashes near-post zone to clear aerial balls with elite physical presence.
               </p>
               <p>
                 <strong>#13 Christian Tharney (C)</strong> anchors the top of the box at CDM to intercept secondary rebounds.

@@ -1073,9 +1073,9 @@ export default function AnalyticsPage() {
                   <span className="text-[10px] text-slate-500">4 Saves in Match Situations</span>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 flex flex-col">
-                  <span className="text-[10px] text-slate-400 font-bold uppercase">Physical Height</span>
-                  <span className="text-lg font-mono font-black text-white">6&apos;0&quot;</span>
-                  <span className="text-[10px] text-slate-500">172 lbs Frame</span>
+                  <span className="text-[10px] text-slate-400 font-bold uppercase">Weight &amp; Frame</span>
+                  <span className="text-lg font-mono font-black text-white">172 lbs</span>
+                  <span className="text-[10px] text-slate-500">Athletic Build</span>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 flex flex-col">
                   <span className="text-[10px] text-slate-400 font-bold uppercase">Crosses Claimed %</span>
@@ -1090,7 +1090,7 @@ export default function AnalyticsPage() {
               </div>
 
               <div className="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-xs text-slate-300 leading-relaxed">
-                <strong>Sideline Protocol:</strong> Jeffery Zhang acts as the designated emergency goalkeeper in the event of injury or tactical card accumulation to Dylan McKenzie (#98). His 6&apos;0&quot; height and explosive jumping ability provide reliable net protection.
+                <strong>Sideline Protocol:</strong> Jeffery Zhang acts as the designated emergency goalkeeper in the event of injury or tactical card accumulation to Dylan McKenzie (#98). His wingspan and explosive jumping ability provide reliable net protection.
               </div>
             </div>
           </div>
