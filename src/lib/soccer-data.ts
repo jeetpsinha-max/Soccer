@@ -2968,26 +2968,22 @@ export const MATCH_EVENTS_VEO_BLAIR: MatchEvent[] = [
 ];
 
 export const ALL_VEO_MATCH_EVENTS: Record<string, MatchEvent[]> = {
-  'm-0': MATCH_EVENTS_VEO_HAVERFORD,
-  'm-1': MATCH_EVENTS_VEO_AQUINAS,
-  'm-2': MATCH_EVENTS_VEO_TRENTON,
-  'm-3': MATCH_EVENTS_VEO_GEORGE,
-  'm-4': MATCH_EVENTS_VEO_PDS,
+  // Official Completed Match Film (2026 Season)
+  'm-0': MATCH_EVENTS_VEO_HAVERFORD,     // Sept 1 @ Haverford (0-5)
+  'm-1': MATCH_EVENTS_VEO_AQUINAS,       // Sept 4 vs St. Thomas Aquinas (3-2 W)
+  'm-2': MATCH_EVENTS_VEO_TRENTON,       // Sept 8 vs Trenton Central (2-3 L)
+  'm-3': MATCH_EVENTS_VEO_GEORGE,        // Sept 10 vs George School (5-2 W)
+  'm-4': MATCH_EVENTS_VEO_PDS,           // Sept 14 vs Princeton Day School (7-1 W)
+  
+  // Dedicated Opponent Pre-Match Scout Reels
+  'scout-lca': MATCH_EVENTS_VEO_LIFE_CENTER,     // Life Center Academy Scout Reel
   'm-5': MATCH_EVENTS_VEO_LIFE_CENTER,
-  'm-6': MATCH_EVENTS_VEO_AQUINAS,
+  'scout-lvr': MATCH_EVENTS_VEO_LAWRENCEVILLE,   // Lawrenceville Big Red MAPL Scout Reel
   'm-7': MATCH_EVENTS_VEO_LAWRENCEVILLE,
-  'm-8': MATCH_EVENTS_VEO_TRENTON,
-  'm-9': MATCH_EVENTS_VEO_GEORGE,
-  'm-10': MATCH_EVENTS_VEO_PDS,
-  'm-11': MATCH_EVENTS_VEO_HAVERFORD,
-  'm-12': MATCH_EVENTS_VEO_TRENTON,
-  'm-13': MATCH_EVENTS_VEO_PENNINGTON,
-  'm-14': MATCH_EVENTS_VEO_HAVERFORD,
-  'm-15': MATCH_EVENTS_VEO_BLAIR,
-  'scout-lca': MATCH_EVENTS_VEO_LIFE_CENTER,
-  'scout-lvr': MATCH_EVENTS_VEO_LAWRENCEVILLE,
-  'scout-pen': MATCH_EVENTS_VEO_PENNINGTON,
-  'scout-blr': MATCH_EVENTS_VEO_BLAIR,
+  'scout-pen': MATCH_EVENTS_VEO_PENNINGTON,      // The Pennington School Prep A Scout Reel
+  'm-14': MATCH_EVENTS_VEO_PENNINGTON,
+  'scout-blr': MATCH_EVENTS_VEO_BLAIR,           // Blair Academy 123rd Classic Scout Reel
+  'm-16': MATCH_EVENTS_VEO_BLAIR,
 };
 
 export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {

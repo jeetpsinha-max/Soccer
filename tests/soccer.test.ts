@@ -646,5 +646,53 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
       expect(p.filmUrl?.startsWith('http')).toBe(true);
     });
   });
+
+  it('verifies match film is strictly and accurately shown only for correct games', () => {
+    // 1. Completed matches (m-0 to m-4) must all have official Veo match film
+    const completedIds = ['m-0', 'm-1', 'm-2', 'm-3', 'm-4'];
+    completedIds.forEach(id => {
+      expect(ALL_VEO_MATCH_EVENTS[id]).toBeDefined();
+      expect(ALL_VEO_MATCH_EVENTS[id].length).toBeGreaterThan(0);
+    });
+
+    // 2. Dedicated opponent pre-match scout reels exist for specified upcoming opponents
+    const scoutReelKeys = ['scout-lca', 'scout-lvr', 'scout-pen', 'scout-blr'];
+    scoutReelKeys.forEach(key => {
+      expect(ALL_VEO_MATCH_EVENTS[key]).toBeDefined();
+      expect(ALL_VEO_MATCH_EVENTS[key].length).toBeGreaterThanOrEqual(4);
+    });
+
+    // 3. Upcoming matches without dedicated scout reels MUST NOT have film entries or false cross-mappings
+    const upcomingWithoutFilm = ['m-6', 'm-8', 'm-9', 'm-10', 'm-11', 'm-12', 'm-13', 'm-15'];
+    upcomingWithoutFilm.forEach(id => {
+      expect(ALL_VEO_MATCH_EVENTS[id]).toBeUndefined();
+    });
+
+    // 4. Verify each completed match's events strictly describe its own opponent
+    // m-0: Haverford
+    expect(ALL_VEO_MATCH_EVENTS['m-0'].some(e => e.description.toLowerCase().includes('haverford'))).toBe(true);
+    // m-1: Aquinas
+    expect(ALL_VEO_MATCH_EVENTS['m-1'].some(e => e.description.toLowerCase().includes('aquinas'))).toBe(true);
+    // m-2: Trenton Central
+    expect(ALL_VEO_MATCH_EVENTS['m-2'].some(e => e.description.toLowerCase().includes('trenton'))).toBe(true);
+    // m-3: George School
+    expect(ALL_VEO_MATCH_EVENTS['m-3'].some(e => e.description.toLowerCase().includes('george'))).toBe(true);
+    // m-4: Princeton Day School
+    expect(ALL_VEO_MATCH_EVENTS['m-4'].some(e => e.description.toLowerCase().includes('pds') || e.description.toLowerCase().includes('princeton day'))).toBe(true);
+
+    // 5. Verify scout reels strictly describe their own opponents
+    expect(ALL_VEO_MATCH_EVENTS['scout-lca'].every(e => e.id.startsWith('lca-'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['scout-lvr'].every(e => e.id.startsWith('lvr-'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['scout-pen'].every(e => e.id.startsWith('pen-'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['scout-blr'].every(e => e.id.startsWith('blr-'))).toBe(true);
+
+    // 6. Ensure no false cross-pollination:
+    // m-6 (Rutgers Prep) must NOT have Aquinas events
+    expect(ALL_VEO_MATCH_EVENTS['m-6']).toBeUndefined();
+    // m-8 (St. Benedict's) must NOT have Trenton events
+    expect(ALL_VEO_MATCH_EVENTS['m-8']).toBeUndefined();
+    // m-11 (Hill) must NOT have Haverford events
+    expect(ALL_VEO_MATCH_EVENTS['m-11']).toBeUndefined();
+  });
 });
 

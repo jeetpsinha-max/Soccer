@@ -47,25 +47,21 @@ interface MatchTab {
   hudlUrl?: string;
 }
 
-// Generate soccer match tabs for all 16 schedule fixtures plus scout reels
+// Generate soccer match tabs strictly for completed matches plus verified opponent scout reels
 const SOCCER_MATCH_TABS: MatchTab[] = [
-  ...PEDDIE_SCHEDULE_2026_2027.map(m => {
-    const isCompleted = m.status === 'Completed';
+  // 1. Official Completed Matches (2026 Season - Full Match Film Broadcasts)
+  ...PEDDIE_SCHEDULE_2026_2027.filter(m => m.status === 'Completed').map(m => {
     const isWin = (m.peddieScore ?? 0) > (m.opponentScore ?? 0);
-    const scoreBadge = isCompleted 
-      ? `${m.peddieScore}-${m.opponentScore} ${isWin ? 'W' : 'L'}`
-      : m.matchDate.replace(', 2026', '');
-    const badgeStyle = isCompleted
-      ? isWin
-        ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
-        : 'bg-rose-500/20 text-rose-300 border-rose-500/40'
-      : 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40';
+    const scoreBadge = `${m.peddieScore}-${m.opponentScore} ${isWin ? 'W' : 'L'}`;
+    const badgeStyle = isWin
+      ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+      : 'bg-rose-500/20 text-rose-300 border-rose-500/40';
 
     return {
       id: m.id,
       name: m.opponentLogoText ? `${m.opponentLogoText} - ${m.opponent.replace('The ', '').replace(' High School', '').replace(' School', '')}` : m.opponent,
-      subtext: `${m.matchDate} (${isCompleted ? `${m.peddieScore}-${m.opponentScore}` : 'Upcoming'})`,
-      type: isCompleted ? ('completed' as const) : ('scout' as const),
+      subtext: `${m.matchDate} (${m.peddieScore}-${m.opponentScore} Final)`,
+      type: 'completed' as const,
       scoreBadge,
       badgeStyle,
       opponentKey: m.scoutingReportId,
@@ -74,7 +70,7 @@ const SOCCER_MATCH_TABS: MatchTab[] = [
       hudlUrl: m.hudlUrl
     };
   }),
-  // Opponent scout reels
+  // 2. Opponent Pre-Match Scouting Film Reels
   { id: 'scout-lca', name: 'Life Center Academy', subtext: 'Sep 22 Scout Reel', type: 'scout', scoreBadge: 'SCOUT REEL', badgeStyle: 'bg-amber-500/20 text-amber-300 border-amber-500/40', opponentKey: 'life-center', sport: 'soccer' },
   { id: 'scout-lvr', name: 'Lawrenceville Big Red', subtext: 'MAPL Opener Scout', type: 'scout', scoreBadge: 'SCOUT REEL', badgeStyle: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40', opponentKey: 'lawrenceville', sport: 'soccer' },
   { id: 'scout-pen', name: 'Pennington Red Hawks', subtext: 'Prep A Scout Reel', type: 'scout', scoreBadge: 'SCOUT REEL', badgeStyle: 'bg-purple-500/20 text-purple-300 border-purple-500/40', opponentKey: 'pennington', sport: 'soccer' },
@@ -126,15 +122,20 @@ function MatchFilmContent() {
   // Sync with searchParams if provided
   useEffect(() => {
     if (requestedMatch) {
-      setSelectedMatchId(requestedMatch);
-      const isFoot = FOOTBALL_MATCH_TABS.some(f => f.id === requestedMatch);
+      let targetId = requestedMatch;
+      // Map upcoming fixture requests with available scout reels
+      if (requestedMatch === 'm-5') targetId = 'scout-lca';
+      else if (requestedMatch === 'm-7') targetId = 'scout-lvr';
+      else if (requestedMatch === 'm-14') targetId = 'scout-pen';
+      else if (requestedMatch === 'm-16') targetId = 'scout-blr';
+
+      setSelectedMatchId(targetId);
+      const isFoot = FOOTBALL_MATCH_TABS.some(f => f.id === targetId);
       if (isFoot) {
         setActiveSport('football');
       } else {
         setActiveSport('soccer');
-        const isScout = requestedMatch.startsWith('scout-') || (
-          PEDDIE_SCHEDULE_2026_2027.find(m => m.id === requestedMatch)?.status === 'Upcoming'
-        );
+        const isScout = targetId.startsWith('scout-');
         setFilmCategory(isScout ? 'scout' : 'completed');
       }
     }
@@ -142,16 +143,30 @@ function MatchFilmContent() {
 
   // Current sport match tabs
   const currentSportTabs = activeSport === 'soccer' ? SOCCER_MATCH_TABS : FOOTBALL_MATCH_TABS;
-  const currentTab = currentSportTabs.find(t => t.id === selectedMatchId) || currentSportTabs[0];
-  const isScoutReel = currentTab.type === 'scout';
+  const matchedTab = currentSportTabs.find(t => t.id === selectedMatchId);
 
   // Soccer match fixture
   const soccerFixture = PEDDIE_SCHEDULE_2026_2027.find(m => m.id === selectedMatchId);
   // Football game
   const footballGame = MOCK_GAMES.find(g => g.id === selectedMatchId);
 
-  // Raw events for soccer
-  const rawEvents = ALL_VEO_MATCH_EVENTS[selectedMatchId] || MATCH_EVENTS_VEO_PDS;
+  const currentTab: MatchTab = matchedTab || (
+    soccerFixture ? {
+      id: soccerFixture.id,
+      name: soccerFixture.opponentLogoText ? `${soccerFixture.opponentLogoText} - ${soccerFixture.opponent.replace('The ', '').replace(' High School', '').replace(' School', '')}` : soccerFixture.opponent,
+      subtext: `${soccerFixture.matchDate} (Upcoming)`,
+      type: 'completed',
+      scoreBadge: 'UPCOMING',
+      badgeStyle: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+      opponentKey: soccerFixture.scoutingReportId,
+      sport: 'soccer',
+      hudlUrl: soccerFixture.hudlUrl
+    } : currentSportTabs[0]
+  );
+  const isScoutReel = currentTab.type === 'scout';
+
+  // Raw events for soccer - strictly for the selected match (never fall back to a different game)
+  const rawEvents = ALL_VEO_MATCH_EVENTS[selectedMatchId] || [];
 
   // Filter by period if specified
   const periodFiltered = selectedPeriod === 'all' 
@@ -162,7 +177,17 @@ function MatchFilmContent() {
   const filteredEvents = SoccerTacticalAgent.filterEventsByNaturalLanguage(nlQuery, periodFiltered);
 
   // Selected clip for telestration playback
-  const [selectedClip, setSelectedClip] = useState<MatchEvent>(rawEvents[0] || MATCH_EVENTS_VEO_PDS[4]);
+  const [selectedClip, setSelectedClip] = useState<MatchEvent | null>(rawEvents[0] || null);
+
+  // Keep selectedClip in sync when selectedMatchId changes
+  useEffect(() => {
+    if (rawEvents.length > 0) {
+      const goalClip = rawEvents.find(e => e.type === 'Goal' && e.team === 'Peddie') || rawEvents[0];
+      setSelectedClip(goalClip);
+    } else {
+      setSelectedClip(null);
+    }
+  }, [selectedMatchId]);
 
   const handleSwitchSport = (sport: 'soccer' | 'football') => {
     setActiveSport(sport);
@@ -180,9 +205,13 @@ function MatchFilmContent() {
     setSelectedMatchId(matchId);
     setSelectedPeriod('all');
     setNlQuery('');
-    const events = ALL_VEO_MATCH_EVENTS[matchId] || MATCH_EVENTS_VEO_PDS;
-    const goalClip = events.find(e => e.type === 'Goal' && e.team === 'Peddie') || events[0];
-    setSelectedClip(goalClip || events[0]);
+    const events = ALL_VEO_MATCH_EVENTS[matchId] || [];
+    if (events.length > 0) {
+      const goalClip = events.find(e => e.type === 'Goal' && e.team === 'Peddie') || events[0];
+      setSelectedClip(goalClip);
+    } else {
+      setSelectedClip(null);
+    }
   };
 
   const handleSaveUpload = (e: React.FormEvent) => {
@@ -258,7 +287,7 @@ function MatchFilmContent() {
               <button
                 onClick={() => {
                   setFilmCategory('scout');
-                  handleSwitchMatch('m-7');
+                  handleSwitchMatch('scout-lvr');
                 }}
                 className={`px-3 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
                   filmCategory === 'scout'
@@ -267,7 +296,7 @@ function MatchFilmContent() {
                 }`}
               >
                 <Eye className="w-3.5 h-3.5" />
-                <span>Upcoming & Scout Reels ({SOCCER_MATCH_TABS.filter(t => t.type === 'scout').length})</span>
+                <span>Opponent Scout Reels ({SOCCER_MATCH_TABS.filter(t => t.type === 'scout').length})</span>
               </button>
             </div>
 
@@ -358,8 +387,10 @@ function MatchFilmContent() {
                   footballGame?.title || 'Peddie Varsity Football Game Film'
                 ) : isScoutReel ? (
                   `Tactical Film Scout: ${currentTab.name}`
-                ) : (
+                ) : soccerFixture?.status === 'Completed' ? (
                   `Peddie Falcons ${soccerFixture?.peddieScore ?? 0} – ${soccerFixture?.opponentScore ?? 0} ${soccerFixture?.opponent}`
+                ) : (
+                  `Peddie Falcons vs. ${soccerFixture?.opponent || currentTab.name}`
                 )}
               </h1>
               <span className={`text-xs px-2 py-0.5 rounded font-mono font-bold ${currentTab.badgeStyle}`}>
@@ -371,8 +402,10 @@ function MatchFilmContent() {
                 `${footballGame?.date} • Coach Mark Fabish • ${footballGame?.plays?.length ?? 18} Plays Analyzed • All-22 Tactical Breakdown`
               ) : isScoutReel ? (
                 `Advance tactical scouting reel • Video breakdowns of key opponent tendencies, transition traps, and Coach Nazario counter-strategies`
-              ) : (
+              ) : soccerFixture?.status === 'Completed' ? (
                 `${soccerFixture?.matchDate} • ${soccerFixture?.location} • ${soccerFixture?.keySummary}`
+              ) : (
+                `Upcoming fixture scheduled for ${soccerFixture?.matchDate || 'Fall 2026'} • Official broadcast film pending post-match upload`
               )}
             </p>
           </div>
@@ -389,7 +422,7 @@ function MatchFilmContent() {
               </Link>
             ) : (
               <a
-                href={currentTab.videoUrl || "https://app.veo.co"}
+                href={currentTab.videoUrl || currentTab.hudlUrl || "https://app.veo.co"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 border border-cyan-500/30 font-bold text-xs flex items-center gap-2 transition"
@@ -403,199 +436,261 @@ function MatchFilmContent() {
       </div>
 
       {/* Main Studio: Video Player, Telestration & Play Events */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left 2 Cols: Broadcast Player & Telestration Viewport */}
-        <div className="lg:col-span-2 flex flex-col gap-4">
-          <MatchTelestration
-            videoUrl={
-              activeSport === 'football'
-                ? footballGame?.videoUrl || 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
-                : selectedClip.videoUrl || currentTab.videoUrl || 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/df91eca4-bd9b-4171-893d-6da93b295af0_1788317479.555815/video.mp4?v=7v9q8pPK'
-            }
-            thumbnailUrl={
-              activeSport === 'football'
-                ? undefined
-                : soccerFixture?.thumbnailUrl || 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg'
-            }
-            clipTitle={
-              activeSport === 'football'
-                ? `${footballGame?.title} - All-22 Tactical Film`
-                : `${selectedClip.minute}' - ${selectedClip.type}: ${selectedClip.playerName}`
-            }
-            sourceLabel={
-              activeSport === 'football'
-                ? 'HUDL ALL-22 BROADCAST FOOTAGE'
-                : 'VEO AI OFFICIAL 1080P BROADCAST'
-            }
-            matchUrl={currentTab.videoUrl || currentTab.hudlUrl}
-          />
-
-          {/* Active Clip Analysis Card */}
-          <div className="glass-panel p-4 border border-slate-800 flex flex-col gap-2">
-            <div className="flex items-center justify-between text-xs">
-              <span className="font-mono text-cyan-400 font-bold flex items-center gap-1.5">
-                <Sparkles className="w-4 h-4 text-cyan-400" />
-                {activeSport === 'football' ? 'GRIDIRON COGNITIVE INSIGHT' : 'AI TACTICAL CLIP BREAKDOWN'}
-              </span>
-              <span className="text-slate-400 font-mono text-[11px]">
-                {activeSport === 'football' ? `${footballGame?.plays?.length ?? 18} Plays on Record` : `Timestamp: ${selectedClip.minute}:${selectedClip.second < 10 ? '0' : ''}${selectedClip.second}`}
-              </span>
-            </div>
-            
-            <p className="text-sm text-slate-200 leading-relaxed font-medium">
-              {activeSport === 'football' ? (
-                selectedMatchId === 'peddie-hill-2025'
-                  ? 'Historic 45-42 shootout victory over The Hill School Blues. Peddie generated 412 total yards of offense with +0.38 passing EPA/play and completed a clutch 4th-quarter game-winning touchdown drive.'
-                  : `Official game film for ${footballGame?.title}. High-leverage execution, route concepts, and defensive containment breakdowns available across all drives.`
-              ) : (
-                selectedClip.description
-              )}
+      {activeSport === 'soccer' && (!selectedClip || rawEvents.length === 0) ? (
+        <div className="glass-panel p-8 border border-slate-800 text-center flex flex-col items-center justify-center gap-6 my-2 rounded-2xl">
+          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+            <Clock className="w-8 h-8" />
+          </div>
+          <div className="max-w-xl space-y-2">
+            <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-black uppercase">
+              Upcoming Fixture • Match Broadcast Film Ingestion Pending
+            </span>
+            <h2 className="text-2xl font-black text-white">
+              {soccerFixture ? `Peddie vs. ${soccerFixture.opponent}` : 'Match Film Pending'}
+            </h2>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {soccerFixture
+                ? `This match is scheduled for ${soccerFixture.matchDate} at ${soccerFixture.location}. Official Veo 1080p AI broadcast footage, player tracking, and telestration events will be uploaded immediately following the match.`
+                : 'Official match broadcast footage is strictly displayed for completed varsity games or dedicated advance opponent scout reels.'}
             </p>
+          </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-800/80 text-[11px] text-slate-400">
-              {activeSport === 'football' ? (
-                <>
-                  <span>Passing EPA: <strong className="text-emerald-400">+0.38</strong></span>
-                  <span>•</span>
-                  <span>Rushing Success: <strong className="text-cyan-400">54.2%</strong></span>
-                  <span>•</span>
-                  <span>3rd Down Conv: <strong className="text-amber-400">62.5%</strong></span>
-                </>
-              ) : (
-                <>
-                  <span>Expected Goals (xG): <strong className="text-emerald-400">{(selectedClip.expectedGoals ?? 0).toFixed(2)}</strong></span>
-                  <span>•</span>
-                  <span>Phase: <strong className="text-cyan-400">{selectedClip.phase}</strong></span>
-                  <span>•</span>
-                  <span>Success: <strong className={selectedClip.success ? 'text-emerald-400' : 'text-rose-400'}>{selectedClip.success ? 'Successful' : 'Unsuccessful'}</strong></span>
-                </>
-              )}
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {soccerFixture?.hudlUrl && (
+              <a
+                href={soccerFixture.hudlUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 transition shadow"
+              >
+                <Video className="w-4 h-4" />
+                <span>Watch Opponent Film on Hudl Fan ↗</span>
+              </a>
+            )}
+            <button
+              onClick={() => {
+                setFilmCategory('completed');
+                handleSwitchMatch('m-4');
+              }}
+              className="px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs uppercase tracking-wider transition flex items-center gap-2 shadow-lg shadow-cyan-500/20 cursor-pointer"
+            >
+              <Trophy className="w-4 h-4" />
+              <span>Watch Latest Completed Film (PDS 7-1 W)</span>
+            </button>
+            <button
+              onClick={() => {
+                setFilmCategory('scout');
+                handleSwitchMatch('scout-lvr');
+              }}
+              className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 text-xs font-bold uppercase tracking-wider transition flex items-center gap-2 cursor-pointer"
+            >
+              <Eye className="w-4 h-4 text-amber-400" />
+              <span>View Opponent Scout Reels</span>
+            </button>
+            <Link
+              href="/dashboard/schedule"
+              className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold uppercase tracking-wider transition flex items-center gap-2"
+            >
+              <Calendar className="w-4 h-4 text-slate-400" />
+              <span>Full 2026 Season Schedule</span>
+            </Link>
           </div>
         </div>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left 2 Cols: Broadcast Player & Telestration Viewport */}
+          <div className="lg:col-span-2 flex flex-col gap-4">
+            <MatchTelestration
+              videoUrl={
+                activeSport === 'football'
+                  ? footballGame?.videoUrl || 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+                  : selectedClip?.videoUrl || currentTab.videoUrl || 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/df91eca4-bd9b-4171-893d-6da93b295af0_1788317479.555815/video.mp4?v=7v9q8pPK'
+              }
+              thumbnailUrl={
+                activeSport === 'football'
+                  ? undefined
+                  : soccerFixture?.thumbnailUrl || 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg'
+              }
+              clipTitle={
+                activeSport === 'football'
+                  ? `${footballGame?.title} - All-22 Tactical Film`
+                  : `${selectedClip?.minute ?? 0}' - ${selectedClip?.type ?? 'Highlight'}: ${selectedClip?.playerName ?? ''}`
+              }
+              sourceLabel={
+                activeSport === 'football'
+                  ? 'HUDL ALL-22 BROADCAST FOOTAGE'
+                  : 'VEO AI OFFICIAL 1080P BROADCAST'
+              }
+              matchUrl={currentTab.videoUrl || currentTab.hudlUrl}
+            />
 
-        {/* Right Col: Match Event Timeline & Filter */}
-        <div className="flex flex-col gap-4">
-          <div className="glass-panel p-4 border border-slate-800 flex flex-col gap-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Target className="w-4 h-4 text-amber-400" />
-                <h3 className="font-bold text-white text-sm">
-                  {activeSport === 'football' ? 'Game Plays & Drives' : 'Key Match Events & Clips'}
-                </h3>
+            {/* Active Clip Analysis Card */}
+            <div className="glass-panel p-4 border border-slate-800 flex flex-col gap-2">
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-mono text-cyan-400 font-bold flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-cyan-400" />
+                  {activeSport === 'football' ? 'GRIDIRON COGNITIVE INSIGHT' : 'AI TACTICAL CLIP BREAKDOWN'}
+                </span>
+                <span className="text-slate-400 font-mono text-[11px]">
+                  {activeSport === 'football' ? `${footballGame?.plays?.length ?? 18} Plays on Record` : `Timestamp: ${selectedClip?.minute ?? 0}:${(selectedClip?.second ?? 0) < 10 ? '0' : ''}${selectedClip?.second ?? 0}`}
+                </span>
               </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400">
-                {activeSport === 'football' ? `${footballGame?.plays?.length ?? 18} Plays` : `${filteredEvents.length} Clips`}
-              </span>
+              
+              <p className="text-sm text-slate-200 leading-relaxed font-medium">
+                {activeSport === 'football' ? (
+                  selectedMatchId === 'peddie-hill-2025'
+                    ? 'Historic 45-42 shootout victory over The Hill School Blues. Peddie generated 412 total yards of offense with +0.38 passing EPA/play and completed a clutch 4th-quarter game-winning touchdown drive.'
+                    : `Official game film for ${footballGame?.title}. High-leverage execution, route concepts, and defensive containment breakdowns available across all drives.`
+                ) : (
+                  selectedClip?.description || 'Tactical clip breakdown tracked with Veo AI.'
+                )}
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-800/80 text-[11px] text-slate-400">
+                {activeSport === 'football' ? (
+                  <>
+                    <span>Passing EPA: <strong className="text-emerald-400">+0.38</strong></span>
+                    <span>•</span>
+                    <span>Rushing Success: <strong className="text-cyan-400">54.2%</strong></span>
+                    <span>•</span>
+                    <span>3rd Down Conv: <strong className="text-amber-400">62.5%</strong></span>
+                  </>
+                ) : (
+                  <>
+                    <span>Expected Goals (xG): <strong className="text-emerald-400">{(selectedClip?.expectedGoals ?? 0).toFixed(2)}</strong></span>
+                    <span>•</span>
+                    <span>Phase: <strong className="text-cyan-400">{selectedClip?.phase ?? 'Open Play'}</strong></span>
+                    <span>•</span>
+                    <span>Success: <strong className={selectedClip?.success ? 'text-emerald-400' : 'text-rose-400'}>{selectedClip?.success ? 'Successful' : 'Unsuccessful'}</strong></span>
+                  </>
+                )}
+              </div>
             </div>
+          </div>
 
-            {/* Soccer Event Search & Period Filter */}
-            {activeSport === 'soccer' && (
-              <>
-                <div className="relative">
-                  <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
-                  <input
-                    type="text"
-                    placeholder="Search events (e.g., 'Goal', 'Kim', 'Save')..."
-                    value={nlQuery}
-                    onChange={e => setNlQuery(e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500"
-                  />
+          {/* Right Col: Match Event Timeline & Filter */}
+          <div className="flex flex-col gap-4">
+            <div className="glass-panel p-4 border border-slate-800 flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Target className="w-4 h-4 text-amber-400" />
+                  <h3 className="font-bold text-white text-sm">
+                    {activeSport === 'football' ? 'Game Plays & Drives' : 'Key Match Events & Clips'}
+                  </h3>
                 </div>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400">
+                  {activeSport === 'football' ? `${footballGame?.plays?.length ?? 18} Plays` : `${filteredEvents.length} Clips`}
+                </span>
+              </div>
 
-                <div className="flex items-center gap-1.5 text-[11px] font-bold">
-                  {(['all', 1, 2] as const).map(p => (
-                    <button
-                      key={p}
-                      onClick={() => setSelectedPeriod(p)}
-                      className={`flex-1 py-1 rounded-lg transition cursor-pointer ${
-                        selectedPeriod === p
-                          ? 'bg-cyan-500 text-slate-950 font-black'
-                          : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
-                      }`}
-                    >
-                      {p === 'all' ? 'All Halves' : `Half ${p}`}
-                    </button>
-                  ))}
-                </div>
-              </>
-            )}
-
-            {/* List of Clips */}
-            <div className="flex flex-col gap-2 max-h-[500px] overflow-y-auto pr-1 scrollbar-thin">
-              {activeSport === 'football' ? (
-                // Football Plays List
-                (footballGame?.plays || []).map((play, idx) => (
-                  <div
-                    key={play.id || idx}
-                    className="p-3 rounded-xl border border-slate-800/90 bg-slate-900/60 hover:border-amber-400/50 flex flex-col gap-1.5 transition text-xs"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono font-bold text-amber-400 flex items-center gap-1">
-                        <PlayCircle className="w-3 h-3" />
-                        <span>Q{play.quarter} • {play.down ? `${play.down} & ${play.distance}` : `Play #${idx + 1}`}</span>
-                      </span>
-                      <span className="text-[10px] font-mono text-emerald-400">
-                        EPA: {play.epa > 0 ? `+${play.epa.toFixed(2)}` : play.epa.toFixed(2)}
-                      </span>
-                    </div>
-                    <div className="font-semibold text-white truncate">{play.routeConcept || play.playType}</div>
-                    <div className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">
-                      {play.playDescription || `Gain of ${play.yardsGained ?? 4} yards.`}
-                    </div>
+              {/* Soccer Event Search & Period Filter */}
+              {activeSport === 'soccer' && (
+                <>
+                  <div className="relative">
+                    <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                    <input
+                      type="text"
+                      placeholder="Search events (e.g., 'Goal', 'Kim', 'Save')..."
+                      value={nlQuery}
+                      onChange={e => setNlQuery(e.target.value)}
+                      className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500"
+                    />
                   </div>
-                ))
-              ) : (
-                // Soccer Events List
-                filteredEvents.map(ev => {
-                  const isSelected = selectedClip.id === ev.id;
-                  const isGoal = ev.type === 'Goal';
-                  return (
+
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold">
+                    {(['all', 1, 2] as const).map(p => (
+                      <button
+                        key={p}
+                        onClick={() => setSelectedPeriod(p)}
+                        className={`flex-1 py-1 rounded-lg transition cursor-pointer ${
+                          selectedPeriod === p
+                            ? 'bg-cyan-500 text-slate-950 font-black'
+                            : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                        }`}
+                      >
+                        {p === 'all' ? 'All Halves' : `Half ${p}`}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {/* List of Clips */}
+              <div className="flex flex-col gap-2 max-h-[500px] overflow-y-auto pr-1 scrollbar-thin">
+                {activeSport === 'football' ? (
+                  // Football Plays List
+                  (footballGame?.plays || []).map((play, idx) => (
                     <div
-                      key={ev.id}
-                      onClick={() => setSelectedClip(ev)}
-                      className={`p-3 rounded-xl border flex flex-col gap-1.5 transition cursor-pointer text-xs ${
-                        isSelected
-                          ? 'bg-cyan-500/10 border-cyan-400 shadow-md shadow-cyan-500/10'
-                          : isGoal && ev.team === 'Peddie'
-                          ? 'bg-amber-950/20 border-amber-500/40 text-amber-200 hover:border-amber-400'
-                          : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300'
-                      }`}
+                      key={play.id || idx}
+                      className="p-3 rounded-xl border border-slate-800/90 bg-slate-900/60 hover:border-amber-400/50 flex flex-col gap-1.5 transition text-xs"
                     >
                       <div className="flex items-center justify-between">
                         <span className="font-mono font-bold text-amber-400 flex items-center gap-1">
                           <PlayCircle className="w-3 h-3" />
-                          {ev.period && (
-                            <span className="px-1 py-0.2 rounded bg-amber-400/20 text-amber-300 text-[9px]">
-                              H{ev.period}
-                            </span>
-                          )}
-                          <span>{ev.minute}&apos; {ev.type}</span>
-                          {isGoal && (
-                            <span className="px-1.5 py-0.2 rounded bg-amber-400 text-slate-950 font-black text-[9px]">
-                              GOAL
-                            </span>
-                          )}
+                          <span>Q{play.quarter} • {play.down ? `${play.down} & ${play.distance}` : `Play #${idx + 1}`}</span>
                         </span>
-                        <span className="text-[10px] text-slate-400">{ev.phase}</span>
-                      </div>
-
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="font-semibold text-white truncate">{ev.playerName}</div>
-                        <span className="px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 font-mono text-[9px] shrink-0">
-                          Veo AI Tracked
+                        <span className="text-[10px] font-mono text-emerald-400">
+                          EPA: {play.epa > 0 ? `+${play.epa.toFixed(2)}` : play.epa.toFixed(2)}
                         </span>
                       </div>
-                      
-                      <div className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">{ev.description}</div>
+                      <div className="font-semibold text-white truncate">{play.routeConcept || play.playType}</div>
+                      <div className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">
+                        {play.playDescription || `Gain of ${play.yardsGained ?? 4} yards.`}
+                      </div>
                     </div>
-                  );
-                })
-              )}
+                  ))
+                ) : (
+                  // Soccer Events List
+                  filteredEvents.map(ev => {
+                    const isSelected = selectedClip?.id === ev.id;
+                    const isGoal = ev.type === 'Goal';
+                    return (
+                      <div
+                        key={ev.id}
+                        onClick={() => setSelectedClip(ev)}
+                        className={`p-3 rounded-xl border flex flex-col gap-1.5 transition cursor-pointer text-xs ${
+                          isSelected
+                            ? 'bg-cyan-500/10 border-cyan-400 shadow-md shadow-cyan-500/10'
+                            : isGoal && ev.team === 'Peddie'
+                            ? 'bg-amber-950/20 border-amber-500/40 text-amber-200 hover:border-amber-400'
+                            : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono font-bold text-amber-400 flex items-center gap-1">
+                            <PlayCircle className="w-3 h-3" />
+                            {ev.period && (
+                              <span className="px-1 py-0.2 rounded bg-amber-400/20 text-amber-300 text-[9px]">
+                                H{ev.period}
+                              </span>
+                            )}
+                            <span>{ev.minute}&apos; {ev.type}</span>
+                            {isGoal && (
+                              <span className="px-1.5 py-0.2 rounded bg-amber-400 text-slate-950 font-black text-[9px]">
+                                GOAL
+                              </span>
+                            )}
+                          </span>
+                          <span className="text-[10px] text-slate-400">{ev.phase}</span>
+                        </div>
+
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="font-semibold text-white truncate">{ev.playerName}</div>
+                          <span className="px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 font-mono text-[9px] shrink-0">
+                            Veo AI Tracked
+                          </span>
+                        </div>
+                        
+                        <div className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">{ev.description}</div>
+                      </div>
+                    );
+                  })
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Film Upload Modal */}
       {showUploadModal && (

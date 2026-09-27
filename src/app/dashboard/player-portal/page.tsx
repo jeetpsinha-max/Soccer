@@ -1379,7 +1379,7 @@ export default function PlayerPortalPage() {
                       Scouted via Veo AI All-22 High-Def Camera System • 2026–2027 Season Telemetry
                     </span>
                     <Link
-                      href="/dashboard/match-film"
+                      href="/dashboard/match-film?match=scout-lca"
                       className="text-amber-400 hover:text-white font-bold flex items-center gap-1 transition"
                     >
                       <Video className="w-3.5 h-3.5" />

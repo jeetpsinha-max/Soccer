@@ -34,6 +34,27 @@ import {
 
 type FilterType = 'all' | 'upcoming' | 'completed' | 'mapl' | 'home' | 'away';
 
+// Dedicated verified opponent scout reels for upcoming fixtures
+const OPPONENT_SCOUT_REEL_MAP: Record<string, string> = {
+  'm-5': 'scout-lca',
+  'm-7': 'scout-lvr',
+  'm-14': 'scout-pen',
+  'm-16': 'scout-blr'
+};
+
+// Map scouting report keys to official completed match film or verified opponent scout reels
+const SCOUT_KEY_TO_FILM_MAP: Record<string, string> = {
+  'haverford': 'm-0',
+  'aquinas': 'm-1',
+  'trenton': 'm-2',
+  'george-school': 'm-3',
+  'pds': 'm-4',
+  'life-center': 'scout-lca',
+  'lawrenceville': 'scout-lvr',
+  'pennington': 'scout-pen',
+  'blair': 'scout-blr'
+};
+
 function getWinExpectancyStyle(pct: number) {
   if (pct < 35) {
     return {
@@ -185,12 +206,12 @@ export default function SchedulePage() {
         <div className="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none">
           <Filter className="w-4 h-4 text-slate-400 ml-2 mr-1 shrink-0" />
           {[
-            { id: 'all', label: 'All Fixtures', count: 17 },
-            { id: 'upcoming', label: 'Upcoming', count: 15 },
-            { id: 'completed', label: 'Completed', count: 2 },
-            { id: 'mapl', label: 'MAPL Rivals', count: 5 },
-            { id: 'home', label: 'Home Matches', count: 9 },
-            { id: 'away', label: 'Away Trips', count: 8 },
+            { id: 'all', label: 'All Fixtures', count: PEDDIE_SCHEDULE_2026_2027.length },
+            { id: 'upcoming', label: 'Upcoming', count: PEDDIE_SCHEDULE_2026_2027.filter(m => m.status === 'Upcoming').length },
+            { id: 'completed', label: 'Completed', count: PEDDIE_SCHEDULE_2026_2027.filter(m => m.status === 'Completed').length },
+            { id: 'mapl', label: 'MAPL Rivals', count: PEDDIE_SCHEDULE_2026_2027.filter(m => m.isConference).length },
+            { id: 'home', label: 'Home Matches', count: PEDDIE_SCHEDULE_2026_2027.filter(m => m.isHome).length },
+            { id: 'away', label: 'Away Trips', count: PEDDIE_SCHEDULE_2026_2027.filter(m => !m.isHome).length },
           ].map(tab => (
             <button
               key={tab.id}
@@ -220,7 +241,7 @@ export default function SchedulePage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {filteredMatches.map((match, index) => {
           const scoutDossier = match.scoutingReportId ? OPPONENT_VEO_SCOUTING[match.scoutingReportId] : null;
-          const isNextMatch = match.id === 'm-1';
+          const isNextMatch = match.id === (nextUpcomingMatch?.id || 'm-5');
 
           return (
             <div
@@ -437,13 +458,33 @@ export default function SchedulePage() {
 
               {/* Action Buttons Footer */}
               <div className="p-4 pt-0 flex items-center gap-2">
-                <Link
-                  href={`/dashboard/match-film?match=${match.id}`}
-                  className="flex-1 py-2.5 px-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 border border-cyan-500/30 hover:border-cyan-400 font-black text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <PlayCircle className="w-4 h-4" />
-                  Watch Match Film
-                </Link>
+                {match.status === 'Completed' ? (
+                  <Link
+                    href={`/dashboard/match-film?match=${match.id}`}
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 border border-cyan-500/30 hover:border-cyan-400 font-black text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <PlayCircle className="w-4 h-4" />
+                    Watch Match Film
+                  </Link>
+                ) : OPPONENT_SCOUT_REEL_MAP[match.id] ? (
+                  <Link
+                    href={`/dashboard/match-film?match=${OPPONENT_SCOUT_REEL_MAP[match.id]}`}
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-amber-500/10 hover:bg-amber-500 hover:text-slate-950 text-amber-300 border border-amber-500/30 hover:border-amber-400 font-black text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <Eye className="w-4 h-4" />
+                    Opponent Scout Reel
+                  </Link>
+                ) : (
+                  <a
+                    href={match.hudlUrl || scoutDossier?.hudlUrl || 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/peddie-school'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-slate-800/80 hover:bg-blue-600 hover:text-white text-slate-300 border border-slate-700 font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <Video className="w-4 h-4 text-blue-400" />
+                    Watch Hudl Film ↗
+                  </a>
+                )}
                 {match.scoutingReportId && (
                   <button
                     onClick={() => setSelectedScoutKey(match.scoutingReportId || null)}
@@ -735,13 +776,35 @@ export default function SchedulePage() {
               </div>
 
               <div className="flex items-center gap-2">
-                <Link
-                  href="/dashboard/match-film"
-                  className="px-4 py-2 rounded-xl bg-cyan-500/20 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 border border-cyan-500/40 text-xs font-black uppercase tracking-wider transition flex items-center gap-2"
-                >
-                  <PlayCircle className="w-4 h-4" />
-                  Watch Veo Film in Studio
-                </Link>
+                {(() => {
+                  const targetFilmId = selectedScoutKey ? SCOUT_KEY_TO_FILM_MAP[selectedScoutKey] : null;
+                  if (targetFilmId) {
+                    const isScout = targetFilmId.startsWith('scout-');
+                    return (
+                      <Link
+                        href={`/dashboard/match-film?match=${targetFilmId}`}
+                        className="px-4 py-2 rounded-xl bg-cyan-500/20 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 border border-cyan-500/40 text-xs font-black uppercase tracking-wider transition flex items-center gap-2"
+                      >
+                        <PlayCircle className="w-4 h-4" />
+                        {isScout ? 'Watch Opponent Scout Reel' : 'Watch Match Broadcast Film'}
+                      </Link>
+                    );
+                  }
+                  if (activeScoutDossier.hudlUrl) {
+                    return (
+                      <a
+                        href={activeScoutDossier.hudlUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 rounded-xl bg-blue-600/30 hover:bg-blue-600 text-blue-200 hover:text-white border border-blue-500/40 text-xs font-black uppercase tracking-wider transition flex items-center gap-2"
+                      >
+                        <Video className="w-4 h-4" />
+                        Watch Film on Hudl ↗
+                      </a>
+                    );
+                  }
+                  return null;
+                })()}
                 <button
                   onClick={() => setSelectedScoutKey(null)}
                   className="px-5 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-md shadow-cyan-500/20 cursor-pointer"
