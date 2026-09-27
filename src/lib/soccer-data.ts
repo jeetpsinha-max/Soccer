@@ -1104,10 +1104,68 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
 
 // Enrich Peddie Roster with 2026-2027 Current Season Performance & Scouting Reports
 PEDDIE_ROSTER_2026_2027.forEach(player => {
+  player.squadLevel = 'Varsity';
   if (PEDDIE_PLAYER_CURRENT_SEASON_REPORTS[player.number]) {
     player.currentSeasonReport = PEDDIE_PLAYER_CURRENT_SEASON_REPORTS[player.number];
   }
 });
+
+// ============================================================================
+// Official The Peddie School Boys Junior Varsity (JV) Soccer Roster
+// Raymond Li and Harrison Kwok are rostered on the Junior Varsity (JV) squad.
+// They are strictly excluded from all Varsity rosters, starting lineups, and stats.
+// ============================================================================
+
+export const PEDDIE_JV_ROSTER_2026_2027: Player[] = [
+  {
+    id: 'p-li-raymond-jv',
+    number: 31,
+    name: 'Raymond Li',
+    classYear: 'Sophomore',
+    gradYear: 2029,
+    position: 'CM',
+    squadLevel: 'Junior Varsity',
+    height: "5'9\"",
+    weight: '150 lbs',
+    hometown: 'Princeton, NJ',
+    minutesPlayed: 0,
+    matchesPlayed: 0,
+    goals: 0,
+    assists: 0,
+    expectedGoals: 0,
+    expectedAssists: 0,
+    passCompletionPct: 0,
+    tackleSuccessPct: 0,
+    topSpeedMph: 18.5,
+    distanceCoveredMiles: 0,
+    assignmentHistory: [],
+    recruitmentNotes: 'Peddie Boys Junior Varsity (JV) Soccer. Assigned strictly to the JV developmental squad under JV coaching staff. Not on the Varsity roster.'
+  },
+  {
+    id: 'p-kwok-harrison-jv',
+    number: 32,
+    name: 'Harrison Kwok',
+    classYear: 'Sophomore',
+    gradYear: 2029,
+    position: 'CB',
+    squadLevel: 'Junior Varsity',
+    height: "5'10\"",
+    weight: '155 lbs',
+    hometown: 'East Windsor, NJ',
+    minutesPlayed: 0,
+    matchesPlayed: 0,
+    goals: 0,
+    assists: 0,
+    expectedGoals: 0,
+    expectedAssists: 0,
+    passCompletionPct: 0,
+    tackleSuccessPct: 0,
+    topSpeedMph: 18.0,
+    distanceCoveredMiles: 0,
+    assignmentHistory: [],
+    recruitmentNotes: 'Peddie Boys Junior Varsity (JV) Soccer. Assigned strictly to the JV developmental squad under JV coaching staff. Not on the Varsity roster.'
+  }
+];
 
 // Historical School Honors (Preserved for Program Heritage)
 // ============================================================================

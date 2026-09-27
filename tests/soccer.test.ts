@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { 
   PEDDIE_ROSTER_2026_2027, 
+  PEDDIE_JV_ROSTER_2026_2027,
   PEDDIE_SCHEDULE_2026_2027, 
   OPPONENT_VEO_SCOUTING,
   FORMATIONS_CONFIG, 
@@ -79,7 +80,21 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
       expect(found).toBeUndefined();
     });
 
-    // 7. Validate all official rostered players & jersey numbers
+    // 7. Verify Junior Varsity (JV) separation: Raymond Li and Harrison Kwok are strictly JV, not Varsity
+    const raymondVarsity = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes('Raymond') || p.name.includes('Raymond Li'));
+    expect(raymondVarsity).toBeUndefined();
+
+    const harrisonVarsity = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes('Kwok') || p.name.includes('Harrison Kwok'));
+    expect(harrisonVarsity).toBeUndefined();
+
+    expect(PEDDIE_JV_ROSTER_2026_2027.length).toBe(2);
+    expect(PEDDIE_JV_ROSTER_2026_2027.map(p => p.name)).toEqual(['Raymond Li', 'Harrison Kwok']);
+    expect(PEDDIE_JV_ROSTER_2026_2027.every(p => p.squadLevel === 'Junior Varsity')).toBe(true);
+
+    // Verify all active Peddie roster players are explicitly Varsity
+    expect(PEDDIE_ROSTER_2026_2027.every(p => p.squadLevel === 'Varsity')).toBe(true);
+
+    // 8. Validate all official rostered players & jersey numbers
     const dylanMcKenzie = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Dylan McKenzie');
     expect(dylanMcKenzie).toBeDefined();
     expect(dylanMcKenzie?.number).toBe(98);

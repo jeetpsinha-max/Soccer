@@ -31,6 +31,7 @@ export interface Player {
   position: Position;
   secondaryPosition?: Position;
   isCaptain?: boolean;
+  squadLevel?: 'Varsity' | 'Junior Varsity';
   tacticalRole?: string; // e.g. 'Single Pivot Regista', 'Inverted Inside-Forward', 'Target Center-Forward'
   scoutingTier?: string; // e.g. 'NCAA D1 Prospect', 'All-MAPL First Team Caliber', 'Varsity Cornerstone'
   matchFormScore?: number; // 0.0 - 10.0 Sofascore/WhoScored match performance rating (e.g. 8.8)
