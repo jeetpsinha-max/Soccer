@@ -3181,7 +3181,7 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     },
     peddieCounterDirectives: {
       coachNazarioDirective: 'Trigger aggressive trap on their #4 when stepping forward. Tommy Kim (#28) time runs behind their center-backs.',
-      diamondKeyAssignment: 'Quinn Wachtveitl (#10) and Brody Rozo (#18) provide physical midfield pressure to disrupt PDS rhythm.',
+      diamondKeyAssignment: 'Jeet Sinha (#6) and Brody Rozo (#18) provide physical midfield pressure while Quinn Wachtveitl (#10) and Tommy Kim (#28) press their center-backs.',
       recommendedFormation: '4-4-2'
     }
   },
@@ -3297,7 +3297,7 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     },
     peddieCounterDirectives: {
       coachNazarioDirective: 'Trigger high press whenever backpass is made to their GK or right CB. Quick direct balls from Wachtveitl into Tommy Kim channel runs.',
-      diamondKeyAssignment: 'Quinn Wachtveitl (#10) and Bennett Cuchera (#7) exploit the flanks behind Big Red fullbacks.',
+      diamondKeyAssignment: 'Jeet Sinha (#6) and Bennett Cuchera (#7) exploit the flanks while Quinn Wachtveitl (#10) and Tommy Kim (#28) attack behind Big Red fullbacks.',
       recommendedFormation: '4-4-2'
     }
   },
@@ -3374,7 +3374,7 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     },
     peddieCounterDirectives: {
       coachNazarioDirective: 'Deploy twin strikers Tommy Kim (#28) and Jeffrey Zhang (#20) to split their center-backs. Rayyaan Mohiuddin (#14) thread interior through-balls.',
-      diamondKeyAssignment: 'Bennett Cuchera (#7) and Quinn Wachtveitl (#10) deliver service behind their retreating backline.',
+      diamondKeyAssignment: 'Bennett Cuchera (#7) and Jeet Sinha (#6) deliver service to twin strikers Tommy Kim (#28) and Quinn Wachtveitl (#10) behind their retreating backline.',
       recommendedFormation: '4-4-2'
     }
   },

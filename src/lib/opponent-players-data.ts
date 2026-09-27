@@ -611,7 +611,7 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
         'Defensive work rate drops off sharply in second half'
       ],
       currentSeasonNotes: 'Captain and primary playmaker for PDS. Orchestrates their 4-3-3 possession triangles.',
-      peddieMatchupCounter: 'Quinn Wachtveitl (#10) and Brody Rozo (#18) provide relentless physical midfield pressure.',
+      peddieMatchupCounter: 'Jeet Sinha (#6) and Brody Rozo (#18) provide relentless physical midfield pressure while Quinn Wachtveitl (#10) pins their center-backs.',
       filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/18654/princeton-day-school',
       profileUrl: 'https://www.maxpreps.com/nj/princeton/princeton-day-panthers/soccer/',
       keyStats: { goals: 4, assists: 4, duelsWonPct: 51, savesOrTackles: '3.1 key passes/gm' }
