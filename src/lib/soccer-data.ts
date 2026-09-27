@@ -1243,7 +1243,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     filmProvider: 'veo',
     thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingReportId: 'haverford',
-    keySummary: 'Official 2026-2027 Season Opener vs. The Haverford School (PA, 4-1-1). 4 periods of 20 minutes captured via Veo AI camera. Trial of 4-4-2 diamond rotations against a top Inter-Ac powerhouse.'
+    keySummary: 'Official 2026-2027 Season Opener vs. The Haverford School (PA, 4-1-1). 4 periods of 20 minutes captured via Veo AI camera. Trial of 4-4-2 diamond rotations against a top Inter-Ac powerhouse.',
+    sourceUrl: 'https://www.maxpreps.com/pa/haverford/haverford-school-fords/soccer/',
+    sourceLabel: 'MaxPreps: Haverford Fords Varsity'
   },
   {
     id: 'm-1',
@@ -1276,7 +1278,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     filmProvider: 'both',
     thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingReportId: 'aquinas',
-    keySummary: 'Thrilling 3-2 Home Opener victory on the Peddie campus over GMC power St. Thomas Aquinas (7-2-0)! Goals scored by Tommy Kim (#28), Christian Tharney (#13), and Carson Wiley (#22) (81\' game winner).'
+    keySummary: 'Thrilling 3-2 Home Opener victory on the Peddie campus over GMC power St. Thomas Aquinas (7-2-0)! Goals scored by Tommy Kim (#28), Christian Tharney (#13), and Carson Wiley (#22) (81\' game winner).',
+    sourceUrl: 'https://www.maxpreps.com/nj/edison/st-thomas-aquinas-trojans/soccer/26-27/schedule/',
+    sourceLabel: 'MaxPreps: St. Thomas Aquinas (Peddie 3-2 W)'
   },
   {
     id: 'm-2',
@@ -1308,7 +1312,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     filmProvider: 'hudl',
     thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingReportId: 'christian-school',
-    keySummary: 'High-octane Mercer County battle at Trenton Central (4-3-0). Peddie struck twice through Tommy Kim (#28) and Jeffrey Zhang (#20), but conceded late off rapid transition counters.'
+    keySummary: 'High-octane Mercer County battle at Trenton Central (4-3-0). Peddie struck twice through Tommy Kim (#28) and Jeffrey Zhang (#20), but conceded late off rapid transition counters.',
+    sourceUrl: 'https://www.maxpreps.com/nj/trenton/trenton-central-tornadoes/soccer/boys/schedule/',
+    sourceLabel: 'MaxPreps: Trenton Central (3-2 Win vs Peddie)'
   },
   {
     id: 'm-3',
@@ -1340,7 +1346,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     filmProvider: 'both',
     thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingReportId: 'george-school',
-    keySummary: 'Dominant 5-2 road triumph over George School (PA, 3-3-0). Braces from Tommy Kim (#28) and offensive contributions from Rayyaan Mohiuddin (#14), Christian Tharney (#13), and Blake Romanelli (#26).'
+    keySummary: 'Dominant 5-2 road triumph over George School (PA, 3-3-0). Braces from Tommy Kim (#28) and offensive contributions from Rayyaan Mohiuddin (#14), Christian Tharney (#13), and Blake Romanelli (#26).',
+    sourceUrl: 'https://www.maxpreps.com/pa/newtown/george-school-cougars/soccer/',
+    sourceLabel: 'MaxPreps: George School Cougars (Peddie 5-2 W)'
   },
   {
     id: 'm-4',
@@ -1373,7 +1381,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     filmProvider: 'both',
     thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingReportId: 'pds',
-    keySummary: 'Emphatic 7-1 victory in the Mercer County Prep Derby over Princeton Day School (2-4-0)! Tommy Kim (#28) notched a hat trick, Jeffrey Zhang (#20) added a brace, with Bennett Cucchiara (#7), Jeet Sinha (#6), and Zachary Horsch (#15) sealing the rout.'
+    keySummary: 'Emphatic 7-1 victory in the Mercer County Prep Derby over Princeton Day School (2-4-0)! Tommy Kim (#28) notched a hat trick, Jeffrey Zhang (#20) added a brace, with Bennett Cucchiara (#7), Jeet Sinha (#6), and Zachary Horsch (#15) sealing the rout.',
+    sourceUrl: 'https://www.maxpreps.com/nj/princeton/princeton-day-panthers/soccer/',
+    sourceLabel: 'MaxPreps: Princeton Day Panthers (Peddie 7-1 W)'
   },
   {
     id: 'm-5',
@@ -1393,7 +1403,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     scoutingReportId: 'life-center',
     hudlUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/schedule',
     filmProvider: 'hudl',
-    keySummary: 'Physical non-conference test against Life Center Academy (1-5-0). Model predicts 86% Peddie win probability (projected 9-2). Focus on aerial second-ball domination by Brody Rozo (#18) and capitalizing on Life Center defensive disorganization.'
+    keySummary: 'Physical non-conference test against Life Center Academy (1-5-0). Model predicts 86% Peddie win probability (projected 9-2). Focus on aerial second-ball domination by Brody Rozo (#18) and capitalizing on Life Center defensive disorganization.',
+    sourceUrl: 'https://www.maxpreps.com/nj/burlington/life-center-academy-warriors/soccer/boys/schedule/',
+    sourceLabel: 'MaxPreps: Life Center Academy (Peddie 9-2 W)'
   },
   {
     id: 'm-6',
@@ -1413,7 +1425,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     scoutingReportId: 'rutgers-prep',
     hudlUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/schedule',
     filmProvider: 'hudl',
-    keySummary: 'Showcase matchup against technical Somerset County foe Rutgers Prep (2-3-0). Peddie holds a 78% win probability (projected 8-2). Key matchup: Captain Rayyaan Mohiuddin (#14) dictating tempo and exploiting Rutgers Prep transition gaps.'
+    keySummary: 'Showcase matchup against technical Somerset County foe Rutgers Prep (2-3-0). Peddie holds a 78% win probability (projected 8-2). Key matchup: Captain Rayyaan Mohiuddin (#14) dictating tempo and exploiting Rutgers Prep transition gaps.',
+    sourceUrl: 'https://www.maxpreps.com/nj/somerset/rutgers-prep-argonauts/soccer/',
+    sourceLabel: 'MaxPreps: Rutgers Prep Argonauts (Peddie 8-2 W)'
   },
   {
     id: 'm-7',
@@ -1433,7 +1447,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 65.0,
     projectedScore: 'Peddie 3-1',
     scoutingReportId: 'lawrenceville',
-    keySummary: 'Mid-Atlantic Prep League conference opener on the road against historic rival Lawrenceville Big Red. Lawrenceville enters struggling on an 0-3-0 skid. Peddie win probability elevated to 65% (projected 3-1). Peddie must press high and exploit Lawrenceville center-back hesitations.'
+    keySummary: 'Mid-Atlantic Prep League conference opener on the road against historic rival Lawrenceville Big Red. Lawrenceville enters struggling on an 0-3-0 skid. Peddie win probability elevated to 65% (projected 3-1). Peddie must press high and exploit Lawrenceville center-back hesitations.',
+    sourceUrl: 'https://athletics.lawrenceville.org/',
+    sourceLabel: 'Lawrenceville Athletics & MaxPreps Big Red'
   },
   {
     id: 'm-8',
@@ -1452,7 +1468,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 64.0,
     projectedScore: 'Peddie 2-1',
     scoutingReportId: 'delran',
-    keySummary: 'Prestige showcase against South Jersey public soccer royalty Delran Bears. Delran is in a rebuilding campaign (2-4-0, 0-2 BCSL, ranked #196 in NJ). Peddie win probability upgraded to 64% (projected 2-1) by exploiting Delran low-block transition vulnerabilities.'
+    keySummary: 'Prestige showcase against South Jersey public soccer royalty Delran Bears. Delran is in a rebuilding campaign (2-4-0, 0-2 BCSL, ranked #196 in NJ). Peddie win probability upgraded to 64% (projected 2-1) by exploiting Delran low-block transition vulnerabilities.',
+    sourceUrl: 'https://www.maxpreps.com/nj/delran/delran-bears/soccer/boys/26-27/',
+    sourceLabel: 'MaxPreps: Delran Bears Varsity (BCSL)'
   },
   {
     id: 'm-9',
@@ -1471,7 +1489,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 72.0,
     projectedScore: 'Peddie 3-1',
     scoutingReportId: 'mercersburg',
-    keySummary: 'MAPL home conference fixture against the Blue Storm of Mercersburg Academy (PA, 1-2-1). Peddie favored with a 72% win probability (projected 3-1). Tactical battle of midfield control and flank verticality.'
+    keySummary: 'MAPL home conference fixture against the Blue Storm of Mercersburg Academy (PA, 1-2-1). Peddie favored with a 72% win probability (projected 3-1). Tactical battle of midfield control and flank verticality.',
+    sourceUrl: 'https://www.mercersburg.edu/athletics/teams/boys-varsity-soccer',
+    sourceLabel: 'Mercersburg Athletics & MAPL'
   },
   {
     id: 'm-10',
@@ -1489,7 +1509,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 84.0,
     projectedScore: 'Peddie 4-0',
     scoutingReportId: 'wilberforce',
-    keySummary: 'Mid-week home non-conference fixture vs The Wilberforce School (2-1-0). Peddie holds an 84% win probability (projected 4-0). Opportunity for depth rotations featuring Wyatt Raya (#2), Zach Horsch (#15), and Jeet Sinha (#6).'
+    keySummary: 'Mid-week home non-conference fixture vs The Wilberforce School (2-1-0). Peddie holds an 84% win probability (projected 4-0). Opportunity for depth rotations featuring Wyatt Raya (#2), Zach Horsch (#15), and Jeet Sinha (#6).',
+    sourceUrl: 'https://www.wilberforce.org/athletics',
+    sourceLabel: 'Wilberforce Athletics Official Portal'
   },
   {
     id: 'm-11',
@@ -1508,7 +1530,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 52.0,
     projectedScore: 'Peddie 2-1',
     scoutingReportId: 'hill',
-    keySummary: 'Crucial MAPL road trip to The Hill School Blues in Pottstown, PA (2-1-2, coming off 0-0 draw vs SCH Academy). Tightly contested rivalry battle; Peddie 52% win probability (projected 2-1). Defense must neutralize Hill direct aerial set pieces.'
+    keySummary: 'Crucial MAPL road trip to The Hill School Blues in Pottstown, PA (2-1-2, coming off 0-0 draw vs SCH Academy). Tightly contested rivalry battle; Peddie 52% win probability (projected 2-1). Defense must neutralize Hill direct aerial set pieces.',
+    sourceUrl: 'https://www.maxpreps.com/pa/pottstown/hill-school-blues/soccer/',
+    sourceLabel: 'MaxPreps: The Hill School Blues (MAPL)'
   },
   {
     id: 'm-12',
@@ -1527,7 +1551,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 68.0,
     projectedScore: 'Peddie 3-1',
     scoutingReportId: 'wwps',
-    keySummary: 'Local showdown against Colonial Valley Conference Pirates of WW-P South (3-6-0, 1-3 CVC). Peddie holds a 68% win probability (projected 3-1) by counter-pressing WW-P South build-up pivots.'
+    keySummary: 'Local showdown against Colonial Valley Conference Pirates of WW-P South (3-6-0, 1-3 CVC). Peddie holds a 68% win probability (projected 3-1) by counter-pressing WW-P South build-up pivots.',
+    sourceUrl: 'https://www.maxpreps.com/nj/princeton-junction/west-windsor-plainsboro-south-pirates/soccer/',
+    sourceLabel: 'MaxPreps: WW-P South Pirates (CVC)'
   },
   {
     id: 'm-13',
@@ -1546,7 +1572,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 50.0,
     projectedScore: 'Peddie 2-2 Draw / 3-2 W',
     scoutingReportId: 'hopewell',
-    keySummary: 'High-threat non-conference clash with undefeated Mercer County giant Hopewell Valley Bulldogs (6-0-1, fresh off a 7-1 blowout of Robbinsville). Match recalibrated to High Threat with a 50% win probability (projected 2-2 / 3-2). Testing backline containment against lethal direct transition forwards.'
+    keySummary: 'High-threat non-conference clash with undefeated Mercer County giant Hopewell Valley Bulldogs (6-0-1, fresh off a 7-1 blowout of Robbinsville). Match recalibrated to High Threat with a 50% win probability (projected 2-2 / 3-2). Testing backline containment against lethal direct transition forwards.',
+    sourceUrl: 'https://www.maxpreps.com/nj/pennington/hopewell-valley-central-bulldogs/soccer/boys/',
+    sourceLabel: 'MaxPreps & SI.com: Hopewell Valley Bulldogs (#22 in NJ)'
   },
   {
     id: 'm-14',
@@ -1567,7 +1595,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 26.0,
     projectedScore: 'Pennington 3-1',
     scoutingReportId: 'pennington',
-    keySummary: 'Collegiate recruiting showcase against national #8 ranked powerhouse and 3-peat Prep A champion Pennington Red Hawks (undefeated 7-0-0). Peddie win probability modeled at 26% (projected 1-3). Demands flawless compact low-block discipline and clinical counter-attacks.'
+    keySummary: 'Collegiate recruiting showcase against national #8 ranked powerhouse and 3-peat Prep A champion Pennington Red Hawks (undefeated 7-0-0). Peddie win probability modeled at 26% (projected 1-3). Demands flawless compact low-block discipline and clinical counter-attacks.',
+    sourceUrl: 'https://www.pennington.org/athletics/team-pages/boys-varsity-soccer',
+    sourceLabel: 'Pennington Athletics & USC National #8'
   },
   {
     id: 'm-15',
@@ -1586,7 +1616,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 62.0,
     projectedScore: 'Peddie 2-1',
     scoutingReportId: 'hun',
-    keySummary: 'MAPL conference showdown on the Peddie campus against Hun Raiders (2-3-0). Peddie holds a 62% win probability (projected 2-1). Heavy MAPL tournament seeding implications heading into November.'
+    keySummary: 'MAPL conference showdown on the Peddie campus against Hun Raiders (2-3-0). Peddie holds a 62% win probability (projected 2-1). Heavy MAPL tournament seeding implications heading into November.',
+    sourceUrl: 'https://www.maxpreps.com/nj/princeton/hun-raiders/soccer/boys/',
+    sourceLabel: 'MaxPreps: The Hun School Raiders (MAPL)'
   },
   {
     id: 'm-16',
@@ -1605,7 +1637,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     winProbabilityPct: 66.0,
     projectedScore: 'Peddie 3-1',
     scoutingReportId: 'blair',
-    keySummary: 'The oldest prep school rivalry in New Jersey (since 1903). 123rd Edition hosted at Peddie. Blair stands at 1-2-0. Peddie modeled at 66% win probability (projected 3-1). The ultimate regular-season finale for the Potter-Kelley Cup and MAPL Championship honors.'
+    keySummary: 'The oldest prep school rivalry in New Jersey (since 1903). 123rd Edition hosted at Peddie. Blair stands at 1-2-0. Peddie modeled at 66% win probability (projected 3-1). The ultimate regular-season finale for the Potter-Kelley Cup and MAPL Championship honors.',
+    sourceUrl: 'https://www.maxpreps.com/nj/blairstown/blair-academy-buccaneers/soccer/',
+    sourceLabel: 'MaxPreps: Blair Academy Buccaneers (123rd Classic)'
   }
 ];
 
@@ -2965,6 +2999,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     veoVideoUrl: 'https://app.veo.co/matches/20260901-vs-peddie-v4d69c3b/',
     veoThumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingOverview: 'Nationally prominent Inter-Ac powerhouse with high-tempo physical transition, vertical passing through central channels, and lethal set-piece delivery. Handed Peddie an early 0-5 lesson that triggered Coach Nazario’s shift to the 4-4-2 diamond double pivot.',
+    sourceUrl: 'https://www.maxpreps.com/pa/haverford/haverford-school-fords/soccer/',
+    sourceLabel: 'MaxPreps: Haverford Fords Varsity',
     veoClips: [
       { minute: '13:08', title: 'Period 1: Vertical Cutback Overload', phase: 'Vulnerability', description: 'Veo AI camera reveals Haverford cutting through the wide channel behind advancing wingback, finishing low into left side netting.' },
       { minute: '29:15', title: 'Period 2: High Turnover in Attacking Third', phase: 'High Press', description: 'Aggressive 3-man counter-press forces loose pass on edge of box resulting in first-touch clinical strike.' },
@@ -3003,6 +3039,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     formGuide: 'W-W-W-L-W',
     stateRanking: 'NJ Top 40 Non-Public',
     scoutingOverview: 'Well-drilled GMC Non-Public unit (7-2 in 2026) utilizing double-pivot protection and quick wing counter-attacks. Tested Peddie to the limit in a dramatic 3-2 Falcon home victory decided by Carson Wiley’s 81st-minute header.',
+    sourceUrl: 'https://www.maxpreps.com/nj/edison/st-thomas-aquinas-trojans/soccer/26-27/schedule/',
+    sourceLabel: 'MaxPreps: St. Thomas Aquinas (Peddie 3-2 W)',
     veoClips: [
       { minute: '18:40', title: 'Double-Pivot Build-Up Under Pressure', phase: 'Build-up', description: 'Veo film shows Aquinas central midfielders struggling when pressed directly by CAM free runner.' },
       { minute: '52:10', title: 'Wide Channel Isolation', phase: 'Vulnerability', description: 'Right fullback tends to step high, leaving massive space behind him for diagonal through balls.' }
@@ -3037,6 +3075,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     projectedScore: 'Peddie 2 – 3 Trenton Central (Completed Sept 7)',
     formGuide: 'L-W-L-W-L',
     scoutingOverview: 'Athletic, high-effort local Mercer County opponent with explosive wide wingers and direct transition speed. Edged Peddie 3-2 on a late scramble, capitalizing on direct balls over the top.',
+    sourceUrl: 'https://www.maxpreps.com/nj/trenton/trenton-central-tornadoes/soccer/boys/schedule/',
+    sourceLabel: 'MaxPreps: Trenton Central (3-2 Win vs Peddie)',
     veoClips: [
       { minute: '22:15', title: 'Direct Goal Kick Bypass', phase: 'Build-up', description: 'TCHS bypasses central midfield via direct goal kicks toward left touchline.' },
       { minute: '64:30', title: 'Defensive Disorganization on Crosses', phase: 'Vulnerability', description: 'Center-backs often lose track of back-post runners on inswinging corner deliveries.' }
@@ -3071,6 +3111,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     projectedScore: 'Peddie 5 – 2 George School (Completed Sept 10)',
     formGuide: 'L-W-L-L-W',
     scoutingOverview: 'Tactically disciplined Pennsylvania squad playing a structured 3-5-2 with wingbacks providing width. Peddie overwhelmed their 3 center-backs with wide overlaps in an emphatic 5-2 road showcase victory.',
+    sourceUrl: 'https://www.maxpreps.com/pa/newtown/george-school-cougars/soccer/',
+    sourceLabel: 'MaxPreps: George School Cougars (Peddie 5-2 W)',
     veoClips: [
       { minute: '14:20', title: 'Wingback High Overlap Flaw', phase: 'Vulnerability', description: 'Veo film highlights wide acres of space behind their left wingback on fast transitions.' },
       { minute: '48:10', title: '3-Back Central Density', phase: 'Defensive Transition', description: 'Very dense in central 18-yard box, but vulnerable to cutbacks at top of the penalty arc.' }
@@ -3105,6 +3147,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     projectedScore: 'Peddie 7 – 1 PDS (Completed Sept 14)',
     formGuide: 'L-L-L-W-L',
     scoutingOverview: 'Historic Mercer County rival enduring a tough 2026 campaign (1-4). Plays a bold high defensive line with short-passing triangles that was ruthlessly dismantled 7-1 by Tommy Kim’s hat trick and Jeffrey Zhang’s brace.',
+    sourceUrl: 'https://www.maxpreps.com/nj/princeton/princeton-day-panthers/soccer/',
+    sourceLabel: 'MaxPreps: Princeton Day Panthers (Peddie 7-1 W)',
     veoClips: [
       { minute: '27:45', title: 'Central Triangle Progression', phase: 'Build-up', description: 'PDS rotates midfield 3 to bypass pressure; requires tight man-orientation.' },
       { minute: '68:15', title: 'Backline High-Line Caught', phase: 'Vulnerability', description: 'PDS plays a bold high defensive line that gets caught by well-timed vertical runs.' }
@@ -3139,6 +3183,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     projectedScore: 'Peddie 8 – 2 Rutgers Prep (Completed Showcase)',
     formGuide: 'W-L-W-L-L',
     scoutingOverview: 'Technical Somerset County squad featuring disciplined possession and quick combination play through wide triangles. Defeated Bound Brook 5-3, but struggled against Peddie’s Gegenpress diamond in an 8-2 Falcon offensive explosion.',
+    sourceUrl: 'https://www.maxpreps.com/nj/somerset/rutgers-prep-argonauts/soccer/',
+    sourceLabel: 'MaxPreps: Rutgers Prep Argonauts (Peddie 8-2 W)',
     veoClips: [
       { minute: '31:10', title: 'Midfield Overload in Phase 2', phase: 'Build-up', description: 'Argonauts drop attacking mid deep to form a 3-man midfield pivot.' },
       { minute: '74:20', title: 'Near-Post Defensive Breakdown', phase: 'Set Piece', description: 'Veo film demonstrates difficulty tracking near-post corner runners under pressure.' }
@@ -3173,6 +3219,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     projectedScore: 'Peddie 9 – 2 Life Center (Completed 9/22)',
     formGuide: 'L-L-W-L-L',
     scoutingOverview: 'Physical, aggressive side with fast direct counter-attacks and 50-yard clearances. Central midfielders disconnect from their backline by 25+ yards, allowing Peddie to score 9 goals in a dominant 9-2 masterclass.',
+    sourceUrl: 'https://www.maxpreps.com/nj/burlington/life-center-academy-warriors/soccer/boys/schedule/',
+    sourceLabel: 'MaxPreps: Life Center Academy (Peddie 9-2 W)',
     veoClips: [
       { minute: '19:05', title: 'Direct Aerial Channel Kick', phase: 'Build-up', description: 'LCA launches direct clearances from goalkeeper straight to forward headers.' },
       { minute: '58:40', title: 'Midfield Disconnect Under Press', phase: 'Vulnerability', description: 'LCA central midfielders get separated from backline by 25+ yards.' }
@@ -3208,6 +3256,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     formGuide: 'L-L-L',
     stateRanking: 'MAPL Conference Rival',
     scoutingOverview: 'Historic MAPL rival currently experiencing an uncharacteristic 0-3 start to the 2026 season. Both fullbacks push deep into the attacking third, leaving central defense isolated. Peddie enters as a 65% favorite to capture the MAPL opener on the road.',
+    sourceUrl: 'https://athletics.lawrenceville.org/',
+    sourceLabel: 'Lawrenceville Athletics & MaxPreps Big Red',
     veoClips: [
       { minute: '16:30', title: 'Big Red High Press Trap', phase: 'High Press', description: 'Veo film demonstrates Lawrenceville pressing aggressively with front 3 on goal kicks.' },
       { minute: '44:10', title: 'Space Behind Overlapping Fullbacks', phase: 'Vulnerability', description: 'Both fullbacks push deep into attacking third, leaving their center backs completely exposed.' }
@@ -3244,6 +3294,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     formGuide: 'L-L-W-L-W',
     stateRanking: '#196 in New Jersey (Rebuilding Season)',
     scoutingOverview: 'Perennial South Jersey powerhouse (9-time State Champions) undergoing a rare rebuilding campaign at 2-4 overall and 0-2 in BCSL. Retains trademark physical toughness and long throw-in threats, but Peddie’s diamond midfield holds a distinct technical advantage.',
+    sourceUrl: 'https://www.maxpreps.com/nj/delran/delran-bears/soccer/boys/26-27/',
+    sourceLabel: 'MaxPreps: Delran Bears Varsity (BCSL)',
     veoClips: [
       { minute: '12:50', title: 'High Intensity 50/50 Duels', phase: 'Defensive Transition', description: 'Bears contest every ground duel with full commitment; second-ball speed is elite.' },
       { minute: '67:20', title: 'Back-Post Set-Piece Overload', phase: 'Set Piece', description: 'Whipped free kicks targeting their 6-foot-2 center back crashing at the far post.' }
@@ -3278,6 +3330,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     projectedScore: 'Peddie 3 – 1 Mercersburg',
     formGuide: 'W-W-L-W-L',
     scoutingOverview: 'MAPL rival from Pennsylvania with a respectable 3-2 record. Known for disciplined technical build-up and upset capability (defeated Hill School 3-0 in 2025). Vulnerable to dynamic pace through central channels when twin strikers split their center-backs.',
+    sourceUrl: 'https://www.mercersburg.edu/athletics/teams/boys-varsity-soccer',
+    sourceLabel: 'Mercersburg Athletics & MAPL',
     veoClips: [
       { minute: '24:15', title: 'Wide Switch Progression', phase: 'Build-up', description: 'Blue Storm looks to switch play diagonally to their left winger.' },
       { minute: '61:40', title: 'Center Back Separation', phase: 'Vulnerability', description: 'Center-backs fail to communicate when twin strikers split them.' }
@@ -3312,6 +3366,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     projectedScore: 'Peddie 4 – 0 Wilberforce',
     formGuide: 'W-W-L',
     scoutingOverview: 'Hardworking local Princeton squad off to a 2-1 start with shutout wins over Somerset Tech and Thrive Charter. Employs a low-block 4-4-2 shell defending the 18-yard box, but typically breaks down after the 65th minute against elite possession pressure.',
+    sourceUrl: 'https://www.wilberforce.org/athletics',
+    sourceLabel: 'Wilberforce Athletics Official Portal',
     veoClips: [
       { minute: '35:20', title: 'Low Block Defensive Containment', phase: 'Defensive Transition', description: 'Wilberforce drops 8 outfield players into their defensive third.' },
       { minute: '71:15', title: 'Fatigue Breakdown in Second Half', phase: 'Vulnerability', description: 'Defensive discipline deteriorates past 65th minute under sustained high possession.' }
@@ -3346,6 +3402,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     formGuide: 'D-W-L-D-W',
     stateRanking: 'MAPL Defensive Powerhouse',
     scoutingOverview: 'Historic MAPL Keystone rival. Gritty, disciplined, defensively stingy unit led by Coach Kris Donaldson (fresh off a 0-0 stalemate against Springside Chestnut Hill on Sept 23). Center-back captain Rowan MacCallum dominates the air, requiring low cutbacks to Zone 14.',
+    sourceUrl: 'https://www.maxpreps.com/pa/pottstown/hill-school-blues/soccer/',
+    sourceLabel: 'MaxPreps: The Hill School Blues (MAPL)',
     veoClips: [
       { minute: '17:40', title: 'Blues Defensive Line Discipline', phase: 'Defensive Transition', description: 'Hill maintains rigid lines of 4 and 2; difficult to break down centrally.' },
       { minute: '55:10', title: 'Edge-of-Box Cutback Flaw', phase: 'Vulnerability', description: 'Veo AI reveals Hill defensive midfielders getting sucked into the 6-yard box, vacating the top of the box.' }
@@ -3380,6 +3438,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     projectedScore: 'Peddie 3 – 1 WW-P South',
     formGuide: 'L-L-W-L-L',
     scoutingOverview: 'Premier Mercer County public program having an uneven season at 3-6 overall. Individual winger Aditya Sharma (#7) and midfielder Arjun Patel (#10) create rapid triangles, but their fullbacks overcommit, leaving wide counter-attacking lanes for Peddie to exploit.',
+    sourceUrl: 'https://www.maxpreps.com/nj/princeton-junction/west-windsor-plainsboro-south-pirates/soccer/',
+    sourceLabel: 'MaxPreps: WW-P South Pirates (CVC)',
     veoClips: [
       { minute: '21:30', title: 'Pirates Wide Triangle Rotation', phase: 'Build-up', description: 'Winger, fullback, and interior midfielder create rapid passing triangles.' },
       { minute: '63:15', title: 'Overcommitment on Attacking Corner', phase: 'Vulnerability', description: 'Leaves only 1 defender back on attacking corners, highly vulnerable to fast breakout.' }
@@ -3415,6 +3475,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     formGuide: 'W-W-W-D-W',
     stateRanking: 'CVC Frontrunner & Mercer Powerhouse',
     scoutingOverview: 'RED-HOT Mercer County powerhouse off to an UNDEFEATED 6-0-1 start, highlighted by an emphatic 7-1 blowout of Robbinsville on Sept 24. Ferocious front-two press and physical striker Trevor Bennett make this Peddie’s highest-rated public school challenge.',
+    sourceUrl: 'https://www.maxpreps.com/nj/pennington/hopewell-valley-central-bulldogs/soccer/boys/',
+    sourceLabel: 'MaxPreps & SI.com: Hopewell Valley Bulldogs (#22 in NJ)',
     veoClips: [
       { minute: '15:10', title: 'Bulldogs Front Two Pressing', phase: 'High Press', description: 'Front two press center-backs aggressively to force long clearances.' },
       { minute: '54:20', title: 'Gaps Between Backline & Midfield', phase: 'Vulnerability', description: 'When Bulldogs press high, backline does not push up synchronously, leaving 20 yards of free space.' }
@@ -3451,6 +3513,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     nationalRanking: 'No. 8 in the United States (United Soccer Coaches)',
     stateRanking: 'No. 1 in New Jersey Prep A',
     scoutingOverview: 'RANKED NO. 8 IN THE NATION by United Soccer Coaches. Elite international roster with multiple Division 1 commits under Coach Chad Bridges. 3-time defending state champions with a devastating 4-man Gegenpress. Peddie’s ultimate tactical test.',
+    sourceUrl: 'https://www.pennington.org/athletics/team-pages/boys-varsity-soccer',
+    sourceLabel: 'Pennington Athletics & USC National #8',
     veoClips: [
       { minute: '09:40', title: 'Red Hawks Counter-Pressing Surge', phase: 'High Press', description: 'Veo film highlights 4-man swarm within 3 seconds of losing ball in attacking third.' },
       { minute: '38:25', title: 'Vulnerability on Direct Diagonal Switch', phase: 'Vulnerability', description: 'Pennington counter-press overcommits to ball side, leaving weak side completely open to diagonal switches.' },
@@ -3488,6 +3552,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     formGuide: 'W-L-D-W-L',
     stateRanking: 'MAPL Championship Contender',
     scoutingOverview: 'Traditional MAPL rival with explosive attacking wingbacks and a lethal striker in Santiago Alvarez (#10). Compact back 3 leaves enormous space behind wingbacks on quick turnovers—ideal for Peddie’s wide transition play.',
+    sourceUrl: 'https://www.maxpreps.com/nj/princeton/hun-raiders/soccer/boys/',
+    sourceLabel: 'MaxPreps: The Hun School Raiders (MAPL)',
     veoClips: [
       { minute: '18:15', title: 'Wingbacks Pushed to Touchlines', phase: 'Build-up', description: 'Hun wingbacks push past halfway line, stretching field.' },
       { minute: '42:30', title: 'Massive Space Behind Wingbacks', phase: 'Vulnerability', description: 'Turnovers in central midfield allow immediate fast breaks into outer channels.' }
@@ -3523,6 +3589,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
     formGuide: 'W-L-L',
     stateRanking: '123rd Peddie-Blair Day Rivalry Classic',
     scoutingOverview: '123rd Peddie-Blair Day Rivalry Classic (hosted at Peddie). Blair is 1-2 in early play (5-0 win over Warren Hills), relying almost exclusively on 65-yard direct drop-kicks into 6-3 target striker Gunnar Henderson. Peddie holds significant technical and recovery pace advantages.',
+    sourceUrl: 'https://www.maxpreps.com/nj/blairstown/blair-academy-buccaneers/soccer/',
+    sourceLabel: 'MaxPreps: Blair Academy Buccaneers (123rd Classic)',
     veoClips: [
       { minute: '11:20', title: 'Direct Goal Kick into Striker Chest', phase: 'Build-up', description: 'Buccaneers bypass midfield play completely via direct long balls from goalkeeper.' },
       { minute: '36:45', title: 'Half-Space Gaps in Transition', phase: 'Vulnerability', description: 'Veo film highlights wide midfielders failing to track back, leaving central defense isolated.' },

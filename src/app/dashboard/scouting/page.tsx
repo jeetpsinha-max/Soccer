@@ -21,7 +21,8 @@ import {
   Flame,
   X,
   Footprints,
-  Activity
+  Activity,
+  ExternalLink
 } from 'lucide-react';
 
 export default function ScoutingPage() {
@@ -219,10 +220,22 @@ export default function ScoutingPage() {
           </Link>
           <Link
             href="/dashboard/call-sheet"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold transition ml-auto"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold transition"
           >
             Sideline Call Sheet
           </Link>
+          {selectedScout.sourceUrl && (
+            <a
+              href={selectedScout.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 text-xs font-bold transition ml-auto"
+              title={selectedScout.sourceLabel || 'Verify Live Stats Online'}
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span>Verify Online: {selectedScout.sourceLabel || 'MaxPreps'}</span>
+            </a>
+          )}
         </div>
 
         {/* Overview */}

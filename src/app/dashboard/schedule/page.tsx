@@ -399,6 +399,23 @@ export default function SchedulePage() {
                 <div className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">
                   {match.keySummary}
                 </div>
+
+                {/* Online Source Verification */}
+                {(match.sourceUrl || scoutDossier?.sourceUrl) && (
+                  <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[10px]">
+                    <span className="text-slate-400 font-semibold">Online Source:</span>
+                    <a
+                      href={match.sourceUrl || scoutDossier?.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:text-cyan-300 hover:underline flex items-center gap-1 font-mono font-medium truncate max-w-[210px]"
+                      title={match.sourceLabel || scoutDossier?.sourceLabel || 'Verify Live Stats Online'}
+                    >
+                      <ExternalLink className="w-3 h-3 shrink-0" />
+                      <span className="truncate">{match.sourceLabel || scoutDossier?.sourceLabel || 'Verify on MaxPreps'}</span>
+                    </a>
+                  </div>
+                )}
               </div>
 
               {/* Action Buttons Footer */}
@@ -666,13 +683,27 @@ export default function SchedulePage() {
 
             {/* Modal Footer */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-800">
-              <Link
-                href="/dashboard/scouting"
-                className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider transition flex items-center gap-2"
-              >
-                <Compass className="w-4 h-4 text-cyan-400" />
-                Open Opponent Scouting Dashboard
-              </Link>
+              <div className="flex items-center gap-2">
+                <Link
+                  href="/dashboard/scouting"
+                  className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider transition flex items-center gap-2"
+                >
+                  <Compass className="w-4 h-4 text-cyan-400" />
+                  Open Opponent Scouting Dashboard
+                </Link>
+                {activeScoutDossier.sourceUrl && (
+                  <a
+                    href={activeScoutDossier.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 text-xs font-bold transition flex items-center gap-1.5"
+                    title={activeScoutDossier.sourceLabel || 'Verify Live Stats Online'}
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>Verify: {activeScoutDossier.sourceLabel?.split(':')[0] || 'MaxPreps'}</span>
+                  </a>
+                )}
+              </div>
 
               <div className="flex items-center gap-2">
                 <Link

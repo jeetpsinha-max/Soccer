@@ -196,6 +196,8 @@ export interface MatchFixture {
   nationalRanking?: string;
   stateRanking?: string;
   winProbabilityPct?: number;
+  sourceUrl?: string;
+  sourceLabel?: string;
 }
 
 export interface XTCell {
@@ -341,6 +343,8 @@ export interface VeoTeamScout {
   formGuide?: string;
   nationalRanking?: string;
   stateRanking?: string;
+  sourceUrl?: string;
+  sourceLabel?: string;
   veoMatchRecordId?: string;
   veoThumbnailUrl?: string;
   veoVideoUrl?: string;
