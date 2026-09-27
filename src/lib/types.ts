@@ -345,6 +345,8 @@ export interface VeoTeamScout {
   stateRanking?: string;
   sourceUrl?: string;
   sourceLabel?: string;
+  hudlUrl?: string;
+  hudlLabel?: string;
   veoMatchRecordId?: string;
   veoThumbnailUrl?: string;
   veoVideoUrl?: string;
@@ -383,6 +385,8 @@ export interface OpponentPlayerReport {
   vulnerabilities: string[];
   currentSeasonNotes: string; // Current 2026-2027 Veo film/match scouting notes
   peddieMatchupCounter: string; // Assigned Peddie defender / tactical counter
+  profileUrl?: string; // Online stats/roster profile link (MaxPreps/School Athletics)
+  filmUrl?: string; // Online video/film highlight link (Hudl/YouTube)
   keyStats?: {
     goals?: number;
     assists?: number;

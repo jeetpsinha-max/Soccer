@@ -623,6 +623,28 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(sinha?.passCompletionPct).toBe(91.8);
     expect(sinha?.goals).toBe(1);
     expect(sinha?.assists).toBe(1);
+
+    // 6. Online stats & film verification links for all 17 opponents and 85 scouted players
+    PEDDIE_SCHEDULE_2026_2027.forEach(m => {
+      expect(m.sourceUrl).toBeDefined();
+      expect(m.sourceUrl?.startsWith('http')).toBe(true);
+      expect(m.hudlUrl).toBeDefined();
+      expect(m.hudlUrl?.startsWith('http')).toBe(true);
+    });
+
+    Object.values(OPPONENT_VEO_SCOUTING).forEach(scout => {
+      expect(scout.sourceUrl).toBeDefined();
+      expect(scout.sourceUrl?.startsWith('http')).toBe(true);
+      expect(scout.hudlUrl).toBeDefined();
+      expect(scout.hudlUrl?.startsWith('http')).toBe(true);
+    });
+
+    ALL_OPPONENT_PLAYER_REPORTS.forEach(p => {
+      expect(p.profileUrl).toBeDefined();
+      expect(p.profileUrl?.startsWith('http')).toBe(true);
+      expect(p.filmUrl).toBeDefined();
+      expect(p.filmUrl?.startsWith('http')).toBe(true);
+    });
   });
 });
 

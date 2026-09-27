@@ -400,22 +400,39 @@ export default function SchedulePage() {
                   {match.keySummary}
                 </div>
 
-                {/* Online Source Verification */}
-                {(match.sourceUrl || scoutDossier?.sourceUrl) && (
-                  <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[10px]">
-                    <span className="text-slate-400 font-semibold">Online Source:</span>
-                    <a
-                      href={match.sourceUrl || scoutDossier?.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-cyan-400 hover:text-cyan-300 hover:underline flex items-center gap-1 font-mono font-medium truncate max-w-[210px]"
-                      title={match.sourceLabel || scoutDossier?.sourceLabel || 'Verify Live Stats Online'}
-                    >
-                      <ExternalLink className="w-3 h-3 shrink-0" />
-                      <span className="truncate">{match.sourceLabel || scoutDossier?.sourceLabel || 'Verify on MaxPreps'}</span>
-                    </a>
-                  </div>
-                )}
+                {/* Online Source Verification (Stats & Film) */}
+                <div className="pt-2 border-t border-slate-800/80 space-y-1 text-[10px]">
+                  {(match.sourceUrl || scoutDossier?.sourceUrl) && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-400 font-semibold">Online Stats:</span>
+                      <a
+                        href={match.sourceUrl || scoutDossier?.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-400 hover:text-cyan-300 hover:underline flex items-center gap-1 font-mono font-medium truncate max-w-[210px]"
+                        title={match.sourceLabel || scoutDossier?.sourceLabel || 'Verify Live Stats Online'}
+                      >
+                        <ExternalLink className="w-3 h-3 shrink-0" />
+                        <span className="truncate">{match.sourceLabel || scoutDossier?.sourceLabel || 'Verify on MaxPreps'}</span>
+                      </a>
+                    </div>
+                  )}
+                  {(match.hudlUrl || scoutDossier?.hudlUrl) && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-400 font-semibold">Online Film:</span>
+                      <a
+                        href={match.hudlUrl || scoutDossier?.hudlUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-rose-400 hover:text-rose-300 hover:underline flex items-center gap-1 font-mono font-medium truncate max-w-[210px]"
+                        title={scoutDossier?.hudlLabel || 'Watch Official Film on Hudl Fan'}
+                      >
+                        <Video className="w-3 h-3 shrink-0" />
+                        <span className="truncate">{scoutDossier?.hudlLabel?.split(':')[0] || 'Hudl Fan Film'}</span>
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Action Buttons Footer */}
@@ -689,8 +706,20 @@ export default function SchedulePage() {
                   className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider transition flex items-center gap-2"
                 >
                   <Compass className="w-4 h-4 text-cyan-400" />
-                  Open Opponent Scouting Dashboard
+                  Scouting Dossier
                 </Link>
+                {activeScoutDossier.hudlUrl && (
+                  <a
+                    href={activeScoutDossier.hudlUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/30 text-xs font-bold transition flex items-center gap-1.5"
+                    title={activeScoutDossier.hudlLabel || 'Watch Official Film on Hudl Fan'}
+                  >
+                    <Video className="w-3.5 h-3.5 text-rose-400" />
+                    <span>Watch Hudl Film ↗</span>
+                  </a>
+                )}
                 {activeScoutDossier.sourceUrl && (
                   <a
                     href={activeScoutDossier.sourceUrl}
@@ -699,8 +728,8 @@ export default function SchedulePage() {
                     className="px-3.5 py-2 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 text-xs font-bold transition flex items-center gap-1.5"
                     title={activeScoutDossier.sourceLabel || 'Verify Live Stats Online'}
                   >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    <span>Verify: {activeScoutDossier.sourceLabel?.split(':')[0] || 'MaxPreps'}</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-purple-400" />
+                    <span>Verify: {activeScoutDossier.sourceLabel?.split(':')[0] || 'MaxPreps'} ↗</span>
                   </a>
                 )}
               </div>

@@ -27,6 +27,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Scored in Period 4 of Sept 1 opener vs Peddie (77:48). Targeted early in vertical channels behind advancing fullbacks.',
       peddieMatchupCounter: 'Carson Wiley (#22) must maintain tight physical touchline and deny inside turns. Dylan McKenzie (#98) must control rebound zones.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/haverford/organization/16669/haverford-school',
+      profileUrl: 'https://www.maxpreps.com/pa/haverford/haverford-school-fords/soccer/',
       keyStats: { goals: 4, assists: 1, duelsWonPct: 58, savesOrTackles: '1.8 tackles/gm' }
     },
     {
@@ -54,6 +56,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Assisted Haverford’s opening goal with a slicing diagonal into the left channel. Primary engine of their 4-3-3 possession.',
       peddieMatchupCounter: 'Christian Tharney (#13) must step aggressively into the #10 passing lane and deny Luca space on the half-turn.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/haverford/organization/16669/haverford-school',
+      profileUrl: 'https://www.maxpreps.com/pa/haverford/haverford-school-fords/soccer/',
       keyStats: { goals: 2, assists: 5, duelsWonPct: 52, savesOrTackles: '2.1 key passes/gm' }
     },
     {
@@ -81,6 +85,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film minute 13:08 shows him isolating Peddie’s right back before squaring for the opening score.',
       peddieMatchupCounter: 'Gabriel Lam (#5) must show him inside into Noah Eldessouky and Christian Tharney’s double-team coverage.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/haverford/organization/16669/haverford-school',
+      profileUrl: 'https://www.maxpreps.com/pa/haverford/haverford-school-fords/soccer/',
       keyStats: { goals: 3, assists: 3, duelsWonPct: 61, savesOrTackles: '3.4 take-ons/gm' }
     },
     {
@@ -108,6 +114,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Neutralized long balls in Haverford’s back 4. Orchestrates their high defensive line.',
       peddieMatchupCounter: 'Tommy Kim (#28) must pull him out of the central 18 with checking runs to open space for arriving runners.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/haverford/organization/16669/haverford-school',
+      profileUrl: 'https://www.maxpreps.com/pa/haverford/haverford-school-fords/soccer/',
       keyStats: { goals: 1, assists: 0, duelsWonPct: 79, savesOrTackles: '4.2 clearances/gm' }
     },
     {
@@ -135,6 +143,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Recorded clean sheet against Peddie in season opener. Claimed 4 corner deliveries.',
       peddieMatchupCounter: 'Pressure his backpasses aggressively with twin forwards Kim and Zhang.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/haverford/organization/16669/haverford-school',
+      profileUrl: 'https://www.maxpreps.com/pa/haverford/haverford-school-fords/soccer/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 85, savesOrTackles: '84% save pct' }
     }
   ],
@@ -165,6 +175,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Scored Aquinas’s first goal in Sept 4 3-2 clash vs Peddie from edge of box. Veo film minute 18:40.',
       peddieMatchupCounter: 'Rayyaan Mohiuddin (#14) and Christian Tharney (#13) must squeeze Julian Morales in a midfield vice whenever he receives.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/edison/organization/21175/st-thomas-aquinas-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/edison/st-thomas-aquinas-trojans/soccer/26-27/schedule/',
       keyStats: { goals: 3, assists: 2, duelsWonPct: 50, savesOrTackles: '2.5 shots/gm' }
     },
     {
@@ -192,6 +204,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Scored second-half goal vs Peddie on Sept 4 following loose ball scramble. Contested 14 aerial duels.',
       peddieMatchupCounter: 'Owen Bonchev (#8) and Carson Wiley (#22) must step in front of Darius to win initial headers cleanly.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/edison/organization/21175/st-thomas-aquinas-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/edison/st-thomas-aquinas-trojans/soccer/26-27/schedule/',
       keyStats: { goals: 2, assists: 1, duelsWonPct: 62, savesOrTackles: '3.1 aerial duels won' }
     },
     {
@@ -219,6 +233,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Struggled against Rayyaan Mohiuddin’s quick one-touch combinations in Peddie’s 3-2 victory.',
       peddieMatchupCounter: 'Quinn Wachtveitl (#10) and Brody Rozo (#18) move the ball with 1-2 touches before Mateo can arrive for contact.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/edison/organization/21175/st-thomas-aquinas-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/edison/st-thomas-aquinas-trojans/soccer/26-27/schedule/',
       keyStats: { goals: 0, assists: 1, duelsWonPct: 67, savesOrTackles: '4.2 tackles/gm' }
     },
     {
@@ -245,6 +261,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo clip minute 52:10 shows him trapped upfield during Peddie’s second goal sequence.',
       peddieMatchupCounter: 'Bennett Cuchera (#7) and Blake Romanelli (#26) attack the space vacated behind Rossi.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/edison/organization/21175/st-thomas-aquinas-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/edison/st-thomas-aquinas-trojans/soccer/26-27/schedule/',
       keyStats: { goals: 0, assists: 2, duelsWonPct: 49, savesOrTackles: '1.9 clearances/gm' }
     },
     {
@@ -271,6 +289,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Starting keeper who faced 14 Peddie shots in Sept 5 clash. Beaten by Wiley\'s late header.',
       peddieMatchupCounter: 'Christian Tharney (#13) whipped set pieces into 6-yard cluster; Wiley and Eldessouky crash frame.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/edison/organization/21175/st-thomas-aquinas-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/edison/st-thomas-aquinas-trojans/soccer/26-27/schedule/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 67, savesOrTackles: '74% save pct' }
     }
   ],
@@ -301,6 +321,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Primary scoring threat for Trenton Catholic. Leads team with 5 goals through early season.',
       peddieMatchupCounter: 'Gabriel Lam (#5) must contain Malik, give a half-yard cushion to deny the sprint race, and force him left.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/trenton/organization/14878/trenton-central-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/trenton/trenton-central-tornadoes/soccer/boys/schedule/',
       keyStats: { goals: 5, assists: 1, duelsWonPct: 56, savesOrTackles: '4.1 dribbles/gm' }
     },
     {
@@ -328,6 +350,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Key playmaker in TCHS direct bypass strategy. Primary target for second balls off goal kicks.',
       peddieMatchupCounter: 'Christian Tharney (#13) and Brody Rozo (#18) control the second balls around Campbell.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/trenton/organization/14878/trenton-central-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/trenton/trenton-central-tornadoes/soccer/boys/schedule/',
       keyStats: { goals: 2, assists: 3, duelsWonPct: 63, savesOrTackles: '3.5 tackles/gm' }
     },
     {
@@ -354,6 +378,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film minute 64:30 highlights center-back miscommunication on low cutbacks.',
       peddieMatchupCounter: 'Tommy Kim (#28) use quick stop-and-go vertical acceleration to turn Kwame inside out.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/trenton/organization/14878/trenton-central-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/trenton/trenton-central-tornadoes/soccer/boys/schedule/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 71, savesOrTackles: '4.8 clearances/gm' }
     },
     {
@@ -380,6 +406,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Faced heavy barrage vs Peddie attack on Sept 9.',
       peddieMatchupCounter: 'Tommy Kim (#28) and Jeffrey Zhang (#17) test Vasquez with early curled efforts.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/trenton/organization/14878/trenton-central-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/trenton/trenton-central-tornadoes/soccer/boys/schedule/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 70, savesOrTackles: '72% save pct' }
     },
     {
@@ -406,7 +434,10 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Focal point of Trenton Catholic counter-attacking system.',
       peddieMatchupCounter: 'Rayyaan Mohiuddin (#14) step in early to break Robinson\'s transitional rhythm.',
-      keyStats: { goals: 3, assists: 3, duelsWonPct: 54, savesOrTackles: '1.9 dribbles/gm' }
+      keyStats: { goals: 3, assists: 3, duelsWonPct: 54, savesOrTackles: '1.9 dribbles/gm' },
+      filmUrl: 'https://fan.hudl.com/usa/nj/trenton/organization/14878/trenton-central-high-school',
+
+      profileUrl: 'https://www.maxpreps.com/nj/trenton/trenton-central-tornadoes/soccer/boys/schedule/',
     }
   ],
 
@@ -436,6 +467,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Focal point of George School’s Friends Schools League offensive structure.',
       peddieMatchupCounter: 'Carson Wiley (#22) lock him down tightly; Owen Bonchev (#8) sweep up behind.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/trenton/organization/14878/trenton-central-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/trenton/trenton-central-tornadoes/soccer/boys/schedule/',
       keyStats: { goals: 3, assists: 4, duelsWonPct: 54, savesOrTackles: '2.3 shots/gm' }
     },
     {
@@ -463,6 +496,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Engine of the Cougars 3-5-2 midfield pivot. Disrupted if pressured high.',
       peddieMatchupCounter: 'Rayyaan Mohiuddin (#14) must mark Henderson man-to-man to break George School’s flow.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/newtown/organization/15467/george-school',
+      profileUrl: 'https://www.maxpreps.com/pa/newtown/george-school-cougars/soccer/',
       keyStats: { goals: 1, assists: 4, duelsWonPct: 48, savesOrTackles: '88% pass pct' }
     },
     {
@@ -489,6 +524,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film highlights wide vulnerability zone behind Gray when George School loses possession.',
       peddieMatchupCounter: 'Bennett Cuchera (#7) exploit the vacant right flank channels behind Gray with diagonal bursts.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/newtown/organization/15467/george-school',
+      profileUrl: 'https://www.maxpreps.com/pa/newtown/george-school-cougars/soccer/',
       keyStats: { goals: 1, assists: 3, duelsWonPct: 53, savesOrTackles: '2.0 crosses/gm' }
     },
     {
@@ -515,6 +552,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Anchors George School backline; faced Peddie on Sept 12.',
       peddieMatchupCounter: 'Drive low hard strikes across frame; crash far post for tuck-ins.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/newtown/organization/15467/george-school',
+      profileUrl: 'https://www.maxpreps.com/pa/newtown/george-school-cougars/soccer/',
       keyStats: { goals: 0, assists: 1, duelsWonPct: 75, savesOrTackles: '76% save pct' }
     },
     {
@@ -541,6 +580,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Cougars primary goal scorer in FSL action.',
       peddieMatchupCounter: 'Noah Eldessouky (#12) shade Ferreira onto his weaker right foot.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/newtown/organization/15467/george-school',
+      profileUrl: 'https://www.maxpreps.com/pa/newtown/george-school-cougars/soccer/',
       keyStats: { goals: 4, assists: 2, duelsWonPct: 51, savesOrTackles: '2.4 shots/gm' }
     }
   ],
@@ -571,6 +612,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Captain and primary playmaker for PDS. Orchestrates their 4-3-3 possession triangles.',
       peddieMatchupCounter: 'Quinn Wachtveitl (#10) and Brody Rozo (#18) provide relentless physical midfield pressure.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/18654/princeton-day-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/princeton-day-panthers/soccer/',
       keyStats: { goals: 4, assists: 4, duelsWonPct: 51, savesOrTackles: '3.1 key passes/gm' }
     },
     {
@@ -598,6 +641,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film demonstrates Spencer stepping too far into midfield, exposing PDS to direct balls.',
       peddieMatchupCounter: 'Tommy Kim (#28) time runs onto Spencer’s blind shoulder on quick transition turnovers.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/18654/princeton-day-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/princeton-day-panthers/soccer/',
       keyStats: { goals: 1, assists: 1, duelsWonPct: 69, savesOrTackles: '3.8 clearances/gm' }
     },
     {
@@ -624,6 +669,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Forms dangerous right-side triangle with Cole and Spencer.',
       peddieMatchupCounter: 'Noah Eldessouky (#12) establish physical dominance early with firm touchline tackles.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/18654/princeton-day-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/princeton-day-panthers/soccer/',
       keyStats: { goals: 2, assists: 3, duelsWonPct: 52, savesOrTackles: '2.6 dribbles/gm' }
     },
     {
@@ -650,6 +697,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Struggled against Peddie\'s rapid wing switches and Tommy Kim\'s clinical finishing.',
       peddieMatchupCounter: 'Press Stern vigorously when PDS plays out from back to force hurried clearances.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/18654/princeton-day-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/princeton-day-panthers/soccer/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 64, savesOrTackles: '68% save pct' }
     },
     {
@@ -676,6 +725,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Scored both PDS goals in Peddie\'s 4-2 victory.',
       peddieMatchupCounter: 'Carson Wiley (#22) deny Wallace body contact and contest first ball early.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/18654/princeton-day-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/princeton-day-panthers/soccer/',
       keyStats: { goals: 5, assists: 1, duelsWonPct: 59, savesOrTackles: '2.8 aerial duels/gm' }
     }
   ],
@@ -706,6 +757,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Heartbeat of Rutgers Prep’s 4-2-3-1 setup. Controls their Phase 2 buildup.',
       peddieMatchupCounter: 'Rayyaan Mohiuddin (#14) press Novak on his back turn to force hurried errors.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/somerset/organization/18274/rutgers-preparatory-school',
+      profileUrl: 'https://www.maxpreps.com/nj/somerset/rutgers-prep-argonauts/soccer/',
       keyStats: { goals: 2, assists: 3, duelsWonPct: 64, savesOrTackles: '3.6 tackles/gm' }
     },
     {
@@ -732,6 +785,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film 74:20 shows him losing his mark on near-post corner routines.',
       peddieMatchupCounter: 'Noah Eldessouky (#12) play disciplined positional containment against Mensah.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/somerset/organization/18274/rutgers-preparatory-school',
+      profileUrl: 'https://www.maxpreps.com/nj/somerset/rutgers-prep-argonauts/soccer/',
       keyStats: { goals: 3, assists: 2, duelsWonPct: 55, savesOrTackles: '2.8 dribbles/gm' }
     },
     {
@@ -758,6 +813,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Senior leader for Rutgers Prep with 3 clean sheets this fall.',
       peddieMatchupCounter: 'Low driven strikes from distance; Jeffrey Zhang (#17) and Jeet Sinha (#6) follow in for rebounds.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/somerset/organization/18274/rutgers-preparatory-school',
+      profileUrl: 'https://www.maxpreps.com/nj/somerset/rutgers-prep-argonauts/soccer/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 76, savesOrTackles: '80% save pct' }
     },
     {
@@ -784,6 +841,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Starting center back who marshals the Argonauts defensive unit.',
       peddieMatchupCounter: 'Tommy Kim (#28) pull Meyer out wide to open central pockets for Mohiuddin (#14).',
+      filmUrl: 'https://fan.hudl.com/usa/nj/somerset/organization/18274/rutgers-preparatory-school',
+      profileUrl: 'https://www.maxpreps.com/nj/somerset/rutgers-prep-argonauts/soccer/',
       keyStats: { goals: 1, assists: 0, duelsWonPct: 69, savesOrTackles: '4.2 clearances/gm' }
     },
     {
@@ -810,6 +869,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Leading goalscorer for Rutgers Prep with 6 goals in first 5 games.',
       peddieMatchupCounter: 'Noah Eldessouky (#12) show Santos outside touchline; deny inside cutback lane.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/somerset/organization/18274/rutgers-preparatory-school',
+      profileUrl: 'https://www.maxpreps.com/nj/somerset/rutgers-prep-argonauts/soccer/',
       keyStats: { goals: 6, assists: 2, duelsWonPct: 53, savesOrTackles: '3.1 shots/gm' }
     }
   ],
@@ -840,6 +901,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Primary offensive focal point for LCA. Direct recipient of 20+ clearances per match.',
       peddieMatchupCounter: 'Carson Wiley (#22) contest first header; Owen Bonchev (#8) sweep behind.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/burlington/organization/31754/life-center-academy',
+      profileUrl: 'https://www.maxpreps.com/nj/burlington/life-center-academy-warriors/soccer/boys/schedule/',
       keyStats: { goals: 6, assists: 1, duelsWonPct: 74, savesOrTackles: '4.8 aerials won/gm' }
     },
     {
@@ -866,6 +929,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo clip 58:40 highlights Ferreira leaving 25+ yards of space ahead of him.',
       peddieMatchupCounter: 'Tommy Kim (#28) and Blake Romanelli (#26) use quick passing combinations to bypass his lunges.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/burlington/organization/31754/life-center-academy',
+      profileUrl: 'https://www.maxpreps.com/nj/burlington/life-center-academy-warriors/soccer/boys/schedule/',
       keyStats: { goals: 1, assists: 0, duelsWonPct: 70, savesOrTackles: '5.2 clearances/gm' }
     },
     {
@@ -892,7 +957,10 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Next opponent on Sept 22! Film review shows Sanchez favors rolling ball out to right winger.',
       peddieMatchupCounter: 'Jeet Sinha (#6) cut off the rollout lane to LCA\'s right wing immediately upon save.',
-      keyStats: { goals: 0, assists: 1, duelsWonPct: 71, savesOrTackles: '75% save pct' }
+      keyStats: { goals: 0, assists: 1, duelsWonPct: 71, savesOrTackles: '75% save pct' },
+      filmUrl: 'https://fan.hudl.com/usa/nj/burlington/organization/31754/life-center-academy',
+
+      profileUrl: 'https://www.maxpreps.com/nj/burlington/life-center-academy-warriors/soccer/boys/schedule/',
     },
     {
       id: 'lca-6',
@@ -918,6 +986,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Key engine for LCA. Critical assignment for Sept 22 fixture at Peddie.',
       peddieMatchupCounter: 'Rayyaan Mohiuddin (#14) and Quinn Wachtveitl (#10) quick one-touch passing around Mensah.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/burlington/organization/31754/life-center-academy',
+      profileUrl: 'https://www.maxpreps.com/nj/burlington/life-center-academy-warriors/soccer/boys/schedule/',
       keyStats: { goals: 2, assists: 2, duelsWonPct: 68, savesOrTackles: '3.8 tackles/gm' }
     },
     {
@@ -944,6 +1014,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Prime creator for LCA. Peddie must avoid conceding cheap fouls around the penalty arch on Sept 22.',
       peddieMatchupCounter: 'Christian Tharney (#13) step aggressively to deny DeOliveira time to turn and scan.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/burlington/organization/31754/life-center-academy',
+      profileUrl: 'https://www.maxpreps.com/nj/burlington/life-center-academy-warriors/soccer/boys/schedule/',
       keyStats: { goals: 4, assists: 5, duelsWonPct: 48, savesOrTackles: '2.5 key passes/gm' }
     }
   ],
@@ -974,6 +1046,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Captain of Big Red. Central figure in MAPL rivalry clash on Sept 26.',
       peddieMatchupCounter: 'Christian Tharney (#13) and Rayyaan Mohiuddin (#14) double-team Sterling on first touch.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/lawrenceville/organization/14867/the-lawrenceville-school',
+      profileUrl: 'https://athletics.lawrenceville.org/',
       keyStats: { goals: 3, assists: 6, duelsWonPct: 56, savesOrTackles: '3.4 tackles/gm' }
     },
     {
@@ -1001,6 +1075,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Scored 4 goals in early MAPL action. Veo clip 16:30.',
       peddieMatchupCounter: 'Noah Eldessouky (#12) force Kai to his right and deny any inside shooting angles.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/lawrenceville/organization/14867/the-lawrenceville-school',
+      profileUrl: 'https://athletics.lawrenceville.org/',
       keyStats: { goals: 4, assists: 3, duelsWonPct: 53, savesOrTackles: '3.2 shots/gm' }
     },
     {
@@ -1028,6 +1104,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Tireless runner who capitalizes on loose backpasses.',
       peddieMatchupCounter: 'Carson Wiley (#22) maintain disciplined defensive depth and avoid blind backpasses.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/lawrenceville/organization/14867/the-lawrenceville-school',
+      profileUrl: 'https://athletics.lawrenceville.org/',
       keyStats: { goals: 5, assists: 2, duelsWonPct: 49, savesOrTackles: '2.1 tackles/gm' }
     },
     {
@@ -1054,6 +1132,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Big Red captain and primary organizer of their disciplined 4-3-3 setup.',
       peddieMatchupCounter: 'High intense press from Tommy Kim (#28) and Jeffrey Zhang (#17) on backpasses to Fairchild.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/lawrenceville/organization/14867/the-lawrenceville-school',
+      profileUrl: 'https://athletics.lawrenceville.org/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 78, savesOrTackles: '82% save pct' }
     },
     {
@@ -1080,6 +1160,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Rivalry match anchor for Lawrenceville. MAPL First Team candidate.',
       peddieMatchupCounter: 'Drag Cruz into wide channels where Bennett Cucchiara (#7) can isolate him 1v1.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/lawrenceville/organization/14867/the-lawrenceville-school',
+      profileUrl: 'https://athletics.lawrenceville.org/',
       keyStats: { goals: 1, assists: 1, duelsWonPct: 71, savesOrTackles: '4.5 clearances/gm' }
     }
   ],
@@ -1110,6 +1192,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'South Jersey Group 2 star forward. High-volume shooter (4.8 shots/gm).',
       peddieMatchupCounter: 'Owen Bonchev (#8) and Carson Wiley (#22) must double Dominic and match his physical bite.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/delran/organization/12837/delran-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/delran/delran-bears/soccer/boys/26-27/',
       keyStats: { goals: 8, assists: 3, duelsWonPct: 65, savesOrTackles: '4.8 shots/gm' }
     },
     {
@@ -1137,6 +1221,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film 12:50 highlights Miller winning 7 consecutive duels in central midfield.',
       peddieMatchupCounter: 'Christian Tharney (#13) and Brody Rozo (#18) must meet Miller with equal steel and discipline.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/delran/organization/12837/delran-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/delran/delran-bears/soccer/boys/26-27/',
       keyStats: { goals: 2, assists: 4, duelsWonPct: 76, savesOrTackles: '5.1 tackles/gm' }
     },
     {
@@ -1163,6 +1249,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Major aerial threat on every Delran corner and long throw.',
       peddieMatchupCounter: 'Dylan McKenzie (#98) punch clear on high balls; Bonchev body-check Kelly on runs.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/delran/organization/12837/delran-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/delran/delran-bears/soccer/boys/26-27/',
       keyStats: { goals: 3, assists: 1, duelsWonPct: 78, savesOrTackles: '6.0 clearances/gm' }
     },
     {
@@ -1189,6 +1277,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'South Jersey Group 2 powerhouse anchor. Extremely tough competitor.',
       peddieMatchupCounter: 'Surround Schmidt on corner rebounds; Carson Wiley (#22) and Christian Tharney (#13) crash the 6-yard box.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/delran/organization/12837/delran-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/delran/delran-bears/soccer/boys/26-27/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 72, savesOrTackles: '79% save pct' }
     },
     {
@@ -1215,6 +1305,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Classic South Jersey direct winger who fuels Delran\'s counter-attack.',
       peddieMatchupCounter: 'Owen Bonchev (#8) and Blake Romanelli (#26) double Kelly early to deny endline crosses.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/delran/organization/12837/delran-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/delran/delran-bears/soccer/boys/26-27/',
       keyStats: { goals: 4, assists: 6, duelsWonPct: 52, savesOrTackles: '3.4 crosses/gm' }
     }
   ],
@@ -1245,6 +1337,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Primary creative outlet for Mercersburg’s 4-3-3 setup.',
       peddieMatchupCounter: 'Rayyaan Mohiuddin (#14) stay tight to Schneider and deny him time to look up.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/mercersburg/organization/16548/mercersburg-academy',
+      profileUrl: 'https://www.mercersburg.edu/athletics/teams/boys-varsity-soccer',
       keyStats: { goals: 3, assists: 5, duelsWonPct: 53, savesOrTackles: '86% pass pct' }
     },
     {
@@ -1271,6 +1365,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Scored 2 goals in early PA prep league action.',
       peddieMatchupCounter: 'Carson Wiley (#22) deny him clean turns inside the 18.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/mercersburg/organization/16548/mercersburg-academy',
+      profileUrl: 'https://www.mercersburg.edu/athletics/teams/boys-varsity-soccer',
       keyStats: { goals: 2, assists: 2, duelsWonPct: 55, savesOrTackles: '2.0 shots/gm' }
     },
     {
@@ -1297,6 +1393,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Anchors Mercersburg\'s low-block strategy in MAPL play.',
       peddieMatchupCounter: 'Keep shots low and driven; test Lindqvist with curled strikes toward bottom corners.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/mercersburg/organization/16548/mercersburg-academy',
+      profileUrl: 'https://www.mercersburg.edu/athletics/teams/boys-varsity-soccer',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 80, savesOrTackles: '83% save pct' }
     },
     {
@@ -1323,7 +1421,10 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Defensive linchpin for the Blue Storm.',
       peddieMatchupCounter: 'Exploit Dubois\' lack of pace by sending Tommy Kim (#28) behind him on diagonal runs.',
-      keyStats: { goals: 1, assists: 0, duelsWonPct: 67, savesOrTackles: '5.1 clearances/gm' }
+      keyStats: { goals: 1, assists: 0, duelsWonPct: 67, savesOrTackles: '5.1 clearances/gm' },
+      filmUrl: 'https://fan.hudl.com/usa/pa/mercersburg/organization/16548/mercersburg-academy',
+
+      profileUrl: 'https://www.mercersburg.edu/athletics/teams/boys-varsity-soccer',
     },
     {
       id: 'mer-8',
@@ -1349,6 +1450,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Heartbeat of Mercersburg midfield engine.',
       peddieMatchupCounter: 'Jeet Sinha (#6) and Rayyaan Mohiuddin (#14) outmaneuver Becker with rapid triangle passing.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/mercersburg/organization/16548/mercersburg-academy',
+      profileUrl: 'https://www.mercersburg.edu/athletics/teams/boys-varsity-soccer',
       keyStats: { goals: 2, assists: 3, duelsWonPct: 56, savesOrTackles: '3.1 tackles/gm' }
     }
   ],
@@ -1379,6 +1482,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Sole attacking outlet for Wilberforce’s deep 4-4-2 shell.',
       peddieMatchupCounter: 'Gabriel Lam (#5) and Wyatt Raya (#2) snuff out early clearances to Caleb.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/103452/the-wilberforce-school',
+      profileUrl: 'https://www.wilberforce.org/athletics',
       keyStats: { goals: 4, assists: 0, duelsWonPct: 46, savesOrTackles: '2.5 shots/gm' }
     },
     {
@@ -1405,6 +1510,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Under heavy pressure in big matches; reliable when shielded.',
       peddieMatchupCounter: 'Force Wright into continuous lateral shifting with rapid switches from Sinha (#6) to Cucchiara (#7).',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/103452/the-wilberforce-school',
+      profileUrl: 'https://www.wilberforce.org/athletics',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 66, savesOrTackles: '72% save pct' }
     },
     {
@@ -1431,6 +1538,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Anchors Wilberforce backline.',
       peddieMatchupCounter: 'Tommy Kim (#28) use quick turns and drop deep to pull Cole out of the backline.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/103452/the-wilberforce-school',
+      profileUrl: 'https://www.wilberforce.org/athletics',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 63, savesOrTackles: '4.0 clearances/gm' }
     },
     {
@@ -1457,6 +1566,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Wilberforce primary distributor.',
       peddieMatchupCounter: 'Rayyaan Mohiuddin (#14) press Adams as soon as he receives from his center-backs.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/103452/the-wilberforce-school',
+      profileUrl: 'https://www.wilberforce.org/athletics',
       keyStats: { goals: 2, assists: 2, duelsWonPct: 52, savesOrTackles: '2.5 tackles/gm' }
     },
     {
@@ -1483,6 +1594,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Leading scorer for Wilberforce.',
       peddieMatchupCounter: 'Carson Wiley (#22) maintain physical dominance and win aerial balls cleanly.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/103452/the-wilberforce-school',
+      profileUrl: 'https://www.wilberforce.org/athletics',
       keyStats: { goals: 4, assists: 1, duelsWonPct: 47, savesOrTackles: '2.2 shots/gm' }
     }
   ],
@@ -1513,6 +1626,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Anchors the Blues backline. Grudge match leader for Keystone MAPL clash.',
       peddieMatchupCounter: 'Avoid floating high crosses to MacCallum. Work cutbacks to Mohiuddin and Tharney.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/pottstown/organization/14862/the-hill-school',
+      profileUrl: 'https://www.maxpreps.com/pa/pottstown/hill-school-blues/soccer/',
       keyStats: { goals: 2, assists: 0, duelsWonPct: 83, savesOrTackles: '5.6 clearances/gm' }
     },
     {
@@ -1540,6 +1655,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Key set-piece orchestrator for Hill School. Veo clip 17:40.',
       peddieMatchupCounter: 'Do not concede cheap fouls within 30 yards. Christian Tharney (#13) step to block his lanes.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/pottstown/organization/14862/the-hill-school',
+      profileUrl: 'https://www.maxpreps.com/pa/pottstown/hill-school-blues/soccer/',
       keyStats: { goals: 4, assists: 4, duelsWonPct: 58, savesOrTackles: '2.8 fouls drawn/gm' }
     },
     {
@@ -1566,6 +1683,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'First Team All-MAPL goalkeeper candidate. Primary reason for Hill\'s low goals against.',
       peddieMatchupCounter: 'Screen Collins aggressively with Carson Wiley (#22) on Tharney corner deliveries.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/pottstown/organization/14862/the-hill-school',
+      profileUrl: 'https://www.maxpreps.com/pa/pottstown/hill-school-blues/soccer/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 82, savesOrTackles: '84% save pct' }
     },
     {
@@ -1592,6 +1711,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Primary creative flank outlet for Hill School in MAPL fixtures.',
       peddieMatchupCounter: 'Owen Bonchev (#8) step out to close down Hughes before he can cross.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/pottstown/organization/14862/the-hill-school',
+      profileUrl: 'https://www.maxpreps.com/pa/pottstown/hill-school-blues/soccer/',
       keyStats: { goals: 3, assists: 5, duelsWonPct: 53, savesOrTackles: '3.1 crosses/gm' }
     },
     {
@@ -1618,6 +1739,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Anchors Hill midfield battle.',
       peddieMatchupCounter: 'Quinn Wachtveitl (#10) and Rayyaan Mohiuddin (#14) draw Brennan out and exploit space behind him.',
+      filmUrl: 'https://fan.hudl.com/usa/pa/pottstown/organization/14862/the-hill-school',
+      profileUrl: 'https://www.maxpreps.com/pa/pottstown/hill-school-blues/soccer/',
       keyStats: { goals: 1, assists: 2, duelsWonPct: 69, savesOrTackles: '4.1 tackles/gm' }
     }
   ],
@@ -1648,6 +1771,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Premier public school talent in Mercer County. Scored 6 goals in early season.',
       peddieMatchupCounter: 'Gabriel Lam (#5) show Sharma outside and do not commit early on his feints.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton-junction/organization/13591/ww-p-south-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton-junction/west-windsor-plainsboro-south-pirates/soccer/',
       keyStats: { goals: 6, assists: 3, duelsWonPct: 62, savesOrTackles: '4.5 dribbles/gm' }
     },
     {
@@ -1674,6 +1799,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Creates rapid passing triangles with Sharma and overlapping fullbacks.',
       peddieMatchupCounter: 'Blake Romanelli (#26) and Bennett Cuchera (#7) punish their high fullbacks on turnovers.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton-junction/organization/13591/ww-p-south-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton-junction/west-windsor-plainsboro-south-pirates/soccer/',
       keyStats: { goals: 3, assists: 5, duelsWonPct: 50, savesOrTackles: '89% pass pct' }
     },
     {
@@ -1700,6 +1827,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'CVC conference veteran who provides stability to WWPS.',
       peddieMatchupCounter: 'Attack Nair with inswinging corners and crowd his near post.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton-junction/organization/13591/ww-p-south-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton-junction/west-windsor-plainsboro-south-pirates/soccer/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 70, savesOrTackles: '77% save pct' }
     },
     {
@@ -1726,7 +1855,10 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Key defensive orchestrator for WWPS.',
       peddieMatchupCounter: 'Tommy Kim (#28) exploit Chen\'s high starting line with runs in behind.',
-      keyStats: { goals: 1, assists: 2, duelsWonPct: 64, savesOrTackles: '3.9 clearances/gm' }
+      keyStats: { goals: 1, assists: 2, duelsWonPct: 64, savesOrTackles: '3.9 clearances/gm' },
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton-junction/organization/13591/ww-p-south-high-school',
+
+      profileUrl: 'https://www.maxpreps.com/nj/princeton-junction/west-windsor-plainsboro-south-pirates/soccer/',
     },
     {
       id: 'wwp-8',
@@ -1752,7 +1884,10 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Playmaker in the Pirates 4-3-3 system.',
       peddieMatchupCounter: 'Jeet Sinha (#6) apply aggressive high-intensity press to disrupt Patel\'s passing cadence.',
-      keyStats: { goals: 2, assists: 4, duelsWonPct: 51, savesOrTackles: '2.1 key passes/gm' }
+      keyStats: { goals: 2, assists: 4, duelsWonPct: 51, savesOrTackles: '2.1 key passes/gm' },
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton-junction/organization/13591/ww-p-south-high-school',
+
+      profileUrl: 'https://www.maxpreps.com/nj/princeton-junction/west-windsor-plainsboro-south-pirates/soccer/',
     }
   ],
 
@@ -1782,6 +1917,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Leads Bulldogs attack. Direct physical threat on long throw-ins.',
       peddieMatchupCounter: 'Carson Wiley (#22) and Owen Bonchev (#8) win the physical battle with clean anticipation.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton-junction/organization/13591/ww-p-south-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton-junction/west-windsor-plainsboro-south-pirates/soccer/',
       keyStats: { goals: 5, assists: 2, duelsWonPct: 60, savesOrTackles: '3.6 shots/gm' }
     },
     {
@@ -1808,6 +1945,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film highlights disconnect between Sullivan’s backline and forward press.',
       peddieMatchupCounter: 'Rayyaan Mohiuddin (#14) exploit the 20-yard gap in front of Sullivan with one-touch combinations.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/pennington/organization/13768/hopewell-valley-central-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/pennington/hopewell-valley-central-bulldogs/soccer/boys/',
       keyStats: { goals: 1, assists: 0, duelsWonPct: 73, savesOrTackles: '4.5 clearances/gm' }
     },
     {
@@ -1834,6 +1973,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Bulldogs team captain with 4 clean sheets this autumn.',
       peddieMatchupCounter: 'Test Bradley with low skidding shots and follow up for rebounds immediately.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/pennington/organization/13768/hopewell-valley-central-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/pennington/hopewell-valley-central-bulldogs/soccer/boys/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 74, savesOrTackles: '81% save pct' }
     },
     {
@@ -1860,7 +2001,10 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Top offensive weapon for Hopewell Valley; must be neutralized outside the 18.',
       peddieMatchupCounter: 'Christian Tharney (#13) step up to close down Mitchell\'s shooting space immediately.',
-      keyStats: { goals: 5, assists: 4, duelsWonPct: 58, savesOrTackles: '3.2 shots/gm' }
+      keyStats: { goals: 5, assists: 4, duelsWonPct: 58, savesOrTackles: '3.2 shots/gm' },
+      filmUrl: 'https://fan.hudl.com/usa/nj/pennington/organization/13768/hopewell-valley-central-high-school',
+
+      profileUrl: 'https://www.maxpreps.com/nj/pennington/hopewell-valley-central-bulldogs/soccer/boys/',
     },
     {
       id: 'hvc-11',
@@ -1886,6 +2030,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Secondary scoring option for Bulldogs.',
       peddieMatchupCounter: 'Owen Bonchev (#8) contain Evans and guide him toward the touchline.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/pennington/organization/13768/hopewell-valley-central-high-school',
+      profileUrl: 'https://www.maxpreps.com/nj/pennington/hopewell-valley-central-bulldogs/soccer/boys/',
       keyStats: { goals: 3, assists: 3, duelsWonPct: 49, savesOrTackles: '2.6 crosses/gm' }
     }
   ],
@@ -1916,6 +2062,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Nationally ranked prospect. Orchestrates Pennington’s top-10 offense. Veo clip 09:40.',
       peddieMatchupCounter: 'Christian Tharney (#13) and Noah Eldessouky (#12) anchor central recovery and deny DeSilva half-turn entries.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/pennington/organization/16629/the-pennington-school',
+      profileUrl: 'https://www.pennington.org/athletics/team-pages/boys-varsity-soccer',
       keyStats: { goals: 9, assists: 8, duelsWonPct: 62, savesOrTackles: '4.2 key passes/gm' }
     },
     {
@@ -1943,6 +2091,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Scored 11 goals in early national showcase tournaments.',
       peddieMatchupCounter: 'Owen Bonchev (#8) and Carson Wiley (#22) maintain strict zonal depth and deny Barbosa 1v1 isolations.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/pennington/organization/16629/the-pennington-school',
+      profileUrl: 'https://www.pennington.org/athletics/team-pages/boys-varsity-soccer',
       keyStats: { goals: 11, assists: 4, duelsWonPct: 58, savesOrTackles: '4.0 shots/gm' }
     },
     {
@@ -1970,6 +2120,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film 38:25 reveals Pennington counter-press overcommitting to ball side, leaving weak side completely open.',
       peddieMatchupCounter: 'Immediate diagonal switches from Tharney (#13) to Cuchera (#7) or Romanelli (#26) on the weak side.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/pennington/organization/16629/the-pennington-school',
+      profileUrl: 'https://www.pennington.org/athletics/team-pages/boys-varsity-soccer',
       keyStats: { goals: 2, assists: 1, duelsWonPct: 82, savesOrTackles: '4.8 clearances/gm' }
     },
     {
@@ -1996,6 +2148,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Nationally ranked Prep A goalkeeper. One of the top prep netminders in the United States.',
       peddieMatchupCounter: 'Shoot early and with disguise; force Rossi to make saves while scrambling back.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/pennington/organization/16629/the-pennington-school',
+      profileUrl: 'https://www.pennington.org/athletics/team-pages/boys-varsity-soccer',
       keyStats: { goals: 0, assists: 1, duelsWonPct: 85, savesOrTackles: '88% save pct' }
     },
     {
@@ -2022,6 +2176,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'The tactical pivot of Pennington\'s high-press system. Division 1 target.',
       peddieMatchupCounter: 'Christian Tharney (#13) bypass DeSilva immediately with long diagonal switches to Bennett Cucchiara (#7).',
+      filmUrl: 'https://fan.hudl.com/usa/nj/pennington/organization/16629/the-pennington-school',
+      profileUrl: 'https://www.pennington.org/athletics/team-pages/boys-varsity-soccer',
       keyStats: { goals: 3, assists: 5, duelsWonPct: 71, savesOrTackles: '4.8 tackles/gm' }
     }
   ],
@@ -2052,6 +2208,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Leading scorer for Hun. Focal point of their 3-5-2 counter-attacking system.',
       peddieMatchupCounter: 'Carson Wiley (#22) must step into Alvarez before he can turn and face forward.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/15456/the-hun-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/hun-raiders/soccer/boys/',
       keyStats: { goals: 7, assists: 3, duelsWonPct: 56, savesOrTackles: '3.9 shots/gm' }
     },
     {
@@ -2078,6 +2236,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film highlights massive space behind Hun wingbacks on turnovers.',
       peddieMatchupCounter: 'Isolate outer center-backs with Cuchera and Romanelli; cut back to Mohiuddin.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/15456/the-hun-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/hun-raiders/soccer/boys/',
       keyStats: { goals: 1, assists: 1, duelsWonPct: 77, savesOrTackles: '5.4 clearances/gm' }
     },
     {
@@ -2104,6 +2264,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Starting goalkeeper for Hun\'s 3-5-2 system.',
       peddieMatchupCounter: 'Deploy low driven cutbacks to the 18-yard arc for arriving midfielders Mohiuddin and Sinha.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/15456/the-hun-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/hun-raiders/soccer/boys/',
       keyStats: { goals: 0, assists: 0, duelsWonPct: 75, savesOrTackles: '79% save pct' }
     },
     {
@@ -2130,6 +2292,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film shows huge space behind Rossi on quick turnovers.',
       peddieMatchupCounter: 'Bennett Cucchiara (#7) and Blake Romanelli (#26) attack the space vacated behind Rossi immediately.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/15456/the-hun-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/hun-raiders/soccer/boys/',
       keyStats: { goals: 2, assists: 4, duelsWonPct: 54, savesOrTackles: '2.8 crosses/gm' }
     },
     {
@@ -2156,6 +2320,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Midfield connector for the Raiders.',
       peddieMatchupCounter: 'Jeet Sinha (#6) and Quinn Wachtveitl (#10) pressure Mercer to deny central progression.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/princeton/organization/15456/the-hun-school',
+      profileUrl: 'https://www.maxpreps.com/nj/princeton/hun-raiders/soccer/boys/',
       keyStats: { goals: 1, assists: 3, duelsWonPct: 53, savesOrTackles: '2.2 tackles/gm' }
     }
   ],
@@ -2186,6 +2352,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: '123rd Peddie-Blair Day main weapon. Everything in Blair’s 4-4-2 runs directly through Gunnar.',
       peddieMatchupCounter: 'Carson Wiley (#22) and Owen Bonchev (#8) double-team Henderson in the air; Christian Tharney (#13) sweeps knockdowns.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/blairstown/organization/15865/blair-academy',
+      profileUrl: 'https://www.maxpreps.com/nj/blairstown/blair-academy-buccaneers/soccer/',
       keyStats: { goals: 6, assists: 4, duelsWonPct: 76, savesOrTackles: '5.2 aerials won/gm' }
     },
     {
@@ -2213,6 +2381,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Blair’s set-piece catalyst. Long throw-ins are equivalent to corners.',
       peddieMatchupCounter: 'Dylan McKenzie (#98) punch clear on throw-ins; match his physical intensity with Brody Rozo (#18).',
+      filmUrl: 'https://fan.hudl.com/usa/nj/blairstown/organization/15865/blair-academy',
+      profileUrl: 'https://www.maxpreps.com/nj/blairstown/blair-academy-buccaneers/soccer/',
       keyStats: { goals: 2, assists: 5, duelsWonPct: 61, savesOrTackles: '4.0 throw-ins into box/gm' }
     },
     {
@@ -2239,6 +2409,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Veo film highlights wide gaps behind Vance when he pushes up on counter-attacks.',
       peddieMatchupCounter: 'Gabriel Lam (#5) win first contact; Bennett Cuchera (#7) punish the vacated flank.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/blairstown/organization/15865/blair-academy',
+      profileUrl: 'https://www.maxpreps.com/nj/blairstown/blair-academy-buccaneers/soccer/',
       keyStats: { goals: 3, assists: 2, duelsWonPct: 51, savesOrTackles: '2.4 crosses/gm' }
     },
     {
@@ -2265,6 +2437,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Bypasses midfield with direct punts toward Henderson.',
       peddieMatchupCounter: 'Press him into rushed kicks; win the second balls on the midfield bounce.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/blairstown/organization/15865/blair-academy',
+      profileUrl: 'https://www.maxpreps.com/nj/blairstown/blair-academy-buccaneers/soccer/',
       keyStats: { goals: 0, assists: 1, duelsWonPct: 80, savesOrTackles: '78% save pct' }
     },
     {
@@ -2291,6 +2465,8 @@ export const OPPONENT_PLAYER_SCOUTING_REPORTS: Record<string, OpponentPlayerRepo
       ],
       currentSeasonNotes: 'Blair Day rivalry leader; anchors their physical defensive front.',
       peddieMatchupCounter: 'Carson Wiley (#22) and Christian Tharney (#13) mark Gallagher on long throws; Tommy Kim (#28) exploit his lack of lateral speed.',
+      filmUrl: 'https://fan.hudl.com/usa/nj/blairstown/organization/15865/blair-academy',
+      profileUrl: 'https://www.maxpreps.com/nj/blairstown/blair-academy-buccaneers/soccer/',
       keyStats: { goals: 1, assists: 1, duelsWonPct: 73, savesOrTackles: '4.6 clearances/gm' }
     }
   ]

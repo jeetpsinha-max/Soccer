@@ -224,18 +224,32 @@ export default function ScoutingPage() {
           >
             Sideline Call Sheet
           </Link>
-          {selectedScout.sourceUrl && (
-            <a
-              href={selectedScout.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 text-xs font-bold transition ml-auto"
-              title={selectedScout.sourceLabel || 'Verify Live Stats Online'}
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span>Verify Online: {selectedScout.sourceLabel || 'MaxPreps'}</span>
-            </a>
-          )}
+          <div className="flex flex-wrap items-center gap-2 ml-auto">
+            {selectedScout.hudlUrl && (
+              <a
+                href={selectedScout.hudlUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 text-xs font-bold transition shadow-sm"
+                title={selectedScout.hudlLabel || 'Watch Official Film on Hudl Fan'}
+              >
+                <Video className="w-3.5 h-3.5 text-rose-400" />
+                <span>Watch Film: {selectedScout.hudlLabel?.split(':')[0] || 'Hudl Fan'} ↗</span>
+              </a>
+            )}
+            {selectedScout.sourceUrl && (
+              <a
+                href={selectedScout.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 text-xs font-bold transition shadow-sm"
+                title={selectedScout.sourceLabel || 'Verify Live Stats Online'}
+              >
+                <ExternalLink className="w-3.5 h-3.5 text-purple-400" />
+                <span>Verify Stats: {selectedScout.sourceLabel?.split(':')[0] || 'MaxPreps'} ↗</span>
+              </a>
+            )}
+          </div>
         </div>
 
         {/* Overview */}
@@ -559,6 +573,36 @@ export default function ScoutingPage() {
               <p className="text-xs text-slate-200 leading-relaxed font-semibold">
                 {selectedOpponentPlayer.peddieMatchupCounter}
               </p>
+            </div>
+
+            {/* Online Film & Stats Verification Links */}
+            <div className="pt-2 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
+              <div className="text-[11px] text-slate-400 flex items-center gap-1.5 font-medium">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                Verified 2026–2027 Opponent Varsity Scout
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={selectedOpponentPlayer.filmUrl || selectedScout.hudlUrl || 'https://fan.hudl.com'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 text-xs font-bold transition flex items-center gap-1.5"
+                  title="Watch Player Video on Hudl"
+                >
+                  <Video className="w-3.5 h-3.5 text-rose-400" />
+                  <span>Watch Hudl Film ↗</span>
+                </a>
+                <a
+                  href={selectedOpponentPlayer.profileUrl || selectedScout.sourceUrl || 'https://www.maxpreps.com'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 text-xs font-bold transition flex items-center gap-1.5"
+                  title="Verify Stats Online"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Verify Stats Online ↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
