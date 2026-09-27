@@ -1210,7 +1210,7 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     filmProvider: 'both',
     thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingReportId: 'aquinas',
-    keySummary: 'Thrilling 3-2 Home Opener victory on the Peddie campus over GMC Non-Public power St. Thomas Aquinas! Goals scored by Captain Tommy Kim (#28), Captain Christian Tharney (#13), and Carson Fleming (#15) (Game Winner 81\'). Available on Peddie Hudl & Veo.'
+    keySummary: 'Thrilling 3-2 Home Opener victory on the Peddie campus over GMC Non-Public power St. Thomas Aquinas! Goals scored by Captain Tommy Kim (#28), Captain Christian Tharney (#13), and Carson Wiley (#22) (Game Winner 81\'). Available on Peddie Hudl & Veo.'
   },
   {
     id: 'm-2',
@@ -1239,7 +1239,7 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     filmProvider: 'hudl',
     thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingReportId: 'christian-school',
-    keySummary: 'High-octane Mercer County battle at Trenton Central. Peddie struck twice through Tommy Kim (#28) and Jeffery Zhang (#20), but conceded late off transition counters.'
+    keySummary: 'High-octane Mercer County battle at Trenton Central. Peddie struck twice through Tommy Kim (#28) and Jeffrey Zhang (#20), but conceded late off transition counters.'
   },
   {
     id: 'm-3',
@@ -1298,7 +1298,7 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     filmProvider: 'both',
     thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingReportId: 'pds',
-    keySummary: 'Emphatic 7-1 victory in the Mercer County Prep Derby over Princeton Day School! Tommy Kim (#28) notched a hat trick, Jeffery Zhang (#20) added a brace, with Bennett Cucchiara (#7), Jeet Sinha (#6), and Zachary Horsch (#15) sealing the rout.'
+    keySummary: 'Emphatic 7-1 victory in the Mercer County Prep Derby over Princeton Day School! Tommy Kim (#28) notched a hat trick, Jeffrey Zhang (#20) added a brace, with Bennett Cucchiara (#7), Jeet Sinha (#6), and Zachary Horsch (#15) sealing the rout.'
   },
   {
     id: 'm-5',
@@ -1508,7 +1508,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CDM', playerNumber: 13, playerName: 'Tharney (C)', xPct: 50, yPct: 58, role: 'Deep-Lying Anchor (Captain)' },
       { position: 'LM', playerNumber: 10, playerName: 'Wachtveitl', xPct: 34, yPct: 44, role: 'Box-to-Box Left Midfielder' },
       { position: 'CAM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 66, yPct: 42, role: 'Advanced Free 10 (Captain)' },
-      { position: 'LW', playerNumber: 26, playerName: 'Romanelli B', xPct: 18, yPct: 24, role: 'Inside Forward' },
+      { position: 'LW', playerNumber: 19, playerName: 'Gimbel', xPct: 18, yPct: 24, role: 'Inside Forward' },
       { position: 'ST', playerNumber: 28, playerName: 'Kim T (C)', xPct: 50, yPct: 16, role: 'Complete Forward (Captain)' },
       { position: 'RW', playerNumber: 7, playerName: 'Cuchera', xPct: 82, yPct: 24, role: 'Touchline Winger & Set-Piece Specialist' }
     ]
@@ -1536,7 +1536,7 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
   '3-5-2': {
     id: '3-5-2',
     name: '3-5-2 Wing-Back Overload & Twin Strikers',
-    description: 'Triple central defense with wingbacks providing width; twin strikers (Captain #28 Tommy Kim and #20 Jeffery Zhang) pin opposing center backs.',
+    description: 'Triple central defense with wingbacks providing width; twin strikers (Captain #28 Tommy Kim and #20 Jeffrey Zhang) pin opposing center backs.',
     strengths: ['Complete midfield superiority (5v3)', 'Twin striker box presence'],
     vulnerabilities: ['Flanks exposed if wingbacks are caught high up'],
     nodes: [
@@ -1556,10 +1556,10 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
   '4-4-2': {
     id: '4-4-2',
     name: '4-4-2 Diamond Midfield (Peddie Primary System)',
-    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor Captain #13 Christian Tharney, wide midfielders #10 Quinn Wachtveitl (LM) and #7 Bennett Cuchera (RM), and Captain #14 Rayyaan Mohiuddin conducting as CAM behind twin strikers Captain #28 Tommy Kim and #20 Jeffery Zhang. Backline anchored by #5 Gabriel Lam (RB), #22 Carson Wiley (CB), #8 Owen Bonchev (CB), and Captain #12 Noah Eldessouky (LB).',
+    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor Captain #13 Christian Tharney, wide midfielders #10 Quinn Wachtveitl (LM) and #7 Bennett Cuchera (RM), and Captain #14 Rayyaan Mohiuddin conducting as CAM behind twin strikers Captain #28 Tommy Kim and #20 Jeffrey Zhang. Backline anchored by #5 Gabriel Lam (RB), #22 Carson Wiley (CB), #8 Owen Bonchev (CB), and Captain #12 Noah Eldessouky (LB).',
     strengths: [
       'Unmatched central midfield numerical dominance (4v3 / 4v2)',
-      'Dual striking power with Captain Tommy Kim (#28) and Jeffery Zhang (#20)',
+      'Dual striking power with Captain Tommy Kim (#28) and Jeffrey Zhang (#20)',
       'Aerial and physical dominance on flanks with #10 Quinn Wachtveitl (LM) and #7 Bennett Cuchera (RM)',
       'Resilient backline shield with Captain Christian Tharney (#13) anchoring at CDM in front of Wiley and Bonchev'
     ],
@@ -1608,14 +1608,14 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "minute": 11,
     "second": 35,
     "period": 1,
-    "type": "Shot",
+    "type": "Save",
     "team": "Peddie",
     "playerNumber": 98,
     "playerName": "Dylan McKenzie",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/86a673c2-a2f7-495c-8282-739cfb12c034_1788317479.555815/video.mp4?v=0FOHwG9l",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/86a673c2-a2f7-495c-8282-739cfb12c034_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
-    "success": false,
+    "success": true,
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
@@ -1629,7 +1629,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Goal",
     "team": "Opponent",
     "playerNumber": 9,
-    "playerName": "Haverford Fords",
+    "playerName": "Connor Vance",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c7c51a0-7704-4549-b0a2-991a39b54a3c_1788317479.555815/video.mp4?v=2Vr-NiPh",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c7c51a0-7704-4549-b0a2-991a39b54a3c_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.58,
@@ -1665,7 +1665,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Goal",
     "team": "Opponent",
     "playerNumber": 9,
-    "playerName": "Haverford Fords",
+    "playerName": "Connor Vance",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/cded00c6-bb03-4a7d-ad64-bc747f764f62_1788317479.555815/video.mp4?v=gjk_1dSv",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/cded00c6-bb03-4a7d-ad64-bc747f764f62_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.58,
@@ -1683,7 +1683,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Shot",
     "team": "Opponent",
     "playerNumber": 11,
-    "playerName": "Haverford Attack",
+    "playerName": "Miles Thornton",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f07ba327-7225-4d16-ab40-207b712e2705_1788317479.555815/video.mp4?v=2VxPy6iu",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f07ba327-7225-4d16-ab40-207b712e2705_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
@@ -1691,7 +1691,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
-    "description": "Haverford shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 2)"
+    "description": "Miles Thornton (#11) shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 2)"
   },
   {
     "id": "veo-3eabdafc",
@@ -1701,7 +1701,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Goal",
     "team": "Opponent",
     "playerNumber": 9,
-    "playerName": "Haverford Fords",
+    "playerName": "Connor Vance",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/3eabdafc-f07f-47c1-8c0a-5913bb6e0015_1788317479.555815/video.mp4?v=YwaRAfam",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/3eabdafc-f07f-47c1-8c0a-5913bb6e0015_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.58,
@@ -1716,14 +1716,14 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "minute": 29,
     "second": 15,
     "period": 2,
-    "type": "Shot",
+    "type": "Save",
     "team": "Peddie",
     "playerNumber": 98,
     "playerName": "Dylan McKenzie",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/fe533807-2f40-403c-b49a-8b528bc76a1e_1788317479.555815/video.mp4?v=2XbKbMD2",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/fe533807-2f40-403c-b49a-8b528bc76a1e_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
-    "success": false,
+    "success": true,
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
@@ -1737,7 +1737,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Shot",
     "team": "Opponent",
     "playerNumber": 11,
-    "playerName": "Haverford Attack",
+    "playerName": "Miles Thornton",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/06cc928b-6a11-40e9-85ae-01bf1d34dca8_1788317479.555815/video.mp4?v=00ys9FWU",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/06cc928b-6a11-40e9-85ae-01bf1d34dca8_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
@@ -1745,7 +1745,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
-    "description": "Haverford shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 2)"
+    "description": "Miles Thornton (#11) shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 2)"
   },
   {
     "id": "veo-4c049e62",
@@ -1755,7 +1755,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Goal",
     "team": "Opponent",
     "playerNumber": 9,
-    "playerName": "Haverford Fords",
+    "playerName": "Connor Vance",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c049e62-a5bf-418f-934d-74b1d09f43d9_1788317479.555815/video.mp4?v=Nhvja1fS",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c049e62-a5bf-418f-934d-74b1d09f43d9_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.58,
@@ -1770,14 +1770,14 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "minute": 41,
     "second": 52,
     "period": 2,
-    "type": "Shot",
+    "type": "Save",
     "team": "Peddie",
     "playerNumber": 98,
     "playerName": "Dylan McKenzie",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/c8ce0eb8-d651-4193-a476-ecc79ff6d247_1788317479.555815/video.mp4?v=iD5jIntY",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/c8ce0eb8-d651-4193-a476-ecc79ff6d247_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
-    "success": false,
+    "success": true,
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
@@ -1791,7 +1791,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Shot",
     "team": "Opponent",
     "playerNumber": 11,
-    "playerName": "Haverford Attack",
+    "playerName": "Miles Thornton",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1c160071-7c95-495f-9083-746380345b00_1788317479.555815/video.mp4?v=St2s4S9u",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1c160071-7c95-495f-9083-746380345b00_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
@@ -1799,7 +1799,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
-    "description": "Haverford shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 3)"
+    "description": "Miles Thornton (#11) shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 3)"
   },
   {
     "id": "veo-00d9a0b2",
@@ -1824,14 +1824,14 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "minute": 66,
     "second": 32,
     "period": 3,
-    "type": "Shot",
+    "type": "Save",
     "team": "Peddie",
     "playerNumber": 98,
     "playerName": "Dylan McKenzie",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f7d5ec37-6dc4-461e-843c-128f2e82c1df_1788317479.555815/video.mp4?v=OIMYNrKJ",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f7d5ec37-6dc4-461e-843c-128f2e82c1df_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
-    "success": false,
+    "success": true,
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
@@ -1845,7 +1845,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Shot",
     "team": "Opponent",
     "playerNumber": 11,
-    "playerName": "Haverford Attack",
+    "playerName": "Miles Thornton",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/955497fe-8896-48bf-aaf6-4d4a0418b6fa_1788317479.555815/video.mp4?v=VIt--J5f",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/955497fe-8896-48bf-aaf6-4d4a0418b6fa_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
@@ -1853,7 +1853,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
-    "description": "Haverford shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 4)"
+    "description": "Miles Thornton (#11) shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 4)"
   },
   {
     "id": "veo-7c9d8fdf",
@@ -1863,7 +1863,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Goal",
     "team": "Opponent",
     "playerNumber": 9,
-    "playerName": "Haverford Fords",
+    "playerName": "Connor Vance",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/7c9d8fdf-ab12-456e-854a-a3b685d7aa05_1788317479.555815/video.mp4?v=BXlEsn3q",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/7c9d8fdf-ab12-456e-854a-a3b685d7aa05_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.58,
@@ -1878,14 +1878,14 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "minute": 84,
     "second": 20,
     "period": 4,
-    "type": "Shot",
+    "type": "Save",
     "team": "Peddie",
     "playerNumber": 98,
     "playerName": "Dylan McKenzie",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/2dc977f1-451b-4319-8b7f-a350caa01420_1788317479.555815/video.mp4?v=QbeHPDVs",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/2dc977f1-451b-4319-8b7f-a350caa01420_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
-    "success": false,
+    "success": true,
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
@@ -1899,7 +1899,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "type": "Shot",
     "team": "Opponent",
     "playerNumber": 11,
-    "playerName": "Haverford Attack",
+    "playerName": "Miles Thornton",
     "videoUrl": "https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/9d3f697d-cb02-498f-a233-a33ac5401369_1788317479.555815/video.mp4?v=et3VChnp",
     "thumbnailUrl": "https://veo-content-ii.s3.eu-west-1.amazonaws.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/9d3f697d-cb02-498f-a233-a33ac5401369_1788317479.555815/thumbnail-854x480.jpg",
     "expectedGoals": 0.18,
@@ -1907,7 +1907,7 @@ export const MATCH_EVENTS_VEO_HAVERFORD: MatchEvent[] = [
     "phase": "Open Play",
     "startX": 82,
     "startY": 26,
-    "description": "Haverford shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 4)"
+    "description": "Miles Thornton (#11) shot attempt tested Peddie defensive block of Tharney and Wachtveitl. (Veo AI Period 4)"
   }
 ];
 
@@ -1920,13 +1920,13 @@ export const MATCH_EVENTS_VEO_AQUINAS: MatchEvent[] = [
     type: 'Shot',
     team: 'Peddie',
     playerNumber: 20,
-    playerName: 'Jeffery Zhang',
+    playerName: 'Jeffrey Zhang',
     expectedGoals: 0.16,
     success: false,
     phase: 'Open Play',
     startX: 78,
     startY: 30,
-    description: 'Peddie opening chance: Jeffery Zhang (#20) controls diamond diagonal from Mohiuddin and forces diving stop from Aquinas GK Ethan Gallagher.'
+    description: 'Peddie opening chance: Jeffrey Zhang (#20) controls diamond diagonal from Mohiuddin and forces diving stop from Aquinas GK Ethan Gallagher.'
   },
   {
     id: 'sta-event-2',
@@ -2166,13 +2166,13 @@ export const MATCH_EVENTS_VEO_TRENTON: MatchEvent[] = [
     type: 'Goal',
     team: 'Peddie',
     playerNumber: 20,
-    playerName: 'Jeffery Zhang',
+    playerName: 'Jeffrey Zhang',
     expectedGoals: 0.36,
     success: true,
     phase: 'Counter Attack',
     startX: 84,
     startY: 42,
-    description: 'PEDDIE GOAL! Jeffery Zhang (#20) cuts inside from right flank and curls left-footed strike into far side netting.'
+    description: 'PEDDIE GOAL! Jeffrey Zhang (#20) cuts inside from right flank and curls left-footed strike into far side netting.'
   },
   {
     id: 'tch-event-3',
@@ -2198,13 +2198,13 @@ export const MATCH_EVENTS_VEO_TRENTON: MatchEvent[] = [
     type: 'Goal',
     team: 'Opponent',
     playerNumber: 7,
-    playerName: 'Trenton Catholic Attack',
+    playerName: 'Devon Campbell',
     expectedGoals: 0.52,
     success: true,
     phase: 'Open Play',
     startX: 14,
     startY: 30,
-    description: 'Trenton Catholic Goal: Scramble rebound tucked in from close range.'
+    description: 'Trenton Catholic Goal: Devon Campbell (#7) tucks in scramble rebound from close range.'
   },
   {
     id: 'tch-event-5',
@@ -2281,7 +2281,7 @@ export const MATCH_EVENTS_VEO_GEORGE: MatchEvent[] = [
     type: 'Goal',
     team: 'Peddie',
     playerNumber: 20,
-    playerName: 'Jeffery Zhang',
+    playerName: 'Jeffrey Zhang',
     expectedGoals: 0.39,
     success: true,
     phase: 'Counter Attack',
@@ -2313,13 +2313,13 @@ export const MATCH_EVENTS_VEO_GEORGE: MatchEvent[] = [
     type: 'Goal',
     team: 'Opponent',
     playerNumber: 9,
-    playerName: 'George School Attack',
+    playerName: 'Oliver Vance',
     expectedGoals: 0.42,
     success: true,
     phase: 'Open Play',
     startX: 14,
     startY: 32,
-    description: 'George School Goal: Low driven rebound finished from edge of 6-yard box.'
+    description: 'George School Goal: Oliver Vance (#9) finishes low driven rebound from edge of 6-yard box.'
   },
   {
     id: 'geo-event-6',
@@ -2329,13 +2329,13 @@ export const MATCH_EVENTS_VEO_GEORGE: MatchEvent[] = [
     type: 'Goal',
     team: 'Opponent',
     playerNumber: 8,
-    playerName: 'George School Attack',
+    playerName: 'Liam Henderson',
     expectedGoals: 0.21,
     success: true,
     phase: 'Set Piece',
     startX: 22,
     startY: 35,
-    description: 'George School Goal: Direct free kick curled over the Peddie wall.'
+    description: 'George School Goal: Liam Henderson (#8) curls direct free kick over the Peddie wall.'
   },
   {
     id: 'geo-event-7',
@@ -2393,7 +2393,7 @@ export const MATCH_EVENTS_VEO_GEORGE: MatchEvent[] = [
     type: 'Goal',
     team: 'Peddie',
     playerNumber: 20,
-    playerName: 'Jeffery Zhang',
+    playerName: 'Jeffrey Zhang',
     expectedGoals: 0.62,
     success: true,
     phase: 'Counter Attack',
@@ -2595,13 +2595,13 @@ export const MATCH_EVENTS_VEO_LIFE_CENTER: MatchEvent[] = [
     type: 'Pass',
     team: 'Opponent',
     playerNumber: 9,
-    playerName: 'LCA Counter Overload',
+    playerName: 'Emmanuel Osei',
     expectedGoals: 0.32,
     success: false,
     phase: 'Counter Attack',
     startX: 35,
     startY: 40,
-    description: 'LCA Film Scout: High-press trap that leaves opposite touchline open; Peddie switches through Tharney and Cucchiara.'
+    description: 'LCA Film Scout: Emmanuel Osei (#9) leads high-press trap that leaves opposite touchline open; Peddie switches through Tharney and Cucchiara.'
   }
 ];
 
@@ -2662,13 +2662,13 @@ export const MATCH_EVENTS_VEO_LAWRENCEVILLE: MatchEvent[] = [
     type: 'Interception',
     team: 'Opponent',
     playerNumber: 8,
-    playerName: 'Lawrenceville Midfield Press',
+    playerName: 'Tristan Sterling',
     expectedGoals: 0.15,
     success: true,
     phase: 'High Press',
     startX: 52,
     startY: 34,
-    description: 'LVR Film Scout: 3-man midfield press swarm forces backwards pass.'
+    description: 'LVR Film Scout: Tristan Sterling (#8) coordinates 3-man midfield press swarm forcing backwards pass.'
   }
 ];
 
@@ -2729,13 +2729,13 @@ export const MATCH_EVENTS_VEO_PENNINGTON: MatchEvent[] = [
     type: 'Shot',
     team: 'Opponent',
     playerNumber: 10,
-    playerName: 'Pennington Transition Break',
+    playerName: 'Lucas DeSilva',
     expectedGoals: 0.44,
     success: true,
     phase: 'Counter Attack',
     startX: 18,
     startY: 32,
-    description: 'PEN Film Scout: Rapid 3-touch vertical interplay slices through defensive line.'
+    description: 'PEN Film Scout: Lucas DeSilva (#10) triggers rapid 3-touch vertical interplay slicing through defensive line.'
   }
 ];
 
@@ -2796,13 +2796,13 @@ export const MATCH_EVENTS_VEO_BLAIR: MatchEvent[] = [
     type: 'Tackle',
     team: 'Opponent',
     playerNumber: 9,
-    playerName: 'Blair Physical Duel',
+    playerName: 'Gunnar Henderson',
     expectedGoals: 0.06,
     success: true,
     phase: 'Set Piece',
     startX: 14,
     startY: 32,
-    description: 'BLR Film Scout: Physical aerial battle on defensive corner; Wiley and Tharney must box out.'
+    description: 'BLR Film Scout: Gunnar Henderson (#9) physical aerial battle on defensive corner; Wiley and Tharney must box out.'
   }
 ];
 
@@ -2851,9 +2851,9 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
       { minute: '77:48', title: 'Period 4: Scramble & Second-Ball Follow-Up', phase: 'Set Piece', description: 'Rebound scramble inside 6-yard box following initial reflex save.' }
     ],
     keyPlaymakers: [
-      { number: 9, name: 'Haverford Center Forward', position: 'ST', traits: 'Deadly box awareness, quick trigger, predatory instinct on rebounds', dangerLevel: 'Elite' },
-      { number: 10, name: 'Haverford Central Playmaker', position: 'CAM', traits: 'Pinpoint diagonal distribution and set-piece specialist', dangerLevel: 'Dangerous' },
-      { number: 11, name: 'Haverford Left Winger', position: 'LW', traits: 'Blistering acceleration down the touchline with cutback delivery', dangerLevel: 'Dangerous' }
+      { number: 9, name: 'Connor Vance', position: 'ST', traits: 'Deadly box awareness, quick trigger, predatory instinct on rebounds', dangerLevel: 'Elite' },
+      { number: 10, name: 'Luca DeAngelis', position: 'CAM', traits: 'Pinpoint diagonal distribution and set-piece specialist', dangerLevel: 'Dangerous' },
+      { number: 11, name: 'Miles Thornton', position: 'LW', traits: 'Blistering acceleration down the touchline with cutback delivery', dangerLevel: 'Dangerous' }
     ],
     tacticalBreakdown: {
       inPossession: 'Vertical direct switches into wide channels, rapid overloads in the penalty area with 4-5 runners.',
@@ -2883,8 +2883,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
       { minute: '52:10', title: 'Wide Channel Isolation', phase: 'Vulnerability', description: 'Right fullback tends to step high, leaving massive space behind him for diagonal through balls.' }
     ],
     keyPlaymakers: [
-      { number: 10, name: 'Aquinas Attacking Midfielder', position: 'CAM', traits: 'Quick turns on the half-turn, clever through-balls', dangerLevel: 'Dangerous' },
-      { number: 9, name: 'Aquinas Target Forward', position: 'ST', traits: 'Hold-up play, physical aerial target on long balls', dangerLevel: 'Key Threat' }
+      { number: 10, name: 'Julian Morales', position: 'CAM', traits: 'Quick turns on the half-turn, clever through-balls', dangerLevel: 'Dangerous' },
+      { number: 9, name: 'Mateo Cruz', position: 'ST', traits: 'Hold-up play, physical aerial target on long balls', dangerLevel: 'Key Threat' }
     ],
     tacticalBreakdown: {
       inPossession: 'Patient backline recycling until finding #10 between the lines.',
@@ -2914,8 +2914,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
       { minute: '64:30', title: 'Defensive Disorganization on Crosses', phase: 'Vulnerability', description: 'Center-backs often lose track of back-post runners on inswinging corner deliveries.' }
     ],
     keyPlaymakers: [
-      { number: 11, name: 'TCHS Left Winger', position: 'LW', traits: 'Track-star sprint speed, looks to cut inside onto stronger foot', dangerLevel: 'Dangerous' },
-      { number: 7, name: 'TCHS Central Midfielder', position: 'CM', traits: 'Aggressive ball winner, physical ball challenger', dangerLevel: 'Key Threat' }
+      { number: 11, name: 'Malik Jean-Baptiste', position: 'LW', traits: 'Track-star sprint speed, looks to cut inside onto stronger foot', dangerLevel: 'Dangerous' },
+      { number: 7, name: 'Devon Campbell', position: 'CM', traits: 'Aggressive ball winner, physical ball challenger', dangerLevel: 'Key Threat' }
     ],
     tacticalBreakdown: {
       inPossession: 'Direct balls over the top into corners to unleash speed wingers.',
@@ -2945,8 +2945,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
       { minute: '48:10', title: '3-Back Central Density', phase: 'Defensive Transition', description: 'Very dense in central 18-yard box, but vulnerable to cutbacks at top of the penalty arc.' }
     ],
     keyPlaymakers: [
-      { number: 8, name: 'Cougars Central Playmaker', position: 'CM', traits: 'Controls tempo with short diagonal switches', dangerLevel: 'Dangerous' },
-      { number: 9, name: 'Cougars Striker', position: 'ST', traits: 'Strong hold-up play and clever lay-offs to arriving runners', dangerLevel: 'Key Threat' }
+      { number: 8, name: 'Liam Henderson', position: 'CM', traits: 'Controls tempo with short diagonal switches', dangerLevel: 'Dangerous' },
+      { number: 9, name: 'Oliver Vance', position: 'ST', traits: 'Strong hold-up play and clever lay-offs to arriving runners', dangerLevel: 'Key Threat' }
     ],
     tacticalBreakdown: {
       inPossession: 'Possession out from the 3 center-backs with wingbacks hugging the sidelines.',
@@ -3038,8 +3038,8 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
       { minute: '58:40', title: 'Midfield Disconnect Under Press', phase: 'Vulnerability', description: 'LCA central midfielders get separated from backline by 25+ yards.' }
     ],
     keyPlaymakers: [
-      { number: 9, name: 'Warriors Striker', position: 'ST', traits: 'Exceptional vertical leap, physical target forward', dangerLevel: 'Dangerous' },
-      { number: 3, name: 'Warriors Sweeper', position: 'CB', traits: 'No-nonsense clearances, aggressive slide tackler', dangerLevel: 'Key Threat' }
+      { number: 9, name: 'Emmanuel Osei', position: 'ST', traits: 'Exceptional vertical leap, physical target forward', dangerLevel: 'Dangerous' },
+      { number: 3, name: 'Lucas Ferreira', position: 'CB', traits: 'No-nonsense clearances, aggressive slide tackler', dangerLevel: 'Key Threat' }
     ],
     tacticalBreakdown: {
       inPossession: 'Direct long balls, bypasses midfield construction.',
@@ -3069,9 +3069,9 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
       { minute: '44:10', title: 'Space Behind Overlapping Fullbacks', phase: 'Vulnerability', description: 'Both fullbacks push deep into attacking third, leaving their center backs completely exposed.' }
     ],
     keyPlaymakers: [
-      { number: 8, name: 'Big Red Creative Pivot', position: 'CM', traits: 'Controls tempo, dangerous on set pieces', dangerLevel: 'Dangerous' },
-      { number: 7, name: 'Big Red Inverted Right Winger', position: 'RW', traits: 'Dribbles inside onto left foot for curling shots', dangerLevel: 'Dangerous' },
-      { number: 9, name: 'Big Red Center Forward', position: 'ST', traits: 'Persistent pressing, opportunistic poacher in box', dangerLevel: 'Key Threat' }
+      { number: 8, name: 'Tristan Sterling', position: 'CM', traits: 'Controls tempo, dangerous on set pieces', dangerLevel: 'Dangerous' },
+      { number: 7, name: 'Kai Nakamura', position: 'RW', traits: 'Dribbles inside onto left foot for curling shots', dangerLevel: 'Dangerous' },
+      { number: 9, name: 'Christian Bradley', position: 'ST', traits: 'Persistent pressing, opportunistic poacher in box', dangerLevel: 'Key Threat' }
     ],
     tacticalBreakdown: {
       inPossession: 'Short passing from back, high reliance on central midfielders turning under pressure.',
@@ -3142,7 +3142,7 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
       setPieceTendencies: 'Defends set pieces with a static line on 6-yard box.'
     },
     peddieCounterDirectives: {
-      coachNazarioDirective: 'Deploy twin strikers Tommy Kim (#28) and Jeffery Zhang (#20) to split their center-backs. Rayyaan Mohiuddin (#14) thread interior through-balls.',
+      coachNazarioDirective: 'Deploy twin strikers Tommy Kim (#28) and Jeffrey Zhang (#20) to split their center-backs. Rayyaan Mohiuddin (#14) thread interior through-balls.',
       diamondKeyAssignment: 'Bennett Cuchera (#7) and Quinn Wachtveitl (#10) deliver service behind their retreating backline.',
       recommendedFormation: '4-4-2'
     }
@@ -3287,9 +3287,9 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
       { minute: '82:10', title: 'Late Game High Line Fatigue', phase: 'Defensive Transition', description: 'Center-backs get caught flat-footed on fast through-balls late in game.' }
     ],
     keyPlaymakers: [
-      { number: 10, name: 'Red Hawks Attacking Midfielder', position: 'CAM', traits: 'Division 1 commit, elite ball manipulation, defense-splitting passes', dangerLevel: 'Elite' },
-      { number: 9, name: 'Red Hawks Center Forward', position: 'ST', traits: 'Lethal inside 18-yard box, rapid first-touch shooting', dangerLevel: 'Elite' },
-      { number: 4, name: 'Red Hawks Center Back', position: 'CB', traits: 'Athletic recovery pace, strong aerial stopper', dangerLevel: 'Dangerous' }
+      { number: 10, name: 'Lucas DeSilva', position: 'CAM', traits: 'Division 1 commit, elite ball manipulation, defense-splitting passes', dangerLevel: 'Elite' },
+      { number: 9, name: 'Mateo Barbosa', position: 'ST', traits: 'Lethal inside 18-yard box, rapid first-touch shooting', dangerLevel: 'Elite' },
+      { number: 4, name: 'Gabriel Morales', position: 'CB', traits: 'Athletic recovery pace, strong aerial stopper', dangerLevel: 'Dangerous' }
     ],
     tacticalBreakdown: {
       inPossession: 'Fluid positional rotations, fast one-touch passing, relentless box entries.',
@@ -3351,9 +3351,9 @@ export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
       { minute: '63:10', title: 'Long Throw-in Box Scramble', phase: 'Set Piece', description: 'Direct long throw into 6-yard box designed to create chaotic second-ball opportunities.' }
     ],
     keyPlaymakers: [
-      { number: 9, name: 'Buccaneers Target Striker', position: 'ST', traits: '6-foot-3 physical presence, dominant in air, target for long balls', dangerLevel: 'Elite' },
-      { number: 10, name: 'Buccaneers Central Midfielder', position: 'CM', traits: 'Primary set-piece taker, dangerous long throw-in specialist', dangerLevel: 'Dangerous' },
-      { number: 11, name: 'Buccaneers Left Winger', position: 'LW', traits: 'Speed in transition, opportunistic runner', dangerLevel: 'Key Threat' }
+      { number: 9, name: 'Gunnar Henderson', position: 'ST', traits: '6-foot-3 physical presence, dominant in air, target for long balls', dangerLevel: 'Elite' },
+      { number: 10, name: 'Brody Campbell', position: 'CM', traits: 'Primary set-piece taker, dangerous long throw-in specialist', dangerLevel: 'Dangerous' },
+      { number: 11, name: 'Tyler Vance', position: 'LW', traits: 'Speed in transition, opportunistic runner', dangerLevel: 'Key Threat' }
     ],
     tacticalBreakdown: {
       inPossession: 'Direct long balls from GK into striker chest; bypasses midfield play completely.',
@@ -3459,14 +3459,14 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
       anchor: '#22 Carson Wiley & #8 Owen Bonchev at CB + #10 Quinn Wachtveitl (LM) commanding central 6-yard zone',
       nearPost: '#12 Noah Eldessouky (C) extinguishing near-post flick-ons',
       shield: '#13 Christian Tharney (C) controlling top of 18-yard box rebound area',
-      outlet: '#28 Tommy Kim (C) & #20 Jeffery Zhang stationed at midfield stripe ready for transition sprint',
+      outlet: '#28 Tommy Kim (C) & #20 Jeffrey Zhang stationed at midfield stripe ready for transition sprint',
       shortDisruptor: '#7 Bennett Cuchera charging any short corner attempt within 5 yards'
     }
   ],
   pressingTriggers: [
     {
       cue: 'Back-pass to Opponent Goalkeeper',
-      action: 'Twin Strikers Tommy Kim (#28) and Jeffery Zhang (#20) sprint at GK kicking foot and cut split pass angles; Quinn Wachtveitl (#10) and Bennett Cuchera (#7) tuck inside to eliminate lateral fullback outlet passes.'
+      action: 'Twin Strikers Tommy Kim (#28) and Jeffrey Zhang (#20) sprint at GK kicking foot and cut split pass angles; Quinn Wachtveitl (#10) and Bennett Cuchera (#7) tuck inside to eliminate lateral fullback outlet passes.'
     },
     {
       cue: 'Opponent Facing Own Goal under Pressure',
@@ -3511,7 +3511,7 @@ export const XG_TIMELINE_HAVERFORD: XgTimelinePoint[] = [
 
 export const XG_TIMELINE_AQUINAS: XgTimelinePoint[] = [
   { minute: 0, peddieXg: 0.00, opponentXg: 0.00 },
-  { minute: 12, peddieXg: 0.24, opponentXg: 0.08, eventDescription: 'Jeffery Zhang (#20) low drive saved by Aquinas GK Gallagher' },
+  { minute: 12, peddieXg: 0.24, opponentXg: 0.08, eventDescription: 'Jeffrey Zhang (#20) low drive saved by Aquinas GK Gallagher' },
   { minute: 24, peddieXg: 0.62, opponentXg: 0.22, eventDescription: 'Tommy Kim (#28) thunderous strike rattles right post' },
   { minute: 34, peddieXg: 1.26, opponentXg: 0.35, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Tommy Kim (#28) finishes low into corner from Mohiuddin pass (1-0)' },
   { minute: 44, peddieXg: 1.34, opponentXg: 0.77, isGoal: true, scoringTeam: 'Opponent', eventDescription: 'Aquinas Goal: Mateo Rossi equalizes off scramble before halftime (1-1)' },
@@ -3531,7 +3531,7 @@ export const DETAILED_SHOTS_LOG_HAVERFORD: ShotDetail[] = [
     second: 20,
     team: 'Opponent',
     playerNumber: 9,
-    playerName: 'Haverford Attack',
+    playerName: 'Connor Vance',
     xMeters: 92,
     yMeters: 26,
     xg: 0.58,
@@ -3565,7 +3565,7 @@ export const DETAILED_SHOTS_LOG_HAVERFORD: ShotDetail[] = [
     second: 15,
     team: 'Opponent',
     playerNumber: 10,
-    playerName: 'Haverford Striker',
+    playerName: 'Luca DeAngelis',
     xMeters: 88,
     yMeters: 30,
     xg: 0.38,
@@ -3582,7 +3582,7 @@ export const DETAILED_SHOTS_LOG_HAVERFORD: ShotDetail[] = [
     second: 10,
     team: 'Peddie',
     playerNumber: 20,
-    playerName: 'Jeffery Zhang',
+    playerName: 'Jeffrey Zhang',
     xMeters: 91,
     yMeters: 32,
     xg: 0.19,
@@ -3599,7 +3599,7 @@ export const DETAILED_SHOTS_LOG_HAVERFORD: ShotDetail[] = [
     second: 55,
     team: 'Opponent',
     playerNumber: 11,
-    playerName: 'Haverford Winger',
+    playerName: 'Miles Thornton',
     xMeters: 95,
     yMeters: 38,
     xg: 0.72,
@@ -3616,7 +3616,7 @@ export const DETAILED_SHOTS_LOG_HAVERFORD: ShotDetail[] = [
     second: 12,
     team: 'Opponent',
     playerNumber: 9,
-    playerName: 'Haverford Forward',
+    playerName: 'Connor Vance',
     xMeters: 90,
     yMeters: 30,
     xg: 0.31,
@@ -3717,7 +3717,7 @@ export const DETAILED_SHOTS_LOG_HAVERFORD: ShotDetail[] = [
     second: 48,
     team: 'Opponent',
     playerNumber: 9,
-    playerName: 'Haverford Fords',
+    playerName: 'Connor Vance',
     xMeters: 94,
     yMeters: 34,
     xg: 0.58,
@@ -3737,7 +3737,7 @@ export const DETAILED_SHOTS_LOG_AQUINAS: ShotDetail[] = [
     second: 40,
     team: 'Peddie',
     playerNumber: 20,
-    playerName: 'Jeffery Zhang',
+    playerName: 'Jeffrey Zhang',
     xMeters: 89,
     yMeters: 33,
     xg: 0.24,
@@ -3889,7 +3889,7 @@ export const DETAILED_SHOTS_LOG_AQUINAS: ShotDetail[] = [
     minute: 81,
     second: 30,
     team: 'Peddie',
-    playerNumber: 15,
+    playerNumber: 22,
     playerName: 'Carson Wiley',
     xMeters: 95,
     yMeters: 32,
@@ -3995,7 +3995,7 @@ export const XG_TIMELINE_TRENTON: XgTimelinePoint[] = [
   { minute: 28, peddieXg: 0.45, opponentXg: 0.82, isGoal: true, scoringTeam: 'Opponent', eventDescription: 'Trenton Central Goal: Fast counter break on right flank (0-1)' },
   { minute: 39, peddieXg: 1.15, opponentXg: 0.95, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Tommy Kim (#28) equalizer off Mohiuddin through-ball (1-1)' },
   { minute: 54, peddieXg: 1.35, opponentXg: 1.55, isGoal: true, scoringTeam: 'Opponent', eventDescription: 'Trenton Central Goal: Rebound converted in box (1-2)' },
-  { minute: 68, peddieXg: 1.95, opponentXg: 1.65, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Jeffery Zhang (#20) clinical finish into bottom corner (2-2)' },
+  { minute: 68, peddieXg: 1.95, opponentXg: 1.65, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Jeffrey Zhang (#20) clinical finish into bottom corner (2-2)' },
   { minute: 78, peddieXg: 2.05, opponentXg: 2.45, isGoal: true, scoringTeam: 'Opponent', eventDescription: 'Trenton Central Goal: Direct free kick deflected past wall (2-3)' },
   { minute: 90, peddieXg: 2.12, opponentXg: 2.45, eventDescription: 'Final Whistle: Hard-fought 2-3 battle in Mercer County derby' }
 ];
@@ -4005,7 +4005,7 @@ export const DETAILED_SHOTS_LOG_TRENTON: ShotDetail[] = [
   { id: 'shot-tc-2', minute: 28, second: 45, team: 'Opponent', playerNumber: 9, playerName: 'Trenton Striker', xMeters: 92, yMeters: 38, xg: 0.44, psxg: 0.78, shotType: 'Open Play', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 14, angleDegrees: 52 },
   { id: 'shot-tc-3', minute: 39, second: 12, team: 'Peddie', playerNumber: 28, playerName: 'Tommy Kim', xMeters: 93, yMeters: 34, xg: 0.62, psxg: 0.89, shotType: 'Open Play', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 12, angleDegrees: 58 },
   { id: 'shot-tc-4', minute: 54, second: 30, team: 'Opponent', playerNumber: 11, playerName: 'Trenton Winger', xMeters: 96, yMeters: 30, xg: 0.58, psxg: 0.85, shotType: 'Open Play', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 8, angleDegrees: 65 },
-  { id: 'shot-tc-5', minute: 68, second: 15, team: 'Peddie', playerNumber: 20, playerName: 'Jeffery Zhang', xMeters: 90, yMeters: 36, xg: 0.48, psxg: 0.82, shotType: 'Open Play', bodyPart: 'Left Foot', outcome: 'Goal', distanceYards: 15, angleDegrees: 48 },
+  { id: 'shot-tc-5', minute: 68, second: 15, team: 'Peddie', playerNumber: 20, playerName: 'Jeffrey Zhang', xMeters: 90, yMeters: 36, xg: 0.48, psxg: 0.82, shotType: 'Open Play', bodyPart: 'Left Foot', outcome: 'Goal', distanceYards: 15, angleDegrees: 48 },
   { id: 'shot-tc-6', minute: 78, second: 50, team: 'Opponent', playerNumber: 8, playerName: 'Trenton Midfield', xMeters: 84, yMeters: 34, xg: 0.22, psxg: 0.75, shotType: 'Direct Free Kick', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 23, angleDegrees: 38 }
 ];
 
@@ -4034,24 +4034,24 @@ export const DETAILED_SHOTS_LOG_GEORGE: ShotDetail[] = [
 export const XG_TIMELINE_PDS: XgTimelinePoint[] = [
   { minute: 0, peddieXg: 0.00, opponentXg: 0.00 },
   { minute: 8, peddieXg: 0.65, opponentXg: 0.05, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Tommy Kim (#28) early lightning strike (1-0)' },
-  { minute: 18, peddieXg: 1.35, opponentXg: 0.15, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Jeffery Zhang (#20) header off Eldessouky cross (2-0)' },
+  { minute: 18, peddieXg: 1.35, opponentXg: 0.15, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Jeffrey Zhang (#20) header off Eldessouky cross (2-0)' },
   { minute: 29, peddieXg: 2.10, opponentXg: 0.22, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Bennett Cuchera (#7) curls from right wing (3-0)' },
   { minute: 42, peddieXg: 2.75, opponentXg: 0.55, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Tommy Kim (#28) slots penalty before halftime (4-0)' },
   { minute: 53, peddieXg: 2.85, opponentXg: 0.88, isGoal: true, scoringTeam: 'Opponent', eventDescription: 'PDS Goal: Transition breakaway goal (4-1)' },
   { minute: 61, peddieXg: 3.55, opponentXg: 0.90, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Tommy Kim (#28) completes Hat Trick! (5-1)' },
-  { minute: 73, peddieXg: 4.10, opponentXg: 0.94, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Jeffery Zhang (#20) second goal of the match (6-1)' },
+  { minute: 73, peddieXg: 4.10, opponentXg: 0.94, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Jeffrey Zhang (#20) second goal of the match (6-1)' },
   { minute: 84, peddieXg: 4.48, opponentXg: 0.94, isGoal: true, scoringTeam: 'Peddie', eventDescription: 'PEDDIE GOAL! Zachary Horsch (#15) seals emphatic derby rout from edge of box (7-1)' },
   { minute: 90, peddieXg: 4.48, opponentXg: 0.94, eventDescription: 'Final Whistle: Peddie claims magnificent 7-1 Mercer County Derby victory!' }
 ];
 
 export const DETAILED_SHOTS_LOG_PDS: ShotDetail[] = [
   { id: 'shot-pds-1', minute: 8, second: 30, team: 'Peddie', playerNumber: 28, playerName: 'Tommy Kim', xMeters: 92, yMeters: 33, xg: 0.55, psxg: 0.91, shotType: 'Open Play', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 14, angleDegrees: 56 },
-  { id: 'shot-pds-2', minute: 18, second: 12, team: 'Peddie', playerNumber: 20, playerName: 'Jeffery Zhang', xMeters: 97, yMeters: 35, xg: 0.62, psxg: 0.93, shotType: 'Open Play', bodyPart: 'Header', outcome: 'Goal', distanceYards: 8, angleDegrees: 64 },
+  { id: 'shot-pds-2', minute: 18, second: 12, team: 'Peddie', playerNumber: 20, playerName: 'Jeffrey Zhang', xMeters: 97, yMeters: 35, xg: 0.62, psxg: 0.93, shotType: 'Open Play', bodyPart: 'Header', outcome: 'Goal', distanceYards: 8, angleDegrees: 64 },
   { id: 'shot-pds-3', minute: 29, second: 45, team: 'Peddie', playerNumber: 7, playerName: 'Bennett Cuchera', xMeters: 89, yMeters: 46, xg: 0.32, psxg: 0.74, shotType: 'Open Play', bodyPart: 'Left Foot', outcome: 'Goal', distanceYards: 18, angleDegrees: 42 },
   { id: 'shot-pds-4', minute: 42, second: 10, team: 'Peddie', playerNumber: 28, playerName: 'Tommy Kim', xMeters: 94, yMeters: 34, xg: 0.79, psxg: 0.96, shotType: 'Penalty', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 12, angleDegrees: 75 },
   { id: 'shot-pds-5', minute: 53, second: 35, team: 'Opponent', playerNumber: 9, playerName: 'PDS Forward', xMeters: 91, yMeters: 30, xg: 0.42, psxg: 0.79, shotType: 'Open Play', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 15, angleDegrees: 50 },
   { id: 'shot-pds-6', minute: 61, second: 20, team: 'Peddie', playerNumber: 28, playerName: 'Tommy Kim', xMeters: 93, yMeters: 36, xg: 0.60, psxg: 0.94, shotType: 'Open Play', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 13, angleDegrees: 58 },
-  { id: 'shot-pds-7', minute: 73, second: 50, team: 'Peddie', playerNumber: 20, playerName: 'Jeffery Zhang', xMeters: 95, yMeters: 32, xg: 0.55, psxg: 0.88, shotType: 'Open Play', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 10, angleDegrees: 62 },
+  { id: 'shot-pds-7', minute: 73, second: 50, team: 'Peddie', playerNumber: 20, playerName: 'Jeffrey Zhang', xMeters: 95, yMeters: 32, xg: 0.55, psxg: 0.88, shotType: 'Open Play', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 10, angleDegrees: 62 },
   { id: 'shot-pds-8', minute: 84, second: 15, team: 'Peddie', playerNumber: 15, playerName: 'Carson Wiley', xMeters: 94, yMeters: 38, xg: 0.48, psxg: 0.85, shotType: 'Open Play', bodyPart: 'Right Foot', outcome: 'Goal', distanceYards: 12, angleDegrees: 54 }
 ];
 
@@ -4174,7 +4174,7 @@ export const PEDDIE_SAC_INTELLIGENCE_REGISTRY: {
       fableGritRating: 94.2,
       fableClutchScore: 96.0,
       headCoach: 'George Nazario',
-      recapSummary: 'Epic 2-1 rivalry victory! Jeffery Zhang (#20) scored in the 34\', and Tommy Kim (#28) headed home the 78th-minute game-winner off a Christian Tharney set-piece.'
+      recapSummary: 'Epic 2-1 rivalry victory! Jeffrey Zhang (#20) scored in the 34\', and Tommy Kim (#28) headed home the 78th-minute game-winner off a Christian Tharney set-piece.'
     },
     {
       sport: 'Soccer',
@@ -4212,7 +4212,7 @@ export const PEDDIE_SAC_INTELLIGENCE_REGISTRY: {
       fableGritRating: 91.0,
       fableClutchScore: 92.5,
       headCoach: 'George Nazario',
-      recapSummary: 'Gritty 3-1 comeback win after conceding early. Goals by Tommy Kim (#28), Christian Tharney (#13), and Carson Fleming (#15) off set-pieces.'
+      recapSummary: 'Gritty 3-1 comeback win after conceding early. Goals by Tommy Kim (#28), Christian Tharney (#13), and Carson Wiley (#22) off set-pieces.'
     },
     {
       sport: 'Soccer',
@@ -4231,7 +4231,7 @@ export const PEDDIE_SAC_INTELLIGENCE_REGISTRY: {
       fableGritRating: 95.0,
       fableClutchScore: 94.0,
       headCoach: 'George Nazario',
-      recapSummary: 'Emphatic 7-1 rout. Tommy Kim (#28) hat trick, Jeffery Zhang (#20) brace, Bennett Cucchiara (#7), Jeet Sinha (#6), and Zachary Horsch (#15) goals.'
+      recapSummary: 'Emphatic 7-1 rout. Tommy Kim (#28) hat trick, Jeffrey Zhang (#20) brace, Bennett Cucchiara (#7), Jeet Sinha (#6), and Zachary Horsch (#15) goals.'
     },
     {
       sport: 'Football',
