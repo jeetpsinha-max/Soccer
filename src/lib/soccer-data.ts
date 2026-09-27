@@ -220,15 +220,15 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-wachtveitl',
-    tacticalRole: 'Dynamic Utility Midfielder / Center Back & Engine',
-    scoutingTier: 'All-MAPL Physical Dynamo',
+    tacticalRole: 'Dynamic Target Striker / Aerial Spearhead & Physical Finisher',
+    scoutingTier: 'All-MAPL First XI Striker',
     matchFormScore: 8.9,
     number: 10,
     name: 'Quinn Wachtveitl',
     classYear: 'Senior',
     gradYear: 2027,
-    position: 'LM',
-    secondaryPosition: 'CB',
+    position: 'ST',
+    secondaryPosition: 'CAM',
     photoUrl: '/media-day-headshots/IMG_000705.jpg',
     actionPhotoUrl: '/media-day-previews/IMG_000711.jpg',
     height: "6'2\"",
@@ -254,13 +254,13 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     aerialDuelsWon: 29,
     aerialDuelsContested: 34,
     assignmentHistory: [
-      { match: 'vs Princeton Day School', opponent: 'PDS', grade: '+', assignment: 'Central Physical Anchor & Aerial Eraser', notes: 'Won 6 of 7 aerial duels, completed 88% of passes, and won 4 tackles in 7-1 rout' },
-      { match: 'vs George School', opponent: 'George School', grade: '+', assignment: 'Midfield disruption & aerial crash', notes: 'Cleared 5 crosses and won 7 ground duels in 5-2 victory' },
-      { match: 'vs Trenton Central', opponent: 'Trenton Central', grade: '+', assignment: 'Midfield duel dominance vs Trenton engine', notes: 'Recorded 6 aerial clearances and 4 tackles in heavy physical contest' },
-      { match: 'vs St. Thomas Aquinas', opponent: 'Aquinas', grade: '+', assignment: 'Left Midfield dominance & aerial presence', notes: 'Won 6 ground duels, supported Noah on flank defense, contributed to 3-2 win' },
-      { match: 'vs Haverford School', opponent: 'Haverford', grade: '+', assignment: 'Left Midfield dominance & aerial set-piece crashing', notes: 'Won 8 of 9 aerial duels, controlled touchline with physical authority' }
+      { match: 'vs Princeton Day School', opponent: 'PDS', grade: '+', assignment: 'Starting Striker & Aerial Spearhead', notes: 'Won 6 of 7 aerial duels, pinned center-backs, completed 88% of passes, and won 4 tackles in 7-1 rout' },
+      { match: 'vs George School', opponent: 'George School', grade: '+', assignment: 'Striker pressing trap & aerial crash', notes: 'Cleared 5 crosses, crashed box, and won 7 ground duels in 5-2 victory' },
+      { match: 'vs Trenton Central', opponent: 'Trenton Central', grade: '+', assignment: 'Physical hold-up striker vs Trenton backline', notes: 'Recorded 6 aerial clearances and 4 tackles in heavy physical contest' },
+      { match: 'vs St. Thomas Aquinas', opponent: 'Aquinas', grade: '+', assignment: 'Starting Striker & aerial set-piece presence', notes: 'Won 6 ground duels, supported attacking transition, contributed to 3-2 win' },
+      { match: 'vs Haverford School', opponent: 'Haverford', grade: '+', assignment: 'Target Striker & aerial set-piece crashing', notes: 'Won 8 of 9 aerial duels, pressured center-backs with physical authority' }
     ],
-    recruitmentNotes: 'Team Co-Captain (2026-2027). Physical powerhouse with aerial dominance (team-high 29 aerial duels won, 85.3%), defensive tracking, and long-range crossing threat at 20.8 mph top speed.'
+    recruitmentNotes: 'Team Co-Captain (2026-2027). Physical powerhouse striker with aerial dominance (team-high 29 aerial duels won, 85.3%), pressing commitment, clinical target play, and long-range shot threat at 20.8 mph top speed.'
   },
   {
     id: 'p-mckenzie',
@@ -1717,11 +1717,11 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
   '4-4-2': {
     id: '4-4-2',
     name: '4-4-2 Diamond Midfield (Peddie Primary System)',
-    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor Captain #13 Christian Tharney, wide midfielders #10 Quinn Wachtveitl (LM) and #7 Bennett Cuchera (RM), and Captain #14 Rayyaan Mohiuddin conducting as CAM behind twin strikers Captain #28 Tommy Kim and #20 Jeffrey Zhang. Backline anchored by #5 Gabriel Lam (RB), #22 Carson Wiley (CB), #8 Owen Bonchev (CB), and Captain #12 Noah Eldessouky (LB).',
+    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor Captain #13 Christian Tharney, wide midfielders #6 Jeet Sinha (LM) and #7 Bennett Cuchera (RM), and Captain #14 Rayyaan Mohiuddin conducting as CAM behind twin strikers Captain #28 Tommy Kim and Co-Captain #10 Quinn Wachtveitl (with #20 Jeffrey Zhang in strike rotation). Backline anchored by #5 Gabriel Lam (RB), #22 Carson Wiley (CB), #8 Owen Bonchev (CB), and Captain #12 Noah Eldessouky (LB).',
     strengths: [
       'Unmatched central midfield numerical dominance (4v3 / 4v2)',
-      'Dual striking power with Captain Tommy Kim (#28) and Jeffrey Zhang (#20)',
-      'Aerial and physical dominance on flanks with #10 Quinn Wachtveitl (LM) and #7 Bennett Cuchera (RM)',
+      'Dual striking power with Captain Tommy Kim (#28) and Co-Captain Quinn Wachtveitl (#10)',
+      'Aerial and physical dominance in attack with #10 Quinn Wachtveitl (ST) and flank service from #6 Jeet Sinha (LM) and #7 Bennett Cuchera (RM)',
       'Resilient backline shield with Captain Christian Tharney (#13) anchoring at CDM in front of Wiley and Bonchev'
     ],
     vulnerabilities: [
@@ -1735,11 +1735,11 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CB', playerNumber: 22, playerName: 'Wiley', xPct: 62, yPct: 80, role: 'Stopper Center Back' },
       { position: 'RB', playerNumber: 5, playerName: 'Lam', xPct: 84, yPct: 76, role: 'Starting Right Fullback' },
       { position: 'CDM', playerNumber: 13, playerName: 'Tharney (C)', xPct: 50, yPct: 64, role: 'Diamond Base Holding Anchor (Captain)' },
-      { position: 'LM', playerNumber: 10, playerName: 'Wachtveitl', xPct: 24, yPct: 48, role: 'Left Midfielder' },
+      { position: 'LM', playerNumber: 6, playerName: 'Sinha', xPct: 24, yPct: 48, role: 'Left Midfielder' },
       { position: 'RM', playerNumber: 7, playerName: 'Cuchera', xPct: 76, yPct: 48, role: 'Right Midfielder' },
       { position: 'CAM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 50, yPct: 34, role: 'Diamond Tip Playmaker (Captain)' },
       { position: 'ST', playerNumber: 28, playerName: 'Kim T (C)', xPct: 38, yPct: 16, role: 'Striker / Forward (Captain)' },
-      { position: 'ST', playerNumber: 20, playerName: 'Zhang', xPct: 62, yPct: 16, role: 'Striker / Forward' }
+      { position: 'ST', playerNumber: 10, playerName: 'Wachtveitl (C)', xPct: 62, yPct: 16, role: 'Striker / Target Forward' }
     ]
   }
 };
@@ -3742,7 +3742,7 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
     {
       name: 'Hybrid Zonal Anchor',
       organization: '5 Zonal Protectors + 3 Man-Markers + 1 Short Corner Disruptor + 1 Outlet Sprinter',
-      anchor: '#22 Carson Wiley & #8 Owen Bonchev at CB + #10 Quinn Wachtveitl (LM) commanding central 6-yard zone',
+      anchor: '#22 Carson Wiley & #8 Owen Bonchev at CB + #10 Quinn Wachtveitl (ST) commanding central 6-yard zone',
       nearPost: '#12 Noah Eldessouky (C) extinguishing near-post flick-ons',
       shield: '#13 Christian Tharney (C) controlling top of 18-yard box rebound area',
       outlet: '#28 Tommy Kim (C) & #20 Jeffrey Zhang stationed at midfield stripe ready for transition sprint',
@@ -3752,7 +3752,7 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
   pressingTriggers: [
     {
       cue: 'Back-pass to Opponent Goalkeeper',
-      action: 'Twin Strikers Tommy Kim (#28) and Jeffrey Zhang (#20) sprint at GK kicking foot and cut split pass angles; Quinn Wachtveitl (#10) and Bennett Cuchera (#7) tuck inside to eliminate lateral fullback outlet passes.'
+      action: 'Twin Strikers Tommy Kim (#28) and Quinn Wachtveitl (#10) sprint at GK kicking foot and cut split pass angles; Jeet Sinha (#6) and Bennett Cuchera (#7) tuck inside to eliminate lateral fullback outlet passes.'
     },
     {
       cue: 'Opponent Facing Own Goal under Pressure',
@@ -3760,7 +3760,7 @@ export const SIDELINE_SET_PIECE_PLAYBOOK = {
     },
     {
       cue: 'Bouncing Ball or Heavy Touch on Sideline',
-      action: 'Starting Right Back Gabriel Lam (#5) with Bennett Cuchera (#7) or Left Back Noah Eldessouky (#12) with Quinn Wachtveitl (#10) double-teams; trap ball against touchline.'
+      action: 'Starting Right Back Gabriel Lam (#5) with Bennett Cuchera (#7) or Left Back Noah Eldessouky (#12) with Jeet Sinha (#6) double-teams; trap ball against touchline.'
     }
   ],
   lateGameLockout: [
@@ -4213,7 +4213,7 @@ export const SQUAD_PHYSICAL_TELEMETRY: PhysicalTelemetry[] = [
   { playerId: 'p-tharney', playerNumber: 13, playerName: 'Christian Tharney', position: 'CDM', totalDistanceMiles: 33.5, totalDistanceKm: 53.9, highIntensityMiles: 7.5, highIntensityKm: 12.1, sprintsCount: 132, topSpeedMph: 20.4, topSpeedKmh: 32.8, aerobicWorkRatePct: 96 },
   { playerId: 'p-eldessouky', playerNumber: 12, playerName: 'Noah Eldessouky', position: 'LB', totalDistanceMiles: 34.2, totalDistanceKm: 55.0, highIntensityMiles: 9.8, highIntensityKm: 15.8, sprintsCount: 184, topSpeedMph: 21.1, topSpeedKmh: 34.0, aerobicWorkRatePct: 97 },
   { playerId: 'p-mohiuddin', playerNumber: 14, playerName: 'Rayyaan Mohiuddin', position: 'CAM', totalDistanceMiles: 30.8, totalDistanceKm: 49.6, highIntensityMiles: 7.8, highIntensityKm: 12.6, sprintsCount: 146, topSpeedMph: 20.1, topSpeedKmh: 32.3, aerobicWorkRatePct: 92 },
-  { playerId: 'p-wachtveitl', playerNumber: 10, playerName: 'Quinn Wachtveitl', position: 'LM', totalDistanceMiles: 32.4, totalDistanceKm: 52.1, highIntensityMiles: 7.6, highIntensityKm: 12.2, sprintsCount: 138, topSpeedMph: 20.8, topSpeedKmh: 33.5, aerobicWorkRatePct: 95 },
+  { playerId: 'p-wachtveitl', playerNumber: 10, playerName: 'Quinn Wachtveitl', position: 'ST', totalDistanceMiles: 32.4, totalDistanceKm: 52.1, highIntensityMiles: 7.6, highIntensityKm: 12.2, sprintsCount: 138, topSpeedMph: 20.8, topSpeedKmh: 33.5, aerobicWorkRatePct: 95 },
   { playerId: 'p-lam-5', playerNumber: 5, playerName: 'Gabriel Lam', position: 'RB', totalDistanceMiles: 33.2, totalDistanceKm: 53.4, highIntensityMiles: 9.2, highIntensityKm: 14.8, sprintsCount: 172, topSpeedMph: 20.8, topSpeedKmh: 33.5, aerobicWorkRatePct: 96 },
   { playerId: 'p-bonchev', playerNumber: 8, playerName: 'Owen Bonchev', position: 'CB', totalDistanceMiles: 28.5, totalDistanceKm: 45.9, highIntensityMiles: 5.2, highIntensityKm: 8.4, sprintsCount: 88, topSpeedMph: 20.3, topSpeedKmh: 32.7, aerobicWorkRatePct: 89 },
   { playerId: 'p-wiley-22', playerNumber: 22, playerName: 'Carson Wiley', position: 'CB', totalDistanceMiles: 29.2, totalDistanceKm: 47.0, highIntensityMiles: 5.4, highIntensityKm: 8.7, sprintsCount: 82, topSpeedMph: 20.3, topSpeedKmh: 32.7, aerobicWorkRatePct: 90 },

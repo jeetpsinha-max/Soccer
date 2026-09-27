@@ -50,10 +50,11 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(massimo).toBeDefined();
     expect(massimo?.recruitmentNotes).toContain('DNP');
 
-    // 4. Number 10 is Quinn Wachtveitl; Tommy Kim is #28 (Captain)
+    // 4. Number 10 is Quinn Wachtveitl (Striker); Tommy Kim is #28 (Captain)
     const quinn = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Quinn Wachtveitl');
     expect(quinn).toBeDefined();
     expect(quinn?.number).toBe(10);
+    expect(quinn?.position).toBe('ST');
 
     const tommy = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Tommy Kim');
     expect(tommy).toBeDefined();
@@ -211,8 +212,8 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(cdm?.role).toContain('Diamond Base');
     
     const lm = diamondNodes.find(n => n.position === 'LM');
-    expect(lm?.playerNumber).toBe(10);
-    expect(lm?.playerName).toBe('Wachtveitl');
+    expect(lm?.playerNumber).toBe(6);
+    expect(lm?.playerName).toBe('Sinha');
     
     const rm = diamondNodes.find(n => n.position === 'RM');
     expect(rm?.playerNumber).toBe(7);
@@ -223,14 +224,14 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(cam?.playerNumber).toBe(14);
     expect(cam?.playerName).toContain('Mohiuddin');
 
-    // Twin Strikers
+    // Twin Strikers: Tommy Kim (#28) & Quinn Wachtveitl (#10)
     const stKim = diamondNodes.find(n => n.playerNumber === 28);
     expect(stKim?.playerName).toContain('Kim');
     expect(stKim?.position).toBe('ST');
 
-    const stZhang = diamondNodes.find(n => n.playerNumber === 20);
-    expect(stZhang?.playerName).toBe('Zhang');
-    expect(stZhang?.position).toBe('ST');
+    const stQuinn = diamondNodes.find(n => n.playerNumber === 10);
+    expect(stQuinn?.playerName).toContain('Wachtveitl');
+    expect(stQuinn?.position).toBe('ST');
   });
 
   it('validates complete 17-match official schedule and Veo scouting coverage for all opponents', () => {
@@ -467,12 +468,11 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(jeffreyGk).toBeDefined();
     expect(jeffreyGk?.isStarter).toBe(false);
 
-    // 6. Test Midfielder filter includes LM and RM
-    const midPositions = ['CDM', 'CM', 'CAM', 'LM', 'RM'];
+    // 6. Test Position filter (Quinn is Striker, Jeet & Bennett are LM/RM)
     const quinn = PEDDIE_ROSTER_2026_2027.find(p => p.number === 10);
-    expect(quinn?.position).toBe('LM');
-    expect(midPositions.includes(quinn!.position)).toBe(true);
+    expect(quinn?.position).toBe('ST');
 
+    const midPositions = ['CDM', 'CM', 'CAM', 'LM', 'RM'];
     const jeet = PEDDIE_ROSTER_2026_2027.find(p => p.number === 6);
     expect(jeet?.position).toBe('LM');
     expect(midPositions.includes(jeet!.position)).toBe(true);

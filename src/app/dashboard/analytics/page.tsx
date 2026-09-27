@@ -798,7 +798,7 @@ export default function AnalyticsPage() {
                 </span>
                 <h4 className="text-xs font-bold text-white">Flank Pin & Double-Team</h4>
                 <p className="text-[11px] text-slate-400">
-                  Gabriel Lam (#5) & Bennett Cuchera (#7) or Noah Eldessouky (#12) & Quinn Wachtveitl (#10) pin the ball carrier against the sideline with zero escape angle.
+                  Gabriel Lam (#5) & Bennett Cuchera (#7) or Noah Eldessouky (#12) & Jeet Sinha (#6) pin the ball carrier against the sideline with zero escape angle.
                 </p>
               </div>
             </div>
@@ -869,7 +869,7 @@ export default function AnalyticsPage() {
                     Key Passing Hub: Captain Christian Tharney (#13, CDM)
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    Christian Tharney acts as the single-pivot distribution switchboard at the base of the diamond, completing <strong>52 forward passes</strong> to wide midfielders Quinn Wachtveitl (#10) and Bennett Cuchera (#7), and advanced playmaker Rayyaan Mohiuddin (#14).
+                    Christian Tharney acts as the single-pivot distribution switchboard at the base of the diamond, completing <strong>52 forward passes</strong> to wide midfielders Jeet Sinha (#6) and Bennett Cuchera (#7), advanced playmaker Rayyaan Mohiuddin (#14), and target striker Quinn Wachtveitl (#10).
                   </p>
                 </div>
 
