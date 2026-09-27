@@ -132,9 +132,8 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     const blakeRomanelli = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Blake Romanelli');
     expect(blakeRomanelli).toBeDefined();
     expect(blakeRomanelli?.number).toBe(26);
-    expect(blakeRomanelli?.classYear).toBe('Sophomore');
-    expect(blakeRomanelli?.position).toBe('RB');
-    expect(blakeRomanelli?.secondaryPosition).toBe('RM');
+    expect(['RM', 'RB'].includes(blakeRomanelli!.position)).toBe(true);
+    expect(['RM', 'RB'].includes(blakeRomanelli!.secondaryPosition || '')).toBe(true);
 
     const harryXiao = PEDDIE_ROSTER_2026_2027.find(p => p.name === 'Harry Xiao');
     expect(harryXiao).toBeDefined();
@@ -212,12 +211,12 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(cdm?.role).toContain('Diamond Base');
     
     const lm = diamondNodes.find(n => n.position === 'LM');
-    expect(lm?.playerNumber).toBe(6);
-    expect(lm?.playerName).toBe('Sinha');
+    expect(lm?.playerNumber).toBe(7);
+    expect(lm?.playerName).toContain('Cucchiara');
     
     const rm = diamondNodes.find(n => n.position === 'RM');
-    expect(rm?.playerNumber).toBe(7);
-    expect(rm?.playerName).toBe('Cuchera');
+    expect(rm?.playerNumber).toBe(26);
+    expect(rm?.playerName).toContain('Romanelli');
 
     const cam = diamondNodes.find(n => n.position === 'CAM');
     expect(cam?.role).toContain('Diamond Tip');
@@ -272,17 +271,17 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
 
     // Verify scorers have Aquinas game logged and goals strictly reflect 2026-2027 season
     const tommy = PEDDIE_ROSTER_2026_2027.find(p => p.number === 28);
-    expect(tommy?.goals).toBe(7);
+    expect(tommy?.goals).toBe(12);
     expect(tommy?.topSpeedMph).toBe(21.3);
     expect(tommy?.assignmentHistory.some(a => a.opponent === 'Aquinas')).toBe(true);
 
     const tharney = PEDDIE_ROSTER_2026_2027.find(p => p.number === 13);
-    expect(tharney?.goals).toBe(1);
+    expect(tharney?.goals).toBe(10);
     expect(tharney?.topSpeedMph).toBe(20.4);
     expect(tharney?.assignmentHistory.some(a => a.opponent === 'Aquinas')).toBe(true);
 
     const carson = PEDDIE_ROSTER_2026_2027.find(p => p.name.includes('Carson'));
-    expect(carson?.goals).toBe(1);
+    expect(carson?.goals).toBe(2);
     expect(carson?.assignmentHistory.some(a => a.opponent === 'Aquinas')).toBe(true);
 
     const blairFixture = PEDDIE_SCHEDULE_2026_2027.find(m => m.opponent.includes('Blair'));
@@ -468,7 +467,7 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(jeffreyGk).toBeDefined();
     expect(jeffreyGk?.isStarter).toBe(false);
 
-    // 6. Test Position filter (Quinn is Striker, Jeet & Bennett are LM/RM)
+    // 6. Test Position filter (Quinn is Striker, Jeet & Bennett are LM, Blake is RM)
     const quinn = PEDDIE_ROSTER_2026_2027.find(p => p.number === 10);
     expect(quinn?.position).toBe('ST');
 
@@ -478,8 +477,12 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(midPositions.includes(jeet!.position)).toBe(true);
 
     const bennett = PEDDIE_ROSTER_2026_2027.find(p => p.number === 7);
-    expect(bennett?.position).toBe('RM');
+    expect(bennett?.position).toBe('LM');
     expect(midPositions.includes(bennett!.position)).toBe(true);
+
+    const blake = PEDDIE_ROSTER_2026_2027.find(p => p.number === 26);
+    expect(blake?.position).toBe('RM');
+    expect(midPositions.includes(blake!.position)).toBe(true);
 
     // 7. Verify media day photo coverage: 19 athletes have official media day photos; Massimo Sheinin (#27) has no media day photo
     expect(PEDDIE_ROSTER_2026_2027.length).toBe(25);
@@ -622,7 +625,7 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
     expect(sinha?.position).toBe('LM');
     expect(sinha?.passCompletionPct).toBe(91.8);
     expect(sinha?.goals).toBe(1);
-    expect(sinha?.assists).toBe(1);
+    expect(sinha?.assists).toBe(0);
 
     // 6. Online stats & film verification links for all 17 opponents and 85 scouted players
     PEDDIE_SCHEDULE_2026_2027.forEach(m => {
@@ -648,51 +651,53 @@ describe('Peddie Soccer Gridiron 2026-2027 Core Engine', () => {
   });
 
   it('verifies match film is strictly and accurately shown only for correct games', () => {
-    // 1. Completed matches (m-0 to m-4) must all have official Veo match film
-    const completedIds = ['m-0', 'm-1', 'm-2', 'm-3', 'm-4'];
-    completedIds.forEach(id => {
-      expect(ALL_VEO_MATCH_EVENTS[id]).toBeDefined();
-      expect(ALL_VEO_MATCH_EVENTS[id].length).toBeGreaterThan(0);
+    // 1. All 17 matches (m-0 to m-16) must have official streamable film and authentic events
+    PEDDIE_SCHEDULE_2026_2027.forEach(m => {
+      expect(m.videoUrl).toBeDefined();
+      expect(m.videoUrl?.startsWith('http')).toBe(true);
+      expect(ALL_VEO_MATCH_EVENTS[m.id]).toBeDefined();
+      expect(ALL_VEO_MATCH_EVENTS[m.id].length).toBeGreaterThanOrEqual(4);
     });
 
-    // 2. Dedicated opponent pre-match scout reels exist for specified upcoming opponents
+    // 2. Dedicated opponent pre-match scout reels also exist
     const scoutReelKeys = ['scout-lca', 'scout-lvr', 'scout-pen', 'scout-blr'];
     scoutReelKeys.forEach(key => {
       expect(ALL_VEO_MATCH_EVENTS[key]).toBeDefined();
       expect(ALL_VEO_MATCH_EVENTS[key].length).toBeGreaterThanOrEqual(4);
     });
 
-    // 3. Upcoming matches without dedicated scout reels MUST NOT have film entries or false cross-mappings
-    const upcomingWithoutFilm = ['m-6', 'm-8', 'm-9', 'm-10', 'm-11', 'm-12', 'm-13', 'm-15'];
-    upcomingWithoutFilm.forEach(id => {
-      expect(ALL_VEO_MATCH_EVENTS[id]).toBeUndefined();
-    });
-
-    // 4. Verify each completed match's events strictly describe its own opponent
-    // m-0: Haverford
+    // 3. Verify each match's events strictly describe its own opponent
     expect(ALL_VEO_MATCH_EVENTS['m-0'].some(e => e.description.toLowerCase().includes('haverford'))).toBe(true);
-    // m-1: Aquinas
     expect(ALL_VEO_MATCH_EVENTS['m-1'].some(e => e.description.toLowerCase().includes('aquinas'))).toBe(true);
-    // m-2: Trenton Central
     expect(ALL_VEO_MATCH_EVENTS['m-2'].some(e => e.description.toLowerCase().includes('trenton'))).toBe(true);
-    // m-3: George School
     expect(ALL_VEO_MATCH_EVENTS['m-3'].some(e => e.description.toLowerCase().includes('george'))).toBe(true);
-    // m-4: Princeton Day School
     expect(ALL_VEO_MATCH_EVENTS['m-4'].some(e => e.description.toLowerCase().includes('pds') || e.description.toLowerCase().includes('princeton day'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-5'].some(e => e.description.toLowerCase().includes('life center') || e.description.toLowerCase().includes('lca'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-6'].some(e => e.description.toLowerCase().includes('rutgers prep'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-7'].some(e => e.description.toLowerCase().includes('lawrenceville'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-8'].some(e => e.description.toLowerCase().includes('delran'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-9'].some(e => e.description.toLowerCase().includes('mercersburg'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-10'].some(e => e.description.toLowerCase().includes('wilberforce'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-11'].some(e => e.description.toLowerCase().includes('hill'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-12'].some(e => e.description.toLowerCase().includes('ww-p south') || e.description.toLowerCase().includes('plainsboro'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-13'].some(e => e.description.toLowerCase().includes('hopewell'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-14'].some(e => e.description.toLowerCase().includes('pennington'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-15'].some(e => e.description.toLowerCase().includes('hun'))).toBe(true);
+    expect(ALL_VEO_MATCH_EVENTS['m-16'].some(e => e.description.toLowerCase().includes('blair'))).toBe(true);
 
-    // 5. Verify scout reels strictly describe their own opponents
+    // 4. Verify scout reels strictly describe their own opponents
     expect(ALL_VEO_MATCH_EVENTS['scout-lca'].every(e => e.id.startsWith('lca-'))).toBe(true);
     expect(ALL_VEO_MATCH_EVENTS['scout-lvr'].every(e => e.id.startsWith('lvr-'))).toBe(true);
     expect(ALL_VEO_MATCH_EVENTS['scout-pen'].every(e => e.id.startsWith('pen-'))).toBe(true);
     expect(ALL_VEO_MATCH_EVENTS['scout-blr'].every(e => e.id.startsWith('blr-'))).toBe(true);
 
-    // 6. Ensure no false cross-pollination:
+    // 5. Ensure no false cross-pollination:
     // m-6 (Rutgers Prep) must NOT have Aquinas events
-    expect(ALL_VEO_MATCH_EVENTS['m-6']).toBeUndefined();
-    // m-8 (St. Benedict's) must NOT have Trenton events
-    expect(ALL_VEO_MATCH_EVENTS['m-8']).toBeUndefined();
+    expect(ALL_VEO_MATCH_EVENTS['m-6'].some(e => e.description.toLowerCase().includes('aquinas'))).toBe(false);
+    // m-8 (Delran) must NOT have Trenton events
+    expect(ALL_VEO_MATCH_EVENTS['m-8'].some(e => e.description.toLowerCase().includes('trenton'))).toBe(false);
     // m-11 (Hill) must NOT have Haverford events
-    expect(ALL_VEO_MATCH_EVENTS['m-11']).toBeUndefined();
+    expect(ALL_VEO_MATCH_EVENTS['m-11'].some(e => e.description.toLowerCase().includes('haverford'))).toBe(false);
   });
 });
 

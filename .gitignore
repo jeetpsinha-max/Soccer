@@ -24,6 +24,17 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
+
+# database
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+/prisma/peddie-sac.db
+
+# prisma
+/node_modules/.prisma
 
 # typescript
 *.tsbuildinfo

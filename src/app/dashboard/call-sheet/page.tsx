@@ -253,8 +253,8 @@ export default function SidelineCallSheetPage() {
               )}
               <div className="flex flex-col gap-0.5 min-w-0">
                 <span className="text-[10px] font-mono font-bold uppercase text-cyan-400">RIGHT CORNER (OUT-SWING)</span>
-                <span className="text-xs font-black text-white truncate">#7 Bennett Cuchera (RM)</span>
-                <span className="text-[10px] text-slate-300">Backup: #26 Blake Romanelli</span>
+                <span className="text-xs font-black text-white truncate">#7 Bennett Cucchiara (LM)</span>
+                <span className="text-[10px] text-slate-300">Backup: #26 Blake Romanelli (RM)</span>
               </div>
             </div>
           </div>

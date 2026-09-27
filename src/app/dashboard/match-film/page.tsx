@@ -47,21 +47,28 @@ interface MatchTab {
   hudlUrl?: string;
 }
 
-// Generate soccer match tabs strictly for completed matches plus verified opponent scout reels
+// Generate soccer match tabs for all 17 matches plus dedicated scout reels
 const SOCCER_MATCH_TABS: MatchTab[] = [
-  // 1. Official Completed Matches (2026 Season - Full Match Film Broadcasts)
-  ...PEDDIE_SCHEDULE_2026_2027.filter(m => m.status === 'Completed').map(m => {
+  // 1. All 17 Official Matches (2026 Season - Full Match Film & Tactical Feeds)
+  ...PEDDIE_SCHEDULE_2026_2027.map(m => {
+    const isCompleted = m.status === 'Completed';
     const isWin = (m.peddieScore ?? 0) > (m.opponentScore ?? 0);
-    const scoreBadge = `${m.peddieScore}-${m.opponentScore} ${isWin ? 'W' : 'L'}`;
-    const badgeStyle = isWin
-      ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
-      : 'bg-rose-500/20 text-rose-300 border-rose-500/40';
+    const scoreBadge = isCompleted
+      ? `${m.peddieScore}-${m.opponentScore} ${isWin ? 'W' : 'L'}`
+      : (m.projectedScore ? `Proj: ${m.projectedScore}` : 'SCOUT REEL');
+    const badgeStyle = isCompleted
+      ? (isWin
+          ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+          : 'bg-rose-500/20 text-rose-300 border-rose-500/40')
+      : 'bg-amber-500/20 text-amber-300 border-amber-500/40';
 
     return {
       id: m.id,
       name: m.opponentLogoText ? `${m.opponentLogoText} - ${m.opponent.replace('The ', '').replace(' High School', '').replace(' School', '')}` : m.opponent,
-      subtext: `${m.matchDate} (${m.peddieScore}-${m.opponentScore} Final)`,
-      type: 'completed' as const,
+      subtext: isCompleted 
+        ? `${m.matchDate} (${m.peddieScore}-${m.opponentScore} Final)` 
+        : `${m.matchDate} (Film & Scout Reel)`,
+      type: isCompleted ? 'completed' as const : 'scout' as const,
       scoreBadge,
       badgeStyle,
       opponentKey: m.scoutingReportId,
@@ -112,7 +119,7 @@ function MatchFilmContent() {
   const [selectedMatchId, setSelectedMatchId] = useState<string>(
     requestedMatch || (requestedSport === 'football' ? 'peddie-hill-2025' : 'm-4')
   );
-  const [filmCategory, setFilmCategory] = useState<'completed' | 'scout'>('completed');
+  const [filmCategory, setFilmCategory] = useState<'all' | 'completed' | 'scout'>('all');
   const [selectedPeriod, setSelectedPeriod] = useState<number | 'all'>('all');
   const [nlQuery, setNlQuery] = useState('');
   const [showUploadModal, setShowUploadModal] = useState(false);
@@ -268,8 +275,19 @@ function MatchFilmContent() {
         {/* Sub-Category Switcher for Soccer */}
         {activeSport === 'soccer' && (
           <div className="flex items-center justify-between flex-wrap gap-2 pt-2 border-t border-slate-800/80">
-            <div className="flex items-center gap-2 text-xs">
+            <div className="flex items-center gap-2 text-xs flex-wrap">
               <span className="text-slate-400 font-bold uppercase text-[10px]">Filter Fixtures:</span>
+              <button
+                onClick={() => setFilmCategory('all')}
+                className={`px-3 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
+                  filmCategory === 'all'
+                    ? 'bg-cyan-400 text-slate-950 font-black shadow-md shadow-cyan-500/20'
+                    : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+                }`}
+              >
+                <Film className="w-3.5 h-3.5" />
+                <span>All Fixtures ({PEDDIE_SCHEDULE_2026_2027.length})</span>
+              </button>
               <button
                 onClick={() => {
                   setFilmCategory('completed');
@@ -277,7 +295,7 @@ function MatchFilmContent() {
                 }}
                 className={`px-3 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
                   filmCategory === 'completed'
-                    ? 'bg-cyan-500 text-slate-950 font-black'
+                    ? 'bg-emerald-400 text-slate-950 font-black shadow-md shadow-emerald-500/20'
                     : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
                 }`}
               >
@@ -287,16 +305,16 @@ function MatchFilmContent() {
               <button
                 onClick={() => {
                   setFilmCategory('scout');
-                  handleSwitchMatch('scout-lvr');
+                  handleSwitchMatch('m-5');
                 }}
                 className={`px-3 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
                   filmCategory === 'scout'
-                    ? 'bg-amber-500 text-slate-950 font-black'
+                    ? 'bg-amber-400 text-slate-950 font-black shadow-md shadow-amber-500/20'
                     : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
                 }`}
               >
                 <Eye className="w-3.5 h-3.5" />
-                <span>Opponent Scout Reels ({SOCCER_MATCH_TABS.filter(t => t.type === 'scout').length})</span>
+                <span>Upcoming Match Film & Scouts ({SOCCER_MATCH_TABS.filter(t => t.type === 'scout').length})</span>
               </button>
             </div>
 
@@ -313,7 +331,7 @@ function MatchFilmContent() {
         {/* Match Carousel Switcher Tabs */}
         <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin">
           {(activeSport === 'soccer' 
-            ? SOCCER_MATCH_TABS.filter(t => t.type === filmCategory)
+            ? SOCCER_MATCH_TABS.filter(t => filmCategory === 'all' ? true : t.type === filmCategory)
             : FOOTBALL_MATCH_TABS
           ).map(tab => {
             const isSelected = selectedMatchId === tab.id;

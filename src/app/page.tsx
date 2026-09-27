@@ -199,7 +199,7 @@ export default function Home() {
                   <span className="text-xl">⚽</span>
                   <div>
                     <div className="text-xs font-black text-white">VARSITY SOCCER</div>
-                    <div className="text-[10px] text-emerald-400 font-bold">2026–2027 • 3-2-0 (17 GF)</div>
+                    <div className="text-[10px] text-emerald-400 font-bold">2026–2027 • 37G • 27A • 101 Pts (41 Saves)</div>
                   </div>
                 </div>
                 <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-black">

@@ -14,6 +14,27 @@ export type Position =
 
 export type CoachGrade = '+' | '0' | '-';
 
+export interface FilmClip {
+  id: string;
+  externalId?: string;
+  matchId?: string;
+  playerId?: string;
+  title: string;
+  description?: string;
+  provider: 'veo' | 'hudl' | 'youtube' | 'local';
+  url?: string;
+  videoUrl?: string;
+  durationSeconds?: number;
+  clipType?: string;
+  tags?: string;
+  thumbnailUrl?: string;
+  startSecond?: number;
+  endSecond?: number;
+  minute?: number;
+  phase?: string;
+  isHighlight?: boolean;
+}
+
 export interface PlayerAssignmentRecord {
   match: string;
   opponent: string;
@@ -46,6 +67,7 @@ export interface Player {
   matchesPlayed: number;
   goals: number;
   assists: number;
+  points?: number;
   expectedGoals: number; // xG
   expectedAssists: number; // xA
   passCompletionPct: number;
@@ -134,7 +156,7 @@ export interface MatchEvent {
   expectedGoals?: number;
   success: boolean;
   description: string;
-  phase: 'Open Play' | 'High Press' | 'Counter Attack' | 'Set Piece';
+  phase: 'Open Play' | 'High Press' | 'Counter Attack' | 'Set Piece' | 'Build-up';
   period?: number; // 1, 2, 3, 4
   videoUrl?: string; // Direct Veo CDN 1080p MP4 clip
   thumbnailUrl?: string;

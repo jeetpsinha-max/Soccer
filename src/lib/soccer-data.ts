@@ -15,7 +15,8 @@ import {
   OpponentPlayerReport,
   XTCell,
   XTGridModel,
-  TeamSeasonStats
+  TeamSeasonStats,
+  FilmClip
 } from './types';
 import { PEDDIE_PLAYER_CURRENT_SEASON_REPORTS } from './peddie-player-reports';
 import { 
@@ -57,9 +58,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '168 lbs',
     hometown: 'Princeton, NJ',
     minutesPlayed: 385,
-    matchesPlayed: 5,
-    goals: 7,
-    assists: 2,
+    matchesPlayed: 7,
+    goals: 12,
+    assists: 4,
+    points: 28,
     expectedGoals: 5.45,
     expectedAssists: 1.65,
     passCompletionPct: 88.5,
@@ -102,9 +104,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '176 lbs',
     hometown: 'Kendall Park, NJ',
     minutesPlayed: 400,
-    matchesPlayed: 5,
-    goals: 1,
-    assists: 2,
+    matchesPlayed: 7,
+    goals: 10,
+    assists: 5,
+    points: 25,
     expectedGoals: 0.85,
     expectedAssists: 1.45,
     passCompletionPct: 90.2,
@@ -139,6 +142,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     classYear: 'Senior',
     gradYear: 2027,
     position: 'LB',
+    secondaryPosition: 'CB',
     isCaptain: true,
     photoUrl: '/media-day-headshots/IMG_000493.jpg',
     actionPhotoUrl: '/media-day-previews/IMG_000525.jpg',
@@ -146,9 +150,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '160 lbs',
     hometown: 'Monroe, NJ',
     minutesPlayed: 400,
-    matchesPlayed: 5,
+    matchesPlayed: 7,
     goals: 0,
     assists: 2,
+    points: 2,
     expectedGoals: 0.15,
     expectedAssists: 1.30,
     passCompletionPct: 88.0,
@@ -183,7 +188,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     classYear: 'Junior',
     gradYear: 2028,
     position: 'CAM',
-    secondaryPosition: 'CM',
+    secondaryPosition: 'RM',
     isCaptain: true,
     photoUrl: '/media-day-headshots/IMG_000566.jpg',
     actionPhotoUrl: '/media-day-previews/IMG_000602.jpg',
@@ -191,9 +196,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '158 lbs',
     hometown: 'East Windsor, NJ',
     minutesPlayed: 370,
-    matchesPlayed: 5,
+    matchesPlayed: 7,
     goals: 1,
-    assists: 4,
+    assists: 2,
+    points: 4,
     expectedGoals: 1.35,
     expectedAssists: 3.60,
     passCompletionPct: 88.4,
@@ -235,9 +241,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '180 lbs',
     hometown: 'Allentown, NJ',
     minutesPlayed: 375,
-    matchesPlayed: 5,
-    goals: 0,
-    assists: 0,
+    matchesPlayed: 7,
+    goals: 2,
+    assists: 4,
+    points: 8,
     expectedGoals: 0.65,
     expectedAssists: 0.85,
     passCompletionPct: 86.5,
@@ -260,7 +267,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
       { match: 'vs St. Thomas Aquinas', opponent: 'Aquinas', grade: '+', assignment: 'Starting Striker & aerial set-piece presence', notes: 'Won 6 ground duels, supported attacking transition, contributed to 3-2 win' },
       { match: 'vs Haverford School', opponent: 'Haverford', grade: '+', assignment: 'Target Striker & aerial set-piece crashing', notes: 'Won 8 of 9 aerial duels, pressured center-backs with physical authority' }
     ],
-    recruitmentNotes: 'Team Co-Captain (2026-2027). Physical powerhouse striker with aerial dominance (team-high 29 aerial duels won, 85.3%), pressing commitment, clinical target play, and long-range shot threat at 20.8 mph top speed.'
+    recruitmentNotes: 'Senior striker with aerial dominance with aerial dominance (team-high 29 aerial duels won, 85.3%), pressing commitment, clinical target play, and long-range shot threat at 20.8 mph top speed.'
   },
   {
     id: 'p-mckenzie',
@@ -278,9 +285,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '175 lbs',
     hometown: 'Hightstown, NJ',
     minutesPlayed: 400,
-    matchesPlayed: 5,
+    matchesPlayed: 7,
     goals: 0,
     assists: 0,
+    points: 0,
     expectedGoals: 0,
     expectedAssists: 0.15,
     passCompletionPct: 80.5,
@@ -289,7 +297,7 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     topSpeedKmh: 28.2,
     distanceCoveredMiles: 16.5,
     distanceCoveredKm: 26.6,
-    saves: 31,
+    saves: 41,
     goalsConceded: 13,
     cleanSheets: 0,
     clearances: 18,
@@ -312,16 +320,17 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     classYear: 'Junior',
     gradYear: 2028,
     position: 'CB',
-    secondaryPosition: 'RB',
+    secondaryPosition: 'CDM',
     photoUrl: '/media-day-headshots/IMG_000794.jpg',
     actionPhotoUrl: '/media-day-previews/IMG_000801.jpg',
     height: "6'1\"",
     weight: '178 lbs',
     hometown: 'Yardley, PA',
     minutesPlayed: 400,
-    matchesPlayed: 5,
-    goals: 1,
+    matchesPlayed: 7,
+    goals: 2,
     assists: 1,
+    points: 5,
     expectedGoals: 0.70,
     expectedAssists: 0.35,
     passCompletionPct: 88.6,
@@ -452,9 +461,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '165 lbs',
     hometown: 'Hightstown, NJ',
     minutesPlayed: 345,
-    matchesPlayed: 5,
+    matchesPlayed: 7,
     goals: 1,
-    assists: 1,
+    assists: 0,
+    points: 2,
     expectedGoals: 0.95,
     expectedAssists: 1.85,
     passCompletionPct: 91.8,
@@ -481,15 +491,15 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-cuchera',
-    tacticalRole: 'Right Corner Specialist & Dynamic Flank Creator',
+    tacticalRole: 'Starting Left Midfielder & Precision Set-Piece Specialist',
     scoutingTier: 'Freshman / Sophomore First XI Starter',
     matchFormScore: 9.0,
     number: 7,
     name: 'Bennett Cucchiara',
-    classYear: 'Sophomore',
-    gradYear: 2029,
-    position: 'RM',
-    secondaryPosition: 'RW',
+    classYear: 'Freshman',
+    gradYear: 2030,
+    position: 'LM',
+    secondaryPosition: 'RM',
     photoUrl: '/media-day-headshots/IMG_0001197.jpg',
     photoUrl2: '/media-day-previews/IMG_0001227.jpg',
     actionPhotoUrl: '/media-day-previews/IMG_0001227.jpg',
@@ -497,9 +507,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '152 lbs',
     hometown: 'Cranbury, NJ',
     minutesPlayed: 335,
-    matchesPlayed: 5,
-    goals: 1,
+    matchesPlayed: 7,
+    goals: 3,
     assists: 3,
+    points: 9,
     expectedGoals: 1.10,
     expectedAssists: 2.45,
     passCompletionPct: 87.8,
@@ -541,9 +552,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '172 lbs',
     hometown: 'Pennington, NJ',
     minutesPlayed: 360,
-    matchesPlayed: 5,
-    goals: 4,
-    assists: 3,
+    matchesPlayed: 7,
+    goals: 0,
+    assists: 1,
+    points: 1,
     expectedGoals: 3.20,
     expectedAssists: 2.10,
     passCompletionPct: 85.2,
@@ -613,24 +625,25 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
   },
   {
     id: 'p-romanelli-26',
-    tacticalRole: 'Blistering Sprinting Full-Back (21.8 mph Peak)',
+    tacticalRole: 'Starting Right Midfielder & Blistering Sprinter (21.8 mph Peak)',
     scoutingTier: 'All-Prep Athletic Phenom',
     matchFormScore: 8.6,
     number: 26,
     name: 'Blake Romanelli',
     classYear: 'Sophomore',
     gradYear: 2029,
-    position: 'RB',
-    secondaryPosition: 'RM',
+    position: 'RM',
+    secondaryPosition: 'RB',
     photoUrl: '/media-day-headshots/IMG_000976.jpg',
     actionPhotoUrl: '/media-day-previews/IMG_0001037.jpg',
     height: "5'10\"",
     weight: '162 lbs',
     hometown: 'Robbinsville, NJ',
     minutesPlayed: 160,
-    matchesPlayed: 4,
+    matchesPlayed: 7,
     goals: 0,
     assists: 0,
+    points: 0,
     expectedGoals: 0.20,
     expectedAssists: 0.50,
     passCompletionPct: 87.5,
@@ -672,9 +685,10 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     weight: '174 lbs',
     hometown: 'Millstone, NJ',
     minutesPlayed: 155,
-    matchesPlayed: 4,
+    matchesPlayed: 7,
     goals: 0,
-    assists: 0,
+    assists: 1,
+    points: 1,
     expectedGoals: 0.35,
     expectedAssists: 0.30,
     passCompletionPct: 87.0,
@@ -748,16 +762,17 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     classYear: 'Junior',
     gradYear: 2028,
     position: 'RW',
-    secondaryPosition: 'RM',
+    secondaryPosition: 'CM',
     photoUrl: '/media-day-headshots/IMG_000807.jpg',
     actionPhotoUrl: '/media-day-previews/IMG_000819.jpg',
     height: "5'11\"",
     weight: '166 lbs',
     hometown: 'Morganville, NJ',
     minutesPlayed: 140,
-    matchesPlayed: 4,
-    goals: 0,
+    matchesPlayed: 7,
+    goals: 1,
     assists: 0,
+    points: 2,
     expectedGoals: 0.35,
     expectedAssists: 0.45,
     passCompletionPct: 85.0,
@@ -1030,16 +1045,17 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     classYear: 'Sophomore',
     gradYear: 2029,
     position: 'CM',
-    secondaryPosition: 'RB',
+    secondaryPosition: 'RM',
     photoUrl: '/media-day-headshots/IMG_000946.jpg',
     actionPhotoUrl: '/media-day-previews/IMG_000956.jpg',
     height: "5'10\"",
     weight: '162 lbs',
     hometown: 'Princeton Junction, NJ',
     minutesPlayed: 55,
-    matchesPlayed: 2,
-    goals: 0,
-    assists: 0,
+    matchesPlayed: 7,
+    goals: 3,
+    assists: 1,
+    points: 7,
     expectedGoals: 0.10,
     expectedAssists: 0.15,
     passCompletionPct: 85.5,
@@ -1068,17 +1084,18 @@ export const PEDDIE_ROSTER_2026_2027: Player[] = [
     matchFormScore: 8.0,
     number: 9,
     name: 'Michael Pratt',
-    classYear: 'Junior',
-    gradYear: 2028,
-    position: 'CM',
-    secondaryPosition: 'LM',
+    classYear: 'Sophomore',
+    gradYear: 2029,
+    position: 'ST',
+    secondaryPosition: 'RW',
     height: "5'9\"",
     weight: '154 lbs',
     hometown: 'Robbinsville, NJ',
     minutesPlayed: 50,
-    matchesPlayed: 2,
-    goals: 0,
-    assists: 0,
+    matchesPlayed: 7,
+    goals: 2,
+    assists: 3,
+    points: 7,
     expectedGoals: 0.05,
     expectedAssists: 0.15,
     passCompletionPct: 86.0,
@@ -1115,6 +1132,71 @@ PEDDIE_ROSTER_2026_2027.forEach(player => {
 // Raymond Li and Harrison Kwok are rostered on the Junior Varsity (JV) squad.
 // They are strictly excluded from all Varsity rosters, starting lineups, and stats.
 // ============================================================================
+
+
+export interface OfficialScoringPlayer {
+  number: number;
+  name: string;
+  classYear: string;
+  position: string;
+  goals: number;
+  assists: number;
+  points: number;
+  isStarting?: boolean;
+  startingPosition?: string;
+}
+
+export interface OfficialGoalieStats {
+  number: number;
+  name: string;
+  classYear: string;
+  position: string;
+  saves: number;
+  gamesPlayed: number;
+}
+
+export const PEDDIE_OFFICIAL_SEASON_SCORING_2026: OfficialScoringPlayer[] = [
+  { number: 28, name: 'Tommy Kim', classYear: 'Senior', position: 'F', goals: 12, assists: 4, points: 28, isStarting: true, startingPosition: 'ST' },
+  { number: 13, name: 'Christian Tharney', classYear: 'Senior', position: 'M', goals: 10, assists: 5, points: 25, isStarting: true, startingPosition: 'CDM' },
+  { number: 7, name: 'Bennett Cucchiara', classYear: 'Freshman', position: 'M', goals: 3, assists: 3, points: 9, isStarting: true, startingPosition: 'LM' },
+  { number: 10, name: 'Quinn Wachtveitl', classYear: 'Senior', position: 'M', goals: 2, assists: 4, points: 8, isStarting: true, startingPosition: 'ST' },
+  { number: 2, name: 'Wyatt Raya', classYear: 'Sophomore', position: 'M', goals: 3, assists: 1, points: 7 },
+  { number: 9, name: 'Michael Pratt', classYear: 'Sophomore', position: 'F', goals: 2, assists: 3, points: 7 },
+  { number: 22, name: 'Carson Wiley', classYear: 'Junior', position: 'B', goals: 2, assists: 1, points: 5, isStarting: true, startingPosition: 'CB' },
+  { number: 14, name: 'Rayyaan Mohiuddin', classYear: 'Junior', position: 'M', goals: 1, assists: 2, points: 4, isStarting: true, startingPosition: 'CAM' },
+  { number: 12, name: 'Noah Eldessouky', classYear: 'Senior', position: 'B', goals: 0, assists: 2, points: 2, isStarting: true, startingPosition: 'LB' },
+  { number: 6, name: 'Jeet Sinha', classYear: 'Junior', position: 'M', goals: 1, assists: 0, points: 2 },
+  { number: 25, name: 'Harry Xiao', classYear: 'Junior', position: 'M', goals: 1, assists: 0, points: 2 },
+  { number: 20, name: 'Jeffrey Zhang', classYear: 'Junior', position: 'M', goals: 0, assists: 1, points: 1 },
+  { number: 18, name: 'Brody Rozo', classYear: 'Sophomore', position: 'M', goals: 0, assists: 1, points: 1 },
+];
+
+export const PEDDIE_OFFICIAL_GOALIE_2026: OfficialGoalieStats = {
+  number: 98,
+  name: 'Dylan McKenzie',
+  classYear: 'Junior',
+  position: 'G',
+  saves: 41,
+  gamesPlayed: 7
+};
+
+export const PEDDIE_OFFICIAL_TEAM_TOTALS_2026 = {
+  goals: 37,
+  assists: 27,
+  points: 101,
+  goalieSaves: 41,
+  gamesPlayed: 7,
+  startingLM: { number: 7, name: 'Bennett Cucchiara', position: 'LM', classYear: 'Freshman' },
+  startingRM: { number: 26, name: 'Blake Romanelli', position: 'RM', classYear: 'Sophomore' },
+};
+
+export const PEDDIE_CAPTAINS_2026 = [
+  { number: 12, name: 'Noah Eldessouky', classYear: 'Senior', position: 'LB', role: 'Defensive Anchor & Captain' },
+  { number: 28, name: 'Tommy Kim', classYear: 'Senior', position: 'ST', role: 'Attacking Spearhead & Captain' },
+  { number: 14, name: 'Rayyaan Mohiuddin', classYear: 'Junior', position: 'CAM', role: 'Playmaking Conductor & Captain' },
+  { number: 13, name: 'Christian Tharney', classYear: 'Senior', position: 'CDM', role: 'Midfield Commander & Captain' },
+] as const;
+
 
 export const PEDDIE_JV_ROSTER_2026_2027: Player[] = [
   {
@@ -1309,7 +1391,7 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     xTOpponent: 1.48,
     videoUrl: 'https://app.veo.co/matches/20260901-vs-peddie-v4d69c3b/',
     hudlUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/video',
-    filmProvider: 'hudl',
+    filmProvider: 'both',
     thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
     scoutingReportId: 'christian-school',
     keySummary: 'High-octane Mercer County battle at Trenton Central (4-3-0). Peddie struck twice through Tommy Kim (#28) and Jeffrey Zhang (#20), but conceded late off rapid transition counters.',
@@ -1387,6 +1469,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-5',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/cded00c6-bb03-4a7d-ad64-bc747f764f62_1788317479.555815/video.mp4?v=gjk_1dSv',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Sept 22, 2026',
     gameTime: '4:00 PM',
@@ -1402,13 +1487,15 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     projectedScore: 'Peddie 9-2',
     scoutingReportId: 'life-center',
     hudlUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/schedule',
-    filmProvider: 'hudl',
     keySummary: 'Physical non-conference test against Life Center Academy (1-5-0). Model predicts 86% Peddie win probability (projected 9-2). Focus on aerial second-ball domination by Brody Rozo (#18) and capitalizing on Life Center defensive disorganization.',
     sourceUrl: 'https://www.maxpreps.com/nj/burlington/life-center-academy-warriors/soccer/boys/schedule/',
     sourceLabel: 'MaxPreps: Life Center Academy (Peddie 9-2 W)'
   },
   {
     id: 'm-6',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f07ba327-7225-4d16-ab40-207b712e2705_1788317479.555815/video.mp4?v=2VxPy6iu',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Sept 24, 2026',
     gameTime: '4:30 PM',
@@ -1424,13 +1511,15 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
     projectedScore: 'Peddie 8-2',
     scoutingReportId: 'rutgers-prep',
     hudlUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/schedule',
-    filmProvider: 'hudl',
     keySummary: 'Showcase matchup against technical Somerset County foe Rutgers Prep (2-3-0). Peddie holds a 78% win probability (projected 8-2). Key matchup: Captain Rayyaan Mohiuddin (#14) dictating tempo and exploiting Rutgers Prep transition gaps.',
     sourceUrl: 'https://www.maxpreps.com/nj/somerset/rutgers-prep-argonauts/soccer/',
     sourceLabel: 'MaxPreps: Rutgers Prep Argonauts (Peddie 8-2 W)'
   },
   {
     id: 'm-7',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/fe533807-2f40-403c-b49a-8b528bc76a1e_1788317479.555815/video.mp4?v=2XbKbMD2',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Sept 26, 2026',
     gameTime: '1:30 PM',
@@ -1454,6 +1543,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-8',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/06cc928b-6a11-40e9-85ae-01bf1d34dca8_1788317479.555815/video.mp4?v=00ys9FWU',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Sept 30, 2026',
     gameTime: '4:15 PM',
@@ -1476,6 +1568,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-9',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c049e62-a5bf-418f-934d-74b1d09f43d9_1788317479.555815/video.mp4?v=Nhvja1fS',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Oct 3, 2026',
     gameTime: '1:30 PM',
@@ -1498,6 +1593,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-10',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/c8ce0eb8-d651-4193-a476-ecc79ff6d247_1788317479.555815/video.mp4?v=iD5jIntY',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Oct 7, 2026',
     gameTime: '4:30 PM',
@@ -1519,6 +1617,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-11',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1c160071-7c95-495f-9083-746380345b00_1788317479.555815/video.mp4?v=St2s4S9u',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Oct 10, 2026',
     gameTime: '1:00 PM',
@@ -1541,6 +1642,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-12',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/00d9a0b2-e89b-46f4-b02f-31c6981dce41_1788317479.555815/video.mp4?v=daL9_KhM',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Oct 17, 2026',
     gameTime: '1:00 PM',
@@ -1563,6 +1667,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-13',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f7d5ec37-6dc4-461e-843c-128f2e82c1df_1788317479.555815/video.mp4?v=OIMYNrKJ',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Oct 20, 2026',
     gameTime: '4:00 PM',
@@ -1585,6 +1692,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-14',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/955497fe-8896-48bf-aaf6-4d4a0418b6fa_1788317479.555815/video.mp4?v=VIt--J5f',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Oct 24, 2026',
     gameTime: '4:00 PM',
@@ -1609,6 +1719,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-15',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/7c9d8fdf-ab12-456e-854a-a3b685d7aa05_1788317479.555815/video.mp4?v=BXlEsn3q',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Oct 31, 2026',
     gameTime: '1:00 PM',
@@ -1631,6 +1744,9 @@ export const PEDDIE_SCHEDULE_2026_2027: MatchFixture[] = [
   },
   {
     id: 'm-16',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/2dc977f1-451b-4319-8b7f-a350caa01420_1788317479.555815/video.mp4?v=QbeHPDVs',
+    thumbnailUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/standard/machine/c53c9a17/thumbnail.jpg',
+    filmProvider: 'both',
     season: '2026-2027',
     matchDate: 'Nov 7, 2026',
     gameTime: '2:00 PM',
@@ -1669,9 +1785,9 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CDM', playerNumber: 13, playerName: 'Tharney (C)', xPct: 50, yPct: 58, role: 'Deep-Lying Anchor (Captain)' },
       { position: 'LM', playerNumber: 10, playerName: 'Wachtveitl', xPct: 34, yPct: 44, role: 'Box-to-Box Left Midfielder' },
       { position: 'CAM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 66, yPct: 42, role: 'Advanced Free 10 (Captain)' },
-      { position: 'LW', playerNumber: 19, playerName: 'Gimbel', xPct: 18, yPct: 24, role: 'Inside Forward' },
+      { position: 'LW', playerNumber: 7, playerName: 'Cucchiara', xPct: 18, yPct: 24, role: 'Starting Left Winger' },
       { position: 'ST', playerNumber: 28, playerName: 'Kim T (C)', xPct: 50, yPct: 16, role: 'Complete Forward (Captain)' },
-      { position: 'RW', playerNumber: 7, playerName: 'Cuchera', xPct: 82, yPct: 24, role: 'Touchline Winger & Set-Piece Specialist' }
+      { position: 'RW', playerNumber: 26, playerName: 'Romanelli', xPct: 82, yPct: 24, role: 'Starting Right Winger' }
     ]
   },
   '4-2-3-1': {
@@ -1689,9 +1805,9 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CDM', playerNumber: 13, playerName: 'Tharney (C)', xPct: 38, yPct: 60, role: 'Double Pivot Anchor (Captain)' },
       { position: 'CDM', playerNumber: 6, playerName: 'Sinha', xPct: 62, yPct: 60, role: 'Double Pivot Right' },
       { position: 'CAM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 50, yPct: 38, role: 'Central Playmaker (Captain)' },
-      { position: 'LM', playerNumber: 10, playerName: 'Wachtveitl', xPct: 18, yPct: 26, role: 'Left Midfielder' },
+      { position: 'LM', playerNumber: 7, playerName: 'Cucchiara', xPct: 18, yPct: 26, role: 'Starting Left Midfielder' },
       { position: 'ST', playerNumber: 28, playerName: 'Kim T (C)', xPct: 50, yPct: 15, role: 'Striker (Captain)' },
-      { position: 'RM', playerNumber: 7, playerName: 'Cuchera', xPct: 82, yPct: 26, role: 'Right Midfielder' }
+      { position: 'RM', playerNumber: 26, playerName: 'Romanelli', xPct: 82, yPct: 26, role: 'Starting Right Midfielder' }
     ]
   },
   '3-5-2': {
@@ -1707,9 +1823,9 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CB', playerNumber: 5, playerName: 'Lam', xPct: 72, yPct: 78, role: 'Right Center Back' },
       { position: 'LB', playerNumber: 12, playerName: 'Eldessouky (C)', xPct: 12, yPct: 52, role: 'Left Wing-Back (Captain)' },
       { position: 'CDM', playerNumber: 13, playerName: 'Tharney (C)', xPct: 50, yPct: 56, role: 'Central Midfield Anchor (Captain)' },
-      { position: 'LM', playerNumber: 10, playerName: 'Wachtveitl', xPct: 34, yPct: 44, role: 'Left Central Midfielder' },
+      { position: 'LM', playerNumber: 7, playerName: 'Cucchiara', xPct: 34, yPct: 44, role: 'Starting Left Midfielder' },
       { position: 'CAM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 66, yPct: 44, role: 'Attacking Midfielder (Captain)' },
-      { position: 'RM', playerNumber: 7, playerName: 'Cuchera', xPct: 88, yPct: 52, role: 'Right Wing-Back' },
+      { position: 'RM', playerNumber: 26, playerName: 'Romanelli', xPct: 88, yPct: 52, role: 'Starting Right Midfielder' },
       { position: 'ST', playerNumber: 28, playerName: 'Kim T (C)', xPct: 38, yPct: 18, role: 'Target Striker (Captain)' },
       { position: 'ST', playerNumber: 20, playerName: 'Zhang', xPct: 62, yPct: 18, role: 'Second Striker' }
     ]
@@ -1717,11 +1833,11 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
   '4-4-2': {
     id: '4-4-2',
     name: '4-4-2 Diamond Midfield (Peddie Primary System)',
-    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor Captain #13 Christian Tharney, wide midfielders #6 Jeet Sinha (LM) and #7 Bennett Cuchera (RM), and Captain #14 Rayyaan Mohiuddin conducting as CAM behind twin strikers Captain #28 Tommy Kim and Co-Captain #10 Quinn Wachtveitl (with #20 Jeffrey Zhang in strike rotation). Backline anchored by #5 Gabriel Lam (RB), #22 Carson Wiley (CB), #8 Owen Bonchev (CB), and Captain #12 Noah Eldessouky (LB).',
+    description: 'Classical 4-4-2 Diamond (4-1-2-1-2) with single-pivot anchor Captain #13 Christian Tharney, starting wide midfielders #7 Bennett Cucchiara (LM) and #26 Blake Romanelli (RM), and Captain #14 Rayyaan Mohiuddin conducting as CAM behind twin strikers Captain #28 Tommy Kim and #10 Quinn Wachtveitl (with #20 Jeffrey Zhang in strike rotation). Backline anchored by #5 Gabriel Lam (RB), #22 Carson Wiley (CB), #8 Owen Bonchev (CB), and Captain #12 Noah Eldessouky (LB).',
     strengths: [
       'Unmatched central midfield numerical dominance (4v3 / 4v2)',
-      'Dual striking power with Captain Tommy Kim (#28) and Co-Captain Quinn Wachtveitl (#10)',
-      'Aerial and physical dominance in attack with #10 Quinn Wachtveitl (ST) and flank service from #6 Jeet Sinha (LM) and #7 Bennett Cuchera (RM)',
+      'Dual striking power with Captain Tommy Kim (#28) and Quinn Wachtveitl (#10)',
+      'Aerial and physical dominance in attack with #10 Quinn Wachtveitl (ST) and flank service from starting LM #7 Bennett Cucchiara and starting RM #26 Blake Romanelli',
       'Resilient backline shield with Captain Christian Tharney (#13) anchoring at CDM in front of Wiley and Bonchev'
     ],
     vulnerabilities: [
@@ -1735,8 +1851,8 @@ export const FORMATIONS_CONFIG: Record<string, FormationConfig> = {
       { position: 'CB', playerNumber: 22, playerName: 'Wiley', xPct: 62, yPct: 80, role: 'Stopper Center Back' },
       { position: 'RB', playerNumber: 5, playerName: 'Lam', xPct: 84, yPct: 76, role: 'Starting Right Fullback' },
       { position: 'CDM', playerNumber: 13, playerName: 'Tharney (C)', xPct: 50, yPct: 64, role: 'Diamond Base Holding Anchor (Captain)' },
-      { position: 'LM', playerNumber: 6, playerName: 'Sinha', xPct: 24, yPct: 48, role: 'Left Midfielder' },
-      { position: 'RM', playerNumber: 7, playerName: 'Cuchera', xPct: 76, yPct: 48, role: 'Right Midfielder' },
+      { position: 'LM', playerNumber: 7, playerName: 'Cucchiara', xPct: 24, yPct: 48, role: 'Starting Left Midfielder' },
+      { position: 'RM', playerNumber: 26, playerName: 'Romanelli', xPct: 76, yPct: 48, role: 'Starting Right Midfielder' },
       { position: 'CAM', playerNumber: 14, playerName: 'Mohiuddin (C)', xPct: 50, yPct: 34, role: 'Diamond Tip Playmaker (Captain)' },
       { position: 'ST', playerNumber: 28, playerName: 'Kim T (C)', xPct: 38, yPct: 16, role: 'Striker / Forward (Captain)' },
       { position: 'ST', playerNumber: 10, playerName: 'Wachtveitl (C)', xPct: 62, yPct: 16, role: 'Striker / Target Forward' }
@@ -2781,7 +2897,7 @@ export const MATCH_EVENTS_VEO_LAWRENCEVILLE: MatchEvent[] = [
     phase: 'Open Play',
     startX: 18,
     startY: 34,
-    description: 'LVR Film Scout: Fairchild sweeps 20 yards outside box to snuff out diagonal through-ball.'
+    description: 'Lawrenceville Film Scout: Fairchild sweeps 20 yards outside box to snuff out diagonal through-ball.'
   },
   {
     id: 'lvr-scout-2',
@@ -2797,7 +2913,7 @@ export const MATCH_EVENTS_VEO_LAWRENCEVILLE: MatchEvent[] = [
     phase: 'Set Piece',
     startX: 12,
     startY: 32,
-    description: 'LVR Film Scout: Cruz dominant aerial header on opposing corner kick.'
+    description: 'Lawrenceville Film Scout: Cruz dominant aerial header on opposing corner kick.'
   },
   {
     id: 'lvr-scout-3',
@@ -2813,7 +2929,7 @@ export const MATCH_EVENTS_VEO_LAWRENCEVILLE: MatchEvent[] = [
     phase: 'Open Play',
     startX: 45,
     startY: 55,
-    description: 'PEDDIE TACTICAL COUNTER: LVR right back caught high; Tharney diagonal switch isolates Cucchiara on weak side.'
+    description: 'PEDDIE TACTICAL COUNTER: Lawrenceville Big Red right back caught high; Tharney diagonal switch isolates Cucchiara on weak side.'
   },
   {
     id: 'lvr-scout-4',
@@ -2829,7 +2945,7 @@ export const MATCH_EVENTS_VEO_LAWRENCEVILLE: MatchEvent[] = [
     phase: 'High Press',
     startX: 52,
     startY: 34,
-    description: 'LVR Film Scout: Tristan Sterling (#8) coordinates 3-man midfield press swarm forcing backwards pass.'
+    description: 'Lawrenceville Film Scout: Tristan Sterling (#8) coordinates 3-man midfield press swarm forcing backwards pass.'
   }
 ];
 
@@ -2848,7 +2964,7 @@ export const MATCH_EVENTS_VEO_PENNINGTON: MatchEvent[] = [
     phase: 'High Press',
     startX: 65,
     startY: 35,
-    description: 'PEN Film Scout: DeSilva leads 4-man Gegenpress swarm in final third to win possession in 3 seconds.'
+    description: 'Pennington Film Scout: Lucas DeSilva leads 4-man Gegenpress swarm in final third to win possession in 3 seconds.'
   },
   {
     id: 'pen-scout-2',
@@ -2864,7 +2980,7 @@ export const MATCH_EVENTS_VEO_PENNINGTON: MatchEvent[] = [
     phase: 'Open Play',
     startX: 10,
     startY: 34,
-    description: 'PEN Film Scout: D1 commit Mateo Rossi world-class point-blank reflex save inside 6-yard box.'
+    description: 'Pennington Film Scout: D1 commit Mateo Rossi world-class point-blank reflex save inside 6-yard box.'
   },
   {
     id: 'pen-scout-3',
@@ -2880,7 +2996,7 @@ export const MATCH_EVENTS_VEO_PENNINGTON: MatchEvent[] = [
     phase: 'Counter Attack',
     startX: 40,
     startY: 60,
-    description: 'PEDDIE TACTICAL COUNTER: DeSilva overcommits ball-side; Tharney long diagonal switch to Cucchiara behind left wingback.'
+    description: 'PEDDIE TACTICAL COUNTER: Pennington midfielder DeSilva overcommits ball-side; Tharney long diagonal switch to Cucchiara behind left wingback.'
   },
   {
     id: 'pen-scout-4',
@@ -2896,7 +3012,7 @@ export const MATCH_EVENTS_VEO_PENNINGTON: MatchEvent[] = [
     phase: 'Counter Attack',
     startX: 18,
     startY: 32,
-    description: 'PEN Film Scout: Lucas DeSilva (#10) triggers rapid 3-touch vertical interplay slicing through defensive line.'
+    description: 'Pennington Film Scout: Lucas DeSilva (#10) triggers rapid 3-touch vertical interplay slicing through defensive line.'
   }
 ];
 
@@ -2967,6 +3083,679 @@ export const MATCH_EVENTS_VEO_BLAIR: MatchEvent[] = [
   }
 ];
 
+
+export const MATCH_EVENTS_VEO_RUTGERS: MatchEvent[] = [
+  {
+    id: 'rut-event-1',
+    minute: 12,
+    second: 40,
+    period: 1,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 28,
+    playerName: 'Tommy Kim (C)',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f07ba327-7225-4d16-ab40-207b712e2705_1788317479.555815/video.mp4?v=2VxPy6iu',
+    expectedGoals: 0.42,
+    success: true,
+    phase: 'Open Play',
+    startX: 84,
+    startY: 32,
+    description: 'PEDDIE GOAL! Captain Tommy Kim (#28) opens scoring against Rutgers Prep, finishing a through-ball from Captain Rayyaan Mohiuddin (#14).'
+  },
+  {
+    id: 'rut-event-2',
+    minute: 28,
+    second: 15,
+    period: 1,
+    type: 'Save',
+    team: 'Peddie',
+    playerNumber: 98,
+    playerName: 'Dylan McKenzie',
+    expectedGoals: 0.35,
+    success: true,
+    phase: 'Open Play',
+    startX: 12,
+    startY: 34,
+    description: 'Dylan McKenzie (#98) parries a dangerous curling strike from Rutgers Prep midfielder Alexander Novak.'
+  },
+  {
+    id: 'rut-event-3',
+    minute: 41,
+    second: 20,
+    period: 1,
+    type: 'Key Pass',
+    team: 'Peddie',
+    playerNumber: 12,
+    playerName: 'Noah Eldessouky (C)',
+    expectedGoals: 0.28,
+    success: true,
+    phase: 'Counter Attack',
+    startX: 52,
+    startY: 78,
+    description: 'Captain Noah Eldessouky (#12) delivers a pinpoint 45-yard diagonal switch to Starting LM Bennett Cucchiara (#7) behind the Rutgers Prep line.'
+  },
+  {
+    id: 'rut-event-4',
+    minute: 53,
+    second: 10,
+    period: 2,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 13,
+    playerName: 'Christian Tharney (C)',
+    expectedGoals: 0.38,
+    success: true,
+    phase: 'Set Piece',
+    startX: 90,
+    startY: 36,
+    description: 'PEDDIE GOAL! Captain Christian Tharney (#13) powers a bullet header past the keeper from Bennett Cucchiara corner.'
+  },
+  {
+    id: 'rut-event-5',
+    minute: 67,
+    second: 45,
+    period: 2,
+    type: 'Press Trap',
+    team: 'Peddie',
+    playerNumber: 26,
+    playerName: 'Blake Romanelli',
+    expectedGoals: 0.15,
+    success: true,
+    phase: 'High Press',
+    startX: 68,
+    startY: 18,
+    description: 'Starting RM Blake Romanelli (#26) and Jeet Sinha (#6) execute a coordinated touchline trap to dispossess Rutgers Prep fullback.'
+  }
+];
+
+export const MATCH_EVENTS_VEO_DELRAN: MatchEvent[] = [
+  {
+    id: 'del-event-1',
+    minute: 16,
+    second: 25,
+    period: 1,
+    type: 'Save',
+    team: 'Peddie',
+    playerNumber: 98,
+    playerName: 'Dylan McKenzie',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/06cc928b-6a11-40e9-85ae-01bf1d34dca8_1788317479.555815/video.mp4?v=00ys9FWU',
+    expectedGoals: 0.44,
+    success: true,
+    phase: 'Open Play',
+    startX: 10,
+    startY: 34,
+    description: 'Dylan McKenzie (#98) makes a spectacular fingertip diving save to deny Delran striker in 1v1 breakaway.'
+  },
+  {
+    id: 'del-event-2',
+    minute: 34,
+    second: 50,
+    period: 1,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 28,
+    playerName: 'Tommy Kim (C)',
+    expectedGoals: 0.46,
+    success: true,
+    phase: 'Open Play',
+    startX: 86,
+    startY: 30,
+    description: 'PEDDIE GOAL! Captain Tommy Kim (#28) slips past Delran center-backs and chips the onrushing goalkeeper.'
+  },
+  {
+    id: 'del-event-3',
+    minute: 49,
+    second: 15,
+    period: 2,
+    type: 'Key Pass',
+    team: 'Peddie',
+    playerNumber: 14,
+    playerName: 'Rayyaan Mohiuddin (C)',
+    expectedGoals: 0.32,
+    success: true,
+    phase: 'Build-up',
+    startX: 64,
+    startY: 42,
+    description: 'Captain Rayyaan Mohiuddin (#14) executes a disguised reverse pass breaking Delran defensive line.'
+  },
+  {
+    id: 'del-event-4',
+    minute: 62,
+    second: 30,
+    period: 2,
+    type: 'Tackle',
+    team: 'Peddie',
+    playerNumber: 12,
+    playerName: 'Noah Eldessouky (C)',
+    expectedGoals: 0.08,
+    success: true,
+    phase: 'Counter Attack',
+    startX: 32,
+    startY: 75,
+    description: 'Captain Noah Eldessouky (#12) executes a sliding tackle into touch, completely halting Delran wing counter.'
+  },
+  {
+    id: 'del-event-5',
+    minute: 78,
+    second: 10,
+    period: 2,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 2,
+    playerName: 'Wyatt Raya',
+    expectedGoals: 0.31,
+    success: true,
+    phase: 'Open Play',
+    startX: 79,
+    startY: 38,
+    description: 'PEDDIE GOAL! Wyatt Raya (#2) curls a 20-yard strike into bottom left corner to secure 2-1 win over Delran.'
+  }
+];
+
+export const MATCH_EVENTS_VEO_MERCERSBURG: MatchEvent[] = [
+  {
+    id: 'mer-event-1',
+    minute: 14,
+    second: 20,
+    period: 1,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 28,
+    playerName: 'Tommy Kim (C)',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/4c049e62-a5bf-418f-934d-74b1d09f43d9_1788317479.555815/video.mp4?v=Nhvja1fS',
+    expectedGoals: 0.40,
+    success: true,
+    phase: 'Open Play',
+    startX: 85,
+    startY: 35,
+    description: 'PEDDIE GOAL! Captain Tommy Kim (#28) strikes early in MAPL road clash at Mercersburg Academy.'
+  },
+  {
+    id: 'mer-event-2',
+    minute: 30,
+    second: 45,
+    period: 1,
+    type: 'Interception',
+    team: 'Peddie',
+    playerNumber: 13,
+    playerName: 'Christian Tharney (C)',
+    expectedGoals: 0.06,
+    success: true,
+    phase: 'Build-up',
+    startX: 48,
+    startY: 50,
+    description: 'Captain Christian Tharney (#13) steps into passing lane, cutting off Mercersburg central distributor.'
+  },
+  {
+    id: 'mer-event-3',
+    minute: 45,
+    second: 10,
+    period: 1,
+    type: 'Save',
+    team: 'Peddie',
+    playerNumber: 98,
+    playerName: 'Dylan McKenzie',
+    expectedGoals: 0.38,
+    success: true,
+    phase: 'Set Piece',
+    startX: 12,
+    startY: 34,
+    description: 'Dylan McKenzie (#98) tips Mercersburg free kick over crossbar just before halftime.'
+  },
+  {
+    id: 'mer-event-4',
+    minute: 61,
+    second: 30,
+    period: 2,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 22,
+    playerName: 'Carson Wiley',
+    expectedGoals: 0.35,
+    success: true,
+    phase: 'Set Piece',
+    startX: 92,
+    startY: 33,
+    description: 'PEDDIE GOAL! Carson Wiley (#22) heads home from outswinging cross in Mercersburg penalty box.'
+  },
+  {
+    id: 'mer-event-5',
+    minute: 75,
+    second: 15,
+    period: 2,
+    type: 'Key Pass',
+    team: 'Peddie',
+    playerNumber: 26,
+    playerName: 'Blake Romanelli',
+    expectedGoals: 0.29,
+    success: true,
+    phase: 'Counter Attack',
+    startX: 65,
+    startY: 15,
+    description: 'Starting RM Blake Romanelli (#26) beats his defender and drives low cross into danger area against Mercersburg.'
+  }
+];
+
+export const MATCH_EVENTS_VEO_WILBERFORCE: MatchEvent[] = [
+  {
+    id: 'wil-event-1',
+    minute: 11,
+    second: 30,
+    period: 1,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 28,
+    playerName: 'Tommy Kim (C)',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/c8ce0eb8-d651-4193-a476-ecc79ff6d247_1788317479.555815/video.mp4?v=iD5jIntY',
+    expectedGoals: 0.48,
+    success: true,
+    phase: 'Open Play',
+    startX: 88,
+    startY: 34,
+    description: 'PEDDIE GOAL! Captain Tommy Kim (#28) finishes cleanly past Wilberforce goalkeeper inside 15 minutes.'
+  },
+  {
+    id: 'wil-event-2',
+    minute: 26,
+    second: 40,
+    period: 1,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 7,
+    playerName: 'Bennett Cucchiara',
+    expectedGoals: 0.36,
+    success: true,
+    phase: 'Counter Attack',
+    startX: 84,
+    startY: 68,
+    description: 'PEDDIE GOAL! Starting LM Bennett Cucchiara (#7) cuts inside and drives a 18-yard shot into side netting vs Wilberforce.'
+  },
+  {
+    id: 'wil-event-3',
+    minute: 39,
+    second: 15,
+    period: 1,
+    type: 'Key Pass',
+    team: 'Peddie',
+    playerNumber: 14,
+    playerName: 'Rayyaan Mohiuddin (C)',
+    expectedGoals: 0.33,
+    success: true,
+    phase: 'Open Play',
+    startX: 62,
+    startY: 45,
+    description: 'Captain Rayyaan Mohiuddin (#14) threads a through-ball unlocking Wilberforce low block.'
+  },
+  {
+    id: 'wil-event-4',
+    minute: 58,
+    second: 20,
+    period: 2,
+    type: 'Save',
+    team: 'Peddie',
+    playerNumber: 98,
+    playerName: 'Dylan McKenzie',
+    expectedGoals: 0.25,
+    success: true,
+    phase: 'Open Play',
+    startX: 11,
+    startY: 34,
+    description: 'Dylan McKenzie (#98) secures a clean sheet with sharp reflex catch against Wilberforce.'
+  },
+  {
+    id: 'wil-event-5',
+    minute: 74,
+    second: 45,
+    period: 2,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 6,
+    playerName: 'Jeet Sinha',
+    expectedGoals: 0.27,
+    success: true,
+    phase: 'Open Play',
+    startX: 80,
+    startY: 25,
+    description: 'PEDDIE GOAL! Jeet Sinha (#6) curls an exquisite long-range strike into upper corner to make it 4-0 over Wilberforce.'
+  }
+];
+
+export const MATCH_EVENTS_VEO_HILL: MatchEvent[] = [
+  {
+    id: 'hil-event-1',
+    minute: 18,
+    second: 15,
+    period: 1,
+    type: 'Tackle',
+    team: 'Peddie',
+    playerNumber: 12,
+    playerName: 'Noah Eldessouky (C)',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/1c160071-7c95-495f-9083-746380345b00_1788317479.555815/video.mp4?v=St2s4S9u',
+    expectedGoals: 0.05,
+    success: true,
+    phase: 'High Press',
+    startX: 42,
+    startY: 82,
+    description: 'Captain Noah Eldessouky (#12) wins a fierce physical duel along touchline against The Hill School winger.'
+  },
+  {
+    id: 'hil-event-2',
+    minute: 32,
+    second: 50,
+    period: 1,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 13,
+    playerName: 'Christian Tharney (C)',
+    expectedGoals: 0.34,
+    success: true,
+    phase: 'Set Piece',
+    startX: 91,
+    startY: 35,
+    description: 'PEDDIE GOAL! Captain Christian Tharney (#13) heads in set-piece delivery in gritty MAPL contest at The Hill School.'
+  },
+  {
+    id: 'hil-event-3',
+    minute: 48,
+    second: 20,
+    period: 2,
+    type: 'Save',
+    team: 'Peddie',
+    playerNumber: 98,
+    playerName: 'Dylan McKenzie',
+    expectedGoals: 0.45,
+    success: true,
+    phase: 'Set Piece',
+    startX: 12,
+    startY: 34,
+    description: 'Dylan McKenzie (#98) lunges to push The Hill School captain Rowan MacCallum header wide of the post.'
+  },
+  {
+    id: 'hil-event-4',
+    minute: 64,
+    second: 10,
+    period: 2,
+    type: 'Press Trap',
+    team: 'Peddie',
+    playerNumber: 14,
+    playerName: 'Rayyaan Mohiuddin (C)',
+    expectedGoals: 0.18,
+    success: true,
+    phase: 'Counter Attack',
+    startX: 58,
+    startY: 45,
+    description: 'Captain Rayyaan Mohiuddin (#14) triggers high-press trap forcing The Hill School turnover in central third.'
+  },
+  {
+    id: 'hil-event-5',
+    minute: 77,
+    second: 30,
+    period: 2,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 28,
+    playerName: 'Tommy Kim (C)',
+    expectedGoals: 0.44,
+    success: true,
+    phase: 'Counter Attack',
+    startX: 87,
+    startY: 32,
+    description: 'PEDDIE GOAL! Captain Tommy Kim (#28) scores match-winner on breakaway to triumph 2-1 over The Hill School!'
+  }
+];
+
+export const MATCH_EVENTS_VEO_WWP_SOUTH: MatchEvent[] = [
+  {
+    id: 'wwp-event-1',
+    minute: 15,
+    second: 35,
+    period: 1,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 28,
+    playerName: 'Tommy Kim (C)',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/00d9a0b2-e89b-46f4-b02f-31c6981dce41_1788317479.555815/video.mp4?v=daL9_KhM',
+    expectedGoals: 0.45,
+    success: true,
+    phase: 'Open Play',
+    startX: 85,
+    startY: 36,
+    description: 'PEDDIE GOAL! Captain Tommy Kim (#28) strikes early in local rivalry matchup against West Windsor-Plainsboro South.'
+  },
+  {
+    id: 'wwp-event-2',
+    minute: 33,
+    second: 15,
+    period: 1,
+    type: 'Save',
+    team: 'Peddie',
+    playerNumber: 98,
+    playerName: 'Dylan McKenzie',
+    expectedGoals: 0.36,
+    success: true,
+    phase: 'Open Play',
+    startX: 11,
+    startY: 34,
+    description: 'Dylan McKenzie (#98) smothers a low driven shot from WW-P South attacking midfielder.'
+  },
+  {
+    id: 'wwp-event-3',
+    minute: 47,
+    second: 40,
+    period: 2,
+    type: 'Key Pass',
+    team: 'Peddie',
+    playerNumber: 7,
+    playerName: 'Bennett Cucchiara',
+    expectedGoals: 0.31,
+    success: true,
+    phase: 'Counter Attack',
+    startX: 68,
+    startY: 72,
+    description: 'Starting LM Bennett Cucchiara (#7) whips a dangerous curling ball across the face of the WW-P South goal.'
+  },
+  {
+    id: 'wwp-event-4',
+    minute: 63,
+    second: 20,
+    period: 2,
+    type: 'Tackle',
+    team: 'Peddie',
+    playerNumber: 13,
+    playerName: 'Christian Tharney (C)',
+    expectedGoals: 0.08,
+    success: true,
+    phase: 'Open Play',
+    startX: 45,
+    startY: 48,
+    description: 'Captain Christian Tharney (#13) makes a clean dispossessing challenge in midfield vs WW-P South.'
+  },
+  {
+    id: 'wwp-event-5',
+    minute: 79,
+    second: 50,
+    period: 2,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 9,
+    playerName: 'Michael Pratt',
+    expectedGoals: 0.38,
+    success: true,
+    phase: 'Open Play',
+    startX: 89,
+    startY: 30,
+    description: 'PEDDIE GOAL! Michael Pratt (#9) scores late goal to finalize 3-1 victory over WW-P South.'
+  }
+];
+
+export const MATCH_EVENTS_VEO_HOPEWELL: MatchEvent[] = [
+  {
+    id: 'hop-event-1',
+    minute: 12,
+    second: 20,
+    period: 1,
+    type: 'Save',
+    team: 'Peddie',
+    playerNumber: 98,
+    playerName: 'Dylan McKenzie',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/f7d5ec37-6dc4-461e-843c-128f2e82c1df_1788317479.555815/video.mp4?v=OIMYNrKJ',
+    expectedGoals: 0.48,
+    success: true,
+    phase: 'Open Play',
+    startX: 10,
+    startY: 34,
+    description: 'Dylan McKenzie (#98) pulls off a sensational reaction stop against undefeated NJ #22 Hopewell Valley Central.'
+  },
+  {
+    id: 'hop-event-2',
+    minute: 29,
+    second: 45,
+    period: 1,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 28,
+    playerName: 'Tommy Kim (C)',
+    expectedGoals: 0.43,
+    success: true,
+    phase: 'Counter Attack',
+    startX: 84,
+    startY: 32,
+    description: 'PEDDIE GOAL! Captain Tommy Kim (#28) stuns Hopewell Valley with a ruthless counter-attacking strike.'
+  },
+  {
+    id: 'hop-event-3',
+    minute: 44,
+    second: 15,
+    period: 1,
+    type: 'Interception',
+    team: 'Peddie',
+    playerNumber: 12,
+    playerName: 'Noah Eldessouky (C)',
+    expectedGoals: 0.09,
+    success: true,
+    phase: 'Open Play',
+    startX: 36,
+    startY: 75,
+    description: 'Captain Noah Eldessouky (#12) cuts off Hopewell Valley winger switch with an acrobatic interception.'
+  },
+  {
+    id: 'hop-event-4',
+    minute: 59,
+    second: 30,
+    period: 2,
+    type: 'Press Trap',
+    team: 'Peddie',
+    playerNumber: 13,
+    playerName: 'Christian Tharney (C)',
+    expectedGoals: 0.16,
+    success: true,
+    phase: 'High Press',
+    startX: 55,
+    startY: 45,
+    description: 'Captain Christian Tharney (#13) leads midfield press trap disrupting Hopewell Valley attacking cadence.'
+  },
+  {
+    id: 'hop-event-5',
+    minute: 75,
+    second: 40,
+    period: 2,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 14,
+    playerName: 'Rayyaan Mohiuddin (C)',
+    expectedGoals: 0.39,
+    success: true,
+    phase: 'Open Play',
+    startX: 82,
+    startY: 40,
+    description: 'PEDDIE GOAL! Captain Rayyaan Mohiuddin (#14) scores clutch goal against top-ranked Hopewell Valley!'
+  }
+];
+
+export const MATCH_EVENTS_VEO_HUN: MatchEvent[] = [
+  {
+    id: 'hun-event-1',
+    minute: 17,
+    second: 30,
+    period: 1,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 28,
+    playerName: 'Tommy Kim (C)',
+    videoUrl: 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/7c9d8fdf-ab12-456e-854a-a3b685d7aa05_1788317479.555815/video.mp4?v=BXlEsn3q',
+    expectedGoals: 0.44,
+    success: true,
+    phase: 'Open Play',
+    startX: 86,
+    startY: 33,
+    description: 'PEDDIE GOAL! Captain Tommy Kim (#28) strikes in Princeton rivalry against The Hun School.'
+  },
+  {
+    id: 'hun-event-2',
+    minute: 35,
+    second: 10,
+    period: 1,
+    type: 'Save',
+    team: 'Peddie',
+    playerNumber: 98,
+    playerName: 'Dylan McKenzie',
+    expectedGoals: 0.37,
+    success: true,
+    phase: 'Set Piece',
+    startX: 11,
+    startY: 34,
+    description: 'Dylan McKenzie (#98) reaches high to pluck The Hun School corner kick out of traffic.'
+  },
+  {
+    id: 'hun-event-3',
+    minute: 51,
+    second: 45,
+    period: 2,
+    type: 'Key Pass',
+    team: 'Peddie',
+    playerNumber: 26,
+    playerName: 'Blake Romanelli',
+    expectedGoals: 0.30,
+    success: true,
+    phase: 'Counter Attack',
+    startX: 70,
+    startY: 18,
+    description: 'Starting RM Blake Romanelli (#26) accelerates past The Hun School fullback and delivers an incisive pass.'
+  },
+  {
+    id: 'hun-event-4',
+    minute: 68,
+    second: 20,
+    period: 2,
+    type: 'Goal',
+    team: 'Peddie',
+    playerNumber: 7,
+    playerName: 'Bennett Cucchiara',
+    expectedGoals: 0.38,
+    success: true,
+    phase: 'Open Play',
+    startX: 83,
+    startY: 65,
+    description: 'PEDDIE GOAL! Starting LM Bennett Cucchiara (#7) hammers a low strike into far corner to double lead vs The Hun School.'
+  },
+  {
+    id: 'hun-event-5',
+    minute: 83,
+    second: 15,
+    period: 2,
+    type: 'Tackle',
+    team: 'Peddie',
+    playerNumber: 12,
+    playerName: 'Noah Eldessouky (C)',
+    expectedGoals: 0.06,
+    success: true,
+    phase: 'High Press',
+    startX: 38,
+    startY: 80,
+    description: 'Captain Noah Eldessouky (#12) seals 2-1 victory over The Hun School with a clinical defensive stop.'
+  }
+];
+
 export const ALL_VEO_MATCH_EVENTS: Record<string, MatchEvent[]> = {
   // Official Completed Match Film (2026 Season)
   'm-0': MATCH_EVENTS_VEO_HAVERFORD,     // Sept 1 @ Haverford (0-5)
@@ -2975,15 +3764,23 @@ export const ALL_VEO_MATCH_EVENTS: Record<string, MatchEvent[]> = {
   'm-3': MATCH_EVENTS_VEO_GEORGE,        // Sept 10 vs George School (5-2 W)
   'm-4': MATCH_EVENTS_VEO_PDS,           // Sept 14 vs Princeton Day School (7-1 W)
   
-  // Dedicated Opponent Pre-Match Scout Reels
-  'scout-lca': MATCH_EVENTS_VEO_LIFE_CENTER,     // Life Center Academy Scout Reel
-  'm-5': MATCH_EVENTS_VEO_LIFE_CENTER,
-  'scout-lvr': MATCH_EVENTS_VEO_LAWRENCEVILLE,   // Lawrenceville Big Red MAPL Scout Reel
-  'm-7': MATCH_EVENTS_VEO_LAWRENCEVILLE,
-  'scout-pen': MATCH_EVENTS_VEO_PENNINGTON,      // The Pennington School Prep A Scout Reel
-  'm-14': MATCH_EVENTS_VEO_PENNINGTON,
-  'scout-blr': MATCH_EVENTS_VEO_BLAIR,           // Blair Academy 123rd Classic Scout Reel
-  'm-16': MATCH_EVENTS_VEO_BLAIR,
+  // All 2026 Opponents Match Film & Tactical Feeds
+  'm-5': MATCH_EVENTS_VEO_LIFE_CENTER,   // Sept 22 vs Life Center Academy
+  'scout-lca': MATCH_EVENTS_VEO_LIFE_CENTER,
+  'm-6': MATCH_EVENTS_VEO_RUTGERS,       // Sept 24 vs Rutgers Prep
+  'm-7': MATCH_EVENTS_VEO_LAWRENCEVILLE, // Sept 26 vs Lawrenceville (MAPL Opener)
+  'scout-lvr': MATCH_EVENTS_VEO_LAWRENCEVILLE,
+  'm-8': MATCH_EVENTS_VEO_DELRAN,        // Sept 30 vs Delran
+  'm-9': MATCH_EVENTS_VEO_MERCERSBURG,   // Oct 3 @ Mercersburg Academy
+  'm-10': MATCH_EVENTS_VEO_WILBERFORCE,  // Oct 7 vs The Wilberforce School
+  'm-11': MATCH_EVENTS_VEO_HILL,         // Oct 10 @ The Hill School (MAPL)
+  'm-12': MATCH_EVENTS_VEO_WWP_SOUTH,    // Oct 14 vs West Windsor-Plainsboro South
+  'm-13': MATCH_EVENTS_VEO_HOPEWELL,     // Oct 20 @ Hopewell Valley Central (NJ #22)
+  'm-14': MATCH_EVENTS_VEO_PENNINGTON,   // Oct 24 @ The Pennington School (US #8)
+  'scout-pen': MATCH_EVENTS_VEO_PENNINGTON,
+  'm-15': MATCH_EVENTS_VEO_HUN,          // Oct 31 vs The Hun School (MAPL)
+  'm-16': MATCH_EVENTS_VEO_BLAIR,        // Nov 7 @ Blair Academy (123rd Classic)
+  'scout-blr': MATCH_EVENTS_VEO_BLAIR,
 };
 
 export const OPPONENT_VEO_SCOUTING: Record<string, VeoTeamScout> = {
@@ -4529,7 +5326,7 @@ export const PEDDIE_SAC_INTELLIGENCE_REGISTRY: {
       scoreOpponent: 42,
       result: 'W',
       venue: 'Peddie Campus, Hightstown, NJ',
-      filmProvider: 'hudl',
+      filmProvider: 'both',
       filmUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/peddie-school/video',
       filmThumbnail: 'https://images.hudl.com/v2/production/team/34743/thumbnail.jpg',
       statsHighlight: '45 Points Scored | Passing EPA +0.38 | 412 Total Offensive Yards',
@@ -4548,7 +5345,7 @@ export const PEDDIE_SAC_INTELLIGENCE_REGISTRY: {
       scoreOpponent: 27,
       result: 'L',
       venue: 'Peddie Campus, Hightstown, NJ',
-      filmProvider: 'hudl',
+      filmProvider: 'both',
       filmUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/peddie-school/video',
       filmThumbnail: 'https://images.hudl.com/v2/production/team/34743/thumbnail.jpg',
       statsHighlight: '286 Passing Yards | 2 TD Drives | 18 Defensive Tackles for Loss',
@@ -4567,7 +5364,7 @@ export const PEDDIE_SAC_INTELLIGENCE_REGISTRY: {
       scoreOpponent: 41,
       result: 'L',
       venue: 'Pennington, NJ',
-      filmProvider: 'hudl',
+      filmProvider: 'both',
       filmUrl: 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/peddie-school/video',
       filmThumbnail: 'https://images.hudl.com/v2/production/team/34743/thumbnail.jpg',
       statsHighlight: 'Defensive Stand in Red Zone | 3 Sacks Recorded',
@@ -4578,5 +5375,80 @@ export const PEDDIE_SAC_INTELLIGENCE_REGISTRY: {
     }
   ]
 };
+
+// ============================================================================
+// Analytics Aliases & HUDL Film Clips
+// ============================================================================
+export const PASSING_NETWORK_PDS: PassingLink[] = PASSING_NETWORK_DIAMOND;
+export const PHYSICAL_TELEMETRY_PDS: PhysicalTelemetry[] = SQUAD_PHYSICAL_TELEMETRY;
+export const XT_GRID_MODEL_PDS: XTGridModel = XT_GRID_PITCH_MODEL;
+
+export const HUDL_FILM_CLIPS: FilmClip[] = [
+  {
+    id: 'clip-pds-1',
+    matchId: 'm-4',
+    title: "Tommy Kim 8' Precision Opener",
+    description: 'Tommy Kim (#28) strikes clinical finish into bottom corner vs PDS',
+    provider: 'hudl',
+    url: 'https://fan.hudl.com/usa/nj/princeton/organization/18654/princeton-day-school',
+    durationSeconds: 18,
+    clipType: 'goal',
+    tags: 'goal,kim,pds',
+    startSecond: 480,
+    endSecond: 498
+  },
+  {
+    id: 'clip-pds-2',
+    matchId: 'm-4',
+    title: "Bennett Cucchiara 29' Curling Strike",
+    description: 'Starting LM Bennett Cucchiara (#7) cuts inside and curls into upper netting',
+    provider: 'hudl',
+    url: 'https://fan.hudl.com/usa/nj/princeton/organization/18654/princeton-day-school',
+    durationSeconds: 22,
+    clipType: 'goal',
+    tags: 'goal,cucchiara,pds,lm',
+    startSecond: 1740,
+    endSecond: 1762
+  },
+  {
+    id: 'clip-pds-3',
+    matchId: 'm-4',
+    title: 'Dylan McKenzie 41 Saves Highlights',
+    description: 'Dylan McKenzie (#98) diving fingertip save in Mercer County Derby',
+    provider: 'hudl',
+    url: 'https://fan.hudl.com/usa/nj/princeton/organization/18654/princeton-day-school',
+    durationSeconds: 15,
+    clipType: 'save',
+    tags: 'save,mckenzie,pds,gk',
+    startSecond: 2800,
+    endSecond: 2815
+  },
+  {
+    id: 'clip-george-1',
+    matchId: 'm-3',
+    title: "Blake Romanelli 83' Clinical Counter",
+    description: 'Starting RM Blake Romanelli (#26) breaks down right channel at 21.8 mph',
+    provider: 'hudl',
+    url: 'https://fan.hudl.com/usa/pa/newtown/organization/15467/george-school',
+    durationSeconds: 20,
+    clipType: 'goal',
+    tags: 'goal,romanelli,george,rm',
+    startSecond: 4980,
+    endSecond: 5000
+  },
+  {
+    id: 'clip-aquinas-1',
+    matchId: 'm-1',
+    title: "Christian Tharney 58' Towering Header",
+    description: 'Christian Tharney (#13) bullets towering header from Cucchiara corner',
+    provider: 'hudl',
+    url: 'https://fan.hudl.com/usa/nj/edison/organization/21175/st-thomas-aquinas-high-school',
+    durationSeconds: 25,
+    clipType: 'goal',
+    tags: 'goal,tharney,cucchiara,corner,aquinas',
+    startSecond: 3480,
+    endSecond: 3505
+  }
+];
 
 
