@@ -24,7 +24,9 @@ import {
   Crosshair,
   ListChecks,
   FileText,
-  Zap
+  Zap,
+  Search,
+  Printer
 } from 'lucide-react';
 
 export const Navigation: React.FC = () => {
@@ -133,6 +135,41 @@ export const Navigation: React.FC = () => {
             );
           })}
         </nav>
+
+        {/* Workability Quick Actions & Command Palette Trigger */}
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('open-command-palette'))}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-amber-400/60 text-slate-300 hover:text-white text-xs font-semibold transition group shadow-inner"
+            title="Open Command Palette (⌘K / Ctrl+K)"
+          >
+            <Search className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
+            <span className="hidden sm:inline">Search</span>
+            <kbd className="px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 group-hover:text-amber-300 font-mono text-[9px] font-black border border-slate-700">
+              ⌘K
+            </kbd>
+          </button>
+
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('open-sideline-scratchpad'))}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-400/60 text-slate-300 hover:text-white text-xs font-semibold transition group"
+            title="Sideline Coach Scratchpad (Alt+N)"
+          >
+            <FileText className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" />
+            <span className="hidden md:inline">Notes</span>
+          </button>
+
+          {!isFootball && (
+            <Link
+              href="/dashboard/call-sheet"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 hover:text-amber-300 text-xs font-bold transition group"
+              title="Print Sideline Call Sheet"
+            >
+              <Printer className="w-3.5 h-3.5" />
+              <span className="hidden lg:inline">Print Sheet</span>
+            </Link>
+          )}
+        </div>
 
         {/* Telemetry Status / Season Badge */}
         <div className="flex items-center gap-2">

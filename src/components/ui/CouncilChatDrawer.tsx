@@ -84,6 +84,12 @@ export function CouncilChatDrawer() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isThinking]);
 
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener('open-council-drawer', handleOpen);
+    return () => window.removeEventListener('open-council-drawer', handleOpen);
+  }, []);
+
   const speakText = (text: string) => {
     if (!voiceEnabled || typeof window === 'undefined' || !('speechSynthesis' in window)) return;
     window.speechSynthesis.cancel();
