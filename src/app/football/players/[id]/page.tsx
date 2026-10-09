@@ -30,7 +30,7 @@ export default function PlayerTrackerPage() {
   const [sortBy, setSortBy] = useState<'grade' | 'rank' | 'jersey' | 'snaps' | 'epa'>('grade');
   const [viewMode, setViewMode] = useState<'grid' | 'table'>('grid');
   const [activePlayerModal, setActivePlayerModal] = useState<PlayerProfile | null>(null);
-  const [modalTab, setModalTab] = useState<'film' | 'radar' | 'recruiting'>('film');
+  const [modalTab, setModalTab] = useState<'film' | 'radar'>('film');
 
   // Filter and sort logic across the active season's roster
   const filteredPlayers = useMemo(() => {
@@ -383,18 +383,11 @@ export default function PlayerTrackerPage() {
                       </p>
                     </div>
 
-                    {/* Commit or Best Game */}
-                    {player.recruitment?.committedCollege ? (
-                      <div className="p-2 rounded-lg bg-emerald-950/30 border border-emerald-500/20 text-xs font-mono">
-                        <span className="text-[9px] text-emerald-400 block font-bold">COLLEGE COMMITMENT</span>
-                        <span className="text-white font-semibold">{player.recruitment.committedCollege}</span>
-                      </div>
-                    ) : (
-                      <div className="p-2 rounded-lg bg-slate-950/50 border border-white/5 text-xs font-mono">
-                        <span className="text-[9px] text-slate-400 block font-bold">BEST FILM GAME</span>
-                        <span className="text-slate-200 font-medium truncate block">{fa?.bestFilmGame || '2025 Varsity Season'}</span>
-                      </div>
-                    )}
+                    {/* Best Film Game */}
+                    <div className="p-2 rounded-lg bg-slate-950/50 border border-white/5 text-xs font-mono">
+                      <span className="text-[9px] text-slate-400 block font-bold">BEST FILM GAME</span>
+                      <span className="text-slate-200 font-medium truncate block">{fa?.bestFilmGame || '2025 Varsity Season'}</span>
+                    </div>
 
                     {/* Action Buttons */}
                     <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[11px] gap-2">
@@ -445,7 +438,7 @@ export default function PlayerTrackerPage() {
                     <th className="p-3">Film Snaps</th>
                     <th className="p-3">Net EPA</th>
                     <th className="p-3">Success %</th>
-                    <th className="p-3">Commitment / Status</th>
+                    <th className="p-3">Roster Class</th>
                     <th className="p-3 text-right">Dossier</th>
                   </tr>
                 </thead>
@@ -481,13 +474,7 @@ export default function PlayerTrackerPage() {
                         </td>
                         <td className="p-3 text-amber-300">{fa?.filmSuccessRatePct || 50}%</td>
                         <td className="p-3">
-                          {player.recruitment?.committedCollege ? (
-                            <span className="text-emerald-400 font-bold text-[11px]">
-                              {player.recruitment.committedCollege}
-                            </span>
-                          ) : (
-                            <span className="text-slate-400 text-[11px]">Varsity Athlete</span>
-                          )}
+                          <span className="text-slate-300 font-mono text-[11px]">Class of {player.classYear}</span>
                         </td>
                         <td className="p-3 text-right">
                           <div className="flex items-center justify-end gap-1.5">
@@ -584,15 +571,6 @@ export default function PlayerTrackerPage() {
                 <span>Athletic Radar & Traits</span>
               </button>
 
-              <button
-                onClick={() => setModalTab('recruiting')}
-                className={`py-3 px-3 border-b-2 flex items-center gap-2 transition-all ${
-                  modalTab === 'recruiting' ? 'border-amber-400 text-amber-300 font-bold' : 'border-transparent text-slate-400 hover:text-white'
-                }`}
-              >
-                <GraduationCap className="w-4 h-4" />
-                <span>Recruitment & Bio</span>
-              </button>
             </div>
 
             {/* Modal Body */}
@@ -853,11 +831,7 @@ export default function PlayerTrackerPage() {
                   </div>
 
                   {/* Physical Dimensions */}
-                  <div className="grid grid-cols-3 gap-3 font-mono text-center">
-                    <div className="p-3 rounded-xl bg-slate-950 border border-white/5">
-                      <div className="text-[10px] text-slate-500 uppercase">HEIGHT</div>
-                      <div className="text-sm font-bold text-white mt-0.5">{activePlayerModal.height || '6-0'}</div>
-                    </div>
+                  <div className="grid grid-cols-2 gap-3 font-mono text-center">
                     <div className="p-3 rounded-xl bg-slate-950 border border-white/5">
                       <div className="text-[10px] text-slate-500 uppercase">WEIGHT</div>
                       <div className="text-sm font-bold text-white mt-0.5">{activePlayerModal.weight || '195 lbs'}</div>
@@ -870,215 +844,7 @@ export default function PlayerTrackerPage() {
                 </div>
               )}
 
-              {modalTab === 'recruiting' && (
-                <div className="space-y-6">
-                  {/* College Commitment Banner */}
-                  {activePlayerModal.recruitment?.committedCollege ? (
-                    <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/60 via-slate-900 to-emerald-950/60 border border-emerald-500/50 shadow-xl space-y-2">
-                      <div className="text-[10px] font-black text-emerald-400 uppercase tracking-widest flex items-center gap-1.5 font-mono">
-                        <Star className="w-4 h-4 fill-emerald-400 text-emerald-400" />
-                        COLLEGIATE COMMITMENT VERIFIED · CLASS OF {activePlayerModal.classYear}
-                      </div>
-                      <h3 className="text-xl font-black text-white font-sans flex items-center gap-2">
-                        <span>{activePlayerModal.recruitment.committedCollege}</span>
-                      </h3>
-                      <div className="flex items-center gap-2 text-xs text-emerald-300/90 font-mono">
-                        <span className="px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40">
-                          {activePlayerModal.recruitment.divisionTarget || 'NCAA Division 1'}
-                        </span>
-                        <span>·</span>
-                        <span>Official Division 1 FCS Commit</span>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="p-5 rounded-2xl bg-gradient-to-r from-amber-950/40 via-slate-900 to-amber-950/40 border border-amber-500/40 shadow-xl space-y-2">
-                      <div className="text-[10px] font-black text-amber-400 uppercase tracking-widest flex items-center gap-1.5 font-mono">
-                        <Award className="w-4 h-4 text-amber-400" />
-                        COLLEGIATE RECRUITMENT STATUS: {activePlayerModal.recruitment?.status || 'SCOUTED'}
-                      </div>
-                      <h3 className="text-lg font-black text-white font-sans">
-                        Target: {activePlayerModal.recruitment?.divisionTarget || 'NCAA Collegiate Football'}
-                      </h3>
-                      <p className="text-xs text-slate-300 font-sans">
-                        Actively scouted varsity student-athlete for the Peddie Falcons (Class of {activePlayerModal.classYear}).
-                      </p>
-                    </div>
-                  )}
 
-                  {/* Verified External Profiles & Links */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {/* Hudl Verified Film Profile */}
-                    {activePlayerModal.recruitment?.hudlProfileUrl && (
-                      <div className="p-4 rounded-xl bg-slate-950 border border-white/10 flex items-center justify-between hover:border-red-500/40 transition-all">
-                        <div className="space-y-0.5">
-                          <div className="text-xs font-bold text-white flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
-                            <span>Hudl Verified Profile</span>
-                          </div>
-                          <p className="text-[10px] text-slate-400 font-mono">
-                            Full film reel, verified clips & testing
-                          </p>
-                        </div>
-                        <a
-                          href={activePlayerModal.recruitment.hudlProfileUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-md shrink-0"
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" />
-                          <span>Hudl Reel</span>
-                        </a>
-                      </div>
-                    )}
-
-                    {/* MaxPreps Official Roster Profile */}
-                    <div className="p-4 rounded-xl bg-slate-950 border border-white/10 flex items-center justify-between hover:border-sky-500/40 transition-all">
-                      <div className="space-y-0.5">
-                        <div className="text-xs font-bold text-white flex items-center gap-2">
-                          <Globe className="w-3.5 h-3.5 text-sky-400" />
-                          <span>MaxPreps Roster Profile</span>
-                        </div>
-                        <p className="text-[10px] text-slate-400 font-mono">
-                          Official Peddie School roster record
-                        </p>
-                      </div>
-                      <a
-                        href={activePlayerModal.recruitment?.maxprepsUrl || "https://www.maxpreps.com/nj/hightstown/peddie-falcons/football/roster/"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-md shrink-0"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                        <span>MaxPreps</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Athletic Combine & Physical Testing Numbers */}
-                  <div className="p-4 rounded-xl bg-slate-950 border border-white/10 space-y-3">
-                    <div className="flex items-center justify-between border-b border-white/5 pb-2">
-                      <h4 className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5 font-mono">
-                        <Gauge className="w-3.5 h-3.5" />
-                        Verified Combine & Athletic Testing
-                      </h4>
-                      <span className="text-[10px] text-slate-500 font-mono">
-                        NCAA ID: {activePlayerModal.recruitment?.ncaaEligibilityId || '26009826'}
-                      </span>
-                    </div>
-
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-center font-mono">
-                      <div className="p-2.5 rounded-lg bg-slate-900 border border-white/5">
-                        <div className="text-[9px] text-slate-500 uppercase">40-YD DASH</div>
-                        <div className="text-sm font-black text-amber-300 mt-0.5">
-                          {activePlayerModal.recruitment?.fortyYardDashSec ? `${activePlayerModal.recruitment.fortyYardDashSec}s` : '4.70s'}
-                        </div>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-slate-900 border border-white/5">
-                        <div className="text-[9px] text-slate-500 uppercase">BENCH PRESS</div>
-                        <div className="text-sm font-black text-white mt-0.5">
-                          {activePlayerModal.recruitment?.benchPressMaxLbs ? `${activePlayerModal.recruitment.benchPressMaxLbs} lbs` : '225 lbs'}
-                        </div>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-slate-900 border border-white/5">
-                        <div className="text-[9px] text-slate-500 uppercase">SQUAT MAX</div>
-                        <div className="text-sm font-black text-white mt-0.5">
-                          {activePlayerModal.recruitment?.squatMaxLbs ? `${activePlayerModal.recruitment.squatMaxLbs} lbs` : '335 lbs'}
-                        </div>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-slate-900 border border-white/5">
-                        <div className="text-[9px] text-slate-500 uppercase">VERTICAL JUMP</div>
-                        <div className="text-sm font-black text-emerald-400 mt-0.5">
-                          {activePlayerModal.recruitment?.verticalJumpInches ? `${activePlayerModal.recruitment.verticalJumpInches}"` : '31.0"'}
-                        </div>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-slate-900 border border-white/5">
-                        <div className="text-[9px] text-slate-500 uppercase">PRO SHUTTLE</div>
-                        <div className="text-sm font-black text-slate-300 mt-0.5">
-                          {activePlayerModal.recruitment?.shuttleTimeSec ? `${activePlayerModal.recruitment.shuttleTimeSec}s` : '4.30s'}
-                        </div>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-slate-900 border border-white/5">
-                        <div className="text-[9px] text-slate-500 uppercase">ACADEMIC GPA</div>
-                        <div className="text-sm font-black text-sky-300 mt-0.5">
-                          {activePlayerModal.recruitment?.gpa ? `${activePlayerModal.recruitment.gpa.toFixed(2)}` : '3.65'}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* College Offers & Interested Programs */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Offers */}
-                    <div className="p-4 rounded-xl bg-slate-950 border border-white/10 space-y-2">
-                      <div className="flex items-center justify-between">
-                        <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5 font-mono">
-                          <CheckCircle2 className="w-3.5 h-3.5" />
-                          Verified Offers & Accolades
-                        </h4>
-                        <span className="text-[10px] text-slate-500 font-mono">
-                          {activePlayerModal.recruitment?.offers?.length || 0} Total
-                        </span>
-                      </div>
-                      {activePlayerModal.recruitment?.offers && activePlayerModal.recruitment.offers.length > 0 ? (
-                        <div className="space-y-1.5 mt-2">
-                          {activePlayerModal.recruitment.offers.map((offer, idx) => (
-                            <div key={idx} className="px-2.5 py-1 rounded bg-emerald-950/40 border border-emerald-500/30 text-xs font-mono text-emerald-300 flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                              <span>{offer}</span>
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="text-xs text-slate-400 font-sans italic py-2">
-                          Underclassman prospect building collegiate offer sheet during the 2025–2026 campaign.
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Interested Colleges */}
-                    <div className="p-4 rounded-xl bg-slate-950 border border-white/10 space-y-2">
-                      <div className="flex items-center justify-between">
-                        <h4 className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5 font-mono">
-                          <GraduationCap className="w-3.5 h-3.5" />
-                          Target Programs & Interest
-                        </h4>
-                        <span className="text-[10px] text-slate-500 font-mono">
-                          {activePlayerModal.recruitment?.interestedColleges?.length || 0} Programs
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap gap-1.5 mt-2">
-                        {activePlayerModal.recruitment?.interestedColleges?.map((college, idx) => (
-                          <span
-                            key={idx}
-                            className="px-2.5 py-1 rounded-lg bg-slate-900 border border-white/10 text-xs font-mono text-slate-200"
-                          >
-                            {college}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Scouting Overview */}
-                  <div className="p-4 rounded-xl bg-slate-950 border border-white/10 space-y-2">
-                    <h4 className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5 font-mono">
-                      <BookOpen className="w-3.5 h-3.5" />
-                      Peddie Varsity Scouting Summary
-                    </h4>
-                    <p className="text-xs text-slate-300 leading-relaxed font-sans">
-                      {activePlayerModal.scoutingSummary}
-                    </p>
-                    <ul className="space-y-1.5 mt-3">
-                      {activePlayerModal.strengths.map((str, i) => (
-                        <li key={i} className="text-xs text-slate-300 flex items-start gap-2 font-sans">
-                          <span className="text-emerald-400 font-bold">✓</span>
-                          <span>{str}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* Modal Footer */}

@@ -1,0 +1,319 @@
+// ============================================================================
+// Peddie Soccer SAC — Prisma Database Schema
+// Phase 1: Entity Modeling for Broadcast-Grade Analytics Platform
+// SQLite-compatible: enums replaced with String (validated at application layer)
+// ============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// CORE ENTITIES
+// ============================================================================
+
+/// Peddie School Varsity & JV Players
+model Player {
+  id                   String   @id @default(cuid())
+  externalId           String?  @unique
+  number               Int
+  name                 String
+  classYear            String
+  gradYear             Int
+  position             String   // GK|CB|LB|RB|CDM|CM|CAM|LM|RM|LW|RW|ST
+  secondaryPosition    String?
+  isCaptain            Boolean  @default(false)
+  squadLevel           String   @default("Varsity") // Varsity|JuniorVarsity
+  tacticalRole         String?
+  scoutingTier         String?
+
+  // Physical
+  height               String   @default("")
+  weight               String   @default("")
+  hometown             String   @default("")
+  topSpeedMph          Float    @default(0)
+  distanceCoveredMiles Float    @default(0)
+
+  // Season Stats
+  minutesPlayed        Int      @default(0)
+  matchesPlayed        Int      @default(0)
+  goals                Int      @default(0)
+  assists              Int      @default(0)
+  expectedGoals        Float    @default(0)
+  expectedAssists      Float    @default(0)
+  passCompletionPct    Float    @default(0)
+  tackleSuccessPct     Float    @default(0)
+  shots                Int      @default(0)
+  shotsOnTarget        Int      @default(0)
+  keyPasses            Int      @default(0)
+  interceptions        Int      @default(0)
+  clearances           Int      @default(0)
+  saves                Int      @default(0)
+  goalsConceded        Int      @default(0)
+  cleanSheets          Int      @default(0)
+  matchFormScore       Float?
+
+  // Media
+  photoUrl             String?
+  photoUrl2            String?
+  recruitmentNotes     String?
+
+  // Relations
+  matchEvents          MatchEvent[]
+  playerMatchStats     PlayerMatchStat[]
+  filmClips            FilmClip[]
+
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@map("players")
+}
+
+/// A fixture on the 2026-2027 schedule
+model Match {
+  id                    String   @id @default(cuid())
+  externalId            String?  @unique
+  season                String   @default("2026-2027")
+  matchDate             String
+  opponent              String
+  opponentLogoText      String?
+  isHome                Boolean  @default(true)
+  isConference          Boolean  @default(false)
+  matchType             String?
+  rivalryName           String?
+  status                String   @default("Upcoming") // Completed|Live|Upcoming
+
+  peddieScore           Int?
+  opponentScore         Int?
+
+  expectedGoalsPeddie   Float?
+  expectedGoalsOpponent Float?
+  possessionPctPeddie   Float?
+  fieldTiltPctPeddie    Float?
+  ppdaPeddie            Float?
+  ppdaOpponent          Float?
+  xTPeddie              Float?
+  xTOpponent            Float?
+
+  keySummary            String?
+  opponentRecord        String?
+  projectedScore        String?
+  nationalRanking       String?
+  stateRanking          String?
+  winProbabilityPct     Float?
+  scoutingReportId      String?
+
+  videoUrl              String?
+  hudlUrl               String?
+  filmProvider          String?  // veo|hudl|youtube|local|pending
+  thumbnailUrl          String?
+  location              String?
+  gameTime              String?
+  sourceUrl             String?
+  sourceLabel           String?
+
+  events                MatchEvent[]
+  filmClips             FilmClip[]
+  playerMatchStats      PlayerMatchStat[]
+  auditLogs             IngestionAuditLog[]
+
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@map("matches")
+}
+
+/// Individual on-pitch event tied to a match
+model MatchEvent {
+  id            String   @id @default(cuid())
+  externalId    String?  @unique
+  matchId       String
+  match         Match    @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  playerId      String?
+  player        Player?  @relation(fields: [playerId], references: [id])
+
+  minute        Int
+  second        Int      @default(0)
+  team          String   // Peddie|Opponent
+  playerNumber  Int
+  playerName    String
+  type          String   // Pass|Shot|Goal|KeyPass|Cross|Tackle|Interception|PressTrap|Save|Corner|Foul
+  startX        Float
+  startY        Float
+  endX          Float?
+  endY          Float?
+  expectedGoals Float?
+  success       Boolean  @default(true)
+  description   String
+  phase         String   // Open Play|High Press|Counter Attack|Set Piece
+  period        Int?
+
+  videoUrl      String?
+  thumbnailUrl  String?
+  filmClipId    String?
+  filmClip      FilmClip? @relation(fields: [filmClipId], references: [id])
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([matchId])
+  @@index([playerId])
+  @@map("match_events")
+}
+
+/// Film clips from Veo, Hudl, YouTube, or local files
+model FilmClip {
+  id            String   @id @default(cuid())
+  externalId    String?  @unique
+  matchId       String
+  match         Match    @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  playerId      String?
+  player        Player?  @relation(fields: [playerId], references: [id])
+
+  provider      String   // veo|hudl|youtube|local|pending
+  title         String
+  description   String?
+  videoUrl      String
+  thumbnailUrl  String?
+  startTimeSec  Float?
+  endTimeSec    Float?
+  durationSec   Float?
+  minute        Int?
+  second        Int?
+  phase         String?
+  tags          String?  // JSON array string
+  isHighlight   Boolean  @default(false)
+
+  matchEvents   MatchEvent[]
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([matchId])
+  @@map("film_clips")
+}
+
+/// Per-player, per-match normalized stat snapshot
+model PlayerMatchStat {
+  id            String   @id @default(cuid())
+  matchId       String
+  match         Match    @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  playerId      String
+  player        Player   @relation(fields: [playerId], references: [id])
+
+  minutesPlayed   Int    @default(0)
+  goals           Int    @default(0)
+  assists         Int    @default(0)
+  shots           Int    @default(0)
+  shotsOnTarget   Int    @default(0)
+  keyPasses       Int    @default(0)
+  passAttempts    Int    @default(0)
+  passCompleted   Int    @default(0)
+  tackles         Int    @default(0)
+  tacklesWon      Int    @default(0)
+  interceptions   Int    @default(0)
+  clearances      Int    @default(0)
+  saves           Int    @default(0)
+  goalsConceded   Int    @default(0)
+  xG              Float  @default(0)
+  xA              Float  @default(0)
+  matchFormScore  Float?
+  distanceMiles   Float?
+  topSpeedMph     Float?
+  formationSlot   String? // Position string
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@unique([matchId, playerId])
+  @@index([matchId])
+  @@index([playerId])
+  @@map("player_match_stats")
+}
+
+/// Ingestion audit trail for every data run
+model IngestionAuditLog {
+  id              String   @id @default(cuid())
+  matchId         String?
+  match           Match?   @relation(fields: [matchId], references: [id])
+  source          String   // hudl_fan|veo|peddie_athletics|mapl_network|maxpreps|nj_com|manual
+  status          String   @default("pending") // pending|success|conflict|failed
+  recordType      String   // match|event|player|film_clip|seed
+  externalId      String?
+  rawPayload      String?
+  resolvedPayload String?
+  conflictReason  String?
+  runAt           DateTime @default(now())
+  durationMs      Int?
+  errorMessage    String?
+
+  @@index([matchId])
+  @@index([source])
+  @@map("ingestion_audit_logs")
+}
+
+/// Opponent team scouting profiles
+model OpponentTeam {
+  id                  String   @id @default(cuid())
+  externalKey         String   @unique
+  name                String
+  shortName           String
+  logoText            String?
+  conference          String?
+  headCoach           String?
+  primaryFormation    String?
+  secondaryFormation  String?
+  currentRecord       String?
+  winProbabilityPct   Float?
+  threatLevel         String?  // High|Medium|Critical
+  nationalRanking     String?
+  stateRanking        String?
+  hudlUrl             String?
+  sourceUrl           String?
+  scoutingOverview    String?
+  tacticalNotes       String?  // JSON blob
+
+  players             OpponentPlayer[]
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@map("opponent_teams")
+}
+
+/// Scouted opponent player profiles
+model OpponentPlayer {
+  id                    String   @id @default(cuid())
+  externalId            String?  @unique
+  teamId                String
+  team                  OpponentTeam @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  number                Int
+  name                  String
+  position              String
+  line                  String   // GK|DEF|MID|FWD
+  classYear             String?
+  height                String?
+  dominantFoot          String?  // Right|Left|Both
+  tacticalRole          String
+  dangerLevel           String   // Elite|Dangerous|Key Threat|Tactical Pivot
+  traits                String?
+  strengths             String?  // JSON array
+  vulnerabilities       String?  // JSON array
+  currentSeasonNotes    String?
+  peddieMatchupCounter  String?
+  profileUrl            String?
+  filmUrl               String?
+  goals                 Int?
+  assists               Int?
+
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([teamId])
+  @@map("opponent_players")
+}

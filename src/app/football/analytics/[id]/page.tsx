@@ -293,8 +293,8 @@ export default function AnalyticsPage() {
   // 5. Individual Defensive Playmaker Impact
   const defensivePlaymakers = useMemo(() => {
     const playmakers = [
-      { jersey: 70, name: 'Reed Oliver', pos: 'DE / DL', class: "Senior ('26)", commit: 'Marist College (D1 FCS)' },
-      { jersey: 4, name: 'Cooper Allen', pos: 'DT / DL', class: "Senior ('26)", commit: 'Merrimack College (D1 FCS)' },
+      { jersey: 70, name: 'Reed Oliver', pos: 'DE / DL', class: "Senior ('26)", commit: 'Varsity Senior Captain' },
+      { jersey: 4, name: 'Cooper Allen', pos: 'DT / DL', class: "Senior ('26)", commit: 'Varsity Senior Leader' },
       { jersey: 10, name: 'August Cassidy', pos: 'MLB / LB', class: "Sophomore ('28)", commit: 'Varsity Sophomore' },
       { jersey: 3, name: 'Jeremiah Davis', pos: 'FS / DB', class: "Senior ('26)", commit: 'Varsity Senior' },
       { jersey: 2, name: 'Kadin Huling', pos: 'WLB / LB', class: "Junior ('27)", commit: 'Varsity Junior' },
@@ -1169,7 +1169,7 @@ export default function AnalyticsPage() {
                   <th className="p-3">INTs</th>
                   <th className="p-3">PBUs</th>
                   <th className="p-3">Total Havoc Plays</th>
-                  <th className="p-3">College Commitment</th>
+                  <th className="p-3">Roster Designation</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -1189,11 +1189,7 @@ export default function AnalyticsPage() {
                       </span>
                     </td>
                     <td className="p-3 text-slate-300">
-                      {pm.commit.includes('College') ? (
-                        <span className="text-emerald-400 font-bold">{pm.commit}</span>
-                      ) : (
-                        <span className="text-slate-400">{pm.commit}</span>
-                      )}
+                      <span className="text-slate-300">{pm.commit}</span>
                     </td>
                   </tr>
                 ))}

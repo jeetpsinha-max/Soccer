@@ -253,8 +253,8 @@ export default function SidelineCallSheetPage() {
               )}
               <div className="flex flex-col gap-0.5 min-w-0">
                 <span className="text-[10px] font-mono font-bold uppercase text-cyan-400">RIGHT CORNER (OUT-SWING)</span>
-                <span className="text-xs font-black text-white truncate">#7 Bennett Cuchera (RM)</span>
-                <span className="text-[10px] text-slate-300">Backup: #26 Blake Romanelli</span>
+                <span className="text-xs font-black text-white truncate">#7 Bennett Cucchiara (LM)</span>
+                <span className="text-[10px] text-slate-300">Backup: #26 Blake Romanelli (RM)</span>
               </div>
             </div>
           </div>
@@ -293,7 +293,7 @@ export default function SidelineCallSheetPage() {
                 <strong>#8 Owen Bonchev</strong> and <strong>#22 Carson Wiley</strong> command central 6-yard box as starting Center Backs.
               </p>
               <p>
-                <strong>#10 Quinn Wachtveitl (LM)</strong> crashes near-post zone to clear aerial balls with 6&apos;2&quot; height.
+                <strong>#10 Quinn Wachtveitl (ST)</strong> crashes near-post zone to clear aerial balls with elite physical presence.
               </p>
               <p>
                 <strong>#13 Christian Tharney (C)</strong> anchors the top of the box at CDM to intercept secondary rebounds.
@@ -409,7 +409,7 @@ export default function SidelineCallSheetPage() {
                 <tr>
                   <td className="py-2 font-mono text-cyan-400">55&apos; - 60&apos;</td>
                   <td className="py-2 font-semibold text-amber-400">#18 Brody Rozo (Sophomore, CM)</td>
-                  <td className="py-2">#10 Quinn Wachtveitl (LM)</td>
+                  <td className="py-2">#10 Quinn Wachtveitl (ST)</td>
                   <td className="py-2">Physical box-to-box engine and aerial presence</td>
                 </tr>
                 <tr>

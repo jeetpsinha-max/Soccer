@@ -14,6 +14,27 @@ export type Position =
 
 export type CoachGrade = '+' | '0' | '-';
 
+export interface FilmClip {
+  id: string;
+  externalId?: string;
+  matchId?: string;
+  playerId?: string;
+  title: string;
+  description?: string;
+  provider: 'veo' | 'hudl' | 'youtube' | 'local';
+  url?: string;
+  videoUrl?: string;
+  durationSeconds?: number;
+  clipType?: string;
+  tags?: string;
+  thumbnailUrl?: string;
+  startSecond?: number;
+  endSecond?: number;
+  minute?: number;
+  phase?: string;
+  isHighlight?: boolean;
+}
+
 export interface PlayerAssignmentRecord {
   match: string;
   opponent: string;
@@ -31,6 +52,7 @@ export interface Player {
   position: Position;
   secondaryPosition?: Position;
   isCaptain?: boolean;
+  squadLevel?: 'Varsity' | 'Junior Varsity';
   tacticalRole?: string; // e.g. 'Single Pivot Regista', 'Inverted Inside-Forward', 'Target Center-Forward'
   scoutingTier?: string; // e.g. 'NCAA D1 Prospect', 'All-MAPL First Team Caliber', 'Varsity Cornerstone'
   matchFormScore?: number; // 0.0 - 10.0 Sofascore/WhoScored match performance rating (e.g. 8.8)
@@ -45,6 +67,7 @@ export interface Player {
   matchesPlayed: number;
   goals: number;
   assists: number;
+  points?: number;
   expectedGoals: number; // xG
   expectedAssists: number; // xA
   passCompletionPct: number;
@@ -133,7 +156,7 @@ export interface MatchEvent {
   expectedGoals?: number;
   success: boolean;
   description: string;
-  phase: 'Open Play' | 'High Press' | 'Counter Attack' | 'Set Piece';
+  phase: 'Open Play' | 'High Press' | 'Counter Attack' | 'Set Piece' | 'Build-up';
   period?: number; // 1, 2, 3, 4
   videoUrl?: string; // Direct Veo CDN 1080p MP4 clip
   thumbnailUrl?: string;
@@ -190,6 +213,13 @@ export interface MatchFixture {
   filmProvider?: 'veo' | 'hudl' | 'both' | 'pending';
   thumbnailUrl?: string;
   scoutingReportId?: string;
+  opponentRecord?: string;
+  projectedScore?: string;
+  nationalRanking?: string;
+  stateRanking?: string;
+  winProbabilityPct?: number;
+  sourceUrl?: string;
+  sourceLabel?: string;
 }
 
 export interface XTCell {
@@ -330,6 +360,15 @@ export interface VeoTeamScout {
   secondaryFormation?: string;
   winProbabilityPct: number;
   threatLevel: 'High' | 'Medium' | 'Critical';
+  currentRecord?: string;
+  projectedScore?: string;
+  formGuide?: string;
+  nationalRanking?: string;
+  stateRanking?: string;
+  sourceUrl?: string;
+  sourceLabel?: string;
+  hudlUrl?: string;
+  hudlLabel?: string;
   veoMatchRecordId?: string;
   veoThumbnailUrl?: string;
   veoVideoUrl?: string;
@@ -368,6 +407,8 @@ export interface OpponentPlayerReport {
   vulnerabilities: string[];
   currentSeasonNotes: string; // Current 2026-2027 Veo film/match scouting notes
   peddieMatchupCounter: string; // Assigned Peddie defender / tactical counter
+  profileUrl?: string; // Online stats/roster profile link (MaxPreps/School Athletics)
+  filmUrl?: string; // Online video/film highlight link (Hudl/YouTube)
   keyStats?: {
     goals?: number;
     assists?: number;

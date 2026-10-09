@@ -21,7 +21,8 @@ import {
   Flame,
   X,
   Footprints,
-  Activity
+  Activity,
+  ExternalLink
 } from 'lucide-react';
 
 export default function ScoutingPage() {
@@ -116,7 +117,7 @@ export default function ScoutingPage() {
               {selectedScout.logoText}
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="text-xs font-mono text-amber-400 uppercase font-bold tracking-wider">
                   {selectedScout.conference}
                 </span>
@@ -129,38 +130,72 @@ export default function ScoutingPage() {
                 }`}>
                   {selectedScout.threatLevel} Threat
                 </span>
+                {selectedScout.nationalRanking && (
+                  <span className="px-2 py-0.2 rounded text-[10px] font-black uppercase bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                    🏆 {selectedScout.nationalRanking}
+                  </span>
+                )}
+                {selectedScout.stateRanking && (
+                  <span className="px-2 py-0.2 rounded text-[10px] font-black uppercase bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                    📍 {selectedScout.stateRanking}
+                  </span>
+                )}
               </div>
               <h2 className="text-2xl font-black text-white mt-0.5">{selectedScout.opponent}</h2>
-              <div className="text-xs text-slate-400 mt-1">
-                Primary System: <strong className="text-cyan-400 font-mono">{selectedScout.primaryFormation}</strong> (Alt: {selectedScout.secondaryFormation}) • Head Coach: {selectedScout.headCoach}
+              <div className="text-xs text-slate-400 mt-1 flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                <span>Primary System: <strong className="text-cyan-400 font-mono">{selectedScout.primaryFormation}</strong> (Alt: {selectedScout.secondaryFormation})</span>
+                <span>•</span>
+                <span>Head Coach: <span className="text-slate-200 font-semibold">{selectedScout.headCoach}</span></span>
+                {selectedScout.currentRecord && (
+                  <>
+                    <span>•</span>
+                    <span>2026 Record: <strong className="text-amber-300 font-mono font-bold">{selectedScout.currentRecord}</strong></span>
+                  </>
+                )}
+                {selectedScout.formGuide && (
+                  <>
+                    <span>•</span>
+                    <span>Recent Form: <span className="font-mono text-xs px-1.5 py-0.2 bg-slate-800 rounded text-slate-300 border border-slate-700">{selectedScout.formGuide}</span></span>
+                  </>
+                )}
               </div>
             </div>
           </div>
 
-          {(() => {
-            const pct = selectedScout.winProbabilityPct;
-            const style = pct < 35 
-              ? { text: 'text-rose-400', icon: 'text-rose-400', label: 'Underdog' }
-              : pct < 50
-              ? { text: 'text-amber-400', icon: 'text-amber-400', label: 'Slight Underdog' }
-              : pct <= 55
-              ? { text: 'text-cyan-400', icon: 'text-cyan-400', label: 'Even Match' }
-              : { text: 'text-emerald-400', icon: 'text-emerald-400', label: pct >= 70 ? 'Projected Favorite' : 'Competitive Favorite' };
-            return (
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-950/80 border border-slate-800 self-start md:self-auto">
-                <div className="text-right">
-                  <div className="flex items-center justify-end gap-1.5">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Win Expectancy</span>
-                    <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border border-slate-700 bg-slate-900 ${style.text}`}>
-                      {style.label}
-                    </span>
-                  </div>
-                  <div className={`text-2xl font-mono font-black ${style.text}`}>{selectedScout.winProbabilityPct}%</div>
-                </div>
-                <Award className={`w-8 h-8 ${style.icon}`} />
+          <div className="flex flex-wrap items-center gap-3 self-start md:self-auto">
+            {selectedScout.projectedScore && (
+              <div className="p-3.5 rounded-xl bg-slate-950/80 border border-cyan-500/30 text-right min-w-[140px]">
+                <div className="text-[10px] text-cyan-400 font-bold uppercase tracking-wider">Projected Score</div>
+                <div className="text-lg font-mono font-black text-white">{selectedScout.projectedScore}</div>
+                <div className="text-[10px] text-slate-400 mt-0.5">Veo Model Estimate</div>
               </div>
-            );
-          })()}
+            )}
+
+            {(() => {
+              const pct = selectedScout.winProbabilityPct;
+              const style = pct < 35 
+                ? { text: 'text-rose-400', icon: 'text-rose-400', label: 'Underdog' }
+                : pct < 50
+                ? { text: 'text-amber-400', icon: 'text-amber-400', label: 'Slight Underdog' }
+                : pct <= 55
+                ? { text: 'text-cyan-400', icon: 'text-cyan-400', label: 'Even Match' }
+                : { text: 'text-emerald-400', icon: 'text-emerald-400', label: pct >= 70 ? 'Projected Favorite' : 'Competitive Favorite' };
+              return (
+                <div className="flex items-center gap-4 p-3.5 rounded-xl bg-slate-950/80 border border-slate-800">
+                  <div className="text-right">
+                    <div className="flex items-center justify-end gap-1.5">
+                      <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Win Expectancy</span>
+                      <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border border-slate-700 bg-slate-900 ${style.text}`}>
+                        {style.label}
+                      </span>
+                    </div>
+                    <div className={`text-2xl font-mono font-black ${style.text}`}>{selectedScout.winProbabilityPct}%</div>
+                  </div>
+                  <Award className={`w-8 h-8 ${style.icon}`} />
+                </div>
+              );
+            })()}
+          </div>
         </div>
 
         {/* Multi-Agent Council & Tactical Action Bar */}
@@ -185,10 +220,36 @@ export default function ScoutingPage() {
           </Link>
           <Link
             href="/dashboard/call-sheet"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold transition ml-auto"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold transition"
           >
             Sideline Call Sheet
           </Link>
+          <div className="flex flex-wrap items-center gap-2 ml-auto">
+            {selectedScout.hudlUrl && (
+              <a
+                href={selectedScout.hudlUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 text-xs font-bold transition shadow-sm"
+                title={selectedScout.hudlLabel || 'Watch Official Film on Hudl Fan'}
+              >
+                <Video className="w-3.5 h-3.5 text-rose-400" />
+                <span>Watch Film: {selectedScout.hudlLabel?.split(':')[0] || 'Hudl Fan'} ↗</span>
+              </a>
+            )}
+            {selectedScout.sourceUrl && (
+              <a
+                href={selectedScout.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 text-xs font-bold transition shadow-sm"
+                title={selectedScout.sourceLabel || 'Verify Live Stats Online'}
+              >
+                <ExternalLink className="w-3.5 h-3.5 text-purple-400" />
+                <span>Verify Stats: {selectedScout.sourceLabel?.split(':')[0] || 'MaxPreps'} ↗</span>
+              </a>
+            )}
+          </div>
         </div>
 
         {/* Overview */}
@@ -320,7 +381,7 @@ export default function ScoutingPage() {
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-400 mt-0.5">
-                        {player.classYear} • {player.height || 'Height n/a'} • Foot: {player.dominantFoot || 'Right'}
+                        {player.classYear} • Foot: {player.dominantFoot || 'Right'}
                       </div>
                     </div>
                   </div>
@@ -424,7 +485,7 @@ export default function ScoutingPage() {
                     </span>
                   </div>
                   <div className="text-xs text-slate-400 mt-1">
-                    {selectedOpponentPlayer.teamName} • {selectedOpponentPlayer.classYear} • Height: {selectedOpponentPlayer.height || 'N/A'} • Preferred Foot: {selectedOpponentPlayer.dominantFoot || 'Right'}
+                    {selectedOpponentPlayer.teamName} • {selectedOpponentPlayer.classYear} • Preferred Foot: {selectedOpponentPlayer.dominantFoot || 'Right'}
                   </div>
                 </div>
               </div>
@@ -512,6 +573,36 @@ export default function ScoutingPage() {
               <p className="text-xs text-slate-200 leading-relaxed font-semibold">
                 {selectedOpponentPlayer.peddieMatchupCounter}
               </p>
+            </div>
+
+            {/* Online Film & Stats Verification Links */}
+            <div className="pt-2 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
+              <div className="text-[11px] text-slate-400 flex items-center gap-1.5 font-medium">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                Verified 2026–2027 Opponent Varsity Scout
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={selectedOpponentPlayer.filmUrl || selectedScout.hudlUrl || 'https://fan.hudl.com'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 text-xs font-bold transition flex items-center gap-1.5"
+                  title="Watch Player Video on Hudl"
+                >
+                  <Video className="w-3.5 h-3.5 text-rose-400" />
+                  <span>Watch Hudl Film ↗</span>
+                </a>
+                <a
+                  href={selectedOpponentPlayer.profileUrl || selectedScout.sourceUrl || 'https://www.maxpreps.com'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 text-xs font-bold transition flex items-center gap-1.5"
+                  title="Verify Stats Online"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Verify Stats Online ↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -5,6 +5,9 @@ import { SeasonProvider } from "@/context/SeasonContext";
 import { Navigation } from "@/components/ui/Navigation";
 import { AppShell } from "@/components/ui/AppShell";
 import { CouncilChatDrawer } from "@/components/ui/CouncilChatDrawer";
+import { CommandPalette } from "@/components/ui/CommandPalette";
+import { SidelineScratchpad } from "@/components/ui/SidelineScratchpad";
+import { CoachingQuickDeck } from "@/components/ui/CoachingQuickDeck";
 
 export const metadata: Metadata = {
   title: "Peddie Athletics SAC • Multi-Sport Tactical Analytics & Coaching Platform",
@@ -26,6 +29,9 @@ export default function RootLayout({
               {children}
             </AppShell>
             <CouncilChatDrawer />
+            <CommandPalette />
+            <SidelineScratchpad />
+            <CoachingQuickDeck />
           </SeasonProvider>
         </SportProvider>
       </body>

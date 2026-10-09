@@ -3,7 +3,7 @@
 import Link from 'next/link';
 
 import React, { useState } from 'react';
-import { PEDDIE_ROSTER_2026_2027 } from '@/lib/soccer-data';
+import { PEDDIE_ROSTER_2026_2027, PEDDIE_JV_ROSTER_2026_2027 } from '@/lib/soccer-data';
 import { OPPONENT_PLAYER_SCOUTING_REPORTS, ALL_OPPONENT_PLAYER_REPORTS } from '@/lib/opponent-players-data';
 import { Player, Position, OpponentPlayerReport } from '@/lib/types';
 import { calculateDuelMatchup } from '@/lib/duel-engine';
@@ -16,7 +16,6 @@ import {
   TrendingUp, 
   Zap, 
   FileText, 
-  GraduationCap,
   Camera,
   ShieldCheck,
   Sparkles,
@@ -47,7 +46,19 @@ export default function PlayerPortalPage() {
   const [opponentSearch, setOpponentSearch] = useState<string>('');
   const [inspectedOpponentPlayer, setInspectedOpponentPlayer] = useState<OpponentPlayerReport | null>(null);
 
-  const filteredPlayers = PEDDIE_ROSTER_2026_2027.filter(p => {
+  const [squadFilter, setSquadFilter] = useState<'VARSITY' | 'JV' | 'ALL'>('VARSITY');
+
+  const activePool = squadFilter === 'VARSITY'
+    ? PEDDIE_ROSTER_2026_2027
+    : squadFilter === 'JV'
+    ? PEDDIE_JV_ROSTER_2026_2027
+    : [...PEDDIE_ROSTER_2026_2027, ...PEDDIE_JV_ROSTER_2026_2027];
+
+  const poolToSearch = searchQuery.trim()
+    ? [...PEDDIE_ROSTER_2026_2027, ...PEDDIE_JV_ROSTER_2026_2027]
+    : activePool;
+
+  const filteredPlayers = poolToSearch.filter(p => {
     const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           p.number.toString().includes(searchQuery);
     if (!matchesSearch) return false;
@@ -240,6 +251,31 @@ export default function PlayerPortalPage() {
                 <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2" />
               </div>
 
+              {/* Squad Level Switcher */}
+              <div className="flex items-center gap-1 p-1 bg-slate-950/80 rounded-lg border border-slate-800 text-[10px] font-bold">
+                <button
+                  type="button"
+                  onClick={() => setSquadFilter('VARSITY')}
+                  className={`flex-1 py-1 rounded transition text-center ${squadFilter === 'VARSITY' ? 'bg-amber-400 text-slate-950 font-black' : 'text-slate-400 hover:text-white'}`}
+                >
+                  Varsity ({PEDDIE_ROSTER_2026_2027.length})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSquadFilter('JV')}
+                  className={`flex-1 py-1 rounded transition text-center ${squadFilter === 'JV' ? 'bg-purple-500 text-white font-black' : 'text-slate-400 hover:text-white'}`}
+                >
+                  JV ({PEDDIE_JV_ROSTER_2026_2027.length})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSquadFilter('ALL')}
+                  className={`px-2 py-1 rounded transition text-center ${squadFilter === 'ALL' ? 'bg-slate-700 text-white font-black' : 'text-slate-400 hover:text-white'}`}
+                >
+                  All
+                </button>
+              </div>
+
               {/* Position Filter Buttons */}
               <div className="flex items-center gap-1 overflow-x-auto text-[10px] font-bold">
                 {['ALL', 'FWD', 'MID', 'DEF', 'GK'].map(pos => (
@@ -292,6 +328,9 @@ export default function PlayerPortalPage() {
                           <span>{p.name}</span>
                           {p.isCaptain && (
                             <span className="text-[9px] px-1 rounded bg-amber-400 text-slate-950 font-black">C</span>
+                          )}
+                          {p.squadLevel === 'Junior Varsity' && (
+                            <span className="text-[8px] px-1 rounded bg-purple-500/30 text-purple-300 border border-purple-500/40 font-black">JV</span>
                           )}
                         </div>
                         <div className="text-[10px] text-slate-400">
@@ -347,6 +386,15 @@ export default function PlayerPortalPage() {
                         TEAM CAPTAIN
                       </span>
                     )}
+                    {selectedPlayer.squadLevel === 'Junior Varsity' ? (
+                      <span className="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30 text-[10px] font-black uppercase">
+                        JUNIOR VARSITY (JV)
+                      </span>
+                    ) : (
+                      <span className="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 text-[10px] font-black uppercase">
+                        BOYS VARSITY
+                      </span>
+                    )}
                     <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono font-bold">
                       {selectedPlayer.position}
                     </span>
@@ -358,8 +406,16 @@ export default function PlayerPortalPage() {
                     {selectedPlayer.classYear} • Class of {selectedPlayer.gradYear} • {selectedPlayer.hometown}
                   </div>
                   <div className="text-xs text-slate-400">
-                    Height: {selectedPlayer.height} • Weight: {selectedPlayer.weight}
+                    Weight: {selectedPlayer.weight}
                   </div>
+                  {selectedPlayer.squadLevel === 'Junior Varsity' && (
+                    <div className="mt-2 p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4 shrink-0 text-purple-400" />
+                      <span>
+                        <strong>Junior Varsity (JV) Squad:</strong> {selectedPlayer.name} is on the Peddie Boys JV developmental team under JV coaching staff, and is excluded from Varsity match statistics, lineups, and scouting telemetry.
+                      </span>
+                    </div>
+                  )}
                 </div>
                   {/* Media Picture 2 Quick Preview */}
               {(selectedPlayer.photoUrl2 || selectedPlayer.actionPhotoUrl) && (
@@ -649,10 +705,10 @@ export default function PlayerPortalPage() {
               )}
             </div>
 
-            {/* College Recruitment Dossier */}
+            {/* Tactical Development & Coaching Evaluation */}
             <div className="glass-panel p-5 flex flex-col gap-2 border border-emerald-500/20">
               <h3 className="text-sm font-black text-emerald-400 flex items-center gap-2">
-                <GraduationCap className="w-4 h-4" /> College Recruitment Profile & Scout Evaluation
+                <Award className="w-4 h-4" /> Tactical Development &amp; Coaching Evaluation
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 {selectedPlayer.recruitmentNotes}
@@ -815,8 +871,6 @@ export default function PlayerPortalPage() {
                       </div>
                       <div className="text-[10px] text-slate-400 flex items-center gap-2 font-mono">
                         <span>{p.classYear}</span>
-                        <span>•</span>
-                        <span>{p.height}</span>
                         <span>•</span>
                         <span>{p.dominantFoot} Foot</span>
                       </div>
@@ -1099,7 +1153,7 @@ export default function PlayerPortalPage() {
                         <h3 className="text-lg font-black text-white mt-1 truncate">{pPeddie.name}</h3>
                         <div className="text-xs text-cyan-400 font-medium line-clamp-1">{pPeddie.tacticalRole}</div>
                         <div className="text-[11px] text-slate-400 font-mono mt-0.5">
-                          {pPeddie.classYear} • {pPeddie.height} • {pPeddie.weight}
+                          {pPeddie.classYear} • {pPeddie.weight}
                         </div>
                       </div>
                     </div>
@@ -1159,7 +1213,7 @@ export default function PlayerPortalPage() {
                         <h3 className="text-lg font-black text-white mt-1 truncate">{pOpp?.name}</h3>
                         <div className="text-xs text-rose-300 font-medium line-clamp-1">{pOpp?.tacticalRole}</div>
                         <div className="text-[11px] text-slate-400 font-mono mt-0.5">
-                          {pOpp?.classYear} • {pOpp?.height} • {pOpp?.dominantFoot} Foot
+                          {pOpp?.classYear} • {pOpp?.dominantFoot} Foot
                         </div>
                       </div>
                     </div>
@@ -1325,7 +1379,7 @@ export default function PlayerPortalPage() {
                       Scouted via Veo AI All-22 High-Def Camera System • 2026–2027 Season Telemetry
                     </span>
                     <Link
-                      href="/dashboard/match-film"
+                      href="/dashboard/match-film?match=scout-lca"
                       className="text-amber-400 hover:text-white font-bold flex items-center gap-1 transition"
                     >
                       <Video className="w-3.5 h-3.5" />
@@ -1464,8 +1518,6 @@ export default function PlayerPortalPage() {
               </div>
               <div className="text-[11px] text-slate-400 flex items-center gap-2 font-mono">
                 <span>Class: {inspectedOpponentPlayer.classYear}</span>
-                <span>•</span>
-                <span>Height: {inspectedOpponentPlayer.height}</span>
                 <span>•</span>
                 <span>Foot: {inspectedOpponentPlayer.dominantFoot}</span>
               </div>

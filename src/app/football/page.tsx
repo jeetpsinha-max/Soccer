@@ -182,7 +182,7 @@ export default function DashboardOverviewPage() {
                           {athlete.name}
                         </div>
                         <div className="text-[10px] text-slate-400">
-                          {athlete.positions.join('/')} · {athlete.gradeLevel} · {athlete.height}, {athlete.weight}
+                          {athlete.positions.join('/')} · {athlete.gradeLevel} · {athlete.weight}
                         </div>
                       </div>
                     </div>
@@ -196,7 +196,7 @@ export default function DashboardOverviewPage() {
                         {grade}/100
                       </span>
                       <div className="text-[9px] text-slate-500 mt-0.5">
-                        {athlete.recruitment?.committedCollege ? 'Committed' : 'Prospect'}
+                        Class of {athlete.classYear}
                       </div>
                     </div>
                   </div>

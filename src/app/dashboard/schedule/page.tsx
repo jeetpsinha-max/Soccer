@@ -34,6 +34,27 @@ import {
 
 type FilterType = 'all' | 'upcoming' | 'completed' | 'mapl' | 'home' | 'away';
 
+// Dedicated verified opponent scout reels for upcoming fixtures
+const OPPONENT_SCOUT_REEL_MAP: Record<string, string> = {
+  'm-5': 'scout-lca',
+  'm-7': 'scout-lvr',
+  'm-14': 'scout-pen',
+  'm-16': 'scout-blr'
+};
+
+// Map scouting report keys to official completed match film or verified opponent scout reels
+const SCOUT_KEY_TO_FILM_MAP: Record<string, string> = {
+  'haverford': 'm-0',
+  'aquinas': 'm-1',
+  'trenton': 'm-2',
+  'george-school': 'm-3',
+  'pds': 'm-4',
+  'life-center': 'scout-lca',
+  'lawrenceville': 'scout-lvr',
+  'pennington': 'scout-pen',
+  'blair': 'scout-blr'
+};
+
 function getWinExpectancyStyle(pct: number) {
   if (pct < 35) {
     return {
@@ -185,12 +206,12 @@ export default function SchedulePage() {
         <div className="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none">
           <Filter className="w-4 h-4 text-slate-400 ml-2 mr-1 shrink-0" />
           {[
-            { id: 'all', label: 'All Fixtures', count: 17 },
-            { id: 'upcoming', label: 'Upcoming', count: 15 },
-            { id: 'completed', label: 'Completed', count: 2 },
-            { id: 'mapl', label: 'MAPL Rivals', count: 5 },
-            { id: 'home', label: 'Home Matches', count: 9 },
-            { id: 'away', label: 'Away Trips', count: 8 },
+            { id: 'all', label: 'All Fixtures', count: PEDDIE_SCHEDULE_2026_2027.length },
+            { id: 'upcoming', label: 'Upcoming', count: PEDDIE_SCHEDULE_2026_2027.filter(m => m.status === 'Upcoming').length },
+            { id: 'completed', label: 'Completed', count: PEDDIE_SCHEDULE_2026_2027.filter(m => m.status === 'Completed').length },
+            { id: 'mapl', label: 'MAPL Rivals', count: PEDDIE_SCHEDULE_2026_2027.filter(m => m.isConference).length },
+            { id: 'home', label: 'Home Matches', count: PEDDIE_SCHEDULE_2026_2027.filter(m => m.isHome).length },
+            { id: 'away', label: 'Away Trips', count: PEDDIE_SCHEDULE_2026_2027.filter(m => !m.isHome).length },
           ].map(tab => (
             <button
               key={tab.id}
@@ -220,7 +241,7 @@ export default function SchedulePage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {filteredMatches.map((match, index) => {
           const scoutDossier = match.scoutingReportId ? OPPONENT_VEO_SCOUTING[match.scoutingReportId] : null;
-          const isNextMatch = match.id === 'm-1';
+          const isNextMatch = match.id === (nextUpcomingMatch?.id || 'm-5');
 
           return (
             <div
@@ -295,6 +316,30 @@ export default function SchedulePage() {
                   </div>
                 </div>
 
+                {/* 2026 Season Record & Predictive Badges */}
+                <div className="flex flex-wrap items-center gap-1.5 text-[10px] pt-1">
+                  {(scoutDossier?.currentRecord || match.opponentRecord) && (
+                    <span className="px-1.5 py-0.5 rounded bg-slate-800/90 text-amber-300 font-mono font-bold border border-slate-700">
+                      2026: {scoutDossier?.currentRecord || match.opponentRecord}
+                    </span>
+                  )}
+                  {(scoutDossier?.nationalRanking || match.nationalRanking) && (
+                    <span className="px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30">
+                      🏆 {scoutDossier?.nationalRanking || match.nationalRanking}
+                    </span>
+                  )}
+                  {(scoutDossier?.stateRanking || match.stateRanking) && (
+                    <span className="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">
+                      📍 {scoutDossier?.stateRanking || match.stateRanking}
+                    </span>
+                  )}
+                  {(scoutDossier?.projectedScore || match.projectedScore) && match.status !== 'Completed' && (
+                    <span className="px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 font-mono font-bold border border-cyan-500/30">
+                      Proj: {scoutDossier?.projectedScore || match.projectedScore}
+                    </span>
+                  )}
+                </div>
+
                 {/* Status / Score or Scouting Status */}
                 <div className="pt-2 border-t border-slate-800/80">
                   {match.status === 'Completed' ? (
@@ -314,16 +359,20 @@ export default function SchedulePage() {
                       </div>
                       {match.videoUrl ? (
                         <Link
-                          href="/dashboard/match-film"
+                          href={`/dashboard/match-film?match=${match.id}`}
                           className="px-2.5 py-1 rounded bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-bold flex items-center gap-1 transition"
                         >
                           <PlayCircle className="w-3.5 h-3.5" />
-                          Veo AI Film
+                          Watch Film
                         </Link>
                       ) : (
-                        <span className="text-[10px] font-mono text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2 py-1 rounded">
-                          Film Upload Pending
-                        </span>
+                        <Link
+                          href={`/dashboard/match-film?match=${match.id}`}
+                          className="px-2.5 py-1 rounded bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-bold flex items-center gap-1 transition"
+                        >
+                          <PlayCircle className="w-3.5 h-3.5" />
+                          Scout Reel
+                        </Link>
                       )}
                     </div>
                   ) : (
@@ -371,18 +420,79 @@ export default function SchedulePage() {
                 <div className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">
                   {match.keySummary}
                 </div>
+
+                {/* Online Source Verification (Stats & Film) */}
+                <div className="pt-2 border-t border-slate-800/80 space-y-1 text-[10px]">
+                  {(match.sourceUrl || scoutDossier?.sourceUrl) && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-400 font-semibold">Online Stats:</span>
+                      <a
+                        href={match.sourceUrl || scoutDossier?.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-400 hover:text-cyan-300 hover:underline flex items-center gap-1 font-mono font-medium truncate max-w-[210px]"
+                        title={match.sourceLabel || scoutDossier?.sourceLabel || 'Verify Live Stats Online'}
+                      >
+                        <ExternalLink className="w-3 h-3 shrink-0" />
+                        <span className="truncate">{match.sourceLabel || scoutDossier?.sourceLabel || 'Verify on MaxPreps'}</span>
+                      </a>
+                    </div>
+                  )}
+                  {(match.hudlUrl || scoutDossier?.hudlUrl) && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-400 font-semibold">Online Film:</span>
+                      <a
+                        href={match.hudlUrl || scoutDossier?.hudlUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-rose-400 hover:text-rose-300 hover:underline flex items-center gap-1 font-mono font-medium truncate max-w-[210px]"
+                        title={scoutDossier?.hudlLabel || 'Watch Official Film on Hudl Fan'}
+                      >
+                        <Video className="w-3 h-3 shrink-0" />
+                        <span className="truncate">{scoutDossier?.hudlLabel?.split(':')[0] || 'Hudl Fan Film'}</span>
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Action Buttons Footer */}
-              <div className="p-4 pt-0">
+              <div className="p-4 pt-0 flex items-center gap-2">
+                {match.status === 'Completed' ? (
+                  <Link
+                    href={`/dashboard/match-film?match=${match.id}`}
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 border border-cyan-500/30 hover:border-cyan-400 font-black text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <PlayCircle className="w-4 h-4" />
+                    Watch Match Film
+                  </Link>
+                ) : OPPONENT_SCOUT_REEL_MAP[match.id] ? (
+                  <Link
+                    href={`/dashboard/match-film?match=${OPPONENT_SCOUT_REEL_MAP[match.id]}`}
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-amber-500/10 hover:bg-amber-500 hover:text-slate-950 text-amber-300 border border-amber-500/30 hover:border-amber-400 font-black text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <Eye className="w-4 h-4" />
+                    Opponent Scout Reel
+                  </Link>
+                ) : (
+                  <a
+                    href={match.hudlUrl || scoutDossier?.hudlUrl || 'https://fan.hudl.com/usa/nj/hightstown/organization/15965/peddie-school'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-slate-800/80 hover:bg-blue-600 hover:text-white text-slate-300 border border-slate-700 font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <Video className="w-4 h-4 text-blue-400" />
+                    Watch Hudl Film ↗
+                  </a>
+                )}
                 {match.scoutingReportId && (
                   <button
                     onClick={() => setSelectedScoutKey(match.scoutingReportId || null)}
-                    className="w-full py-2.5 px-3 rounded-xl bg-slate-800/90 hover:bg-cyan-500 hover:text-slate-950 text-cyan-400 border border-cyan-500/30 hover:border-cyan-400 font-black text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-sm group-hover:shadow-cyan-500/10"
+                    className="py-2.5 px-3 rounded-xl bg-slate-800/90 hover:bg-amber-500 hover:text-slate-950 text-amber-300 border border-amber-500/30 hover:border-amber-400 font-black text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+                    title={`Veo Film Scout (${match.opponentLogoText})`}
                   >
                     <Compass className="w-4 h-4" />
-                    Veo Film Scout ({match.opponentLogoText})
-                    <ChevronRight className="w-3.5 h-3.5 ml-auto" />
+                    <span>Scout</span>
                   </button>
                 )}
               </div>
@@ -411,9 +521,37 @@ export default function SchedulePage() {
                   <h2 className="text-2xl font-black text-white mt-1">
                     {activeScoutDossier.opponent}
                   </h2>
-                  <div className="text-xs text-slate-400 font-medium mt-0.5">
-                    Head Coach: <span className="text-slate-200 font-semibold">{activeScoutDossier.headCoach}</span> • System: <span className="text-amber-400 font-bold">{activeScoutDossier.primaryFormation}</span> (Alt: {activeScoutDossier.secondaryFormation})
+                  <div className="text-xs text-slate-400 font-medium mt-0.5 flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                    <span>Head Coach: <span className="text-slate-200 font-semibold">{activeScoutDossier.headCoach}</span></span>
+                    <span>•</span>
+                    <span>System: <span className="text-amber-400 font-bold">{activeScoutDossier.primaryFormation}</span> (Alt: {activeScoutDossier.secondaryFormation})</span>
+                    {activeScoutDossier.currentRecord && (
+                      <>
+                        <span>•</span>
+                        <span>2026 Record: <strong className="text-amber-300 font-mono">{activeScoutDossier.currentRecord}</strong></span>
+                      </>
+                    )}
+                    {activeScoutDossier.formGuide && (
+                      <>
+                        <span>•</span>
+                        <span>Form: <span className="font-mono text-xs px-1.5 py-0.2 bg-slate-800 rounded text-slate-300 border border-slate-700">{activeScoutDossier.formGuide}</span></span>
+                      </>
+                    )}
                   </div>
+                  {(activeScoutDossier.nationalRanking || activeScoutDossier.stateRanking) && (
+                    <div className="flex flex-wrap items-center gap-2 mt-1.5">
+                      {activeScoutDossier.nationalRanking && (
+                        <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                          🏆 {activeScoutDossier.nationalRanking}
+                        </span>
+                      )}
+                      {activeScoutDossier.stateRanking && (
+                        <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                          📍 {activeScoutDossier.stateRanking}
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -426,7 +564,7 @@ export default function SchedulePage() {
             </div>
 
             {/* Win Probability & Threat Metric Bar */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
               {(() => {
                 const style = getWinExpectancyStyle(activeScoutDossier.winProbabilityPct);
                 return (
@@ -461,6 +599,14 @@ export default function SchedulePage() {
                     {activeScoutDossier.threatLevel} Alert
                   </span>
                 </div>
+              </div>
+
+              <div>
+                <div className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Projected Score</div>
+                <div className="text-base font-black text-cyan-300 font-mono mt-1">
+                  {activeScoutDossier.projectedScore || 'Peddie 2-1'}
+                </div>
+                <div className="text-[11px] text-slate-400 mt-0.5">Veo Model Grounded</div>
               </div>
 
               <div>
@@ -595,20 +741,77 @@ export default function SchedulePage() {
 
             {/* Modal Footer */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-800">
-              <Link
-                href="/dashboard/scouting"
-                className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider transition flex items-center gap-2"
-              >
-                <Compass className="w-4 h-4 text-cyan-400" />
-                Open Opponent Scouting Dashboard
-              </Link>
+              <div className="flex items-center gap-2">
+                <Link
+                  href="/dashboard/scouting"
+                  className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider transition flex items-center gap-2"
+                >
+                  <Compass className="w-4 h-4 text-cyan-400" />
+                  Scouting Dossier
+                </Link>
+                {activeScoutDossier.hudlUrl && (
+                  <a
+                    href={activeScoutDossier.hudlUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/30 text-xs font-bold transition flex items-center gap-1.5"
+                    title={activeScoutDossier.hudlLabel || 'Watch Official Film on Hudl Fan'}
+                  >
+                    <Video className="w-3.5 h-3.5 text-rose-400" />
+                    <span>Watch Hudl Film ↗</span>
+                  </a>
+                )}
+                {activeScoutDossier.sourceUrl && (
+                  <a
+                    href={activeScoutDossier.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 text-xs font-bold transition flex items-center gap-1.5"
+                    title={activeScoutDossier.sourceLabel || 'Verify Live Stats Online'}
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 text-purple-400" />
+                    <span>Verify: {activeScoutDossier.sourceLabel?.split(':')[0] || 'MaxPreps'} ↗</span>
+                  </a>
+                )}
+              </div>
 
-              <button
-                onClick={() => setSelectedScoutKey(null)}
-                className="px-5 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-md shadow-cyan-500/20 cursor-pointer"
-              >
-                Close Dossier
-              </button>
+              <div className="flex items-center gap-2">
+                {(() => {
+                  const targetFilmId = selectedScoutKey ? SCOUT_KEY_TO_FILM_MAP[selectedScoutKey] : null;
+                  if (targetFilmId) {
+                    const isScout = targetFilmId.startsWith('scout-');
+                    return (
+                      <Link
+                        href={`/dashboard/match-film?match=${targetFilmId}`}
+                        className="px-4 py-2 rounded-xl bg-cyan-500/20 hover:bg-cyan-500 text-cyan-300 hover:text-slate-950 border border-cyan-500/40 text-xs font-black uppercase tracking-wider transition flex items-center gap-2"
+                      >
+                        <PlayCircle className="w-4 h-4" />
+                        {isScout ? 'Watch Opponent Scout Reel' : 'Watch Match Broadcast Film'}
+                      </Link>
+                    );
+                  }
+                  if (activeScoutDossier.hudlUrl) {
+                    return (
+                      <a
+                        href={activeScoutDossier.hudlUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 rounded-xl bg-blue-600/30 hover:bg-blue-600 text-blue-200 hover:text-white border border-blue-500/40 text-xs font-black uppercase tracking-wider transition flex items-center gap-2"
+                      >
+                        <Video className="w-4 h-4" />
+                        Watch Film on Hudl ↗
+                      </a>
+                    );
+                  }
+                  return null;
+                })()}
+                <button
+                  onClick={() => setSelectedScoutKey(null)}
+                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-md shadow-cyan-500/20 cursor-pointer"
+                >
+                  Close Dossier
+                </button>
+              </div>
             </div>
           </div>
         </div>

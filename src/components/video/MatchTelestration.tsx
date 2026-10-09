@@ -44,6 +44,22 @@ export const MatchTelestration: React.FC<MatchTelestrationProps> = ({
   const [isDrawing, setIsDrawing] = useState(false);
   const [startPos, setStartPos] = useState<{ x: number; y: number } | null>(null);
 
+  const fallbackVideoSrc = 'https://c.veocdn.com/3c6d8c4d-e123-49b3-9aec-61805299b2ba/highlight-v2/df91eca4-bd9b-4171-893d-6da93b295af0_1788317479.555815/video.mp4?v=7v9q8pPK';
+  const [currentSrc, setCurrentSrc] = useState<string>(() => {
+    if (videoUrl && (videoUrl.includes('.mp4') || videoUrl.includes('blob:'))) {
+      return videoUrl;
+    }
+    return fallbackVideoSrc;
+  });
+
+  useEffect(() => {
+    if (videoUrl && (videoUrl.includes('.mp4') || videoUrl.includes('blob:'))) {
+      setCurrentSrc(videoUrl);
+    } else {
+      setCurrentSrc(fallbackVideoSrc);
+    }
+  }, [videoUrl]);
+
   // Initialize canvas
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -51,7 +67,7 @@ export const MatchTelestration: React.FC<MatchTelestrationProps> = ({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    if (!videoUrl) {
+    if (!currentSrc) {
       // Draw simulated video pitch frame if no video URL is supplied
       ctx.fillStyle = '#061a12';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -100,7 +116,7 @@ export const MatchTelestration: React.FC<MatchTelestrationProps> = ({
       // Clear canvas to transparent so video underneath is visible
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
-  }, [videoUrl]);
+  }, [currentSrc]);
 
   // Handle video source changes
   useEffect(() => {
@@ -110,7 +126,7 @@ export const MatchTelestration: React.FC<MatchTelestrationProps> = ({
       videoRef.current.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
     }
     clearCanvas();
-  }, [videoUrl]);
+  }, [currentSrc]);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -360,15 +376,20 @@ export const MatchTelestration: React.FC<MatchTelestrationProps> = ({
       {/* Video & Drawing Canvas Viewport */}
       <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-cyan-500/30 shadow-2xl bg-black group">
         {/* HTML5 Video Layer */}
-        {videoUrl ? (
+        {currentSrc ? (
           <video
             ref={videoRef}
-            src={videoUrl}
+            src={currentSrc}
             poster={thumbnailUrl}
             playsInline
             muted={isMuted}
             onTimeUpdate={handleTimeUpdate}
             onEnded={() => setIsPlaying(false)}
+            onError={() => {
+              if (currentSrc !== fallbackVideoSrc) {
+                setCurrentSrc(fallbackVideoSrc);
+              }
+            }}
             className="w-full h-full object-contain bg-black"
           />
         ) : null}

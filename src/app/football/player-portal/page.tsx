@@ -103,7 +103,7 @@ export default function PlayerPortalPage() {
                   {selectedPlayer.primaryPosition} · Class of {selectedPlayer.classYear} ({selectedPlayer.gradeLevel})
                 </div>
                 <div className="text-[11px] text-slate-400 mt-1">
-                  {selectedPlayer.height} · {selectedPlayer.weight} lbs
+                  {selectedPlayer.weight} lbs
                 </div>
               </div>
 

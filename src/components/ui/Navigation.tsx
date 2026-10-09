@@ -17,14 +17,16 @@ import {
   Calendar,
   Sparkles,
   Sliders,
-  GraduationCap,
   Radio,
   Swords,
   Home,
   User,
   Crosshair,
   ListChecks,
-  FileText
+  FileText,
+  Zap,
+  Search,
+  Printer
 } from 'lucide-react';
 
 export const Navigation: React.FC = () => {
@@ -39,7 +41,6 @@ export const Navigation: React.FC = () => {
     { label: 'Touchline Simulator', href: '/dashboard/simulator', icon: Radio },
     { label: 'Data Analytics', href: '/dashboard/analytics', icon: BarChart3 },
     { label: 'Tactics & Pitch', href: '/dashboard/tactics', icon: Sliders },
-    { label: 'College Recruiting', href: '/dashboard/recruiting', icon: GraduationCap },
     { label: 'Call Sheet', href: '/dashboard/call-sheet', icon: ClipboardList },
     { label: 'Player Portal', href: '/dashboard/player-portal', icon: Users },
     { label: 'Match Film', href: '/dashboard/match-film', icon: Film },
@@ -135,6 +136,41 @@ export const Navigation: React.FC = () => {
           })}
         </nav>
 
+        {/* Workability Quick Actions & Command Palette Trigger */}
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('open-command-palette'))}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-amber-400/60 text-slate-300 hover:text-white text-xs font-semibold transition group shadow-inner"
+            title="Open Command Palette (⌘K / Ctrl+K)"
+          >
+            <Search className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
+            <span className="hidden sm:inline">Search</span>
+            <kbd className="px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 group-hover:text-amber-300 font-mono text-[9px] font-black border border-slate-700">
+              ⌘K
+            </kbd>
+          </button>
+
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('open-sideline-scratchpad'))}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-400/60 text-slate-300 hover:text-white text-xs font-semibold transition group"
+            title="Sideline Coach Scratchpad (Alt+N)"
+          >
+            <FileText className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" />
+            <span className="hidden md:inline">Notes</span>
+          </button>
+
+          {!isFootball && (
+            <Link
+              href="/dashboard/call-sheet"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 hover:text-amber-300 text-xs font-bold transition group"
+              title="Print Sideline Call Sheet"
+            >
+              <Printer className="w-3.5 h-3.5" />
+              <span className="hidden lg:inline">Print Sheet</span>
+            </Link>
+          )}
+        </div>
+
         {/* Telemetry Status / Season Badge */}
         <div className="flex items-center gap-2">
           {isFootball ? (
@@ -160,6 +196,48 @@ export const Navigation: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Persistent Soccer SAC Telemetry & HUD Ticker Ribbon */}
+      {!isFootball && (
+        <div className="max-w-7xl mx-auto mt-2 pt-1.5 border-t border-slate-800/80 flex items-center justify-between text-[11px] gap-3 overflow-hidden flex-wrap sm:flex-nowrap">
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <span className="flex items-center gap-1 px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono font-black text-[10px] border border-cyan-400/40">
+              <Zap className="w-3 h-3 text-cyan-400 animate-pulse" />
+              SAC HUD
+            </span>
+            <span className="font-mono font-bold text-amber-300 flex items-center gap-1">
+              <Sparkles className="w-3 h-3 text-amber-400" />
+              37G • 27A • 101 PTS
+            </span>
+          </div>
+
+          <div className="flex items-center gap-3 text-slate-300 font-mono text-[10px] overflow-x-auto whitespace-nowrap scrollbar-none">
+            <span className="text-amber-300 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">
+              👑 Captains: #12 Eldessouky • #28 Kim • #14 Mohiuddin • #13 Tharney
+            </span>
+            <span className="text-emerald-300 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
+              Starting LM: #7 Bennett Cucchiara (FR • 3G, 3A, 9P)
+            </span>
+            <span className="text-purple-300 font-bold bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/30">
+              Starting RM: #26 Blake Romanelli (SO • 21.8 mph)
+            </span>
+            <span className="text-cyan-300 font-semibold bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
+              GK: #98 Dylan McKenzie (41 Saves • 7 GP)
+            </span>
+            <span className="text-slate-300">
+              #13 Christian Tharney (10G, 5A, 25P)
+            </span>
+          </div>
+
+          <Link
+            href="/"
+            className="text-[10px] text-amber-400 hover:text-white font-bold transition flex items-center gap-1 flex-shrink-0 ml-auto"
+          >
+            <span>Match Center HUD</span>
+            <span>→</span>
+          </Link>
+        </div>
+      )}
     </header>
   );
 };

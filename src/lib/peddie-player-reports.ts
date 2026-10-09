@@ -255,26 +255,26 @@ export const PEDDIE_PLAYER_CURRENT_SEASON_REPORTS: Record<number, CurrentSeasonR
   },
 
   10: {
-    seasonRole: 'Starting Utility Midfielder / Center Back & Co-Captain',
+    seasonRole: 'Starting Striker / Target Forward & Co-Captain',
     formRating: 8.9,
-    match0Review: 'Provided relentless box-to-box energy against Haverford, disrupting build-up triangles and winning 8 aerial headers.',
-    match1Review: 'Controlled the right-interior channel in 3-2 win vs Aquinas, winning 5 duels and delivering dangerous diagonal switches.',
-    match2Review: 'Battled through 80 physical minutes at Trenton Central, recording 6 aerial clearances and 4 tackles.',
-    match3Review: 'Anchored midfield disruption in 5-2 win over George School, clearing 5 crosses and winning 7 ground duels.',
-    match4Review: 'Commanded the central pitch in 7-1 win at PDS, winning 6 of 7 aerial duels and completing 88% of passes.',
-    latestMatchReview: 'Imposing physical presence at PDS, shutting down their midfield counters with 6 aerial wins and 4 tackles.',
-    upcomingMatchAssignment: 'Maintain midfield physicality against Life Center Academy, win second balls, and crash the box on attacking corners.',
+    match0Review: 'Provided relentless pressing and physical presence against Haverford, winning 8 aerial headers and pinning center-backs.',
+    match1Review: 'Spearheaded central attack in 3-2 win vs Aquinas, winning 5 duels and crashing the box on set-piece deliveries.',
+    match2Review: 'Battled through 80 physical minutes at Trenton Central, recording 6 aerial clearances and leading the forward press.',
+    match3Review: 'Anchored attacking disruption in 5-2 win over George School, clearing crosses and winning 7 aerial and ground duels.',
+    match4Review: 'Commanded the attacking front in 7-1 win at PDS, winning 6 of 7 aerial duels and completing 88% of passes.',
+    latestMatchReview: 'Imposing physical presence at PDS, pinning their backline with 6 aerial duel wins and relentless hold-up play.',
+    upcomingMatchAssignment: 'Lead the forward line against Life Center Academy, contest direct aerial releases, and crash the 6-yard box on crosses.',
     technicalStrengths: [
       'Massive aerial dominance in both boxes (29 aerial duels won, 85.3% win rate)',
-      'Versatile ability to play box-to-box midfielder or center back',
-      'Relentless physical commitment and vocal leadership (32.4 miles covered)'
+      'Imposing physical target play and hold-up distribution with back to goal',
+      'Relentless pressing commitment and vocal leadership (32.4 miles covered, 20.8 mph pace)'
     ],
     developmentPriorities: [
       'Composure in final third shooting opportunities',
       'Avoiding unnecessary fouls in dangerous dead-ball zones'
     ],
-    coachNazarioEvaluation: 'Quinn gives our squad tremendous backbone. He does the heavy physical lifting in midfield and in the air, winning 29 aerial duels and providing veteran leadership.',
-    veoFilmInsight: 'Veo heatmaps reveal Quinn covering every blade of grass in the middle third, recording 20.8 mph sprint speed.'
+    coachNazarioEvaluation: 'Quinn gives our squad tremendous backbone and aerial firepower as a striker. He does the heavy physical lifting up top and in the air, winning 29 aerial duels and providing veteran leadership.',
+    veoFilmInsight: 'Veo heatmaps reveal Quinn dominating the attacking third and pressing backlines with authority, recording 20.8 mph sprint speed.'
   },
 
   15: {
